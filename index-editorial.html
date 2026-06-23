@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[에디토리얼 시안] 푸드트럭하우스</title>
+<meta name="theme-color" content="#0B0B0E">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0B0E;          /* 잉크빛 블랙 (네이비 그라데이션 대신 차분한 무채) */
+    --bg-2:#101015;
+    --paper:#F3F1EA;        /* 따뜻한 페이퍼 */
+    --ink:#0B0B0E;
+    --fg:#EDEDE7;           /* 본문 (살짝 따뜻한 화이트) */
+    --mut:#8A8A86;          /* 보조 */
+    --line:rgba(237,237,231,.16);
+    --accent:#3B5BFF;       /* 단 하나의 포인트 블루 (남발 X) */
+    --accent-2:#C7B299;     /* 세리프 악센트용 웜톤 */
+    --max:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+  /* 미세 그레인 질감 — 밋밋한 AI 그라데이션 느낌 제거 */
+  body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  a{text-decoration:none;color:inherit}
+  img,video{max-width:100%;display:block}
+  .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum"}
+  .ser{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(22px,4vw,40px);position:relative;z-index:2}
+
+  /* header — 아주 얇게 */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(11,11,14,.7);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--fg);display:flex;align-items:center;gap:10px}
+  .brand .est{font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;color:var(--mut)}
+  .nav-links{display:flex;gap:28px;font-size:13.5px;font-weight:500;letter-spacing:.01em}
+  .nav-links a{color:var(--mut);transition:color .2s}.nav-links a:hover{color:var(--fg)}
+  .nav-cta{font-size:13px;font-weight:700;color:var(--fg);border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+
+  /* editorial hero */
+  .ed-hero{padding:118px 0 70px}
+  .ed-rule{height:1px;background:var(--line);margin:0 0 16px}
+  .ed-top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+  .ed-main{display:grid;grid-template-columns:1.45fr .85fr;gap:clamp(30px,5vw,70px);align-items:end;padding:clamp(34px,6vw,72px) 0 clamp(28px,4vw,46px)}
+  h1.ed-h1{font-size:clamp(46px,9vw,128px);font-weight:800;letter-spacing:-.045em;line-height:.94;color:#fff}
+  h1.ed-h1 .ser{color:var(--accent-2);letter-spacing:-.01em;font-size:1.02em;line-height:.8}
+  .ed-meta{padding-bottom:8px}
+  .ed-lead{font-size:15.5px;color:var(--mut);line-height:1.7;max-width:40ch;padding-bottom:26px;border-bottom:1px solid var(--line)}
+  .ed-stats{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:0}
+  .ed-stats li{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .ed-stats .n{font-size:30px;font-weight:700;color:#fff;letter-spacing:-.02em}
+  .ed-stats .n i{font-style:normal;font-size:.46em;color:var(--accent);margin-left:2px;font-weight:600}
+  .ed-stats .l{font-size:12.5px;color:var(--mut);letter-spacing:.02em}
+  .ed-cta{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:15px;font-weight:700;color:#fff}
+  .ed-cta span{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;transition:.2s}
+  .ed-cta:hover span{background:var(--accent);border-color:var(--accent);transform:translate(2px,-2px)}
+
+  /* figure — 풀블리드 영상 + 캡션 */
+  .ed-figure{position:relative;border-top:1px solid var(--line);padding-top:18px}
+  .ed-frame{position:relative;aspect-ratio:21/8;overflow:hidden;border-radius:2px;background:#16161b}
+  .ed-frame video{width:100%;height:100%;object-fit:cover;opacity:.92}
+  .ed-cap{display:flex;align-items:center;gap:12px;margin-top:12px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+  .ed-cap b{font-family:'Archivo';font-weight:700;color:var(--accent-2)}
+
+  /* clients — 텍스트 라인 (로고띠 대신 잡지식 인덱스) */
+  .ed-clients{padding:38px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .ed-clients .lab{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:16px}
+  .ed-clients .row{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:clamp(17px,2vw,22px);font-weight:700;color:rgba(237,237,231,.5);letter-spacing:-.01em}
+  .ed-clients .row span:hover{color:#fff}
+
+  footer{padding:46px 0;color:var(--mut);font-size:12.5px}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);padding-top:22px}
+
+  .tone-badge{position:fixed;left:18px;bottom:18px;z-index:80;background:var(--paper);color:var(--ink);font-size:12px;font-weight:700;padding:9px 14px;border-radius:30px;box-shadow:0 10px 28px -12px rgba(0,0,0,.6)}
+
+  @media(max-width:860px){
+    .nav-links{display:none}
+    .ed-main{grid-template-columns:1fr;gap:30px;align-items:start}
+    .ed-frame{aspect-ratio:16/10}
+    h1.ed-h1{font-size:clamp(42px,13vw,80px)}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}.ed-frame video{display:none}}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<a class="tone-badge" href="index.html" title="현재 버전으로 보기">✦ 에디토리얼 시안 — 현재 버전 보기 →</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">푸드트럭하우스 <span class="est">est. 2016</span></a>
+    <nav class="nav-links">
+      <a href="about.html">소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지</a>
+    </nav>
+    <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
+  </div>
+</header>
+
+<section class="ed-hero">
+  <div class="wrap">
+    <div class="ed-rule"></div>
+    <div class="ed-top">
+      <span>Catering · Brand Promotion · Festival</span>
+      <span>본사 직영 · 100% 합법 푸드트럭</span>
+    </div>
+
+    <div class="ed-main">
+      <h1 class="ed-h1">젊음이 만든 <span class="ser">passion</span>,<br>깨끗한 푸드트럭의 기준.</h1>
+      <div class="ed-meta">
+        <p class="ed-lead">기업 행사부터 건설현장·축제·페스티벌까지 — 현장을 가장 많이 굴려본 팀이, 가장 빠르게 견적으로 답합니다.</p>
+        <ul class="ed-stats">
+          <li><span class="n num">4,000<i>곳+</i></span><span class="l">함께한 고객사</span></li>
+          <li><span class="n num">8,000<i>건+</i></span><span class="l">누적 행사 운영</span></li>
+          <li><span class="n num">92<i>%</i></span><span class="l">서비스 재이용률</span></li>
+        </ul>
+        <a class="ed-cta" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="ed-figure">
+      <div class="ed-frame">
+        <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+          <source src="https://foodtruckhouse.com/assets/videos/main.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="ed-cap"><b>FIG. 01</b> 실시간 현장 운영 — 직영 15대 · 전국 협력 400여 대 · 물류창고 100평+</div>
+    </div>
+  </div>
+</section>
+
+<section class="ed-clients">
+  <div class="wrap">
+    <div class="lab">Selected Clients — 우리가 함께한 곳</div>
+    <div class="row">
+      <span>삼성생명</span><span>한화</span><span>현대</span><span>CJ</span><span>무신사</span><span>국민은행</span><span>농협</span><span>FC서울</span><span>진로</span><span>메디큐브</span><span>롯데건설</span><span>고든램지버거</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>© 2026 푸드트럭하우스 · 주식회사 하이팅</span>
+      <span>1877-6901 · 경기 용인시 기흥구 상하동 229</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
