@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1430"/><stop offset="1" stop-color="#060C1F"/>
+    </linearGradient>
+    <linearGradient id="m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2D5BFF"/><stop offset="1" stop-color="#003892"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.7">
+      <stop offset="0" stop-color="#2D5BFF" stop-opacity="0.4"/><stop offset="1" stop-color="#2D5BFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(90,86)">
+    <rect width="60" height="60" rx="14" fill="url(#m)"/>
+    <text x="30" y="40" font-family="Archivo, Arial, sans-serif" font-size="20" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="-1.1">FTH</text>
+    <text x="78" y="40" font-family="Pretendard, 'Apple SD Gothic Neo', sans-serif" font-size="30" font-weight="800" fill="#fff">푸드트럭하우스</text>
+  </g>
+  <text x="92" y="300" font-family="Pretendard, 'Apple SD Gothic Neo', sans-serif" font-size="62" font-weight="800" fill="#fff" letter-spacing="-2">젊음이 만든 <tspan fill="#5B86FF">열정</tspan>,</text>
+  <text x="92" y="378" font-family="Pretendard, 'Apple SD Gothic Neo', sans-serif" font-size="62" font-weight="800" fill="#fff" letter-spacing="-2">깨끗한 푸드트럭의 기준.</text>
+  <text x="94" y="500" font-family="Pretendard, 'Apple SD Gothic Neo', sans-serif" font-size="27" font-weight="600" fill="#93A1C7">고객사 <tspan fill="#EAF0FF" font-weight="800">4,000곳+</tspan>　·　행사 <tspan fill="#EAF0FF" font-weight="800">8,000건+</tspan>　·　재이용률 <tspan fill="#EAF0FF" font-weight="800">92%</tspan></text>
+</svg>

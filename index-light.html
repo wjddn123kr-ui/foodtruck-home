@@ -3,32 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>푸드트럭하우스 — 8,000건의 현장이 증명하는 푸드트럭 케이터링</title>
+<title>[밝은 톤 시안] 푸드트럭하우스 — 8,000건의 현장이 증명하는 푸드트럭 케이터링</title>
 <meta name="description" content="고객사 4,000곳, 행사 8,000건, 재이용률 92%. 케이터링·브랜드 프로모션·페스티벌 부스까지, 현장을 가장 많이 굴려본 팀. 인원과 날짜만 알려주시면 3분 만에 견적을 받아보세요.">
-<meta name="keywords" content="커피차, 푸드트럭, 간식차, 케이터링, 브랜드 프로모션, 행사대행, 푸드트럭하우스">
-<meta property="og:title" content="푸드트럭하우스 — 푸드트럭 케이터링">
-<meta property="og:description" content="고객사 4,000곳이 다시 찾는 푸드트럭 케이터링. 행사 8,000건, 재이용률 92%.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="og-image.svg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="푸드트럭하우스 — 푸드트럭 케이터링">
-<meta name="twitter:description" content="고객사 4,000곳이 다시 찾는 푸드트럭 케이터링. 행사 8,000건, 재이용률 92%.">
-<meta name="twitter:image" content="og-image.svg">
-<meta name="theme-color" content="#0A1733">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
+<meta name="theme-color" content="#FBFCFF">
 
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!-- ===== 메타 픽셀 자리 (5단계에서 채웁니다) ===== -->
-
 <style>
   :root{
+    /* 다크 액센트(배차카드·푸터에 사용) */
     --navy-900:#060C1F;
     --navy-850:#0A1430;
     --navy-800:#0E1A3D;
@@ -39,116 +25,111 @@
     --ice:#EAF0FF;
     --paper:#F4F7FE;
     --ink:#0A1124;
-    --mute:#93A1C7;
-    --line:rgba(140,165,225,.16);
+    --mute:#93A1C7;        /* 다크 배경용 보조 텍스트 */
+    --line:rgba(140,165,225,.16);   /* 다크 영역 라인 */
+    /* ↓ 밝은 톤 전용 토큰 */
+    --bg:#FBFCFF;          /* 페이지 기본 배경 */
+    --surface:#FFFFFF;     /* 카드 */
+    --text:#0A1124;        /* 본문 */
+    --text-soft:#54618A;   /* 라이트 배경용 보조 텍스트 */
+    --line2:rgba(10,17,36,.09);     /* 라이트 영역 라인 */
     --max:1200px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--navy-900);color:var(--ice);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
   a{text-decoration:none;color:inherit}
   img{max-width:100%;display:block}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
 
+  /* 톤 비교 배지 */
+  .tone-badge{position:fixed;left:16px;bottom:16px;z-index:80;background:#fff;border:1px solid var(--line2);color:var(--ink);font-size:12.5px;font-weight:700;padding:10px 15px;border-radius:30px;box-shadow:0 10px 28px -12px rgba(10,20,60,.3);transition:transform .15s}
+  .tone-badge:hover{transform:translateY(-2px)}
+
   /* header */
-  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(6,12,31,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .3s}
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2);transition:transform .3s}
   .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff}
-  .brand .m{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:13px;box-shadow:0 4px 16px -4px rgba(45,91,255,.6)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+  .brand .m{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:13px;box-shadow:0 4px 16px -4px rgba(45,91,255,.5)}
   .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
-  .nav-links a{color:var(--mute);transition:color .2s}
-  .nav-links a:hover{color:#fff}
+  .nav-links a{color:var(--text-soft);transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
   .nav-right{display:flex;align-items:center;gap:18px}
-  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
-  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
-  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(45,91,255,.9)}
+  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-deep)}
+  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 20px -8px rgba(45,91,255,.7)}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(45,91,255,.8)}
   .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
-  .menu-btn span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;transition:.25s}
-  /* 소개 드롭다운 */
-  .nav-links .has-sub{position:relative}
-  .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-  .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
-  .submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,20,48,.97);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:148px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(0,0,0,.7)}
-  .submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
-  .nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-  .submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--mute);white-space:nowrap;transition:background .15s,color .15s}
-  .submenu a:hover,.submenu a.active{background:rgba(91,134,255,.12);color:#fff}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.25s}
 
   /* hero */
   .hero{position:relative;padding:150px 0 90px;overflow:hidden}
   .hero .glow{position:absolute;border-radius:50%;filter:blur(90px);z-index:0;pointer-events:none}
-  .hero .glow.g1{width:520px;height:520px;background:rgba(45,91,255,.4);top:-120px;right:-80px}
-  .hero .glow.g2{width:380px;height:380px;background:rgba(0,56,146,.5);bottom:-140px;left:-100px}
-  .hero .grid-bg{position:absolute;inset:0;z-index:1;opacity:.4;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 65% at 65% 25%,#000 25%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 80% 65% at 65% 25%,#000 25%,transparent 75%)}
-  /* 히어로 배경 영상 */
-  .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--navy-900)}
-  .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
-  .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,31,.18),rgba(6,12,31,.46) 62%,var(--navy-900) 100%),linear-gradient(90deg,rgba(6,12,31,.58),rgba(6,12,31,.05) 66%)}
+  .hero .glow.g1{width:520px;height:520px;background:rgba(45,91,255,.16);top:-120px;right:-80px}
+  .hero .glow.g2{width:380px;height:380px;background:rgba(0,56,146,.12);bottom:-140px;left:-100px}
+  .hero .grid-bg{position:absolute;inset:0;z:0;opacity:.7;background-image:linear-gradient(var(--line2) 1px,transparent 1px),linear-gradient(90deg,var(--line2) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 65% at 65% 25%,#000 25%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 80% 65% at 65% 25%,#000 25%,transparent 75%)}
   .hero .wrap{position:relative;z-index:2}
-  .eb{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:8px 16px;border-radius:30px;margin-bottom:28px}
-  .eb .dot{width:7px;height:7px;border-radius:50%;background:var(--blue-bright);box-shadow:0 0 0 0 rgba(91,134,255,.7);animation:pulse 2.4s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(91,134,255,.6)}70%{box-shadow:0 0 0 11px rgba(91,134,255,0)}100%{box-shadow:0 0 0 0 rgba(91,134,255,0)}}
-  h1.ht{font-size:clamp(40px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff;max-width:16ch}
-  h1.ht .grad{background:linear-gradient(105deg,var(--blue-bright),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .hlead{margin-top:26px;font-size:clamp(19px,2.5vw,27px);font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.3}
-  .hlead b{color:var(--blue-bright);font-weight:800}
-  .hsub{margin-top:14px;font-size:clamp(16px,2vw,19px);color:var(--ice);opacity:.82;max-width:48ch}
+  .eb{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--blue-deep);background:rgba(45,91,255,.08);border:1px solid rgba(45,91,255,.22);padding:8px 16px;border-radius:30px;margin-bottom:28px}
+  .eb .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 0 rgba(45,91,255,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(45,91,255,.5)}70%{box-shadow:0 0 0 11px rgba(45,91,255,0)}100%{box-shadow:0 0 0 0 rgba(45,91,255,0)}}
+  h1.ht{font-size:clamp(40px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1.02;color:var(--ink);max-width:16ch}
+  h1.ht .grad{background:linear-gradient(105deg,var(--blue),var(--blue-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hsub{margin-top:28px;font-size:clamp(16px,2vw,19px);color:var(--text-soft);max-width:46ch}
   .hbtns{display:flex;gap:13px;margin-top:40px;flex-wrap:wrap}
-  .b1{background:var(--blue);color:#fff;padding:16px 30px;border-radius:11px;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s,box-shadow .2s;box-shadow:0 10px 30px -10px rgba(45,91,255,.8)}
-  .b1:hover{transform:translateY(-2px);box-shadow:0 16px 38px -10px rgba(45,91,255,.95)}
+  .b1{background:var(--blue);color:#fff;padding:16px 30px;border-radius:11px;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s,box-shadow .2s;box-shadow:0 10px 30px -10px rgba(45,91,255,.7)}
+  .b1:hover{transform:translateY(-2px);box-shadow:0 16px 38px -10px rgba(45,91,255,.85)}
   .b1 svg{transition:transform .2s}.b1:hover svg{transform:translateX(3px)}
-  .b2{color:#fff;padding:16px 26px;border-radius:11px;border:1px solid var(--line);font-weight:600;font-size:16px;transition:background .2s,border-color .2s}
-  .b2:hover{background:rgba(140,165,225,.07);border-color:rgba(140,165,225,.4)}
+  .b2{color:var(--ink);padding:16px 26px;border-radius:11px;border:1px solid var(--line2);font-weight:600;font-size:16px;transition:background .2s,border-color .2s}
+  .b2:hover{background:rgba(10,17,36,.04);border-color:rgba(10,17,36,.2)}
 
-  .hstats{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-  .hst{padding:32px 8px 0;border-right:1px solid var(--line)}
+  .hstats{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line2)}
+  .hst{padding:32px 8px 0;border-right:1px solid var(--line2)}
   .hst:last-child{border-right:0}
-  .hst .v{font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1;display:flex;align-items:baseline;gap:3px;color:#fff}
-  .hst .v .u{font-size:.42em;color:var(--blue-bright);font-weight:700}
-  .hst .l{margin-top:12px;font-size:14px;color:var(--mute)}
+  .hst .v{font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1;display:flex;align-items:baseline;gap:3px;color:var(--ink)}
+  .hst .v .u{font-size:.42em;color:var(--blue);font-weight:700}
+  .hst .l{margin-top:12px;font-size:14px;color:var(--text-soft)}
 
   /* marquee */
-  .marquee{padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--navy-850);overflow:hidden;position:relative}
-  .marquee .ml{text-align:center;font-size:12.5px;letter-spacing:.1em;color:var(--mute);margin-bottom:24px;text-transform:uppercase}
-  .track{display:flex;gap:18px;width:max-content;align-items:center;animation:scroll 40s linear infinite}
-  .logo-chip{flex:0 0 auto;height:62px;padding:0 24px;background:#fff;border-radius:14px;display:grid;place-items:center;box-shadow:0 10px 26px -16px rgba(0,0,0,.55)}
-  .logo-chip img{height:28px;width:auto;max-width:150px;object-fit:contain;display:block}
+  .marquee{padding:42px 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:#EFF3FE;overflow:hidden;position:relative}
+  .marquee .ml{text-align:center;font-size:12.5px;letter-spacing:.1em;color:var(--text-soft);margin-bottom:24px;text-transform:uppercase}
+  .track{display:flex;gap:56px;width:max-content;animation:scroll 26s linear infinite}
+  .track span{font-weight:700;font-size:clamp(18px,2.4vw,24px);color:rgba(10,17,36,.26);white-space:nowrap;transition:color .25s}
   .marquee:hover .track{animation-play-state:paused}
+  .track span:hover{color:var(--ink)}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
   /* section */
   section{padding:clamp(80px,9vw,116px) 0}
-  .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue-bright);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:18px}
-  .kicker::after{content:"";width:54px;height:1px;background:var(--line)}
-  h2.st{font-size:clamp(28px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:#fff}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue-deep);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:18px}
+  .kicker::after{content:"";width:54px;height:1px;background:var(--line2)}
+  h2.st{font-size:clamp(28px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--ink)}
 
   /* WHY + dispatch */
   .why-grid{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(40px,6vw,72px);align-items:center}
-  .why-lead{margin-top:22px;font-size:17px;color:var(--mute);max-width:46ch}
+  .why-lead{margin-top:22px;font-size:17px;color:var(--text-soft);max-width:46ch}
   .points{margin-top:38px}
-  .pt{padding:26px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+  .pt{padding:26px 0;border-bottom:1px solid var(--line2);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
   .pt:last-child{border-bottom:0}
-  .pt .n{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue-bright);border:1.5px solid rgba(91,134,255,.4);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
-  .pt h3{font-size:19px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:6px}
-  .pt p{font-size:15px;color:var(--mute)}
+  .pt .n{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue-deep);border:1.5px solid rgba(45,91,255,.32);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
+  .pt h3{font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:6px}
+  .pt p{font-size:15px;color:var(--text-soft)}
 
-  .dispatch-card{background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid var(--line);border-radius:22px;padding:30px;position:relative;overflow:hidden;box-shadow:0 30px 70px -40px #000}
-  .dispatch-card::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(45,91,255,.18);filter:blur(50px);top:-40px;right:-40px}
+  /* 배차 카드 — 밝은 페이지 위에서 '다크 프리미엄 카드'로 강조 유지 */
+  .dispatch-card{background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid rgba(140,165,225,.18);border-radius:22px;padding:30px;position:relative;overflow:hidden;box-shadow:0 30px 70px -38px rgba(10,25,70,.55)}
+  .dispatch-card::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(45,91,255,.22);filter:blur(50px);top:-40px;right:-40px}
   .dc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative}
   .dc-head .t{font-size:13px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:8px}
   .dc-head .t .live{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse2 2s infinite}
   @keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
   .dc-head .meta{font-family:'Archivo';font-size:12px;color:var(--mute)}
   .dispatch{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;position:relative}
-  .cell{aspect-ratio:1;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;font-family:'Archivo';font-weight:700;font-size:13px;color:var(--mute);background:rgba(140,165,225,.04);transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
+  .cell{aspect-ratio:1;border-radius:11px;border:1px solid rgba(140,165,225,.16);display:grid;place-items:center;font-family:'Archivo';font-weight:700;font-size:13px;color:var(--mute);background:rgba(140,165,225,.04);transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
   .cell.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 22px -8px rgba(45,91,255,.8)}
   .cell.warm{background:rgba(91,134,255,.14);color:var(--blue-bright);border-color:rgba(91,134,255,.35)}
-  .cell.booth{background:rgba(52,211,153,.12);color:#34D399;border:1px dashed rgba(52,211,153,.45);font-size:12px}
   .dc-cap{margin-top:22px;font-size:13px;color:var(--mute);line-height:1.55;position:relative}
 
-  /* services (light) */
-  .services{background:var(--paper);color:var(--ink)}
+  /* services (밝은 블루 밴드) */
+  .services{background:#E9F0FF;color:var(--ink)}
   .services .kicker{color:var(--blue-deep)}
   .services .kicker::after{background:rgba(10,17,36,.12)}
   .services h2.st{color:var(--ink)}
@@ -168,23 +149,23 @@
   .svc p{font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.6}
   .svc .go{margin-top:16px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:6px;opacity:.9}
 
-  /* reviews */
+  /* reviews (밝은 카드) */
   .rev-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:48px;flex-wrap:wrap}
-  .rev-head a{font-size:14.5px;font-weight:600;color:var(--blue-bright);white-space:nowrap}
+  .rev-head a{font-size:14.5px;font-weight:600;color:var(--blue-deep);white-space:nowrap}
   .rev3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .rev{background:var(--navy-800);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s}
-  .rev:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.4)}
-  .rev .ph{aspect-ratio:16/10;background:linear-gradient(135deg,#16224a,#0c1530);position:relative;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+  .rev{background:var(--surface);border:1px solid var(--line2);border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;box-shadow:0 12px 34px -24px rgba(10,25,70,.3)}
+  .rev:hover{transform:translateY(-4px);border-color:rgba(45,91,255,.35);box-shadow:0 20px 44px -24px rgba(10,25,70,.4)}
+  .rev .ph{aspect-ratio:16/10;background:linear-gradient(135deg,#E5ECFA,#D4E0F4);position:relative;display:grid;place-items:center;border-bottom:1px solid var(--line2)}
   .rev .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .rev .ph .no{font-size:12.5px;color:var(--mute)}
+  .rev .ph .no{font-size:12.5px;color:var(--text-soft)}
   .rev .badge{position:absolute;top:14px;left:14px;background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:6px;z-index:2}
   .rev .rb{padding:24px}
-  .rev h3{font-size:18px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:10px;line-height:1.4}
-  .rev p{font-size:14px;color:var(--mute);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .rev h3{font-size:18px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:10px;line-height:1.4}
+  .rev p{font-size:14px;color:var(--text-soft);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
-  /* CTA */
+  /* CTA (그대로 블루) */
   .cta-wrap{padding:clamp(80px,9vw,116px) 0}
-  .cta{max-width:var(--max);margin:0 auto;border-radius:26px;padding:clamp(44px,6vw,72px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:center}
+  .cta{max-width:var(--max);margin:0 auto;border-radius:26px;padding:clamp(44px,6vw,72px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:center;box-shadow:0 36px 80px -44px rgba(45,91,255,.6)}
   .cta::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.12);top:-100px;right:-60px;filter:blur(10px)}
   .cta h2{font-size:clamp(27px,3.8vw,42px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.14;position:relative}
   .cta p{margin-top:16px;font-size:16.5px;color:rgba(255,255,255,.85);max-width:40ch;position:relative}
@@ -194,10 +175,10 @@
   .cta .c2{border:1.5px solid rgba(255,255,255,.5);color:#fff;padding:16px 28px;border-radius:12px;font-weight:600;font-size:15px;text-align:center;transition:background .2s;font-family:'Archivo'}
   .cta .c2:hover{background:rgba(255,255,255,.14)}
 
-  /* footer */
-  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:66px 0 40px}
+  /* footer — 다크로 마무리(라이트 페이지 앵커) */
+  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:66px 0 40px;color:var(--ice)}
   .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line)}
-  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand .brand{margin-bottom:16px;color:#fff}
   .foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
   .foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
   .foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
@@ -209,21 +190,10 @@
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1)}
   .reveal.in{opacity:1;transform:none}
 
-  .drawer{position:fixed;inset:70px 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line)}
+  .drawer{position:fixed;inset:70px 0 auto;background:#fff;z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line2);box-shadow:0 20px 40px -28px rgba(10,25,70,.3)}
   .drawer.open{transform:translateY(0)}
-  .drawer a{display:block;padding:14px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
-  .drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
-
-  /* 카카오톡 상담 플로팅 버튼 */
-  .kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
-  .kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
-  .kakao-fab svg{width:21px;height:21px}
-  @media(max-width:560px){.kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}}
-  /* 3초 견적완성 플로팅 버튼 (카톡 버튼 위에 스택) */
-  .quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
-  .quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
-  .quote-fab svg{width:18px;height:18px}
-  @media(max-width:560px){.quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}}
+  .drawer a{display:block;padding:14px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--line2);color:var(--ink)}
+  .drawer a:last-child{border-bottom:0;color:var(--blue-deep)}
 
   @media(max-width:900px){
     .nav-links,.tel{display:none}.menu-btn{display:block}
@@ -231,60 +201,43 @@
     .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
   }
   @media(max-width:560px){
-    .hstats{grid-template-columns:1fr}.hst{border-right:0;border-bottom:1px solid var(--line);padding:22px 0}.hst:last-child{border-bottom:0}
+    .hstats{grid-template-columns:1fr}.hst{border-right:0;border-bottom:1px solid var(--line2);padding:22px 0}.hst:last-child{border-bottom:0}
     .foot-top{grid-template-columns:1fr}
   }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.track{animation:none}.hero-vid{display:none}}
-  :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.track{animation:none}}
+  :focus-visible{outline:2.5px solid var(--blue);outline-offset:3px;border-radius:4px}
 </style>
 </head>
 <body>
+
+<a class="tone-badge" href="index.html" title="원래(다크) 버전으로 보기">☀ 밝은 톤 시안 — 다크로 보기 →</a>
 
 <header id="hdr">
   <div class="wrap nav">
     <a href="index.html" class="brand"><span class="m">FTH</span>푸드트럭하우스</a>
     <nav class="nav-links">
-      <div class="has-sub"><a tabindex="0">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html">회사소개</a></div></div><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
+      <a href="about.html">소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
     </nav>
     <div class="nav-right">
       <a href="tel:18776901" class="tel">1877-6901</a>
-      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
+      <a href="#contact" class="nav-cta">3분 견적내기</a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 <div class="drawer" id="drawer">
-  <a href="about.html">인사말</a><a href="company.html">회사소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a><a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 →</a>
+  <a href="about.html">소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a><a href="#contact">3분 견적내기 →</a>
 </div>
-
-<!-- 3초 견적완성 플로팅 버튼 (추후 챗봇 연동) -->
-<a class="quote-fab" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="3초 견적완성">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-  <span>3초 견적완성</span>
-</a>
-
-<!-- 카카오톡 상담 플로팅 버튼 -->
-<a class="kakao-fab" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.76 6.78-.21.78-.76 2.82-.87 3.26-.14.55.2.54.42.39.17-.11 2.71-1.84 3.81-2.59.6.09 1.23.13 1.88.13 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-  <span>카톡 상담</span>
-</a>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <video class="hero-vid" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
-      <source src="https://foodtruckhouse.com/assets/videos/main.mp4" type="video/mp4">
-    </video>
-    <div class="hero-veil"></div>
-  </div>
   <div class="glow g1"></div><div class="glow g2"></div><div class="grid-bg"></div>
   <div class="wrap">
     <span class="eb"><span class="dot"></span>10년 경력 · 본사 직영 관리 시스템</span>
     <h1 class="ht">젊음이 만든 <span class="grad">열정</span>,<br>깨끗한 푸드트럭의 기준.</h1>
-    <p class="hlead">기업 행사 케이터링, <b>8,000건의 현장</b>으로 증명합니다.</p>
-    <p class="hsub">기업 행사부터 건설현장·축제·페스티벌까지, 현장을 가리지 않습니다. 인원과 날짜만 알려주시면 가장 많이 굴려본 팀이 가장 빠르게 견적으로 답합니다.</p>
+    <p class="hsub">행사 그 이상의 추억을 만듭니다. 인원과 날짜만 알려주시면, 현장을 가장 많이 굴려본 팀이 가장 빠르게 견적으로 답합니다.</p>
     <div class="hbtns">
-      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="b1">3초 견적완성 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#contact" class="b1">3분 견적내기 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="review.html" class="b2">현장 후기 보기</a>
     </div>
     <div class="hstats">
@@ -298,7 +251,10 @@
 <!-- MARQUEE -->
 <div class="marquee">
   <p class="ml">우리가 함께한 고객들</p>
-  <div class="track" id="track"><!-- 고객사 로고는 스크립트로 채웁니다 --></div>
+  <div class="track" id="track">
+    <span>삼성생명</span><span>한화</span><span>현대</span><span>CJ</span><span>무신사</span><span>국민은행</span><span>농협은행</span><span>FC서울</span><span>진로</span><span>메디큐브</span><span>잡코리아</span><span>동양생명</span>
+    <span>삼성생명</span><span>한화</span><span>현대</span><span>CJ</span><span>무신사</span><span>국민은행</span><span>농협은행</span><span>FC서울</span><span>진로</span><span>메디큐브</span><span>잡코리아</span><span>동양생명</span>
+  </div>
 </div>
 
 <!-- WHY + DISPATCH -->
@@ -309,7 +265,7 @@
       <h2 class="st">케이터링은 음식이 아니라<br>현장 운영입니다.</h2>
       <p class="why-lead">맛있는 트럭은 많습니다. 행사 담당자가 진짜 걱정하는 건 "당일 그 규모를 펑크 없이 돌릴 수 있는가"예요. 그 운영을 8,000번 해봤습니다.</p>
       <div class="points">
-        <div class="pt"><div class="n">01</div><div><h3>규모를 감당해 본 팀</h3><p>15대 트럭과 부스 운영 체계로, 수백 명 동시 행사도 대기 시간 없이 회전시킵니다.</p></div></div>
+        <div class="pt"><div class="n">01</div><div><h3>규모를 감당해 본 팀</h3><p>13대 트럭과 부스 운영 체계로, 수백 명 동시 행사도 대기 시간 없이 회전시킵니다.</p></div></div>
         <div class="pt"><div class="n">02</div><div><h3>펑크 없는 배차</h3><p>자체 운영 시스템으로 호차·인력·물량을 사전 배차해, 당일 변수에도 멈추지 않습니다.</p></div></div>
         <div class="pt"><div class="n">03</div><div><h3>다시 찾는 이유</h3><p>재이용률 92%. 한 번 맡겨본 담당자가 다음 행사도, 그 다음 행사도 맡기는 이유입니다.</p></div></div>
       </div>
@@ -317,13 +273,12 @@
     <div class="dispatch-card reveal">
       <div class="dc-head">
         <span class="t"><span class="live"></span>실시간 배차 현황</span>
-        <span class="meta">TODAY · 15 UNITS · 부스</span>
+        <span class="meta">TODAY · 13 UNITS</span>
       </div>
       <div class="dispatch" id="dispatch">
         <div class="cell">1호</div><div class="cell">2호</div><div class="cell">3호</div><div class="cell">4호</div>
         <div class="cell">5호</div><div class="cell">6호</div><div class="cell">7호</div><div class="cell">8호</div>
         <div class="cell">9호</div><div class="cell">10호</div><div class="cell">11호</div><div class="cell">12호</div>
-        <div class="cell">13호</div><div class="cell">14호</div><div class="cell">15호</div><div class="cell booth">부스</div>
       </div>
       <p class="dc-cap">행사마다 호차를 미리 배정하고 인력·물량을 묶어 운영합니다. 같은 화면을 사무실과 현장팀이 함께 봅니다.</p>
     </div>
@@ -372,7 +327,7 @@
       <p>인원과 날짜만 알려주시면 됩니다. 가장 많이 굴려본 팀이 가장 빠르게 견적으로 답합니다.</p>
     </div>
     <div class="act">
-      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="c1">3초 견적완성 →</a>
+      <a href="#" class="c1">3분 견적서 신청 →</a>
       <a href="tel:18776901" class="c2">전화 문의 1877-6901</a>
     </div>
   </div>
@@ -387,29 +342,17 @@
         <p>커피차·푸드트럭 케이터링 전문. 고객사 4,000곳과 8,000건의 현장을 함께한 운영의 힘으로 행사 그 이상의 추억을 만듭니다.</p>
       </div>
       <div class="foot-col"><h4>서비스</h4><a href="service.html">케이터링</a><a href="service.html">브랜드 프로모션</a><a href="service.html">F&B 행사대행</a><a href="service.html">출장뷔페</a></div>
-      <div class="foot-col"><h4>바로가기</h4><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="#contact">3초 견적</a><a href="tel:18776901">1877-6901</a><a href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">네이버 블로그</a></div>
+      <div class="foot-col"><h4>바로가기</h4><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="#contact">3분 견적</a><a href="tel:18776901">1877-6901</a></div>
     </div>
     <div class="biz">
       <b>푸드트럭하우스</b> &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 주식회사 하이팅 &nbsp;|&nbsp; 사업자번호 441-86-03352<br>
       대표번호 1877-6901 / 010-2263-6901 / 010-2482-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229
-      <div class="copy">© 2026 푸드트럭하우스. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--blue-bright)">개인정보처리방침</a></div>
+      <div class="copy">© 2026 푸드트럭하우스. All rights reserved.</div>
     </div>
   </div>
 </footer>
 
 <script>
-  /* 고객사 로고 마퀴 채우기 (도메인 전환 전까지 기존 서버 URL 임시 참조) */
-  (function(){
-    var base="https://foodtruckhouse.com/assets/images/main/", track=document.getElementById('track');
-    if(!track)return;
-    var html="";
-    for(var pass=0;pass<2;pass++){          /* 끊김 없는 무한 스크롤용 2벌 */
-      for(var i=1;i<=20;i++){
-        html+='<div class="logo-chip"><img src="'+base+'logo_'+i+'.png" alt="고객사 로고" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></div>';
-      }
-    }
-    track.innerHTML=html;
-  })();
   var hdr=document.getElementById('hdr'),last=0;
   window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
 
@@ -426,7 +369,7 @@
 
   (function(){
     if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    var cells=[].slice.call(document.querySelectorAll('#dispatch .cell:not(.booth)'));
+    var cells=[].slice.call(document.querySelectorAll('#dispatch .cell'));
     function tick(){
       cells.forEach(function(c){c.classList.remove('on','warm');});
       var idx=cells.map(function(_,i){return i;}).sort(function(){return Math.random()-.5;});

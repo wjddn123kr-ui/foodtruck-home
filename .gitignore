@@ -1,0 +1,6 @@
+# Claude Code 개인 설정 (각 PC마다 다름, 공유 안 함)
+.claude/settings.local.json
+
+# OS 부산물
+Thumbs.db
+.DS_Store

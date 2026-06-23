@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메뉴 — 푸드트럭하우스</title>
+<meta name="description" content="커피·음료 세트부터 간식·디저트·분식·식사·출장뷔페까지. 행사 성격과 인원에 맞춰 75종 메뉴를 자유롭게 구성하세요.">
+<meta name="theme-color" content="#0A1733">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#060C1F;--navy-850:#0A1430;--navy-800:#0E1A3D;--navy-700:#13224C;
+    --blue:#2D5BFF;--blue-deep:#003892;--blue-bright:#5B86FF;
+    --ice:#EAF0FF;--paper:#F4F7FE;--ink:#0A1124;--mute:#93A1C7;
+    --line:rgba(140,165,225,.16);--max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--navy-900);color:var(--ice);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(6,12,31,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .3s}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff}
+  .brand .m{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:13px;box-shadow:0 4px 16px -4px rgba(45,91,255,.6)}
+  .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
+  .nav-links a{color:var(--mute);transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
+  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .menu-btn span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+  /* 소개 드롭다운 */
+  .nav-links .has-sub{position:relative}
+  .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
+  .submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,20,48,.97);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:148px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(0,0,0,.7)}
+  .submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
+  .nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--mute);white-space:nowrap;transition:background .15s,color .15s}
+  .submenu a:hover,.submenu a.active{background:rgba(91,134,255,.12);color:#fff}
+
+  /* page head */
+  .phead{position:relative;padding:138px 0 50px;overflow:hidden}
+  .phead .glow{position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(45,91,255,.32);filter:blur(90px);top:-160px;right:-40px;z-index:0}
+  .phead .wrap{position:relative;z-index:2}
+  .crumb{font-size:13.5px;color:var(--mute);margin-bottom:16px}
+  .crumb a:hover{color:#fff}
+  .phead h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;color:#fff}
+  .phead p{margin-top:16px;font-size:17px;color:var(--mute);max-width:50ch}
+  .phead .count{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:7px 15px;border-radius:30px}
+
+  /* tabs */
+  .tabs{position:sticky;top:70px;z-index:40;background:rgba(6,12,31,.86);backdrop-filter:blur(14px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tabs-inner{display:flex;gap:7px;overflow-x:auto;padding:14px 0;-ms-overflow-style:none;scrollbar-width:none}
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;padding:9px 18px;border-radius:30px;font-size:14.5px;font-weight:600;color:var(--mute);border:1px solid var(--line);background:rgba(140,165,225,.04);cursor:pointer;transition:color .2s,background .2s,border-color .2s,box-shadow .2s;white-space:nowrap;font-family:inherit}
+  .tab:hover{color:#fff;border-color:rgba(91,134,255,.4)}
+  .tab.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 6px 18px -8px rgba(45,91,255,.85)}
+
+  /* menu body */
+  .menu-body{padding:0 0 90px}
+  .panel{padding:54px 0 0}
+  .panel.hide{display:none}
+  .panel-head{margin-bottom:26px}
+  .panel-head h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.03em;color:#fff}
+  .panel-head p{margin-top:10px;font-size:15px;color:var(--mute);max-width:54ch}
+  .pill{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:6px 13px;border-radius:30px}
+
+  /* simple item grid */
+  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .mi{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--navy-800);border:1px solid var(--line);border-radius:13px;padding:16px 18px;transition:transform .2s,border-color .2s}
+  .mi:hover{border-color:rgba(91,134,255,.42);transform:translateY(-2px)}
+  .mi-n{font-size:15.5px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .best-b{font-size:10px;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--blue);padding:2px 7px;border-radius:5px;line-height:1.5}
+  .mi-p{font-size:16px;font-weight:700;color:#fff;white-space:nowrap}
+  .mi-p i{font-style:normal;font-size:12px;color:var(--mute);margin-left:2px;font-weight:600}
+
+  /* subgroup heading (식사) */
+  .sub{margin:34px 0 16px;font-size:16px;font-weight:700;color:#fff;display:flex;align-items:center;gap:11px}
+  .sub:first-child{margin-top:0}
+  .sub::before{content:"";width:4px;height:17px;background:var(--blue);border-radius:2px}
+
+  /* drink sets */
+  .set-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .set-card{background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid var(--line);border-radius:18px;padding:26px;transition:border-color .25s}
+  .set-card:hover{border-color:rgba(91,134,255,.4)}
+  .set-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+  .set-top h3{font-size:19px;font-weight:800;letter-spacing:-.02em;color:#fff}
+  .set-price{font-size:22px;font-weight:800;color:var(--blue-bright)}
+  .set-price i{font-style:normal;font-size:13px;color:var(--mute);font-weight:600;margin-left:2px}
+  .set-grp{margin-bottom:15px}
+  .set-grp:last-child{margin-bottom:0}
+  .set-grp .gl{font-size:12px;font-weight:700;color:var(--mute);margin-bottom:9px;letter-spacing:.03em}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-size:13px;color:var(--ice);background:rgba(140,165,225,.08);border:1px solid var(--line);padding:5px 11px;border-radius:20px}
+
+  /* buffet */
+  .buf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .buf{background:var(--navy-800);border:1px solid var(--line);border-radius:18px;padding:30px 26px;text-align:center;position:relative;transition:transform .25s,border-color .25s}
+  .buf:hover{transform:translateY(-4px)}
+  .buf.mid{border-color:rgba(91,134,255,.5);box-shadow:0 18px 46px -28px rgba(45,91,255,.8)}
+  .buf .tier{font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--blue-bright);line-height:1}
+  .buf .comp{margin-top:14px;color:var(--mute);font-size:14px;line-height:1.6;min-height:44px}
+  .buf .bp{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:25px;font-weight:800;color:#fff}
+  .buf .bp i{font-style:normal;font-size:13px;color:var(--mute);font-weight:600;margin-left:2px}
+  .buf-opt{margin-top:18px;background:var(--navy-850);border:1px solid var(--line);border-radius:18px;padding:8px 28px}
+  .opt-row{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.6}
+  .opt-row:last-child{border-bottom:0}
+  .opt-row .ok{flex:0 0 92px;color:var(--blue-bright);font-weight:700}
+  .opt-row .ov{color:var(--ice)}
+
+  /* season */
+  .season-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .season-card{border-radius:18px;padding:28px;border:1px solid var(--line);position:relative;overflow:hidden}
+  .season-card::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(60px);top:-60px;right:-50px;z-index:0}
+  .season-card.summer::before{background:rgba(45,91,255,.28)}
+  .season-card.winter::before{background:rgba(91,134,255,.22)}
+  .season-card>*{position:relative;z-index:1}
+  .season-tag{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--blue-bright);margin-bottom:16px}
+  .season-grp{margin-top:16px}
+  .season-grp .gl{font-size:12px;font-weight:700;color:var(--mute);margin-bottom:9px;letter-spacing:.03em}
+
+  /* CTA */
+  .cta-wrap{padding:0 0 110px}
+  .cta{max-width:var(--max);margin:0 auto;border-radius:24px;padding:clamp(40px,5vw,60px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;text-align:center}
+  .cta::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.12);top:-100px;right:-50px;filter:blur(10px)}
+  .cta h2{font-size:clamp(24px,3.4vw,36px);font-weight:800;letter-spacing:-.03em;color:#fff;position:relative}
+  .cta p{margin-top:14px;font-size:16px;color:rgba(255,255,255,.85);position:relative}
+  .cta a{display:inline-block;margin-top:28px;background:#fff;color:var(--blue-deep);padding:16px 32px;border-radius:12px;font-weight:800;font-size:16px;position:relative;transition:transform .15s}
+  .cta a:hover{transform:translateY(-2px)}
+
+  /* footer */
+  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:60px 0 40px}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
+  .foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
+  .foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--blue-bright)}
+  .biz{padding-top:24px;font-size:13px;color:var(--mute);line-height:1.8}
+  .biz b{color:var(--ice);font-weight:600}
+  .copy{margin-top:12px;font-size:12.5px;color:rgba(147,161,199,.6)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .drawer{position:fixed;inset:70px 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line)}
+  .drawer.open{transform:translateY(0)}
+  .drawer a{display:block;padding:14px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
+  .drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
+  .kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
+  .kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
+  .kakao-fab svg{width:21px;height:21px}
+  .quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
+  .quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
+  .quote-fab svg{width:18px;height:18px}
+  @media(max-width:560px){.quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}}
+  @media(max-width:560px){.kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}}
+
+  @media(max-width:900px){
+    .nav-links,.tel{display:none}.menu-btn{display:block}
+    .mgrid{grid-template-columns:1fr 1fr}.set-grid{grid-template-columns:1fr}.buf-grid{grid-template-columns:1fr}.season-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:560px){
+    .mgrid{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}
+    .buf .comp{min-height:0}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="m">FTH</span>푸드트럭하우스</a>
+    <nav class="nav-links">
+      <div class="has-sub"><a tabindex="0">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html">회사소개</a></div></div><a href="service.html">서비스</a><a href="menu.html" class="active">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:18776901" class="tel">1877-6901</a>
+      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="about.html">인사말</a><a href="company.html">회사소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a><a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 →</a>
+</div>
+
+<section class="phead">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> · 메뉴</div>
+    <h1>행사에 맞춰 고르는 메뉴</h1>
+    <p>커피·음료 세트부터 간식·디저트·분식·식사·출장뷔페까지. 행사 성격과 인원에 맞춰 자유롭게 구성하세요. 가격·구성은 현장 여건에 따라 조정될 수 있습니다.</p>
+    <span class="count">총 <b class="num" style="margin:0 2px">75</b>종 메뉴 · 시즌 한정 메뉴 운영</span>
+  </div>
+</section>
+
+<div class="tabs">
+  <div class="wrap">
+    <div class="tabs-inner" id="tabs">
+      <button class="tab active" data-cat="all" aria-pressed="true">전체</button>
+      <button class="tab" data-cat="season" aria-pressed="false">시즌</button>
+      <button class="tab" data-cat="drinks" aria-pressed="false">커피·음료</button>
+      <button class="tab" data-cat="snack" aria-pressed="false">간식</button>
+      <button class="tab" data-cat="dessert" aria-pressed="false">디저트</button>
+      <button class="tab" data-cat="bunsik" aria-pressed="false">분식</button>
+      <button class="tab" data-cat="meal" aria-pressed="false">식사</button>
+      <button class="tab" data-cat="buffet" aria-pressed="false">뷔페</button>
+    </div>
+  </div>
+</div>
+
+<div class="menu-body">
+  <div class="wrap" id="menuRoot"><!-- JS가 채웁니다 --></div>
+</div>
+
+<div class="cta-wrap">
+  <div class="cta reveal" id="contact">
+    <h2>메뉴 구성, 어렵게 고민하지 마세요</h2>
+    <p>인원과 날짜만 알려주시면 행사에 딱 맞는 메뉴 구성과 견적을 3분 만에 잡아드립니다.</p>
+    <a href="index.html#contact">3분 견적서 신청 →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand"><span class="m">FTH</span>푸드트럭하우스</div>
+        <p>커피차·푸드트럭 케이터링 전문. 고객사 4,000곳과 8,000건의 현장을 함께한 운영의 힘으로 행사 그 이상의 추억을 만듭니다.</p>
+      </div>
+      <div class="foot-col"><h4>서비스</h4><a href="service.html">케이터링</a><a href="service.html">브랜드 프로모션</a><a href="service.html">F&B 행사대행</a><a href="service.html">출장뷔페</a></div>
+      <div class="foot-col"><h4>바로가기</h4><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="index.html#contact">3분 견적</a><a href="tel:18776901">1877-6901</a><a href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">네이버 블로그</a></div>
+    </div>
+    <div class="biz">
+      <b>푸드트럭하우스</b> &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 주식회사 하이팅 &nbsp;|&nbsp; 사업자번호 441-86-03352<br>
+      대표번호 1877-6901 / 010-2263-6901 / 010-2482-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229
+      <div class="copy">© 2026 푸드트럭하우스. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--blue-bright)">개인정보처리방침</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ===== 메뉴 데이터 (menu.json 기반, 도메인 전환 후 Supabase로 이전 예정) ===== */
+  var MENU = {
+    drink_sets: [
+      {name:"2종 실속세트", price:3000, summer:["아메리카노","복숭아 아이스티"], winter:["아메리카노","유자차"]},
+      {name:"4종 간편세트", price:3300, summer:["아메리카노","복숭아 아이스티","레몬에이드","애플캐모마일"], winter:["아메리카노","초코라떼","유자차","애플캐모마일"]},
+      {name:"7종 베이직세트", price:3500, coffee:["아메리카노","카페라떼","바닐라라떼","아샷추"], ade:["레몬에이드","자몽에이드","청포도에이드","애플망고에이드"], tea:["복숭아 아이스티","자몽허니블랙티","유자차","캐모마일","애플캐모마일","얼그레이","얼그레이밀크티"], non_coffee:["초코라떼"]},
+      {name:"15종 클래식세트", price:4000, coffee:["아메리카노","카페라떼","바닐라라떼","카라멜마끼야또","카페모카","헤이즐넛라떼","헤이즐넛아메리카노","아샷추","다방커피"], non_coffee:["딸기라떼","초코라떼","말차라떼","꿀고구마라떼"], ade:["레몬에이드","자몽에이드","청포도에이드","애플망고에이드"], tea:["복숭아 아이스티","자몽허니블랙티","유자차","캐모마일","애플캐모마일","얼그레이","얼그레이밀크티","페퍼민트","생강레몬티","애플시나몬티"]}
+    ],
+    snacks: [
+      {name:"츄러스(30cm)", price:3000, best:true},
+      {name:"피카츄돈까스", price:3000},
+      {name:"핫바", price:3500},
+      {name:"소떡소떡", price:3500},
+      {name:"그릴소세지", price:3500},
+      {name:"옛날 핫도그", price:3500},
+      {name:"미니붕어빵(5ea)", price:3500},
+      {name:"감자핫도그", price:4000},
+      {name:"페스츄리핫도그", price:4000},
+      {name:"회오리감자", price:4000},
+      {name:"후라이드닭꼬치", price:4500},
+      {name:"닭꼬치", price:5000, best:true},
+      {name:"타코야끼", price:5000},
+      {name:"닭강정(중간컵)", price:6000, best:true},
+      {name:"닭강정(큰컵)", price:12000}
+    ],
+    dessert_bakery: [
+      {name:"쿠키", price:2000},
+      {name:"휘낭시에", price:3500},
+      {name:"마들렌", price:3500},
+      {name:"마카롱", price:3500},
+      {name:"대만샌드위치", price:3500},
+      {name:"컵솜사탕", price:3500},
+      {name:"젤라또아이스크림", price:4500},
+      {name:"크로와상샌드위치", price:4500},
+      {name:"컵과일", price:4500},
+      {name:"팥빙수", price:5000},
+      {name:"뉴욕핫도그", price:5000},
+      {name:"클럽샌드위치", price:5500}
+    ],
+    bunsik: [
+      {name:"떡볶이", price:4000},
+      {name:"튀김", price:3500},
+      {name:"순대", price:3500},
+      {name:"어묵(2ea)", price:2500},
+      {name:"어묵(어묵1ea, 물떡1ea)", price:3000},
+      {name:"분식 2종(떡튀/떡순)", price:6000},
+      {name:"분식 3종(떡튀순/떡튀어/떡순어)", price:8000, best:true},
+      {name:"분식 4종(떡튀순어)", price:10000}
+    ],
+    meal_rice: [
+      {name:"제육 덮밥", price:8000},
+      {name:"간장제육 덮밥", price:8000},
+      {name:"치킨마요 덮밥", price:8000, best:true},
+      {name:"스팸마요 덮밥", price:9000},
+      {name:"돈까스마요 덮밥", price:9000},
+      {name:"짜장군만두 덮밥", price:9000},
+      {name:"돈까스카레 덮밥", price:10000},
+      {name:"닭갈비 덮밥", price:10000},
+      {name:"간장닭갈비 덮밥", price:10000},
+      {name:"불닭 덮밥", price:10000},
+      {name:"흑돼지 덮밥", price:10000, best:true},
+      {name:"규동", price:10000},
+      {name:"소불고기덮밥", price:10000},
+      {name:"돈토로동", price:12000},
+      {name:"스테이크 덮밥", price:13000}
+    ],
+    meal_noodle: [
+      {name:"잔치국수", price:7500},
+      {name:"어묵우동", price:8000},
+      {name:"비빔국수", price:9000},
+      {name:"볶음우동", price:9000},
+      {name:"냉우동", price:9000},
+      {name:"짜장면", price:9000},
+      {name:"야끼소바", price:10000, best:true}
+    ],
+    meal_etc: [
+      {name:"떡국", price:8500},
+      {name:"오코노미야끼", price:10000},
+      {name:"비빔밥", price:11000},
+      {name:"닭강정", price:12000},
+      {name:"닭목살구이", price:14000},
+      {name:"소세지플래터", price:14000},
+      {name:"치킨윙봉", price:15000},
+      {name:"숯불치킨", price:15000},
+      {name:"목살 플래터", price:15000},
+      {name:"감바스알하이오", price:15000},
+      {name:"부채살 큐브스테이크", price:18000}
+    ],
+    buffet: {
+      sets: [
+        {name:"하", composition:"밥 + 국 + 메인 1 + 반찬 3", price:10000},
+        {name:"우", composition:"밥 + 국 + 메인 2 + 반찬 4", price:15000},
+        {name:"스", composition:"밥 + 국 + 메인 3 + 반찬 4 + 제철과일", price:20000}
+      ],
+      options: [
+        {k:"밥", v:"흑미 / 백미 (택1)"},
+        {k:"국", v:"김치콩나물국 · 미역국 · 어묵탕 · 계란국 · 우거지 된장국"},
+        {k:"메인 1", v:"제육볶음 · 간장 제육볶음 · 닭갈비 · 돼지두루치기 · 돈까스"},
+        {k:"메인 2·3", v:"소세지야채볶음 · 미니돈까스 · 동그랑땡 · 메추리알장조림"},
+        {k:"반찬", v:"김치 · 무말랭이 · 멸치볶음 · 깻잎장아찌 · 김자반 · 어묵볶음 · 콩나물 무침"}
+      ]
+    },
+    season: {
+      summer: {snacks:["팥빙수","수박화채","아츄","망고빙수"], drinks:["수박주스","복숭아 아이스티","미숫가루","아메리카노"]},
+      winter: {snacks:["어묵(2ea)","미니붕어빵(5ea)","호빵","호떡"], drinks:["아메리카노","핫초코","유자차"]}
+    }
+  };
+
+  /* ===== 렌더링 ===== */
+  function won(n){return n.toLocaleString('ko-KR');}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function chips(arr){return '<div class="chips">'+arr.map(function(d){return '<span class="chip">'+esc(d)+'</span>';}).join('')+'</div>';}
+
+  function itemCard(it){
+    var badge = it.best ? '<span class="best-b">BEST</span>' : '';
+    return '<div class="mi reveal"><span class="mi-n">'+esc(it.name)+badge+'</span>'+
+           '<span class="mi-p num">'+won(it.price)+'<i>원</i></span></div>';
+  }
+  function grid(items){return '<div class="mgrid">'+items.map(itemCard).join('')+'</div>';}
+
+  var SETLABELS = {summer:"여름 메뉴", winter:"겨울 메뉴", coffee:"커피", non_coffee:"논커피", ade:"에이드", tea:"티 · 기타"};
+  function setCard(s){
+    var groups = '';
+    ["summer","winter","coffee","non_coffee","ade","tea"].forEach(function(k){
+      if(s[k]) groups += '<div class="set-grp"><div class="gl">'+SETLABELS[k]+'</div>'+chips(s[k])+'</div>';
+    });
+    return '<div class="set-card reveal"><div class="set-top"><h3>'+esc(s.name)+'</h3>'+
+           '<span class="set-price num">'+won(s.price)+'<i>원/인</i></span></div>'+groups+'</div>';
+  }
+
+  function panel(cat, title, desc, pill, inner){
+    var head = '<div class="panel-head"><h2>'+title+'</h2>'+
+               (desc?'<p>'+desc+'</p>':'')+
+               (pill?'<span class="pill">'+pill+'</span>':'')+'</div>';
+    return '<section class="panel" data-cat="'+cat+'">'+head+inner+'</section>';
+  }
+
+  var html = '';
+
+  /* 시즌 */
+  (function(){
+    function seasonCard(cls, tag, data){
+      return '<div class="season-card '+cls+' reveal"><div class="season-tag">'+tag+'</div>'+
+             '<div class="season-grp"><div class="gl">먹거리</div>'+chips(data.snacks)+'</div>'+
+             '<div class="season-grp"><div class="gl">음료</div>'+chips(data.drinks)+'</div></div>';
+    }
+    var inner = '<div class="season-grid">'+
+      seasonCard('summer','☀ 여름 한정', MENU.season.summer)+
+      seasonCard('winter','❄ 겨울 한정', MENU.season.winter)+'</div>';
+    html += panel('season','시즌 한정 메뉴','계절에 맞춰 운영하는 시즌 메뉴입니다. 더위엔 시원하게, 추위엔 따뜻하게 현장을 챙깁니다.','', inner);
+  })();
+
+  /* 커피·음료 세트 */
+  html += panel('drinks','커피 · 음료 세트',
+    '인원과 메뉴 수에 맞춰 세트를 고르세요. 가격은 1인 기준이며, 세트 안에서 음료를 자유롭게 선택할 수 있습니다.',
+    '가장 인기 있는 커피차 구성',
+    '<div class="set-grid">'+MENU.drink_sets.map(setCard).join('')+'</div>');
+
+  /* 간식 */
+  html += panel('snack','간식','츄러스·닭꼬치·타코야끼 등 손이 자주 가는 길거리 간식입니다.','', grid(MENU.snacks));
+
+  /* 디저트 */
+  html += panel('dessert','디저트 · 베이커리','쿠키·마카롱·빙수까지. 포토존과 잘 어울리는 디저트 구성입니다.','', grid(MENU.dessert_bakery));
+
+  /* 분식 */
+  html += panel('bunsik','분식','떡볶이·튀김·순대·어묵. 2~4종 모둠 구성으로도 제공합니다.','', grid(MENU.bunsik));
+
+  /* 식사 */
+  html += panel('meal','식사',
+    '덮밥·면류부터 안주류까지. 든든한 한 끼가 필요한 행사에 적합합니다.',
+    '100인분 이상부터 주문 가능',
+    '<div class="sub">덮밥</div>'+grid(MENU.meal_rice)+
+    '<div class="sub">면류</div>'+grid(MENU.meal_noodle)+
+    '<div class="sub">기타 · 안주류</div>'+grid(MENU.meal_etc));
+
+  /* 뷔페 */
+  (function(){
+    var sets = MENU.buffet.sets.map(function(b,i){
+      return '<div class="buf'+(i===2?' mid':'')+' reveal"><div class="tier">'+esc(b.name)+'</div>'+
+             '<div class="comp">'+esc(b.composition)+'</div>'+
+             '<div class="bp num">'+won(b.price)+'<i>원/인</i></div></div>';
+    }).join('');
+    var opts = MENU.buffet.options.map(function(o){
+      return '<div class="opt-row"><div class="ok">'+esc(o.k)+'</div><div class="ov">'+esc(o.v)+'</div></div>';
+    }).join('');
+    var inner = '<div class="buf-grid">'+sets+'</div><div class="buf-opt reveal">'+opts+'</div>';
+    html += panel('buffet','출장뷔페',
+      '하 · 우 · 스 세 가지 구성으로, 아래 메뉴를 조합해 차립니다. 대규모 행사의 든든한 한 상.',
+      '200인분 이상부터 주문 가능', inner);
+  })();
+
+  document.getElementById('menuRoot').innerHTML = html;
+
+  /* ===== 탭 필터 ===== */
+  var tabsWrap = document.getElementById('tabs');
+  var tabs = [].slice.call(tabsWrap.querySelectorAll('.tab'));
+  var panels = [].slice.call(document.querySelectorAll('.panel'));
+  function filter(cat){
+    tabs.forEach(function(t){
+      var on = t.dataset.cat === cat;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-pressed', on);
+    });
+    panels.forEach(function(p){
+      var show = (cat === 'all') || (p.dataset.cat === cat);
+      p.classList.toggle('hide', !show);
+      if(show) p.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      filter(t.dataset.cat);
+      var y = tabsWrap.getBoundingClientRect().top + window.scrollY - 78;
+      window.scrollTo({top:y, behavior:'smooth'});
+    });
+  });
+
+  /* ===== 공통 스크립트 (index/review 동일) ===== */
+  var hdr=document.getElementById('hdr'),last=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
+  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
+  mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
+  dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+<!-- 3초 견적완성 플로팅 버튼 (챗봇) -->
+<a class="quote-fab" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="3초 견적완성">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+  <span>3초 견적완성</span>
+</a>
+<!-- 카카오톡 상담 플로팅 버튼 -->
+<a class="kakao-fab" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.76 6.78-.21.78-.76 2.82-.87 3.26-.14.55.2.54.42.39.17-.11 2.71-1.84 3.81-2.59.6.09 1.23.13 1.88.13 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+  <span>카톡 상담</span>
+</a>
+</body>
+</html>

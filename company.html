@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회사소개 — 푸드트럭하우스</title>
+<meta name="description" content="2016년 푸드트럭 1대로 시작해 직영 15대·전국 협력 400여 대까지. 연혁과 비전, 사업 영역까지 푸드트럭하우스를 소개합니다.">
+<meta name="theme-color" content="#0A1733">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#060C1F;--navy-850:#0A1430;--navy-800:#0E1A3D;--navy-700:#13224C;
+    --blue:#2D5BFF;--blue-deep:#003892;--blue-bright:#5B86FF;
+    --ice:#EAF0FF;--paper:#F4F7FE;--ink:#0A1124;--mute:#93A1C7;
+    --line:rgba(140,165,225,.16);--max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--navy-900);color:var(--ice);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(6,12,31,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .3s}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff}
+  .brand .m{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:13px;box-shadow:0 4px 16px -4px rgba(45,91,255,.6)}
+  .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
+  .nav-links a{color:var(--mute);transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
+  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .menu-btn span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+  /* 소개 드롭다운 */
+  .nav-links .has-sub{position:relative}
+  .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
+  .submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,20,48,.97);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:148px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(0,0,0,.7)}
+  .submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
+  .nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--mute);white-space:nowrap;transition:background .15s,color .15s}
+  .submenu a:hover,.submenu a.active{background:rgba(91,134,255,.12);color:#fff}
+
+  .phead{position:relative;padding:138px 0 56px;overflow:hidden}
+  .phead .glow{position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(45,91,255,.32);filter:blur(90px);top:-160px;right:-40px;z-index:0}
+  .phead .wrap{position:relative;z-index:2}
+  .crumb{font-size:13.5px;color:var(--mute);margin-bottom:16px}
+  .crumb a:hover{color:#fff}
+  .phead h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;color:#fff}
+  .phead p{margin-top:16px;font-size:17px;color:var(--mute);max-width:54ch}
+
+  .stats-sec{padding:10px 0 30px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(165deg,var(--navy-800),var(--navy-850))}
+  .stat{padding:30px 24px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .v{font-size:clamp(32px,4vw,46px);font-weight:800;line-height:1;display:flex;align-items:baseline;gap:3px;color:#fff}
+  .stat .v .u{font-size:.42em;color:var(--blue-bright);font-weight:700}
+  .stat .l{margin-top:11px;font-size:13.5px;color:var(--mute)}
+
+  section{padding:clamp(70px,8vw,104px) 0}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue-bright);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:18px}
+  .kicker::after{content:"";width:54px;height:1px;background:var(--line)}
+  h2.st{font-size:clamp(26px,3.8vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.14;color:#fff}
+  .sec-head{max-width:640px;margin-bottom:46px}
+  .sec-head p{margin-top:16px;font-size:16.5px;color:var(--mute)}
+
+  /* 회사소개 */
+  .intro{border-top:1px solid var(--line)}
+  .intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,72px);align-items:start}
+  .intro-body .lead{font-size:clamp(19px,2.2vw,24px);font-weight:700;color:#fff;line-height:1.5;letter-spacing:-.01em;margin-bottom:22px}
+  .intro-body .lead b,.intro-body p b{color:var(--blue-bright);font-weight:800}
+  .intro-body p{font-size:16.5px;color:var(--ice);opacity:.84;line-height:1.85;margin-bottom:16px}
+  .intro-body p:last-child{margin-bottom:0}
+
+  /* timeline */
+  .history{background:var(--navy-850);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:2px solid var(--line)}
+  .tl{position:relative;padding:0 0 40px}
+  .tl:last-child{padding-bottom:0}
+  .tl::before{content:"";position:absolute;left:-43px;top:5px;width:16px;height:16px;border-radius:50%;background:var(--navy-850);border:3px solid var(--blue);box-shadow:0 0 0 4px rgba(45,91,255,.12)}
+  .tl-y{font-family:'Archivo';font-weight:800;font-size:22px;color:var(--blue-bright);margin-bottom:8px}
+  .tl h3{font-size:18.5px;font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:5px}
+  .tl p{font-size:14.5px;color:var(--mute)}
+
+  /* vision */
+  .biz-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .bz{background:var(--navy-800);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;transition:transform .25s,border-color .25s}
+  .bz:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
+  .bz .bi{font-family:'Archivo';font-weight:800;font-size:13px;color:var(--blue-bright);margin-bottom:10px}
+  .bz h3{font-size:15px;font-weight:700;color:#fff;line-height:1.4}
+
+  /* biz info */
+  .bizinfo{background:var(--paper);color:var(--ink)}
+  .bizinfo .kicker{color:var(--blue-deep)}
+  .bizinfo .kicker::after{background:rgba(10,17,36,.12)}
+  .bizinfo h2.st{color:var(--ink)}
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px;margin-top:14px}
+  .inf{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(10,17,36,.1);font-size:15.5px}
+  .inf .k{flex:0 0 120px;color:#5A6890;font-weight:700}
+  .inf .v{color:var(--ink);font-weight:500}
+
+  /* 미션 */
+  .mission{padding:clamp(56px,7vw,84px) 0;background:linear-gradient(135deg,var(--blue),var(--blue-deep))}
+  .mission .wrap{text-align:center}
+  .mission .ml{font-size:12.5px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.72);text-transform:uppercase;margin-bottom:18px}
+  .mission h2{font-size:clamp(22px,3vw,33px);font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1.46;max-width:25ch;margin:0 auto}
+  .mission h2 .u{color:#cfe0ff}
+  /* 시설(물류창고) */
+  .facility{border-top:1px solid var(--line)}
+  .fac-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,60px);align-items:center}
+  .fac-photo{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#16224a,#0c1530);border:1px solid var(--line);display:grid;place-items:center}
+  .fac-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .fac-photo .ph-note{font-size:13px;color:var(--mute);text-align:center;padding:0 24px;line-height:1.6}
+  .fac-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);border-radius:30px;padding:8px 16px;margin-bottom:20px;font-size:13.5px;font-weight:600;color:var(--blue-bright)}
+  .fac-text p{margin-top:16px;color:var(--mute);font-size:16px;line-height:1.78}
+  .fac-num{margin-top:24px;font-family:'Archivo';font-weight:800;font-size:clamp(38px,5vw,54px);color:#fff;line-height:1;display:flex;align-items:flex-end;gap:5px}
+  .fac-num .u{font-size:.36em;color:var(--blue-bright);font-weight:700;margin-bottom:.18em}
+  .fac-num .l{font-size:.26em;color:var(--mute);font-weight:600;margin-left:8px;margin-bottom:.34em}
+  /* 위치 */
+  .location{background:var(--navy-850);border-top:1px solid var(--line)}
+  .loc-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .loc-card{background:var(--navy-800);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .loc-card .loc-map{border-bottom:1px solid var(--line)}
+  .loc-card iframe{width:100%;height:300px;border:0;display:block}
+  .loc-meta{padding:22px 24px}
+  .loc-meta .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:5px 12px;border-radius:20px;margin-bottom:12px}
+  .loc-meta .addr{font-size:15.5px;color:var(--ice);line-height:1.6}
+  .loc-meta .map-link{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--blue-bright)}
+
+  .cta-wrap{padding:clamp(70px,8vw,104px) 0}
+  .cta{max-width:var(--max);margin:0 auto;border-radius:24px;padding:clamp(40px,5vw,60px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;text-align:center}
+  .cta::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.12);top:-100px;right:-50px;filter:blur(10px)}
+  .cta h2{font-size:clamp(24px,3.4vw,36px);font-weight:800;letter-spacing:-.03em;color:#fff;position:relative}
+  .cta p{margin-top:14px;font-size:16px;color:rgba(255,255,255,.85);position:relative}
+  .cta a{display:inline-block;margin-top:28px;background:#fff;color:var(--blue-deep);padding:16px 32px;border-radius:12px;font-weight:800;font-size:16px;position:relative;transition:transform .15s}
+  .cta a:hover{transform:translateY(-2px)}
+
+  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:60px 0 40px}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
+  .foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
+  .foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--blue-bright)}
+  .biz{padding-top:24px;font-size:13px;color:var(--mute);line-height:1.8}
+  .biz b{color:var(--ice);font-weight:600}
+  .copy{margin-top:12px;font-size:12.5px;color:rgba(147,161,199,.6)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .drawer{position:fixed;inset:70px 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line)}
+  .drawer.open{transform:translateY(0)}
+  .drawer a{display:block;padding:14px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
+  .drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
+  .kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
+  .kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
+  .kakao-fab svg{width:21px;height:21px}
+  .quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
+  .quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
+  .quote-fab svg{width:18px;height:18px}
+  @media(max-width:560px){.quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}}
+  @media(max-width:560px){.kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}}
+  .drawer .sub{padding-left:14px;font-size:15.5px;color:var(--mute)}
+
+  @media(max-width:900px){
+    .nav-links,.tel{display:none}.menu-btn{display:block}
+    .stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+    .intro-grid{grid-template-columns:1fr}.biz-cards{grid-template-columns:1fr 1fr}.fac-grid{grid-template-columns:1fr}.loc-2{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:560px){
+    .stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}
+    .biz-cards{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="m">FTH</span>푸드트럭하우스</a>
+    <nav class="nav-links">
+      <div class="has-sub"><a class="active" tabindex="0">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html" class="active">회사소개</a></div></div>
+      <a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:18776901" class="tel">1877-6901</a>
+      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="about.html">인사말</a><a href="company.html">회사소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a><a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 →</a>
+</div>
+
+<section class="phead">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> · 소개 · 회사소개</div>
+    <h1>현장을 책임지는 운영의 힘</h1>
+    <p>2016년 푸드트럭 한 대로 시작해, 지금은 직영 15대와 전국 협력 400여 대의 운영망을 갖춘 케이터링 전문 회사입니다.</p>
+  </div>
+</section>
+
+<section class="stats-sec">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="v"><span class="num" data-count="15">0</span><span class="u">대</span></div><div class="l">직영 푸드트럭</div></div>
+      <div class="stat"><div class="v"><span class="num" data-count="400">0</span><span class="u">대+</span></div><div class="l">전국 협력 차량</div></div>
+      <div class="stat"><div class="v"><span class="num" data-count="4000">0</span><span class="u">곳+</span></div><div class="l">함께한 고객사</div></div>
+      <div class="stat"><div class="v"><span class="num" data-count="92">0</span><span class="u">%</span></div><div class="l">서비스 재이용률</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 회사소개 -->
+<section class="intro">
+  <div class="wrap intro-grid">
+    <div class="reveal">
+      <div class="kicker">About us</div>
+      <h2 class="st">현장을 중심으로 움직이는<br>'맛있는 경험'을 만듭니다.</h2>
+    </div>
+    <div class="intro-body reveal">
+      <p class="lead">푸드트럭을 기반으로 다양한 현장에 맛과 즐거움을 전하는 <b>케이터링 전문 회사</b>입니다.</p>
+      <p>기업 행사부터 축제, 브랜드 이벤트까지 — 각 현장에 맞는 메뉴와 운영 방식으로 맞춤형 식음 서비스를 제공합니다. <b>직영 푸드트럭 15대</b>와 <b>전국 협력 차량 400여 대</b>로, 전국 어디든 규모에 맞춰 출동합니다.</p>
+      <p>직접 보유한 푸드트럭·냉동탑차·카고트럭과 자체 인력으로 기획부터 조리·서비스·마감까지 전 과정을 책임지고 운영합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 미션 -->
+<section class="mission">
+  <div class="wrap">
+    <div class="ml">Our Mission</div>
+    <h2>현장을 중심으로 움직이는 '맛있는 경험'을 만드는 사람들. 이동식 구조의 강점을 살려, 어떤 상황에서도 <span class="u">최적의 식음 솔루션</span>을 제공합니다.</h2>
+  </div>
+</section>
+
+<!-- 시설: 물류창고 -->
+<section class="facility">
+  <div class="wrap fac-grid">
+    <div class="fac-photo reveal"><span class="ph-note">사진 영역<br>(물류창고 사진을 받으면 이 자리에 넣습니다)</span></div>
+    <div class="fac-text reveal">
+      <div class="fac-badge">⬢ 전국 최대 규모 인프라</div>
+      <h2 class="st">100평이 넘는<br>자체 물류창고</h2>
+      <p>푸드트럭 업계를 통틀어 전국 최대 규모의 물류창고를 직접 운영합니다. 대규모 행사에도 장비와 물량을 안정적으로 공급하는, 우리 운영의 든든한 기반입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 연혁 -->
+<section class="history">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">History</div>
+      <h2 class="st">푸드트럭 1대에서<br>직영 15대까지</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal"><div class="tl-y num">2016</div><h3>'와사바리' 푸드트럭 설립</h3><p>직영 차량 1대로 현장을 시작했습니다.</p></div>
+      <div class="tl reveal"><div class="tl-y num">2021</div><h3>'푸드트럭하우스'로 상호 변경</h3><p>직영 차량 5대. 케이터링 전문 브랜드로 확장.</p></div>
+      <div class="tl reveal"><div class="tl-y num">2024</div><h3>'주식회사 하이팅' 법인 설립</h3><p>직영 차량 11대. 운영 체계를 본사 직영으로 정비.</p></div>
+      <div class="tl reveal"><div class="tl-y num">2025</div><h3>F&amp;B 오프라인 매장 '더판'·'츄럭스' 오픈</h3><p>직영 차량 15대. 외식 브랜드 사업으로 영역 확장.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 비전 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Vision</div>
+      <h2 class="st">행사 운영을 넘어,<br>이동형 F&amp;B 플랫폼으로</h2>
+      <p>현장에서 쌓아온 경험을 바탕으로, 단순한 행사 운영을 넘어 대행·렌탈·매장 운영·유통까지 사업 영역을 넓혀가고 있습니다.</p>
+    </div>
+    <div class="biz-cards">
+      <div class="bz reveal"><div class="bi">01</div><h3>행사 케이터링<br>대행</h3></div>
+      <div class="bz reveal"><div class="bi">02</div><h3>장비 렌탈<br>서비스</h3></div>
+      <div class="bz reveal"><div class="bi">03</div><h3>오프라인<br>매장 운영</h3></div>
+      <div class="bz reveal"><div class="bi">04</div><h3>프랜차이즈<br>시스템</h3></div>
+      <div class="bz reveal"><div class="bi">05</div><h3>식자재 ·<br>상품 유통</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- 위치 / 오시는 길 -->
+<section class="location">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Location</div>
+      <h2 class="st">오시는 길</h2>
+    </div>
+    <div class="loc-2">
+      <div class="loc-card reveal">
+        <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2&z=17&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 사무실 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-meta">
+          <span class="tag">사무실</span>
+          <div class="addr">경기도 용인시 기흥구 중부대로 746번길 2, 2층 푸드트럭하우스</div>
+          <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2" target="_blank" rel="noopener">큰 지도로 보기 →</a>
+        </div>
+      </div>
+      <div class="loc-card reveal">
+        <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229&z=16&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 물류창고·차고지 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-meta">
+          <span class="tag">물류창고 · 차고지</span>
+          <div class="addr">경기도 용인시 기흥구 상하동 229</div>
+          <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229" target="_blank" rel="noopener">큰 지도로 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 사업자 정보 -->
+<section class="bizinfo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Company</div>
+      <h2 class="st">사업자 정보</h2>
+    </div>
+    <div class="info-grid reveal">
+      <div class="inf"><div class="k">회사명</div><div class="v">푸드트럭하우스 (주식회사 하이팅)</div></div>
+      <div class="inf"><div class="k">대표</div><div class="v">김정우</div></div>
+      <div class="inf"><div class="k">사업자번호</div><div class="v">441-86-03352</div></div>
+      <div class="inf"><div class="k">대표번호</div><div class="v">1877-6901</div></div>
+      <div class="inf"><div class="k">직통</div><div class="v">010-2263-6901 / 010-2482-6901</div></div>
+      <div class="inf"><div class="k">소재지</div><div class="v">경기도 용인시 기흥구 상하동 229</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-wrap">
+  <div class="cta reveal">
+    <h2>다음 행사, 푸드트럭하우스와 함께</h2>
+    <p>인원과 날짜만 알려주시면 3분 만에 견적을 받아보실 수 있습니다.</p>
+    <a href="index.html#contact">3분 견적서 신청 →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand"><span class="m">FTH</span>푸드트럭하우스</div>
+        <p>커피차·푸드트럭 케이터링 전문. 고객사 4,000곳과 8,000건의 현장을 함께한 운영의 힘으로 행사 그 이상의 추억을 만듭니다.</p>
+      </div>
+      <div class="foot-col"><h4>회사</h4><a href="about.html">인사말</a><a href="company.html">회사소개</a><a href="service.html">서비스</a><a href="review.html">후기</a></div>
+      <div class="foot-col"><h4>바로가기</h4><a href="menu.html">메뉴</a><a href="news.html">공지사항</a><a href="index.html#contact">3분 견적</a><a href="tel:18776901">1877-6901</a><a href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">네이버 블로그</a></div>
+    </div>
+    <div class="biz">
+      <b>푸드트럭하우스</b> &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 주식회사 하이팅 &nbsp;|&nbsp; 사업자번호 441-86-03352<br>
+      대표번호 1877-6901 / 010-2263-6901 / 010-2482-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229
+      <div class="copy">© 2026 푸드트럭하우스. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--blue-bright)">개인정보처리방침</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var hdr=document.getElementById('hdr'),last=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
+  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
+  mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
+  dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  function animate(el){var t=+el.dataset.count,d=1500,s=null;function tick(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t).toLocaleString('ko-KR');if(p<1)requestAnimationFrame(tick);else el.textContent=t.toLocaleString('ko-KR');}requestAnimationFrame(tick);}
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animate(e.target);co.unobserve(e.target);}});},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+</script>
+<!-- 3초 견적완성 플로팅 버튼 (챗봇) -->
+<a class="quote-fab" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="3초 견적완성">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+  <span>3초 견적완성</span>
+</a>
+<!-- 카카오톡 상담 플로팅 버튼 -->
+<a class="kakao-fab" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.76 6.78-.21.78-.76 2.82-.87 3.26-.14.55.2.54.42.39.17-.11 2.71-1.84 3.81-2.59.6.09 1.23.13 1.88.13 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+  <span>카톡 상담</span>
+</a>
+</body>
+</html>

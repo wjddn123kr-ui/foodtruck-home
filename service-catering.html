@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>케이터링 — 푸드트럭하우스</title>
+<meta name="description" content="임직원 복지차·체육대회·기념일·연예인 서포트·실내 행사까지. 메뉴 구성부터 현장 운영까지 A to Z 전담하는 이벤트 케이터링 서비스.">
+<meta name="theme-color" content="#0A1733">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#060C1F;--navy-850:#0A1430;--navy-800:#0E1A3D;--navy-700:#13224C;
+    --blue:#2D5BFF;--blue-deep:#003892;--blue-bright:#5B86FF;
+    --ice:#EAF0FF;--paper:#F4F7FE;--ink:#0A1124;--mute:#93A1C7;
+    --line:rgba(140,165,225,.16);--max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--navy-900);color:var(--ice);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(6,12,31,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .3s}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff}
+  .brand .m{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:13px;box-shadow:0 4px 16px -4px rgba(45,91,255,.6)}
+  .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
+  .nav-links a{color:var(--mute);transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
+  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .menu-btn span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+  .nav-links .has-sub{position:relative}
+  .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
+  .submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,20,48,.97);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:160px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(0,0,0,.7)}
+  .submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
+  .nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--mute);white-space:nowrap;transition:background .15s,color .15s}
+  .submenu a:hover,.submenu a.active{background:rgba(91,134,255,.12);color:#fff}
+
+  .phead{position:relative;padding:138px 0 56px;overflow:hidden}
+  .phead .glow{position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(45,91,255,.32);filter:blur(90px);top:-160px;right:-40px;z-index:0}
+  .phead .wrap{position:relative;z-index:2}
+  .crumb{font-size:13.5px;color:var(--mute);margin-bottom:16px}
+  .crumb a:hover{color:#fff}
+  .phead h1{font-size:clamp(34px,5.4vw,56px);font-weight:800;letter-spacing:-.03em;color:#fff}
+  .phead .sub{margin-top:18px;font-size:17px;color:var(--mute);max-width:52ch}
+  .phead .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .phead .chips span{font-size:12.5px;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:6px 13px;border-radius:20px}
+
+  section{padding:clamp(64px,7.5vw,96px) 0}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue-bright);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:18px}
+  .kicker::after{content:"";width:54px;height:1px;background:var(--line)}
+  h2.st{font-size:clamp(25px,3.4vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.16;color:#fff}
+  .sec-head{max-width:640px;margin-bottom:42px}
+  .sec-head p{margin-top:14px;font-size:16px;color:var(--mute);line-height:1.7}
+
+  /* intro */
+  .intro{border-top:1px solid var(--line)}
+  .intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,64px);align-items:start}
+  .intro-body p{font-size:16px;color:var(--ice);opacity:.85;line-height:1.85;margin-bottom:16px}
+  .intro-body p:last-child{margin-bottom:0}
+  .intro-body b{color:#fff;font-weight:700}
+
+  /* usecases */
+  .uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .uc{background:var(--navy-800);border:1px solid var(--line);border-radius:16px;padding:26px;transition:transform .25s,border-color .25s}
+  .uc:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
+  .uc .ui{font-family:'Archivo';font-weight:800;font-size:13px;color:var(--blue-bright);margin-bottom:13px}
+  .uc h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
+  .uc p{font-size:14px;color:var(--mute);line-height:1.66}
+
+  /* types */
+  .types{background:var(--navy-850);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .type{background:var(--navy-800);border:1px solid var(--line);border-radius:14px;padding:24px 22px;transition:transform .25s,border-color .25s}
+  .type:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
+  .type h3{font-size:16.5px;font-weight:800;color:#fff;margin-bottom:9px}
+  .type p{font-size:13.5px;color:var(--mute);line-height:1.6}
+
+  /* why */
+  .why-list{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+  .wp{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .why-list .wp:nth-last-child(-n+2){border-bottom:0}
+  .wp .n{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue-bright);border:1.5px solid rgba(91,134,255,.4);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
+  .wp h3{font-size:17.5px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.01em}
+  .wp p{font-size:14px;color:var(--mute);line-height:1.66}
+
+  /* highlight */
+  .highlight{background:linear-gradient(135deg,var(--blue),var(--blue-deep))}
+  .hl-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
+  .hl-grid h2{font-size:clamp(24px,3.2vw,34px);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.25}
+  .hl-grid p{margin-top:14px;font-size:16px;color:rgba(255,255,255,.88);line-height:1.7}
+  .hl-tags{display:flex;flex-wrap:wrap;gap:10px}
+  .hl-tags span{font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:10px 16px;border-radius:30px}
+
+  /* process */
+  .process{background:var(--paper);color:var(--ink)}
+  .process .kicker{color:var(--blue-deep)}.process .kicker::after{background:rgba(10,17,36,.12)}
+  .process h2.st{color:var(--ink)}
+  .proc{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px}
+  .proc-step{padding-top:18px;border-top:2px solid rgba(10,17,36,.14)}
+  .proc-step:first-child{border-top-color:var(--blue)}
+  .proc-step .pn{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue-deep);margin-bottom:10px}
+  .proc-step h4{font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.45}
+
+  /* related reviews */
+  .rev3{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .rev{background:var(--navy-800);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;transition:transform .25s,border-color .25s}
+  .rev:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
+  .rev .ph{flex:0 0 40%;background:linear-gradient(135deg,#16224a,#0c1530);position:relative;display:grid;place-items:center;min-height:130px}
+  .rev .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .rev .ph .no{font-size:12px;color:var(--mute)}
+  .rev .rb{padding:20px}
+  .rev .bg{font-size:11.5px;font-weight:700;color:var(--blue-bright);margin-bottom:7px}
+  .rev h3{font-size:16px;font-weight:700;color:#fff;line-height:1.4;letter-spacing:-.01em}
+  .rev-more{margin-top:28px;text-align:center}
+  .rev-more a{font-size:14.5px;font-weight:700;color:var(--blue-bright)}
+
+  /* faq */
+  .faq-list{max-width:840px}
+  .faq-list details{border-bottom:1px solid var(--line)}
+  .faq-list summary{cursor:pointer;padding:22px 0;font-size:16.5px;font-weight:700;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;transition:color .2s}
+  .faq-list summary:hover{color:var(--blue-bright)}
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary::after{content:"+";color:var(--blue-bright);font-size:24px;font-weight:400;line-height:1}
+  .faq-list details[open] summary::after{content:"\2212"}
+  .faq-list details p{padding:0 0 22px;font-size:14.5px;color:var(--mute);line-height:1.85}
+
+  .cta-wrap{padding:clamp(64px,7.5vw,96px) 0}
+  .cta{max-width:var(--max);margin:0 auto;border-radius:24px;padding:clamp(40px,5vw,60px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;text-align:center}
+  .cta::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.12);top:-100px;right:-50px;filter:blur(10px)}
+  .cta h2{font-size:clamp(24px,3.4vw,36px);font-weight:800;letter-spacing:-.03em;color:#fff;position:relative}
+  .cta p{margin-top:14px;font-size:16px;color:rgba(255,255,255,.85);position:relative}
+  .cta .btns{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+  .cta .c1{background:#fff;color:var(--blue-deep);padding:16px 30px;border-radius:12px;font-weight:800;font-size:16px;transition:transform .15s}
+  .cta .c1:hover{transform:translateY(-2px)}
+  .cta .c2{border:1.5px solid rgba(255,255,255,.55);color:#fff;padding:15px 28px;border-radius:12px;font-weight:700;font-size:15px}
+
+  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:60px 0 40px}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
+  .foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
+  .foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--blue-bright)}
+  .biz{padding-top:24px;font-size:13px;color:var(--mute);line-height:1.8}
+  .biz b{color:var(--ice);font-weight:600}
+  .copy{margin-top:12px;font-size:12.5px;color:rgba(147,161,199,.6)}
+  .copy a{color:var(--blue-bright)}
+
+  .kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
+  .kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
+  .kakao-fab svg{width:21px;height:21px}
+  .quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
+  .quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
+  .quote-fab svg{width:18px;height:18px}
+  @media(max-width:560px){.quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .drawer{position:fixed;inset:70px 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line)}
+  .drawer.open{transform:translateY(0)}
+  .drawer a{display:block;padding:13px 0;font-size:16.5px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
+  .drawer a.sub{padding-left:14px;font-size:15px;color:var(--mute)}
+  .drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
+
+  @media(max-width:900px){
+    .nav-links,.tel{display:none}.menu-btn{display:block}
+    .intro-grid{grid-template-columns:1fr}.uc-grid{grid-template-columns:1fr}.type-grid{grid-template-columns:1fr 1fr}
+    .why-list{grid-template-columns:1fr}.why-list .wp:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.why-list .wp:last-child{border-bottom:0}
+    .hl-grid{grid-template-columns:1fr;gap:24px}.proc{grid-template-columns:1fr 1fr}.rev3{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
+    .kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}
+  }
+  @media(max-width:560px){.type-grid{grid-template-columns:1fr 1fr}.proc{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="m">FTH</span>푸드트럭하우스</a>
+    <nav class="nav-links">
+      <div class="has-sub"><a tabindex="0">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html">회사소개</a></div></div>
+      <div class="has-sub"><a href="service.html" class="active">서비스</a><div class="submenu"><a href="service-catering.html" class="active">케이터링</a><a href="service-promotion.html">브랜드 프로모션</a><a href="service-events.html">F&B 행사대행</a><a href="service-buffet.html">출장뷔페</a></div></div>
+      <a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:18776901" class="tel">1877-6901</a>
+      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="about.html">인사말</a><a href="company.html">회사소개</a>
+  <a href="service.html">서비스 전체</a>
+  <a href="service-catering.html" class="sub">— 케이터링</a><a href="service-promotion.html" class="sub">— 브랜드 프로모션</a><a href="service-events.html" class="sub">— F&B 행사대행</a><a href="service-buffet.html" class="sub">— 출장뷔페</a>
+  <a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a><a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 →</a>
+</div>
+
+<section class="phead">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> · <a href="service.html">서비스</a> · 케이터링</div>
+    <h1>케이터링</h1>
+    <p class="sub">서로의 거리를 한층 가깝게, 기억에 남는 현장에 맛을 더하는 이벤트 케이터링. 메뉴 구성부터 현장 운영 방식까지 <b style="color:#fff">A to Z 전담 디렉션</b>으로 진행합니다.</p>
+    <div class="chips"><span>#임직원 복지차</span><span>#체육대회</span><span>#기념일·창립기념일</span><span>#연예인 서포트</span><span>#실내 행사</span></div>
+  </div>
+</section>
+
+<!-- intro -->
+<section class="intro">
+  <div class="wrap intro-grid">
+    <div class="reveal">
+      <div class="kicker">About</div>
+      <h2 class="st">음식을 넘어,<br>'분위기'를 케이터링합니다.</h2>
+    </div>
+    <div class="intro-body reveal">
+      <p>케이터링(catering)은 단순히 음식을 공급하는 일이 아닙니다. 다수의 인원에게 맛과 즐거움을 전하고, 그 현장의 <b>분위기와 감동까지 함께 설계</b>하는 일입니다.</p>
+      <p>푸드트럭하우스는 행사의 성격과 인원에 맞춰 메뉴를 구성하고, 동선·세팅·배식·디자인물까지 현장 운영 전반을 직접 디렉션합니다. 담당자는 <b>인원과 날짜만</b> 알려주시면 됩니다.</p>
+      <p>임직원 복지부터 기념일, 연예인 서포트, 실내 행사까지 — 8,000건의 현장에서 쌓은 운영력으로 펑크 없이 회전시킵니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- usecases -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Use Cases</div>
+      <h2 class="st">이런 행사에 잘 맞습니다</h2>
+      <p>규모와 목적이 달라도 괜찮습니다. 행사 성격에 맞춰 구성과 운영을 새로 설계합니다.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="uc reveal"><div class="ui">01</div><h3>임직원 복지차</h3><p>출근길 커피·간식부터 사내 행사까지. 임직원에게 전하는 따뜻한 복지 한 잔.</p></div>
+      <div class="uc reveal"><div class="ui">02</div><h3>체육대회·워크숍</h3><p>학교·기업 체육대회나 야외 워크숍 현장. 수백 명도 대기 없이 회전합니다.</p></div>
+      <div class="uc reveal"><div class="ui">03</div><h3>기념일·창립기념일</h3><p>창립기념일·개업·기업 기념 행사에 특별한 메뉴와 연출을 더합니다.</p></div>
+      <div class="uc reveal"><div class="ui">04</div><h3>연예인 서포트·역조공</h3><p>촬영장·콘서트 현장 커피차 서포트. 응원 메시지와 출력물 세팅까지.</p></div>
+      <div class="uc reveal"><div class="ui">05</div><h3>실내 행사</h3><p>호텔·사옥·강당 등 실내에서도 부스 형태로 완성도 높게 운영합니다.</p></div>
+      <div class="uc reveal"><div class="ui">06</div><h3>고객사 선물차</h3><p>파트너사 감사차·고객 초청 행사 등 관계를 잇는 자리에 맛을 더합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- types -->
+<section class="types">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Line-up</div>
+      <h2 class="st">케이터링 구성</h2>
+      <p>행사 성격에 맞춰 단독 또는 조합으로 구성할 수 있습니다.</p>
+    </div>
+    <div class="type-grid">
+      <div class="type reveal"><h3>핑거푸드</h3><p>한 손에 즐기는 간편한 핑거푸드. 네트워킹·리셉션에 적합.</p></div>
+      <div class="type reveal"><h3>도시락</h3><p>이동·야외 행사에 좋은 든든한 한 끼 도시락 구성.</p></div>
+      <div class="type reveal"><h3>분식</h3><p>떡볶이·튀김·어묵 등 누구나 좋아하는 길거리 분식.</p></div>
+      <div class="type reveal"><h3>커피·음료</h3><p>커피차 7종 이상 음료. 더위·추위에 맞춘 시즌 메뉴까지.</p></div>
+    </div>
+    <div class="rev-more reveal"><a href="menu.html">전체 메뉴 75종 보기 →</a></div>
+  </div>
+</section>
+
+<!-- why us -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Why us</div>
+      <h2 class="st">왜 푸드트럭하우스일까요</h2>
+    </div>
+    <div class="why-list">
+      <div class="wp reveal"><div class="n">01</div><div><h3>맞춤 디자인 직접 제작</h3><p>고객 니즈에 맞는 현수막·출력물 디자인을 직접 제작하고, 피드백을 받아 완성합니다.</p></div></div>
+      <div class="wp reveal"><div class="n">02</div><div><h3>빠른 사진 후기 전달</h3><p>행사 현장 사진 후기를 빠르고 간편하게 전달해 보고와 공유가 쉽습니다.</p></div></div>
+      <div class="wp reveal"><div class="n">03</div><div><h3>다지점 일관 핸들링</h3><p>여러 지점·여러 고객사에 동시에 보낼 때도 일관된 맛과 퀄리티로 한 번에 관리합니다.</p></div></div>
+      <div class="wp reveal"><div class="n">04</div><div><h3>퀄리티 · 청결 · 열정</h3><p>음식의 퀄리티와 청결, 그리고 서비스 마인드의 열정을 가장 중요하게 여깁니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- highlight: 공간 제약 없음 -->
+<section class="highlight">
+  <div class="wrap hl-grid">
+    <div class="reveal">
+      <h2>공간이 좁아도,<br>실내여도 괜찮습니다.</h2>
+      <p>푸드트럭 진입이 어려운 공간이라도 대안 운영 솔루션으로 완성도 높은 케이터링을 제공합니다. 현장 여건을 먼저 보고 맞는 형태를 제안드려요.</p>
+    </div>
+    <div class="hl-tags reveal">
+      <span>핑거푸드 케이터링</span><span>도시락 케이터링</span><span>분식 케이터링</span><span>커피·음료 케이터링</span>
+    </div>
+  </div>
+</section>
+
+<!-- process -->
+<section class="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Process</div>
+      <h2 class="st">진행은 5단계로 간단하게</h2>
+    </div>
+    <div class="proc">
+      <div class="proc-step reveal"><div class="pn">STEP 01</div><h4>맞춤 상담<br>및 견적</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 02</div><h4>계약서<br>· 예약금</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 03</div><h4>디자인물<br>제작</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 04</div><h4>행사 진행<br>· 현장 운영</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 05</div><h4>결제 ·<br>정산서류 발급</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- related reviews -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Review</div>
+      <h2 class="st">케이터링 현장 후기</h2>
+    </div>
+    <div class="rev3">
+      <a class="rev reveal" href="review.html"><div class="ph"><img src="https://foodtruckhouse.com/files/thumbnails/356/001/740x394.crop.jpg" alt="삼성생명 신년맞이 간식차" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="bg">기업 간식차</div><h3>'삼성생명' 신년맞이 간식차</h3></div></a>
+      <a class="rev reveal" href="review.html"><div class="ph"><img src="https://foodtruckhouse.com/files/thumbnails/235/002/740x394.crop.jpg" alt="iM사회공헌재단 실내케이터링" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="bg">실내 케이터링</div><h3>'iM사회공헌재단' 사회복지사의 날</h3></div></a>
+    </div>
+    <div class="rev-more reveal"><a href="review.html">전체 후기 보기 →</a></div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="types">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">FAQ</div>
+      <h2 class="st">자주 묻는 질문</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details><summary>최소 인원이 정해져 있나요?</summary><p>소규모부터 수백 명 규모까지 모두 가능합니다. 인원과 예산을 알려주시면 거기에 맞춰 메뉴와 운영을 구성해 드립니다.</p></details>
+      <details><summary>실내에서도 진행할 수 있나요?</summary><p>네. 공간상 푸드트럭 진입이 어려운 경우에도 핑거푸드·도시락·부스 형태의 실내 케이터링으로 대체 운영합니다.</p></details>
+      <details><summary>현수막·출력물 같은 디자인물도 해주나요?</summary><p>네. 고객 니즈에 맞춘 디자인을 직접 제작하고 피드백을 거쳐 완성합니다. 행사 컨셉에 맞는 연출까지 함께 제안드려요.</p></details>
+      <details><summary>예약은 얼마나 미리 해야 하나요?</summary><p>날짜·차량 수급을 위해 가능한 일찍 문의 주실수록 좋습니다. 다만 직영 차량을 다수 보유하고 있어 급한 일정도 대응 가능한 경우가 많습니다.</p></details>
+      <details><summary>견적은 어떻게 받나요?</summary><p>인원·날짜·장소·메뉴 방향만 알려주시면 카카오톡 상담 또는 견적 문의로 빠르게 안내드립니다.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="cta-wrap">
+  <div class="cta reveal">
+    <h2>케이터링, 어렵게 고민하지 마세요</h2>
+    <p>인원과 날짜만 알려주시면 행사에 딱 맞는 구성과 견적을 빠르게 잡아드립니다.</p>
+    <div class="btns">
+      <a class="c1" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener">카카오톡으로 3분 견적 →</a>
+      <a class="c2" href="tel:18776901">전화 문의 1877-6901</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand"><span class="m">FTH</span>푸드트럭하우스</div>
+        <p>커피차·푸드트럭 케이터링 전문. 고객사 4,000곳과 8,000건의 현장을 함께한 운영의 힘으로 행사 그 이상의 추억을 만듭니다.</p>
+      </div>
+      <div class="foot-col"><h4>서비스</h4><a href="service-catering.html">케이터링</a><a href="service-promotion.html">브랜드 프로모션</a><a href="service-events.html">F&B 행사대행</a><a href="service-buffet.html">출장뷔페</a></div>
+      <div class="foot-col"><h4>바로가기</h4><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="index.html#contact">3분 견적</a><a href="tel:18776901">1877-6901</a><a href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">네이버 블로그</a></div>
+    </div>
+    <div class="biz">
+      <b>푸드트럭하우스</b> &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 주식회사 하이팅 &nbsp;|&nbsp; 사업자번호 441-86-03352<br>
+      대표번호 1877-6901 / 010-2263-6901 / 010-2482-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229
+      <div class="copy">© 2026 푸드트럭하우스. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html">개인정보처리방침</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- 3초 견적완성 플로팅 버튼 (챗봇) -->
+<a class="quote-fab" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="3초 견적완성">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+  <span>3초 견적완성</span>
+</a>
+
+<!-- 카카오톡 상담 플로팅 버튼 -->
+<a class="kakao-fab" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.76 6.78-.21.78-.76 2.82-.87 3.26-.14.55.2.54.42.39.17-.11 2.71-1.84 3.81-2.59.6.09 1.23.13 1.88.13 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+  <span>카톡 상담</span>
+</a>
+
+<script>
+  var hdr=document.getElementById('hdr'),last=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
+  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
+  mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
+  dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
