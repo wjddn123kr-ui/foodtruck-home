@@ -89,7 +89,7 @@
   .eb{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:8px 16px;border-radius:30px;margin-bottom:28px}
   .eb .dot{width:7px;height:7px;border-radius:50%;background:var(--blue-bright);box-shadow:0 0 0 0 rgba(91,134,255,.7);animation:pulse 2.4s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(91,134,255,.6)}70%{box-shadow:0 0 0 11px rgba(91,134,255,0)}100%{box-shadow:0 0 0 0 rgba(91,134,255,0)}}
-  h1.ht{font-size:clamp(40px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1.02;color:#fff;max-width:16ch}
+  h1.ht{font-size:clamp(30px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1.04;color:#fff;max-width:18ch}
   h1.ht .grad{background:linear-gradient(105deg,var(--blue-bright),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .hlead{margin-top:26px;font-size:clamp(19px,2.5vw,27px);font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.3}
   .hlead b{color:var(--blue-bright);font-weight:800}
@@ -230,8 +230,19 @@
     .why-grid,.svc3,.rev3,.cta{grid-template-columns:1fr}
     .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
   }
-  @media(max-width:560px){
-    .hstats{grid-template-columns:1fr}.hst{border-right:0;border-bottom:1px solid var(--line);padding:22px 0}.hst:last-child{border-bottom:0}
+  @media(max-width:600px){
+    .hero{padding:112px 0 60px}
+    h1.ht{line-height:1.1}
+    .hlead{font-size:17px;margin-top:18px}
+    .hsub{font-size:14.5px;margin-top:11px;max-width:100%}
+    .hero-veil{background:linear-gradient(180deg,rgba(6,12,31,.42),rgba(6,12,31,.68) 56%,var(--navy-900) 100%)}
+    .hbtns{flex-direction:column;align-items:stretch;gap:10px;margin-top:26px}
+    .b1{justify-content:center}.b2{text-align:center}
+    .hstats{margin-top:32px}
+    .hst{padding:18px 6px 0}
+    .hst .v{font-size:clamp(20px,6vw,30px)}
+    .hst .l{font-size:11px;margin-top:8px}
+    .eb{margin-bottom:22px;font-size:12.5px}
     .foot-top{grid-template-columns:1fr}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.track{animation:none}.hero-vid{display:none}}
