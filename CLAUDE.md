@@ -69,7 +69,7 @@
 | service-buffet.html | 출장뷔페 상세 | ✅ 완료 |
 
 > 헤더 **'서비스'도 드롭다운**(service.html 허브 + 4종 상세). 단, 현재 드롭다운은 service*.html 페이지에만 적용됨 — index/menu/review/about/company/privacy 헤더엔 아직 '서비스' 단일 링크. (다음에 통일 propagate 필요. `.has-sub` 블록 복사 + 드로어 sub.)
-| news.html | 공지사항·뉴스 | ⬜ |
+| news.html | 공지사항·뉴스 (뉴스 6건 + 운영공지 3건, 탭 필터) | ✅ 완료 |
 | privacy.html | 개인정보처리방침 (전 12조, 푸터에서 링크) | ✅ 완료 |
 
 > 전 페이지 공통: **카카오톡 상담 플로팅 버튼**(`.kakao-fab`, https://pf.kakao.com/_MJvVG/chat), 푸터 **개인정보처리방침** 링크. 견적 버튼은 추후 작업자 챗봇으로 교체 예정(현재 카톡 임시연결).
