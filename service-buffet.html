@@ -185,6 +185,15 @@
   }
   @media(max-width:560px){.type-grid{grid-template-columns:1fr 1fr}.proc{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  @media(max-width:600px){
+    .phead{padding:100px 0 40px}
+    .phead h1{font-size:clamp(27px,7.4vw,42px);line-height:1.18}
+    .phead p,.phead .sub{font-size:15px;margin-top:13px;line-height:1.65}
+    section{padding-top:clamp(54px,12vw,80px);padding-bottom:clamp(54px,12vw,80px)}
+    .sec-head{margin-bottom:30px}
+    h2.st{font-size:clamp(22px,6.3vw,32px);line-height:1.22}
+    .sec-head p{font-size:15px;line-height:1.65}
+  }
   :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
 </style>
 </head>
