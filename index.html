@@ -199,13 +199,33 @@
   .ps:first-child{border-top-color:var(--blue)}
   .ps .pn{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--blue-bright);margin-bottom:9px}
   .ps h4{font-size:15px;font-weight:700;color:#fff;line-height:1.4}
+  /* 라이트 존 — 서비스 이후 흰 배경 + 블루 (히어로·배차격자는 다크 유지) */
+  .lite{background:var(--paper);color:var(--ink)}
+  .lite .kicker{color:var(--blue-deep)}
+  .lite .kicker::after{background:rgba(10,17,36,.12)}
+  .lite h2.st{color:var(--ink)}
+  .lite .rev-head a{color:var(--blue-deep)}
+  .lite .rc{background:#fff;border-color:rgba(10,17,36,.09)}
+  .lite .rc:hover{border-color:rgba(45,91,255,.4)}
+  .lite .rc h3{color:var(--ink)}
+  .lite .rc p{color:#5A6890}
+  .lite .rev{background:#fff;border-color:rgba(10,17,36,.09)}
+  .lite .rev:hover{border-color:rgba(45,91,255,.4)}
+  .lite .rev .ph{background:linear-gradient(135deg,#E8EEFB,#DCE6F8);border-bottom:1px solid rgba(10,17,36,.08)}
+  .lite .rev .ph .no{color:#5A6890}
+  .lite .rev h3{color:var(--ink)}
+  .lite .rev p{color:#5A6890}
+  .lite .ps{border-top-color:rgba(10,17,36,.14)}
+  .lite .ps:first-child{border-top-color:var(--blue)}
+  .lite .ps .pn{color:var(--blue-deep)}
+  .lite .ps h4{color:var(--ink)}
   /* review stars */
   .stars{color:#FFC83D;font-size:13.5px;letter-spacing:2px;margin-bottom:9px;line-height:1}
   @media(max-width:900px){.rec-grid{grid-template-columns:1fr 1fr}.proc{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.proc{grid-template-columns:1fr}}
 
   /* CTA */
-  .cta-wrap{padding:clamp(80px,9vw,116px) 0}
+  .cta-wrap{padding:clamp(80px,9vw,116px) 0;background:var(--paper)}
   .cta{max-width:var(--max);margin:0 auto;border-radius:26px;padding:clamp(44px,6vw,72px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:center}
   .cta::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.12);top:-100px;right:-60px;filter:blur(10px)}
   .cta h2{font-size:clamp(27px,3.8vw,42px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.14;position:relative}
@@ -407,7 +427,7 @@
 </section>
 
 <!-- RECOMMEND -->
-<section>
+<section class="lite">
   <div class="wrap">
     <div class="reveal" style="max-width:600px;margin-bottom:46px">
       <div class="kicker">For You</div>
@@ -427,7 +447,7 @@
 </section>
 
 <!-- REVIEWS -->
-<section>
+<section class="lite">
   <div class="wrap">
     <div class="rev-head reveal">
       <div>
@@ -445,7 +465,7 @@
 </section>
 
 <!-- PROCESS -->
-<section>
+<section class="lite">
   <div class="wrap">
     <div class="reveal" style="max-width:600px;margin-bottom:46px">
       <div class="kicker">Process</div>
