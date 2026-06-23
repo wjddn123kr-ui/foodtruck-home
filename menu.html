@@ -69,6 +69,20 @@
   .tab.active{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 6px 18px -8px rgba(45,91,255,.85)}
 
   /* menu body */
+  /* 인기 조합 */
+  .combos{padding:4px 0 26px}
+  .combos-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:15px}
+  .cb-tag{font-size:15px;font-weight:800;color:#fff}
+  .cb-sub{font-size:13px;color:var(--mute)}
+  .combo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .combo{position:relative;background:linear-gradient(135deg,rgba(45,91,255,.16),rgba(14,26,61,.4));border:1px solid rgba(91,134,255,.32);border-radius:16px;padding:20px 22px}
+  .combo-n{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--blue-bright);margin-bottom:9px}
+  .combo-items{font-size:16px;font-weight:700;color:#fff;line-height:1.45}
+  .combo-items span{color:var(--blue-bright);margin:0 5px;font-weight:800}
+  .combo-tag{display:inline-block;margin-top:12px;font-size:11.5px;font-weight:700;color:var(--blue-bright);background:rgba(45,91,255,.12);border:1px solid rgba(45,91,255,.3);padding:4px 11px;border-radius:20px}
+  .now-tag{font-size:11.5px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.12);border:1px solid rgba(45,91,255,.3);padding:2px 9px;border-radius:20px;margin-left:6px}
+  @media(max-width:560px){.combo-grid{grid-template-columns:1fr}}
+
   .menu-body{padding:0 0 90px}
   .panel{padding:54px 0 0}
   .panel.hide{display:none}
@@ -78,13 +92,17 @@
   .pill{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:6px 13px;border-radius:30px}
 
   /* simple item grid */
-  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .mi{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--navy-800);border:1px solid var(--line);border-radius:13px;padding:16px 18px;transition:transform .2s,border-color .2s}
-  .mi:hover{border-color:rgba(91,134,255,.42);transform:translateY(-2px)}
-  .mi-n{font-size:15.5px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .best-b{font-size:10px;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--blue);padding:2px 7px;border-radius:5px;line-height:1.5}
-  .mi-p{font-size:16px;font-weight:700;color:#fff;white-space:nowrap}
-  .mi-p i{font-style:normal;font-size:12px;color:var(--mute);margin-left:2px;font-weight:600}
+  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .mc{background:var(--navy-800);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s}
+  .mc:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
+  .mc-th{position:relative;aspect-ratio:16/10;display:grid;place-items:center;background:radial-gradient(circle at 50% 32%,rgba(91,134,255,.2),rgba(10,20,48,0) 60%),linear-gradient(160deg,#16224a,#0c1530);border-bottom:1px solid var(--line)}
+  .mc-th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .mc-emoji{font-size:42px;line-height:1;opacity:.95}
+  .mc-best{position:absolute;top:10px;left:10px;z-index:2;background:var(--blue);color:#fff;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.03em;box-shadow:0 4px 12px -4px rgba(45,91,255,.7)}
+  .mc-b{padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .mc-n{font-size:14.5px;font-weight:600;color:var(--ice);line-height:1.35}
+  .mc-p{font-size:15.5px;font-weight:700;color:#fff;white-space:nowrap}
+  .mc-p i{font-style:normal;font-size:12px;color:var(--mute);margin-left:2px;font-weight:600}
 
   /* subgroup heading (식사) */
   .sub{margin:34px 0 16px;font-size:16px;font-weight:700;color:#fff;display:flex;align-items:center;gap:11px}
@@ -173,7 +191,7 @@
     .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
   }
   @media(max-width:560px){
-    .mgrid{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}
+    .mgrid{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr}
     .buf .comp{min-height:0}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -214,7 +232,18 @@
     <div class="crumb"><a href="index.html">홈</a> · 메뉴</div>
     <h1>행사에 맞춰 고르는 메뉴</h1>
     <p>커피·음료 세트부터 간식·디저트·분식·식사·출장뷔페까지. 행사 성격과 인원에 맞춰 자유롭게 구성하세요. 가격·구성은 현장 여건에 따라 조정될 수 있습니다.</p>
-    <span class="count">총 <b class="num" style="margin:0 2px">75</b>종 메뉴 · 시즌 한정 메뉴 운영</span>
+    <span class="count">총 <b class="num" style="margin:0 2px">100</b>여 종 · 시즌 한정 메뉴 운영</span>
+  </div>
+</section>
+
+<!-- 이번 달 인기 조합 -->
+<section class="combos">
+  <div class="wrap">
+    <div class="combos-head">
+      <span class="cb-tag">🔥 이번 달 인기 조합</span>
+      <span class="cb-sub">담당자들이 가장 많이 찾는 구성이에요</span>
+    </div>
+    <div class="combo-grid" id="comboRoot"></div>
   </div>
 </section>
 
@@ -268,67 +297,77 @@
   var MENU = {
     drink_sets: [
       {name:"2종 실속세트", price:3000, summer:["아메리카노","복숭아 아이스티"], winter:["아메리카노","유자차"]},
-      {name:"4종 간편세트", price:3300, summer:["아메리카노","복숭아 아이스티","레몬에이드","애플캐모마일"], winter:["아메리카노","초코라떼","유자차","애플캐모마일"]},
+      {name:"4종 간편세트", price:3300, summer:["아메리카노","복숭아 아이스티","레몬에이드","애플캐모마일"], winter:["아메리카노","핫초코","유자차","애플캐모마일"]},
       {name:"7종 베이직세트", price:3500, coffee:["아메리카노","카페라떼","바닐라라떼","아샷추"], ade:["레몬에이드","자몽에이드","청포도에이드","애플망고에이드"], tea:["복숭아 아이스티","자몽허니블랙티","유자차","캐모마일","애플캐모마일","얼그레이","얼그레이밀크티"], non_coffee:["초코라떼"]},
       {name:"15종 클래식세트", price:4000, coffee:["아메리카노","카페라떼","바닐라라떼","카라멜마끼야또","카페모카","헤이즐넛라떼","헤이즐넛아메리카노","아샷추","다방커피"], non_coffee:["딸기라떼","초코라떼","말차라떼","꿀고구마라떼"], ade:["레몬에이드","자몽에이드","청포도에이드","애플망고에이드"], tea:["복숭아 아이스티","자몽허니블랙티","유자차","캐모마일","애플캐모마일","얼그레이","얼그레이밀크티","페퍼민트","생강레몬티","애플시나몬티"]}
     ],
     snacks: [
       {name:"츄러스(30cm)", price:3000, best:true},
-      {name:"피카츄돈까스", price:3000},
+      {name:"팝콘(소)", price:3500},
+      {name:"컵솜사탕", price:3500},
       {name:"핫바", price:3500},
       {name:"소떡소떡", price:3500},
       {name:"그릴소세지", price:3500},
       {name:"옛날 핫도그", price:3500},
-      {name:"미니붕어빵(5ea)", price:3500},
       {name:"감자핫도그", price:4000},
-      {name:"페스츄리핫도그", price:4000},
+      {name:"페스츄리핫도그", price:4000, best:true},
+      {name:"미니붕어빵(5ea)", price:3500},
       {name:"회오리감자", price:4000},
+      {name:"닭꼬치", price:5000},
       {name:"후라이드닭꼬치", price:4500},
-      {name:"닭꼬치", price:5000, best:true},
       {name:"타코야끼", price:5000},
-      {name:"닭강정(중간컵)", price:6000, best:true},
+      {name:"닭강정(중간컵)", price:6000},
       {name:"닭강정(큰컵)", price:12000}
     ],
     dessert_bakery: [
       {name:"쿠키", price:2000},
+      {name:"버터떡", price:2500},
+      {name:"츄러스(30cm)", price:3000, best:true},
       {name:"휘낭시에", price:3500},
       {name:"마들렌", price:3500},
       {name:"마카롱", price:3500},
       {name:"대만샌드위치", price:3500},
-      {name:"컵솜사탕", price:3500},
-      {name:"젤라또아이스크림", price:4500},
-      {name:"크로와상샌드위치", price:4500},
+      {name:"크로와상샌드위치", price:4500, best:true},
       {name:"컵과일", price:4500},
-      {name:"팥빙수", price:5000},
       {name:"뉴욕핫도그", price:5000},
-      {name:"클럽샌드위치", price:5500}
+      {name:"클럽샌드위치", price:5500},
+      {name:"스쿱아이스크림", price:3500},
+      {name:"소프트아이스크림", price:3500},
+      {name:"젤라또 아이스크림", price:4500},
+      {name:"아츄(스쿱)", price:6000},
+      {name:"아츄(젤라또)", price:7000}
     ],
     bunsik: [
       {name:"떡볶이", price:4000},
       {name:"튀김", price:3500},
       {name:"순대", price:3500},
       {name:"어묵(2ea)", price:2500},
-      {name:"어묵(어묵1ea, 물떡1ea)", price:3000},
-      {name:"분식 2종(떡튀/떡순)", price:6000},
-      {name:"분식 3종(떡튀순/떡튀어/떡순어)", price:8000, best:true},
-      {name:"분식 4종(떡튀순어)", price:10000}
+      {name:"어묵(어묵1+물떡1)", price:3000},
+      {name:"떡+튀", price:6000},
+      {name:"떡+순", price:6000},
+      {name:"떡+어", price:6000},
+      {name:"떡+튀+순", price:8000, best:true},
+      {name:"떡+튀+어", price:8000},
+      {name:"떡+순+어", price:8000},
+      {name:"떡+튀+순+어", price:10000}
     ],
     meal_rice: [
-      {name:"제육 덮밥", price:8000},
-      {name:"간장제육 덮밥", price:8000},
-      {name:"치킨마요 덮밥", price:8000, best:true},
-      {name:"스팸마요 덮밥", price:9000},
-      {name:"돈까스마요 덮밥", price:9000},
-      {name:"짜장군만두 덮밥", price:9000},
-      {name:"돈까스카레 덮밥", price:10000},
-      {name:"닭갈비 덮밥", price:10000},
-      {name:"간장닭갈비 덮밥", price:10000},
-      {name:"불닭 덮밥", price:10000},
-      {name:"흑돼지 덮밥", price:10000, best:true},
+      {name:"제육덮밥", price:8000, best:true},
+      {name:"간장제육덮밥", price:8000},
+      {name:"치킨마요덮밥", price:8000},
+      {name:"스팸마요덮밥", price:9000},
+      {name:"돈까스마요덮밥", price:9000},
+      {name:"짜장군만두덮밥", price:9000},
+      {name:"돈까스카레덮밥", price:10000},
+      {name:"고추장닭갈비덮밥", price:10000},
+      {name:"간장닭갈비덮밥", price:10000},
+      {name:"불닭덮밥", price:10000},
+      {name:"흑돼지덮밥", price:10000, best:true},
       {name:"규동", price:10000},
       {name:"소불고기덮밥", price:10000},
+      {name:"비빔밥", price:11000},
       {name:"돈토로동", price:12000},
-      {name:"스테이크 덮밥", price:13000}
+      {name:"스테이크덮밥", price:13000}
     ],
     meal_noodle: [
       {name:"잔치국수", price:7500},
@@ -336,13 +375,13 @@
       {name:"비빔국수", price:9000},
       {name:"볶음우동", price:9000},
       {name:"냉우동", price:9000},
+      {name:"냉소바", price:9000},
       {name:"짜장면", price:9000},
       {name:"야끼소바", price:10000, best:true}
     ],
     meal_etc: [
       {name:"떡국", price:8500},
       {name:"오코노미야끼", price:10000},
-      {name:"비빔밥", price:11000},
       {name:"닭강정", price:12000},
       {name:"닭목살구이", price:14000},
       {name:"소세지플래터", price:14000},
@@ -367,22 +406,46 @@
       ]
     },
     season: {
-      summer: {snacks:["팥빙수","수박화채","아츄","망고빙수"], drinks:["수박주스","복숭아 아이스티","미숫가루","아메리카노"]},
-      winter: {snacks:["어묵(2ea)","미니붕어빵(5ea)","호빵","호떡"], drinks:["아메리카노","핫초코","유자차"]}
+      summer: [
+        {name:"수박화채", price:5000, best:true},
+        {name:"수박주스", price:5500},
+        {name:"팥빙수", price:5000, best:true},
+        {name:"망고빙수", price:6000},
+        {name:"베리빙수", price:6000},
+        {name:"아이스크림빙수", price:7000},
+        {name:"토핑 아이스크림", price:5000}
+      ],
+      winter: [
+        {name:"씨앗호떡", price:2500},
+        {name:"옛날 꿀호떡", price:2500},
+        {name:"호빵", price:2500},
+        {name:"꿀 가래떡 꼬치(2ea)", price:2500},
+        {name:"일반붕어빵(2ea)", price:2500},
+        {name:"뱅쇼", price:5000},
+        {name:"오곡라떼", price:5000}
+      ]
     }
   };
+
+  /* ===== 시즌·인기조합 설정 (나중에 관리자 페이지에서 이 부분만 바꾸면 됨) ===== */
+  var SEASON_NOW = 'summer';   // 'summer' 또는 'winter' — 겨울엔 'winter'로 바꾸면 겨울 메뉴가 위로 올라가요
+  var COMBOS = [
+    {n:'조합 1', items:'커피·음료 7종 세트 ＋ 츄러스(30cm)', tag:'인기 No.1'},
+    {n:'조합 2', items:'2종 실속세트 ＋ 흑돼지덮밥', tag:'든든 세트'}
+  ];
 
   /* ===== 렌더링 ===== */
   function won(n){return n.toLocaleString('ko-KR');}
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function chips(arr){return '<div class="chips">'+arr.map(function(d){return '<span class="chip">'+esc(d)+'</span>';}).join('')+'</div>';}
 
-  function itemCard(it){
-    var badge = it.best ? '<span class="best-b">BEST</span>' : '';
-    return '<div class="mi reveal"><span class="mi-n">'+esc(it.name)+badge+'</span>'+
-           '<span class="mi-p num">'+won(it.price)+'<i>원</i></span></div>';
+  function itemCard(it, emoji){
+    var badge = it.best ? '<span class="mc-best">BEST</span>' : '';
+    return '<div class="mc reveal"><div class="mc-th">'+badge+'<span class="mc-emoji">'+(emoji||'🍽️')+'</span></div>'+
+           '<div class="mc-b"><span class="mc-n">'+esc(it.name)+'</span>'+
+           '<span class="mc-p num">'+won(it.price)+'<i>원</i></span></div></div>';
   }
-  function grid(items){return '<div class="mgrid">'+items.map(itemCard).join('')+'</div>';}
+  function grid(items, emoji){return '<div class="mgrid">'+items.map(function(it){return itemCard(it,emoji);}).join('')+'</div>';}
 
   var SETLABELS = {summer:"여름 메뉴", winter:"겨울 메뉴", coffee:"커피", non_coffee:"논커피", ade:"에이드", tea:"티 · 기타"};
   function setCard(s){
@@ -403,16 +466,14 @@
 
   var html = '';
 
-  /* 시즌 */
+  /* 시즌 (현재 시즌이 위로) */
   (function(){
-    function seasonCard(cls, tag, data){
-      return '<div class="season-card '+cls+' reveal"><div class="season-tag">'+tag+'</div>'+
-             '<div class="season-grp"><div class="gl">먹거리</div>'+chips(data.snacks)+'</div>'+
-             '<div class="season-grp"><div class="gl">음료</div>'+chips(data.drinks)+'</div></div>';
-    }
-    var inner = '<div class="season-grid">'+
-      seasonCard('summer','☀ 여름 한정', MENU.season.summer)+
-      seasonCard('winter','❄ 겨울 한정', MENU.season.winter)+'</div>';
+    var summer = {label:'☀ 여름 한정', em:'🍧', items:MENU.season.summer};
+    var winter = {label:'❄ 겨울 한정', em:'🫓', items:MENU.season.winter};
+    var ord = (SEASON_NOW==='winter') ? [winter,summer] : [summer,winter];
+    var inner =
+      '<div class="sub" style="margin-top:0">'+ord[0].label+' <span class="now-tag">지금 시즌</span></div>'+grid(ord[0].items,ord[0].em)+
+      '<div class="sub">'+ord[1].label+'</div>'+grid(ord[1].items,ord[1].em);
     html += panel('season','시즌 한정 메뉴','계절에 맞춰 운영하는 시즌 메뉴입니다. 더위엔 시원하게, 추위엔 따뜻하게 현장을 챙깁니다.','', inner);
   })();
 
@@ -423,21 +484,21 @@
     '<div class="set-grid">'+MENU.drink_sets.map(setCard).join('')+'</div>');
 
   /* 간식 */
-  html += panel('snack','간식','츄러스·닭꼬치·타코야끼 등 손이 자주 가는 길거리 간식입니다.','', grid(MENU.snacks));
+  html += panel('snack','간식','츄러스·닭꼬치·타코야끼 등 손이 자주 가는 길거리 간식입니다.','', grid(MENU.snacks,'🌭'));
 
   /* 디저트 */
-  html += panel('dessert','디저트 · 베이커리','쿠키·마카롱·빙수까지. 포토존과 잘 어울리는 디저트 구성입니다.','', grid(MENU.dessert_bakery));
+  html += panel('dessert','디저트 · 베이커리','쿠키·마카롱·빙수까지. 포토존과 잘 어울리는 디저트 구성입니다.','', grid(MENU.dessert_bakery,'🧁'));
 
   /* 분식 */
-  html += panel('bunsik','분식','떡볶이·튀김·순대·어묵. 2~4종 모둠 구성으로도 제공합니다.','', grid(MENU.bunsik));
+  html += panel('bunsik','분식','떡볶이·튀김·순대·어묵. 2~4종 모둠 구성으로도 제공합니다.','', grid(MENU.bunsik,'🍢'));
 
   /* 식사 */
   html += panel('meal','식사',
     '덮밥·면류부터 안주류까지. 든든한 한 끼가 필요한 행사에 적합합니다.',
     '100인분 이상부터 주문 가능',
-    '<div class="sub">덮밥</div>'+grid(MENU.meal_rice)+
-    '<div class="sub">면류</div>'+grid(MENU.meal_noodle)+
-    '<div class="sub">기타 · 안주류</div>'+grid(MENU.meal_etc));
+    '<div class="sub">덮밥</div>'+grid(MENU.meal_rice,'🍚')+
+    '<div class="sub">면류</div>'+grid(MENU.meal_noodle,'🍜')+
+    '<div class="sub">기타 · 안주류</div>'+grid(MENU.meal_etc,'🍖'));
 
   /* 뷔페 */
   (function(){
@@ -456,6 +517,16 @@
   })();
 
   document.getElementById('menuRoot').innerHTML = html;
+
+  /* 인기 조합 렌더 */
+  (function(){
+    var cr=document.getElementById('comboRoot'); if(!cr)return;
+    cr.innerHTML = COMBOS.map(function(c){
+      return '<div class="combo"><div class="combo-n">'+esc(c.n)+'</div>'+
+             '<div class="combo-items">'+esc(c.items).replace(/＋/g,'<span>＋</span>')+'</div>'+
+             (c.tag?'<span class="combo-tag">'+esc(c.tag)+'</span>':'')+'</div>';
+    }).join('');
+  })();
 
   /* ===== 탭 필터 ===== */
   var tabsWrap = document.getElementById('tabs');

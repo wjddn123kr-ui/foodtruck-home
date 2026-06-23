@@ -181,6 +181,28 @@
   .rev .rb{padding:24px}
   .rev h3{font-size:18px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:10px;line-height:1.4}
   .rev p{font-size:14px;color:var(--mute);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  /* trust strip */
+  .trust{padding:24px 0;border-bottom:1px solid var(--line)}
+  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .tb{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--ice);background:rgba(140,165,225,.06);border:1px solid var(--line);padding:9px 16px;border-radius:30px}
+  .tb b{color:var(--blue-bright);font-weight:800;font-family:'Archivo',sans-serif}
+  /* recommend */
+  .rec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .rc{background:var(--navy-800);border:1px solid var(--line);border-radius:14px;padding:22px 18px;transition:transform .25s,border-color .25s}
+  .rc:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
+  .rc .ic{font-size:23px;margin-bottom:10px;display:block;line-height:1}
+  .rc h3{font-size:15.5px;font-weight:700;color:#fff;margin-bottom:5px;letter-spacing:-.01em}
+  .rc p{font-size:13px;color:var(--mute);line-height:1.55}
+  /* process */
+  .proc{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .ps{padding-top:16px;border-top:2px solid var(--line)}
+  .ps:first-child{border-top-color:var(--blue)}
+  .ps .pn{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--blue-bright);margin-bottom:9px}
+  .ps h4{font-size:15px;font-weight:700;color:#fff;line-height:1.4}
+  /* review stars */
+  .stars{color:#FFC83D;font-size:13.5px;letter-spacing:2px;margin-bottom:9px;line-height:1}
+  @media(max-width:900px){.rec-grid{grid-template-columns:1fr 1fr}.proc{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.proc{grid-template-columns:1fr}}
 
   /* CTA */
   .cta-wrap{padding:clamp(80px,9vw,116px) 0}
@@ -316,6 +338,18 @@
   <div class="track" id="track"><!-- 고객사 로고는 스크립트로 채웁니다 --></div>
 </div>
 
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <span class="tb">✓ 본사 직영 운영</span>
+    <span class="tb">✓ 100% 합법 푸드트럭</span>
+    <span class="tb">직영 트럭 <b>15대</b></span>
+    <span class="tb">전국 협력 <b>400대+</b></span>
+    <span class="tb">물류창고 <b>100평+</b></span>
+    <span class="tb">재이용률 <b>92%</b></span>
+  </div>
+</div>
+
 <!-- WHY + DISPATCH -->
 <section>
   <div class="wrap why-grid">
@@ -361,6 +395,26 @@
   </div>
 </section>
 
+<!-- RECOMMEND -->
+<section>
+  <div class="wrap">
+    <div class="reveal" style="max-width:600px;margin-bottom:46px">
+      <div class="kicker">For You</div>
+      <h2 class="st">이런 행사에 추천합니다</h2>
+    </div>
+    <div class="rec-grid">
+      <div class="rc reveal"><span class="ic">🏢</span><h3>기업·임직원 행사</h3><p>창립기념일·복지차·사내 이벤트</p></div>
+      <div class="rc reveal"><span class="ic">🏅</span><h3>체육대회·워크숍</h3><p>수백 명 야외 행사도 대기 없이</p></div>
+      <div class="rc reveal"><span class="ic">⭐</span><h3>연예인 서포트</h3><p>촬영장·콘서트 커피차·역조공</p></div>
+      <div class="rc reveal"><span class="ic">🎬</span><h3>광고·방송 촬영</h3><p>장시간 촬영 스태프 간식차</p></div>
+      <div class="rc reveal"><span class="ic">🎪</span><h3>축제·페스티벌</h3><p>대규모 푸드존 통합 운영</p></div>
+      <div class="rc reveal"><span class="ic">🏗️</span><h3>건설·산업현장</h3><p>근로자 식사·새벽 간식 대응</p></div>
+      <div class="rc reveal"><span class="ic">🎓</span><h3>학교·대학 행사</h3><p>대동제·입학식·체육대회</p></div>
+      <div class="rc reveal"><span class="ic">🏛️</span><h3>관공서·공공기관</h3><p>지자체 행사·기념식 대행</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- REVIEWS -->
 <section>
   <div class="wrap">
@@ -372,9 +426,26 @@
       <a href="review.html">전체 후기 보기 →</a>
     </div>
     <div class="rev3">
-      <div class="rev reveal"><div class="ph"><span class="badge">브랜드 프로모션</span><img src="https://foodtruckhouse.com/files/thumbnails/549/002/740x394.crop.jpg" alt="진로 테라 시음회 성수동 팝업" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><h3>'진로' 테라 시음회 성수동 팝업</h3><p>푸드트럭을 브랜드 포토존처럼 연출해 현장 분위기를 살리고, 야외 시음행사가 원활히 진행되도록 운영했습니다.</p></div></div>
-      <div class="rev reveal"><div class="ph"><span class="badge">연예인 서포트</span><img src="https://foodtruckhouse.com/files/thumbnails/462/002/740x394.crop.jpg" alt="메디큐브 이사배 뮤직비디오 현장" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><h3>'메디큐브' 이사배 뮤직비디오 현장</h3><p>긴 촬영 현장에 커피차 서포트. 브랜드의 응원을 자연스럽게 전하도록 메뉴부터 출력물 세팅까지 함께했습니다.</p></div></div>
-      <div class="rev reveal"><div class="ph"><span class="badge">기업 간식차</span><img src="https://foodtruckhouse.com/files/thumbnails/356/001/740x394.crop.jpg" alt="삼성생명 신년맞이 간식차" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><h3>'삼성생명' 신년맞이 간식차</h3><p>겨울 출근길에 어묵·붕어빵으로 따뜻함을 전했습니다. 맞춤 출력물로 새해 분위기를 더했습니다.</p></div></div>
+      <div class="rev reveal"><div class="ph"><span class="badge">브랜드 프로모션</span><img src="https://foodtruckhouse.com/files/thumbnails/549/002/740x394.crop.jpg" alt="진로 테라 시음회 성수동 팝업" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="stars">★★★★★</div><h3>'진로' 테라 시음회 성수동 팝업</h3><p>푸드트럭을 브랜드 포토존처럼 연출해 현장 분위기를 살리고, 야외 시음행사가 원활히 진행되도록 운영했습니다.</p></div></div>
+      <div class="rev reveal"><div class="ph"><span class="badge">연예인 서포트</span><img src="https://foodtruckhouse.com/files/thumbnails/462/002/740x394.crop.jpg" alt="메디큐브 이사배 뮤직비디오 현장" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="stars">★★★★★</div><h3>'메디큐브' 이사배 뮤직비디오 현장</h3><p>긴 촬영 현장에 커피차 서포트. 브랜드의 응원을 자연스럽게 전하도록 메뉴부터 출력물 세팅까지 함께했습니다.</p></div></div>
+      <div class="rev reveal"><div class="ph"><span class="badge">기업 간식차</span><img src="https://foodtruckhouse.com/files/thumbnails/356/001/740x394.crop.jpg" alt="삼성생명 신년맞이 간식차" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="stars">★★★★★</div><h3>'삼성생명' 신년맞이 간식차</h3><p>겨울 출근길에 어묵·붕어빵으로 따뜻함을 전했습니다. 맞춤 출력물로 새해 분위기를 더했습니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="wrap">
+    <div class="reveal" style="max-width:600px;margin-bottom:46px">
+      <div class="kicker">Process</div>
+      <h2 class="st">문의부터 정산까지, 5단계</h2>
+    </div>
+    <div class="proc">
+      <div class="ps reveal"><div class="pn">STEP 01</div><h4>맞춤 상담·견적</h4></div>
+      <div class="ps reveal"><div class="pn">STEP 02</div><h4>계약·예약</h4></div>
+      <div class="ps reveal"><div class="pn">STEP 03</div><h4>메뉴·디자인·배차</h4></div>
+      <div class="ps reveal"><div class="pn">STEP 04</div><h4>행사 진행·운영</h4></div>
+      <div class="ps reveal"><div class="pn">STEP 05</div><h4>결제·정산</h4></div>
     </div>
   </div>
 </section>
