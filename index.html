@@ -242,39 +242,28 @@ img{max-width:100%;display:block}
 .montage-sec .wrap{position:relative;z-index:2}
 .montage-head h2{font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.22;color:var(--navy-900)}
 .montage-head h2 .hl{color:var(--blue)}
-.montage-head p{margin-top:16px;color:#3c4a72;font-size:16.5px;max-width:580px;margin-left:auto;margin-right:auto}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.montage-head p{margin-top:16px;color:#3c4a72;font-size:16.5px;max-width:580px;margin:16px auto 0}
 
-.montage-stage{position:relative;height:560px;margin:48px auto 0;max-width:920px}
-/* 뒤 SINCE 아웃라인 */
-.m-since{position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);z-index:1;pointer-events:none;white-space:nowrap;
-  font-family:var(--num);font-weight:800;letter-spacing:-.04em;line-height:1;
-  font-size:clamp(60px,13vw,150px);color:transparent;-webkit-text-stroke:2px rgba(45,91,255,.22)}
-/* 중앙 음식 영상 카드 */
-.m-video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
-  width:clamp(228px,30vw,300px);aspect-ratio:3/4;border-radius:30px;overflow:hidden;
-  border:5px solid #fff;box-shadow:var(--shadow-lg);animation:floaty 6s ease-in-out infinite}
-.m-video video{width:100%;height:100%;object-fit:cover;display:block}
-/* 떠다니는 원형 음식 컷 */
-.m-bubble{position:absolute;z-index:3;border-radius:50%;overflow:hidden;background:#fff;border:4px solid #fff;
-  box-shadow:0 18px 40px rgba(13,40,120,.18);animation:bob 5.6s ease-in-out infinite}
-.m-bubble img{width:100%;height:100%;object-fit:cover;display:block}
-.m-bubble.b1{width:142px;height:142px;top:5%;left:9%;animation-duration:5.5s}
-.m-bubble.b2{width:120px;height:120px;top:0;right:11%;animation-duration:6.3s;animation-delay:.4s}
-.m-bubble.b3{width:162px;height:162px;bottom:7%;left:3%;animation-duration:6.9s;animation-delay:.2s}
-.m-bubble.b4{width:132px;height:132px;bottom:1%;right:5%;animation-duration:5.9s;animation-delay:.6s}
-.m-bubble.b5{width:96px;height:96px;top:41%;left:-1%;animation-duration:6.5s;animation-delay:.9s}
-.m-bubble.b6{width:106px;height:106px;top:45%;right:-1%;animation-duration:5.2s;animation-delay:.3s}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
-.montage-cta{margin-top:42px}
+.mc-stage{position:relative;height:480px;margin:36px auto 0;max-width:1060px}
+.mc-pile{position:absolute;left:0;bottom:0;width:60%;max-width:640px;z-index:2}
+.mc-pile img{width:100%;display:block;filter:drop-shadow(0 22px 26px rgba(13,40,120,.16))}
+.fly{position:absolute;z-index:5;pointer-events:none;height:auto;filter:drop-shadow(0 12px 16px rgba(13,40,120,.3));will-change:transform,opacity}
+.fly1{left:39%;top:30%;width:112px}
+.fly2{left:32%;top:13%;width:96px}
+.fly3{left:45%;top:44%;width:130px}
+.mc-cart{position:absolute;right:5%;bottom:6%;width:188px;z-index:4;animation:cartBob 3s ease-in-out infinite}
+.mc-cart-svg{width:100%;height:auto;display:block;filter:drop-shadow(0 16px 22px rgba(45,91,255,.3))}
+.mc-cart-label{margin-top:4px;font-weight:800;font-size:14.5px;color:var(--blue-deep)}
+@keyframes cartBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.montage-cta{margin-top:36px}
 
-@media(max-width:768px){
-  .montage-stage{height:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:34px}
-  .m-video{position:static;transform:none;flex:0 0 100%;width:208px;margin:0 auto;animation:none;order:1}
-  .m-bubble{position:static;width:84px;height:84px;animation:none;order:2}
-  .m-bubble.b5,.m-bubble.b6{display:none}
-  .m-since{position:static;transform:none;flex:0 0 100%;order:3;margin-top:8px}
+@media(max-width:760px){
+  .mc-stage{height:540px;max-width:none}
+  .mc-pile{left:50%;transform:translateX(-50%);bottom:auto;top:6px;width:92%;max-width:440px}
+  .fly1{left:30%;top:34%;width:88px}.fly2{left:18%;top:22%;width:76px}.fly3{left:42%;top:46%;width:88px}
+  .mc-cart{right:0;left:0;margin:0 auto;bottom:0;width:148px}
 }
+@media(prefers-reduced-motion:reduce){.mc-cart{animation:none}}
 
 /* ================= 후기 ================= */
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -554,7 +543,7 @@ img{max-width:100%;display:block}
         <h2>전화 없이,<br><span class="hl">3초 만에 견적</span> 완성</h2>
         <p>메뉴·인원·지역만 고르면 출장비까지 포함된 예상 견적이 즉시 나옵니다. 카카오 알림톡으로 바로 받아보세요.</p>
         <ul class="qfeat">
-          <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>메뉴 75종에서 골라 담는 즉석 구성</li>
+          <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>메뉴 100종에서 골라 담는 즉석 구성</li>
           <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>전국 10개 권역 출장비 자동 반영</li>
           <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>행사 메뉴판 시안까지 무료 제공</li>
         </ul>
@@ -599,32 +588,62 @@ img{max-width:100%;display:block}
       <p>현장에서 바로 조리하는 75종 — 츄러스·닭강정·떡볶이부터 갓 내린 커피까지. 행사 성격에 맞춰 골라 담으세요.</p>
     </div>
 
-    <div class="montage-stage reveal">
-      <span class="m-since">SINCE 2016</span>
+    <div class="mc-stage reveal">
+      <!-- ▼ 누끼 음식 모음 (menu-pile.png 저장 시 표시) ▼ -->
+      <div class="mc-pile"><img src="menu-pile.png" alt="푸드트럭하우스 100종 메뉴 모음" loading="lazy" onerror="this.closest('.mc-pile').style.opacity=0"></div>
 
-      <!-- ▼ 중앙 음식 영상 (임시: 메인 영상 — '음식 클로즈업 영상'으로 src만 교체) ▼ -->
-      <div class="m-video">
-        <video autoplay muted loop playsinline poster="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg">
-          <source src="https://foodtruckhouse.com/assets/videos/main.mp4" type="video/mp4">
-        </video>
+      <!-- ▼ 장바구니로 날아가는 개별 누끼 3종 (item-*.png 저장 시 표시) ▼ -->
+      <img class="fly fly1" src="item-fruit.png" alt="컵과일" loading="lazy" onerror="this.style.display='none'">
+      <img class="fly fly2" src="item-ade.png" alt="청포도에이드" loading="lazy" onerror="this.style.display='none'">
+      <img class="fly fly3" src="item-corndog.png" alt="핫도그" loading="lazy" onerror="this.style.display='none'">
+
+      <!-- ▼ 장바구니 ▼ -->
+      <div class="mc-cart">
+        <svg class="mc-cart-svg" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 6h17l-1.8 9.4a2 2 0 0 1-2 1.6H9.7a2 2 0 0 1-2-1.6L5 3H1" fill="rgba(45,91,255,.1)"/>
+          <circle cx="9" cy="21" r="1.5" fill="var(--blue)" stroke="none"/>
+          <circle cx="19" cy="21" r="1.5" fill="var(--blue)" stroke="none"/>
+        </svg>
+        <div class="mc-cart-label">장바구니</div>
       </div>
-      <!-- ▲ 음식 영상으로 교체 시 위 src만 바꾸면 됩니다 ▲ -->
-
-      <!-- ▼ 음식 컷 버블 — 더 먹음직한 개별 누끼/사진으로 교체 추천 ▼ -->
-      <div class="m-bubble b1"><img src="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg" alt="푸드트럭 메뉴" loading="lazy"></div>
-      <div class="m-bubble b2"><img src="https://foodtruckhouse.com/assets/images/main/sec06_2.jpg" alt="간식 메뉴" loading="lazy"></div>
-      <div class="m-bubble b3"><img src="https://foodtruckhouse.com/assets/images/main/sec06_3.jpg" alt="행사 케이터링 음식" loading="lazy"></div>
-      <div class="m-bubble b4"><img src="https://foodtruckhouse.com/files/attach/images/coffee-car.jpg" alt="커피차 음료" loading="lazy"></div>
-      <div class="m-bubble b5"><img src="https://foodtruckhouse.com/files/thumbnails/549/002/740x394.crop.jpg" alt="현장 음식" loading="lazy"></div>
-      <div class="m-bubble b6"><img src="https://foodtruckhouse.com/files/thumbnails/462/002/740x394.crop.jpg" alt="디저트 메뉴" loading="lazy"></div>
-      <!-- ▲ 누끼 PNG(투명배경) 6컷을 보내주시면 원형 대신 진짜 쿡앤컴퍼니式으로 바꿔드립니다 ▲ -->
     </div>
 
     <div class="montage-cta reveal">
-      <a href="/menu.html" class="btn btn-primary">메뉴 75종 보기
+      <a href="/menu.html" class="btn btn-primary">메뉴 100종 보기
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
+
+    <script>
+    (function(){
+      var stage=document.querySelector('.mc-stage'); if(!stage)return;
+      var cart=document.querySelector('.mc-cart'), items=[].slice.call(stage.querySelectorAll('.fly'));
+      if(!cart||!items.length||!Element.prototype.animate)return;
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+      var started=false;
+      function run(){
+        var sr=stage.getBoundingClientRect(), cr=cart.getBoundingClientRect();
+        var tx=cr.left-sr.left+cr.width*0.5, ty=cr.top-sr.top+cr.height*0.30;
+        items.forEach(function(it,i){
+          var ir=it.getBoundingClientRect();
+          var lx=ir.left-sr.left+ir.width*0.5, ly=ir.top-sr.top+ir.height*0.5;
+          var dx=tx-lx, dy=ty-ly;
+          it.getAnimations().forEach(function(a){a.cancel();});
+          it.animate([
+            {transform:'translate(0,0) scale(1) rotate(0deg)',opacity:0,offset:0},
+            {opacity:1,offset:.07},
+            {transform:'translate('+(dx*0.5)+'px,'+(dy*0.5-95)+'px) scale(.92) rotate(12deg)',opacity:1,offset:.5},
+            {transform:'translate('+dx+'px,'+(dy-8)+'px) scale(.5) rotate(2deg)',opacity:1,offset:.85},
+            {transform:'translate('+dx+'px,'+(dy+20)+'px) scale(.36)',opacity:1,offset:.95},
+            {transform:'translate('+dx+'px,'+(dy+22)+'px) scale(.3)',opacity:0,offset:1}
+          ],{duration:3400,iterations:Infinity,delay:i*1050,easing:'cubic-bezier(.4,0,.25,1)'});
+        });
+      }
+      var io=new IntersectionObserver(function(e){if(e[0].isIntersecting&&!started){started=true;run();}},{threshold:.25});
+      io.observe(stage);
+      var rt; window.addEventListener('resize',function(){if(!started)return;clearTimeout(rt);rt=setTimeout(run,250);},{passive:true});
+    })();
+    </script>
   </div>
 </section>
 
