@@ -3,405 +3,629 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>푸드트럭하우스 — 8,000건의 현장이 증명하는 푸드트럭 케이터링</title>
-<meta name="description" content="고객사 4,000곳, 행사 8,000건, 재이용률 92%. 케이터링·브랜드 프로모션·페스티벌 부스까지, 현장을 가장 많이 굴려본 팀. 인원과 날짜만 알려주시면 3분 만에 견적을 받아보세요.">
-<meta name="keywords" content="커피차, 푸드트럭, 간식차, 케이터링, 브랜드 프로모션, 행사대행, 푸드트럭하우스">
-<meta property="og:title" content="푸드트럭하우스 — 푸드트럭 케이터링">
-<meta property="og:description" content="고객사 4,000곳이 다시 찾는 푸드트럭 케이터링. 행사 8,000건, 재이용률 92%.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="og-image.svg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="푸드트럭하우스 — 푸드트럭 케이터링">
-<meta name="twitter:description" content="고객사 4,000곳이 다시 찾는 푸드트럭 케이터링. 행사 8,000건, 재이용률 92%.">
-<meta name="twitter:image" content="og-image.svg">
-<meta name="theme-color" content="#0A1733">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
+<title>푸드트럭하우스 | 젊음이 만든 열정, 깨끗한 푸드트럭의 기준</title>
+<meta name="description" content="기업행사·축제·브랜드행사 푸드트럭 케이터링 전문. 고객사 4,000곳, 누적 행사 8,000건, 재이용률 92%. 푸드트럭·커피차·간식차·분식차 전국 출장. 3초 견적완성.">
+<meta name="keywords" content="푸드트럭,푸드트럭 대여,기업행사 푸드트럭,커피차,간식차,분식차,축제 푸드트럭,푸드트럭 케이터링,푸드트럭하우스">
 
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<!-- ===== FONTS: Pretendard(본문) + Archivo(숫자) ===== -->
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- ===== 메타 픽셀 자리 (5단계에서 채웁니다) ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --navy-900:#060C1F;
-    --navy-850:#0A1430;
-    --navy-800:#0E1A3D;
-    --navy-700:#13224C;
-    --blue:#2D5BFF;        /* 키 컬러 (일렉트릭 블루) */
-    --blue-deep:#003892;   /* 브랜드 블루 */
-    --blue-bright:#5B86FF;
-    --ice:#EAF0FF;
-    --paper:#F4F7FE;
-    --ink:#0A1124;
-    --mute:#93A1C7;
-    --line:rgba(140,165,225,.16);
-    --max:1200px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--navy-900);color:var(--ice);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
-  a{text-decoration:none;color:inherit}
-  img{max-width:100%;display:block}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
+/* ================= DESIGN TOKENS ================= */
+:root{
+  --navy-900:#060C1F; --navy-850:#0A1430; --navy-800:#0E1A3D;
+  --blue:#2D5BFF; --blue-deep:#003892; --blue-bright:#5B86FF;
+  --ice:#EAF0FF; --paper:#F4F7FE; --ink:#0A1124; --mute:#93A1C7;
+  --line:rgba(140,165,225,.16);
+  --white:#ffffff;
+  --r-sm:12px; --r:18px; --r-lg:26px;
+  --shadow-sm:0 4px 18px rgba(13,40,120,.06);
+  --shadow:0 14px 44px rgba(13,40,120,.10);
+  --shadow-lg:0 30px 80px rgba(6,12,31,.18);
+  --maxw:1180px;
+  --num:'Archivo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',-apple-system,sans-serif;
+  color:var(--ink); background:var(--white);
+  line-height:1.6; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums}
 
-  /* header */
-  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(6,12,31,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .3s}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#fff}
-  .brand .m{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:13px;box-shadow:0 4px 16px -4px rgba(45,91,255,.6)}
-  .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
-  .nav-links a{color:var(--mute);transition:color .2s}
-  .nav-links a:hover{color:#fff}
-  .nav-right{display:flex;align-items:center;gap:18px}
-  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
-  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;transition:transform .15s,box-shadow .2s;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
-  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(45,91,255,.9)}
-  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
-  .menu-btn span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;transition:.25s}
-  /* 소개 드롭다운 */
-  .nav-links .has-sub{position:relative}
-  .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-  .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
-  .submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(10,20,48,.97);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:148px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(0,0,0,.7)}
-  .submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
-  .nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-  .submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--mute);white-space:nowrap;transition:background .15s,color .15s}
-  .submenu a:hover,.submenu a.active{background:rgba(91,134,255,.12);color:#fff}
+/* ================= HEADER ================= */
+.hd{position:fixed;top:0;left:0;right:0;z-index:100;
+  transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+.hd.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(13,40,120,.08)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em;color:#fff}
+.hd.scrolled .logo{color:var(--navy-900)}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--blue);
+  display:grid;place-items:center;color:#fff;flex:none;box-shadow:0 6px 16px rgba(45,91,255,.35)}
+/* 워드마크 로고: 영상 위=흰색, 스크롤 후=원본 파랑 */
+.logo-img{height:26px;width:auto;display:block;filter:brightness(0) invert(1);transition:filter .3s}
+.hd.scrolled .logo-img{filter:none}
+.ft .logo-img{height:30px;filter:brightness(0) invert(1)}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{padding:10px 15px;font-size:15px;font-weight:600;color:rgba(255,255,255,.92);border-radius:10px;transition:.18s;position:relative}
+.hd.scrolled .nav a{color:#33406b}
+.nav a:hover{background:rgba(255,255,255,.14)}
+.hd.scrolled .nav a:hover{background:var(--paper);color:var(--blue)}
+.has-drop{position:relative}
+.drop{position:absolute;top:calc(100% + 6px);left:0;min-width:172px;background:#fff;border-radius:14px;
+  box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s}
+.has-drop:hover .drop{opacity:1;visibility:visible;transform:translateY(0)}
+.drop a{display:block;color:#33406b;padding:10px 13px;border-radius:9px;font-size:14.5px}
+.drop a:hover{background:var(--paper);color:var(--blue)}
+.hd-cta{display:flex;align-items:center;gap:14px}
+.tel{display:flex;align-items:center;gap:7px;font-weight:700;color:#fff;font-size:15px}
+.hd.scrolled .tel{color:var(--navy-900)}
+.tel .num{font-size:17px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:12px;
+  padding:12px 20px;font-size:15px;transition:.2s;cursor:pointer;border:none;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 26px rgba(45,91,255,.34)}
+.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px);box-shadow:0 16px 34px rgba(45,91,255,.42)}
+.btn-ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.26)}
+.btn-line{background:#fff;color:var(--blue);border:1.6px solid var(--ice)}
+.btn-line:hover{border-color:var(--blue);transform:translateY(-2px)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;padding:6px}
+.hd.scrolled .menu-toggle{color:var(--navy-900)}
 
-  /* hero */
-  .hero{position:relative;padding:150px 0 90px;overflow:hidden}
-  .hero .glow{position:absolute;border-radius:50%;filter:blur(90px);z-index:0;pointer-events:none}
-  .hero .glow.g1{width:520px;height:520px;background:rgba(45,91,255,.4);top:-120px;right:-80px}
-  .hero .glow.g2{width:380px;height:380px;background:rgba(0,56,146,.5);bottom:-140px;left:-100px}
-  .hero .grid-bg{position:absolute;inset:0;z-index:1;opacity:.4;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 65% at 65% 25%,#000 25%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 80% 65% at 65% 25%,#000 25%,transparent 75%)}
-  /* 히어로 배경 영상 */
-  .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--navy-900)}
-  .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
-  .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,31,.18),rgba(6,12,31,.46) 62%,var(--navy-900) 100%),linear-gradient(90deg,rgba(6,12,31,.58),rgba(6,12,31,.05) 66%)}
-  .hero .wrap{position:relative;z-index:2}
-  .eb{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:8px 16px;border-radius:30px;margin-bottom:28px}
-  .eb .dot{width:7px;height:7px;border-radius:50%;background:var(--blue-bright);box-shadow:0 0 0 0 rgba(91,134,255,.7);animation:pulse 2.4s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(91,134,255,.6)}70%{box-shadow:0 0 0 11px rgba(91,134,255,0)}100%{box-shadow:0 0 0 0 rgba(91,134,255,0)}}
-  h1.ht{font-size:clamp(30px,6.6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1.04;color:#fff;max-width:18ch}
-  h1.ht .grad{background:linear-gradient(105deg,var(--blue-bright),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .hlead{margin-top:26px;font-size:clamp(19px,2.5vw,27px);font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1.3}
-  .hlead b{color:var(--blue-bright);font-weight:800}
-  .hsub{margin-top:14px;font-size:clamp(16px,2vw,19px);color:var(--ice);opacity:.82;max-width:48ch}
-  .hbtns{display:flex;gap:13px;margin-top:40px;flex-wrap:wrap}
-  .b1{background:var(--blue);color:#fff;padding:16px 30px;border-radius:11px;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:9px;transition:transform .15s,box-shadow .2s;box-shadow:0 10px 30px -10px rgba(45,91,255,.8)}
-  .b1:hover{transform:translateY(-2px);box-shadow:0 16px 38px -10px rgba(45,91,255,.95)}
-  .b1 svg{transition:transform .2s}.b1:hover svg{transform:translateX(3px)}
-  .b2{color:#fff;padding:16px 26px;border-radius:11px;border:1px solid var(--line);font-weight:600;font-size:16px;transition:background .2s,border-color .2s}
-  .b2:hover{background:rgba(140,165,225,.07);border-color:rgba(140,165,225,.4)}
+/* ================= HERO (영상 유지) ================= */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+/* 소프트 블루 그라데이션 스크림 */
+.hero-scrim{position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg,rgba(6,12,31,.55) 0%,rgba(6,12,31,.30) 38%,rgba(10,20,48,.72) 100%),
+    radial-gradient(120% 90% at 80% 0%,rgba(45,91,255,.40) 0%,transparent 55%)}
+.hero-in{position:relative;z-index:2;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.26);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;margin-bottom:24px;backdrop-filter:blur(6px)}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#5BE38A;box-shadow:0 0 0 4px rgba(91,227,138,.25)}
+.hero h1{font-size:clamp(34px,5.6vw,62px);font-weight:800;line-height:1.16;letter-spacing:-.03em;margin-bottom:22px}
+.hero h1 .hl{color:#2F62FF;text-shadow:0 2px 24px rgba(47,98,255,.55)}
+.hero p.lead{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.86);max-width:560px;margin-bottom:36px;font-weight:400}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-actions .btn{padding:16px 28px;font-size:16px}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:12px;letter-spacing:.18em;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint .bar{width:1px;height:38px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%,100%{opacity:.3;transform:scaleY(.4);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
 
-  .hstats{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-  .hst{padding:32px 8px 0;border-right:1px solid var(--line)}
-  .hst:last-child{border-right:0}
-  .hst .v{font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1;display:flex;align-items:baseline;gap:3px;color:#fff}
-  .hst .v .u{font-size:.42em;color:var(--blue-bright);font-weight:700}
-  .hst .l{margin-top:12px;font-size:14px;color:var(--mute)}
+/* ================= SECTION 공통 ================= */
+.sec{padding:96px 0;position:relative}
+.sec-paper{background:var(--paper)}
+.sec-ice{background:linear-gradient(180deg,var(--paper) 0%,var(--ice) 100%)}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.eyebrow{display:inline-block;color:var(--blue);font-weight:700;font-size:14px;letter-spacing:.04em;margin-bottom:14px}
+.eyebrow::before{content:"";display:inline-block;width:22px;height:2px;background:var(--blue);vertical-align:middle;margin-right:9px;border-radius:2px}
+.eyebrow::after{content:"";display:inline-block;width:22px;height:2px;background:var(--blue);vertical-align:middle;margin-left:9px;border-radius:2px}
+.sec-head h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.25;color:var(--navy-900)}
+.sec-head p{margin-top:16px;color:#5b6789;font-size:16.5px}
 
-  /* marquee */
-  .marquee{padding:42px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--navy-850);overflow:hidden;position:relative}
-  .marquee .ml{text-align:center;font-size:12.5px;letter-spacing:.1em;color:var(--mute);margin-bottom:24px;text-transform:uppercase}
-  .track{display:flex;gap:18px;width:max-content;align-items:center;animation:scroll 40s linear infinite}
-  .logo-chip{flex:0 0 auto;height:62px;padding:0 24px;background:#fff;border-radius:14px;display:grid;place-items:center;box-shadow:0 10px 26px -16px rgba(0,0,0,.55)}
-  .logo-chip img{height:28px;width:auto;max-width:150px;object-fit:contain;display:block}
-  .marquee:hover .track{animation-play-state:paused}
-  @keyframes scroll{to{transform:translateX(-50%)}}
+/* ================= STATS ================= */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:-130px;position:relative;z-index:5}
+.stat-card{background:#fff;border-radius:var(--r-lg);padding:34px 26px;text-align:center;box-shadow:var(--shadow);border:1px solid rgba(45,91,255,.06)}
+.stat-card .ico{width:48px;height:48px;border-radius:13px;background:var(--ice);color:var(--blue);display:grid;place-items:center;margin:0 auto 16px}
+.stat-card .val{font-family:var(--num);font-weight:800;font-size:clamp(30px,3.4vw,42px);color:var(--navy-900);line-height:1;letter-spacing:-.02em}
+.stat-card .val .u{font-size:.5em;color:var(--blue);margin-left:3px}
+.stat-card .lbl{margin-top:11px;color:#5b6789;font-size:14.5px;font-weight:600}
 
-  /* section */
-  section{padding:clamp(80px,9vw,116px) 0}
-  .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue-bright);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:18px}
-  .kicker::after{content:"";width:54px;height:1px;background:var(--line)}
-  h2.st{font-size:clamp(28px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:#fff}
+/* ================= 견적 폰목업 섹션 ================= */
+.quote-sec{background:linear-gradient(160deg,#EAF0FF 0%,#DCE7FF 50%,#CFDDFF 100%);overflow:hidden;position:relative}
+.quote-sec::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(91,134,255,.5),transparent 70%);top:-180px;right:-120px;filter:blur(8px)}
+.quote-grid{display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:center;position:relative;z-index:2}
+.quote-copy .eyebrow{margin-bottom:16px}
+.quote-copy h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.22;color:var(--navy-900)}
+.quote-copy h2 .hl{color:var(--blue)}
+.quote-copy p{margin-top:18px;color:#3c4a72;font-size:17px;max-width:480px}
+.qfeat{display:flex;flex-direction:column;gap:14px;margin:30px 0 34px}
+.qfeat li{display:flex;align-items:center;gap:13px;font-weight:600;color:var(--navy-850);font-size:15.5px}
+.qfeat .chk{width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+/* phone mockup */
+.phone{width:320px;margin:0 auto;background:#0E1A3D;border-radius:42px;padding:12px;
+  box-shadow:var(--shadow-lg);position:relative}
+.phone::before{content:"";position:absolute;top:24px;left:50%;transform:translateX(-50%);width:120px;height:26px;background:#0E1A3D;border-radius:0 0 16px 16px;z-index:3}
+.phone-screen{background:#fff;border-radius:32px;overflow:hidden;aspect-ratio:9/19;display:flex;flex-direction:column}
+.ps-top{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:46px 22px 22px;flex:none}
+.ps-top .small{font-size:12px;opacity:.85;font-weight:600}
+.ps-top .big{font-size:20px;font-weight:800;margin-top:4px;letter-spacing:-.02em}
+.ps-body{padding:18px;flex:1;display:flex;flex-direction:column;gap:11px;background:var(--paper)}
+.ps-row{background:#fff;border-radius:13px;padding:13px 14px;box-shadow:0 2px 10px rgba(13,40,120,.05);display:flex;align-items:center;justify-content:space-between}
+.ps-row .l{font-size:13px;font-weight:600;color:#33406b}
+.ps-row .r{font-family:var(--num);font-size:13px;font-weight:700;color:var(--blue)}
+.ps-row.sel{border:1.6px solid var(--blue);box-shadow:0 6px 18px rgba(45,91,255,.18)}
+.ps-pill{display:inline-block;background:var(--ice);color:var(--blue);font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px}
+.ps-total{margin-top:auto;background:var(--navy-900);color:#fff;border-radius:14px;padding:15px 17px;display:flex;align-items:center;justify-content:space-between}
+.ps-total .t{font-size:12px;opacity:.75}
+.ps-total .v{font-family:var(--num);font-size:21px;font-weight:800}
+.ps-total .v .w{font-size:.6em;font-weight:600;margin-left:2px}
 
-  /* WHY + dispatch */
-  .why-grid{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(40px,6vw,72px);align-items:center}
-  .why-lead{margin-top:22px;font-size:17px;color:var(--mute);max-width:46ch}
-  .points{margin-top:38px}
-  .pt{padding:26px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
-  .pt:last-child{border-bottom:0}
-  .pt .n{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue-bright);border:1.5px solid rgba(91,134,255,.4);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
-  .pt h3{font-size:19px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:6px}
-  .pt p{font-size:15px;color:var(--mute)}
+/* ================= 서비스 픽토그램 ================= */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.svc-card{background:#fff;border-radius:var(--r-lg);padding:34px 26px;border:1px solid #eef2fb;transition:.25s;position:relative;overflow:hidden}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.svc-card .ico{width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--ice),#dbe6ff);color:var(--blue);display:grid;place-items:center;margin-bottom:20px;transition:.25s}
+.svc-card:hover .ico{background:var(--blue);color:#fff;transform:scale(1.04)}
+.svc-card h3{font-size:19px;font-weight:700;color:var(--navy-900);margin-bottom:9px;letter-spacing:-.02em}
+.svc-card p{font-size:14.5px;color:#5b6789;line-height:1.6}
+.svc-card .more{margin-top:16px;color:var(--blue);font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:5px}
 
-  .dispatch-card{background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid var(--line);border-radius:22px;padding:30px;position:relative;overflow:hidden;box-shadow:0 30px 70px -40px #000}
-  .dispatch-card::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(45,91,255,.18);filter:blur(50px);top:-40px;right:-40px}
-  .dc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative}
-  .dc-head .t{font-size:13px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:8px}
-  .dc-head .t .live{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse2 2s infinite}
-  @keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
-  .dc-head .meta{font-family:'Archivo';font-size:12px;color:var(--mute)}
-  .dispatch{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;position:relative}
-  .cell{aspect-ratio:1;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;font-family:'Archivo';font-weight:700;font-size:13px;color:var(--mute);background:rgba(140,165,225,.04);transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
-  .cell.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 22px -8px rgba(45,91,255,.8)}
-  .cell.warm{background:rgba(91,134,255,.14);color:var(--blue-bright);border-color:rgba(91,134,255,.35)}
-  .cell.booth{background:rgba(52,211,153,.12);color:#34D399;border:1px dashed rgba(52,211,153,.45);font-size:12px}
-  .dc-cap{margin-top:22px;font-size:13px;color:var(--mute);line-height:1.55;position:relative}
+/* ================= 실사진 갤러리 ================= */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gal-card{border-radius:var(--r-lg);overflow:hidden;position:relative;background:#fff;box-shadow:var(--shadow-sm);transition:.3s}
+.gal-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.gal-card .ph{aspect-ratio:4/3;overflow:hidden}
+.gal-card .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.gal-card:hover .ph img{transform:scale(1.06)}
+.gal-card .cap{padding:20px 22px}
+.gal-card .cap .tag{display:inline-block;background:var(--ice);color:var(--blue);font-size:12px;font-weight:700;padding:4px 11px;border-radius:20px;margin-bottom:10px}
+.gal-card .cap h3{font-size:18px;font-weight:700;color:var(--navy-900);letter-spacing:-.02em}
+.gal-card .cap p{font-size:14px;color:#5b6789;margin-top:6px}
 
-  /* services (light) */
-  .services{background:var(--paper);color:var(--ink)}
-  .services .kicker{color:var(--blue-deep)}
-  .services .kicker::after{background:rgba(10,17,36,.12)}
-  .services h2.st{color:var(--ink)}
-  .svc-head{max-width:600px;margin-bottom:50px}
-  .svc-head p{margin-top:16px;font-size:17px;color:#5A6890}
-  .svc3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .svc{position:relative;border-radius:22px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;color:#fff;isolation:isolate;transition:transform .35s cubic-bezier(.2,.6,.2,1),box-shadow .35s;box-shadow:0 18px 44px -28px rgba(10,20,60,.6)}
-  .svc:hover{transform:translateY(-8px);box-shadow:0 32px 60px -30px rgba(20,50,130,.7)}
-  .svc .bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
-  .svc:nth-child(1) .bg{background:linear-gradient(160deg,#1B4DE0,#072c79)}
-  .svc:nth-child(2) .bg{background:linear-gradient(160deg,#2D5BFF,#0a266b)}
-  .svc:nth-child(3) .bg{background:linear-gradient(160deg,#4D7CFF,#0d3a96)}
-  .svc .bg img{transition:transform .7s cubic-bezier(.2,.6,.2,1)}
-  .svc:hover .bg img{transform:scale(1.07)}
-  .svc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(transparent 26%,rgba(5,12,35,.42) 56%,rgba(3,9,28,.92))}
-  .svc .tag{position:absolute;top:16px;left:16px;font-size:11.5px;font-weight:700;color:#fff;background:rgba(10,22,55,.4);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.24);padding:6px 13px;border-radius:30px}
-  .svc .ix{position:absolute;top:15px;right:18px;font-family:'Archivo';font-weight:800;font-size:15px;color:rgba(255,255,255,.9)}
-  .svc h3{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:9px}
-  .svc p{font-size:14px;color:rgba(255,255,255,.88);line-height:1.6}
-  .svc .go{margin-top:18px;font-size:13.5px;font-weight:700;display:inline-flex;align-items:center;gap:8px;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:9px 17px;border-radius:30px;width:fit-content;transition:background .2s,border-color .2s,gap .2s}
-  .svc:hover .go{background:var(--blue);border-color:var(--blue);gap:11px}
+/* ================= 차량 라인업 (SEO) ================= */
+.veh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.veh-card{background:#fff;border-radius:var(--r);padding:28px 22px;text-align:center;border:1.4px solid #eef2fb;transition:.25s}
+.veh-card:hover{border-color:var(--blue);transform:translateY(-5px);box-shadow:var(--shadow)}
+.veh-card .ico{width:64px;height:64px;border-radius:50%;background:var(--paper);color:var(--blue);display:grid;place-items:center;margin:0 auto 16px;transition:.25s}
+.veh-card:hover .ico{background:var(--blue);color:#fff}
+.veh-card h3{font-size:17px;font-weight:700;color:var(--navy-900)}
+.veh-card p{font-size:13px;color:#7a87a8;margin-top:6px}
+.veh-soon{opacity:.55}
+.veh-soon .badge{font-size:10.5px;background:#eef2fb;color:#93A1C7;border-radius:10px;padding:2px 8px;font-weight:700;display:inline-block;margin-top:8px}
 
-  /* reviews */
-  .rev-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:48px;flex-wrap:wrap}
-  .rev-head a{font-size:14.5px;font-weight:600;color:var(--blue-bright);white-space:nowrap}
-  .rev3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .rev{background:var(--navy-800);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s}
-  .rev:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.4)}
-  .rev .ph{aspect-ratio:16/10;background:linear-gradient(135deg,#16224a,#0c1530);position:relative;display:grid;place-items:center;border-bottom:1px solid var(--line)}
-  .rev .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .rev .ph .no{font-size:12.5px;color:var(--mute)}
-  .rev .badge{position:absolute;top:14px;left:14px;background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:6px;z-index:2}
-  .rev .rb{padding:24px}
-  .rev h3{font-size:18px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:10px;line-height:1.4}
-  .rev p{font-size:14px;color:var(--mute);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  /* trust strip */
-  .trust{padding:24px 0;border-bottom:1px solid var(--line)}
-  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-  .tb{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--ice);background:rgba(140,165,225,.06);border:1px solid var(--line);padding:9px 16px;border-radius:30px}
-  .tb b{color:var(--blue-bright);font-weight:800;font-family:'Archivo',sans-serif}
-  /* recommend */
-  .rec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  .rc{background:var(--navy-800);border:1px solid var(--line);border-radius:14px;padding:22px 18px;transition:transform .25s,border-color .25s}
-  .rc:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
-  .rc .ic{font-size:23px;margin-bottom:10px;display:block;line-height:1}
-  .rc h3{font-size:15.5px;font-weight:700;color:#fff;margin-bottom:5px;letter-spacing:-.01em}
-  .rc p{font-size:13px;color:var(--mute);line-height:1.55}
-  /* process */
-  .proc{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-  .ps{padding-top:16px;border-top:2px solid var(--line)}
-  .ps:first-child{border-top-color:var(--blue)}
-  .ps .pn{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--blue-bright);margin-bottom:9px}
-  .ps h4{font-size:15px;font-weight:700;color:#fff;line-height:1.4}
-  /* 라이트 존 — 서비스 이후 흰 배경 + 블루 (히어로·배차격자는 다크 유지) */
-  .lite{background:var(--paper);color:var(--ink)}
-  .lite .kicker{color:var(--blue-deep)}
-  .lite .kicker::after{background:rgba(10,17,36,.12)}
-  .lite h2.st{color:var(--ink)}
-  .lite .rev-head a{color:var(--blue-deep)}
-  .lite .rc{background:#fff;border-color:rgba(10,17,36,.09)}
-  .lite .rc:hover{border-color:rgba(45,91,255,.4)}
-  .lite .rc h3{color:var(--ink)}
-  .lite .rc p{color:#5A6890}
-  .lite .rev{background:#fff;border-color:rgba(10,17,36,.09)}
-  .lite .rev:hover{border-color:rgba(45,91,255,.4)}
-  .lite .rev .ph{background:linear-gradient(135deg,#E8EEFB,#DCE6F8);border-bottom:1px solid rgba(10,17,36,.08)}
-  .lite .rev .ph .no{color:#5A6890}
-  .lite .rev h3{color:var(--ink)}
-  .lite .rev p{color:#5A6890}
-  .lite .ps{border-top-color:rgba(10,17,36,.14)}
-  .lite .ps:first-child{border-top-color:var(--blue)}
-  .lite .ps .pn{color:var(--blue-deep)}
-  .lite .ps h4{color:var(--ink)}
-  /* review stars */
-  .stars{color:#FFC83D;font-size:13.5px;letter-spacing:2px;margin-bottom:9px;line-height:1}
-  @media(max-width:900px){.rec-grid{grid-template-columns:1fr 1fr}.proc{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){.proc{grid-template-columns:1fr}}
+/* ================= 고객사 로고월 ================= */
+.clients{background:var(--paper)}
+.logo-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:8px}
+.logo-chip{background:#fff;border:1px solid #eef2fb;border-radius:16px;
+  aspect-ratio:3/2;display:grid;place-items:center;padding:18px;transition:.25s}
+.logo-chip img{max-width:100%;max-height:48px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.62;transition:.25s}
+.logo-chip:hover{box-shadow:var(--shadow-sm);transform:translateY(-3px);border-color:#dbe6ff}
+.logo-chip:hover img{filter:none;opacity:1}
 
-  /* CTA */
-  .cta-wrap{padding:clamp(80px,9vw,116px) 0;background:var(--paper)}
-  .cta{max-width:var(--max);margin:0 auto;border-radius:26px;padding:clamp(44px,6vw,72px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:center}
-  .cta::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.12);top:-100px;right:-60px;filter:blur(10px)}
-  .cta h2{font-size:clamp(27px,3.8vw,42px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.14;position:relative}
-  .cta p{margin-top:16px;font-size:16.5px;color:rgba(255,255,255,.85);max-width:40ch;position:relative}
-  .cta .act{display:flex;flex-direction:column;gap:12px;position:relative}
-  .cta .c1{background:#fff;color:var(--blue-deep);padding:18px 28px;border-radius:12px;font-weight:800;font-size:17px;text-align:center;transition:transform .15s}
-  .cta .c1:hover{transform:translateY(-2px)}
-  .cta .c2{border:1.5px solid rgba(255,255,255,.5);color:#fff;padding:16px 28px;border-radius:12px;font-weight:600;font-size:15px;text-align:center;transition:background .2s;font-family:'Archivo'}
-  .cta .c2:hover{background:rgba(255,255,255,.14)}
+/* ===== 현장 운영 (다크) ===== */
+.why-sec{background:var(--navy-900);color:#fff;position:relative;overflow:hidden}
+.why-sec::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(45,91,255,.16),transparent 70%);top:-180px;left:-120px}
+.why-grid{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(40px,6vw,72px);align-items:center;position:relative;z-index:2}
+/* 강조 에어브로우(빨강 + 펄스) */
+.why-kicker{display:inline-flex;align-items:center;gap:11px;font-size:14px;font-weight:800;letter-spacing:.01em;color:#FF6B57;margin-bottom:18px}
+.why-kicker .kdot{width:8px;height:8px;border-radius:50%;background:#FF6B57;animation:kpulse 1.7s ease-out infinite}
+.why-kicker::after{content:"";width:52px;height:1px;background:linear-gradient(90deg,rgba(255,107,87,.7),transparent)}
+@keyframes kpulse{0%{box-shadow:0 0 0 0 rgba(255,107,87,.55)}70%{box-shadow:0 0 0 9px rgba(255,107,87,0)}100%{box-shadow:0 0 0 0 rgba(255,107,87,0)}}
+.why-sec h2.st{font-size:clamp(28px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:#fff}
+.why-lead{margin-top:22px;font-size:17px;color:var(--mute);max-width:46ch;line-height:1.7}
+.points{margin-top:38px}
+.pt{padding:26px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.pt:last-child{border-bottom:0}
+.pt .n{font-family:var(--num);font-weight:800;font-size:14px;color:var(--blue-bright);border:1.5px solid rgba(91,134,255,.4);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
+.pt h3{font-size:19px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:6px}
+.pt p{font-size:15px;color:var(--mute);line-height:1.6}
 
-  /* footer */
-  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:66px 0 40px}
-  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line)}
-  .foot-brand .brand{margin-bottom:16px}
-  .foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
-  .foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
-  .foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
-  .foot-col a:hover{color:var(--blue-bright)}
-  .biz{padding-top:26px;font-size:13px;color:var(--mute);line-height:1.8}
-  .biz b{color:var(--ice);font-weight:600}
-  .copy{margin-top:12px;font-size:12.5px;color:rgba(147,161,199,.6)}
+/* ===== 실시간 배차 카드 ===== */
+.dispatch-card{background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid var(--line);border-radius:22px;padding:30px;position:relative;overflow:hidden;box-shadow:0 30px 70px -40px #000}
+.dispatch-card::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(45,91,255,.18);filter:blur(50px);top:-40px;right:-40px}
+.dc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative;flex-wrap:wrap;gap:8px}
+.dc-head .t{font-size:13px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:8px}
+.dc-head .t .live{width:8px;height:8px;border-radius:50%;background:#34D399;animation:pulse2 2s infinite}
+@keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.dc-head .meta{font-family:var(--num);font-size:12px;color:var(--mute)}
+.dispatch{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;position:relative}
+.cell{aspect-ratio:1;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:13px;color:var(--mute);background:rgba(140,165,225,.04);transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
+.cell.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 22px -8px rgba(45,91,255,.8)}
+.cell.warm{background:rgba(91,134,255,.14);color:var(--blue-bright);border-color:rgba(91,134,255,.35)}
+.cell.booth{background:rgba(52,211,153,.12);color:#34D399;border:1px dashed rgba(52,211,153,.45);font-size:12px}
+.dc-cap{margin-top:22px;font-size:13px;color:var(--mute);line-height:1.55;position:relative}
 
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1)}
-  .reveal.in{opacity:1;transform:none}
+/* ===== 음식 몽타주 (쿡앤컴퍼니式 → 우리 블루) ===== */
+.montage-sec{background:linear-gradient(165deg,#EAF0FF 0%,#DCE7FF 55%,#CFDDFF 100%);overflow:hidden;text-align:center;position:relative}
+.montage-sec::before{content:"";position:absolute;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(91,134,255,.30),transparent 70%);top:-230px;left:50%;transform:translateX(-50%)}
+.montage-sec .wrap{position:relative;z-index:2}
+.montage-head h2{font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.22;color:var(--navy-900)}
+.montage-head h2 .hl{color:var(--blue)}
+.montage-head p{margin-top:16px;color:#3c4a72;font-size:16.5px;max-width:580px;margin-left:auto;margin-right:auto}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
-  .drawer{position:fixed;inset:70px 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line)}
-  .drawer.open{transform:translateY(0)}
-  .drawer a{display:block;padding:14px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
-  .drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
+.montage-stage{position:relative;height:560px;margin:48px auto 0;max-width:920px}
+/* 뒤 SINCE 아웃라인 */
+.m-since{position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);z-index:1;pointer-events:none;white-space:nowrap;
+  font-family:var(--num);font-weight:800;letter-spacing:-.04em;line-height:1;
+  font-size:clamp(60px,13vw,150px);color:transparent;-webkit-text-stroke:2px rgba(45,91,255,.22)}
+/* 중앙 음식 영상 카드 */
+.m-video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
+  width:clamp(228px,30vw,300px);aspect-ratio:3/4;border-radius:30px;overflow:hidden;
+  border:5px solid #fff;box-shadow:var(--shadow-lg);animation:floaty 6s ease-in-out infinite}
+.m-video video{width:100%;height:100%;object-fit:cover;display:block}
+/* 떠다니는 원형 음식 컷 */
+.m-bubble{position:absolute;z-index:3;border-radius:50%;overflow:hidden;background:#fff;border:4px solid #fff;
+  box-shadow:0 18px 40px rgba(13,40,120,.18);animation:bob 5.6s ease-in-out infinite}
+.m-bubble img{width:100%;height:100%;object-fit:cover;display:block}
+.m-bubble.b1{width:142px;height:142px;top:5%;left:9%;animation-duration:5.5s}
+.m-bubble.b2{width:120px;height:120px;top:0;right:11%;animation-duration:6.3s;animation-delay:.4s}
+.m-bubble.b3{width:162px;height:162px;bottom:7%;left:3%;animation-duration:6.9s;animation-delay:.2s}
+.m-bubble.b4{width:132px;height:132px;bottom:1%;right:5%;animation-duration:5.9s;animation-delay:.6s}
+.m-bubble.b5{width:96px;height:96px;top:41%;left:-1%;animation-duration:6.5s;animation-delay:.9s}
+.m-bubble.b6{width:106px;height:106px;top:45%;right:-1%;animation-duration:5.2s;animation-delay:.3s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+.montage-cta{margin-top:42px}
 
-  /* 카카오톡 상담 플로팅 버튼 */
-  .kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
-  .kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
-  .kakao-fab svg{width:21px;height:21px}
-  @media(max-width:560px){.kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}}
-  /* 3초 견적완성 플로팅 버튼 (카톡 버튼 위에 스택) */
-  .quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
-  .quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
-  .quote-fab svg{width:18px;height:18px}
-  /* 소셜·전화 (우측, 3초견적 위로) */
-  .fab-social{position:fixed;right:20px;bottom:148px;z-index:70;display:flex;flex-direction:column;gap:9px}
-  .fab-social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);transition:transform .15s}
-  .fab-social a:hover{transform:translateY(-2px) scale(1.05)}
-  .fab-social .blog{background:#03C75A}
-  .fab-social .blog b{font-size:11px;font-weight:800;font-family:'Archivo',sans-serif}
-  .fab-social .insta{background:radial-gradient(circle at 30% 107%,#fdf497,#fd5949 45%,#d6249f 70%,#285AEB 110%)}
-  .fab-social .yt{background:#FF0000}
-  .fab-social .tel{background:var(--blue)}
-  .fab-social svg{width:20px;height:20px}
-  @media(max-width:560px){.fab-social{right:14px;bottom:150px;gap:8px}.fab-social a{width:38px;height:38px}}
-  @media(max-width:560px){.quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}}
+@media(max-width:768px){
+  .montage-stage{height:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:34px}
+  .m-video{position:static;transform:none;flex:0 0 100%;width:208px;margin:0 auto;animation:none;order:1}
+  .m-bubble{position:static;width:84px;height:84px;animation:none;order:2}
+  .m-bubble.b5,.m-bubble.b6{display:none}
+  .m-since{position:static;transform:none;flex:0 0 100%;order:3;margin-top:8px}
+}
 
-  @media(max-width:900px){
-    .nav-links,.tel{display:none}.menu-btn{display:block}
-    .why-grid,.svc3,.rev3,.cta{grid-template-columns:1fr}
-    .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
-  }
-  @media(max-width:600px){
-    /* 모바일: 영상을 풀폭 배너로, 텍스트는 그 아래로 */
-    .hero{padding:84px 0 52px}
-    .hero-bg{position:relative;inset:auto;width:100%;aspect-ratio:16/10;overflow:hidden;margin-bottom:28px}
-    .hero-vid{opacity:1}
-    .hero-veil{background:linear-gradient(180deg,rgba(6,12,31,0),rgba(6,12,31,.1) 62%,rgba(6,12,31,.5))}
-    .hero .glow,.hero .grid-bg{display:none}
-    .eb{margin-bottom:16px;font-size:12.5px}
-    h1.ht{font-size:clamp(28px,7.6vw,40px);line-height:1.14;max-width:100%}
-    .hlead{font-size:16.5px;margin-top:15px}
-    .hsub{font-size:14.5px;margin-top:10px;max-width:100%}
-    .hbtns{flex-direction:column;align-items:stretch;gap:10px;margin-top:24px}
-    .b1{justify-content:center}.b2{text-align:center}
-    .hstats{margin-top:30px}
-    .hst{padding:18px 6px 0}
-    .hst .v{font-size:clamp(20px,6vw,30px)}
-    .hst .l{font-size:11px;margin-top:8px}
-    .foot-top{grid-template-columns:1fr}
-  }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.track{animation:none}.hero-vid{display:none}}
-  :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
-  /* 로고 배지 */
-  .brand-logo{display:inline-flex;align-items:center}
-  .brand-logo img{height:27px;width:auto;display:block}
-  /* 추천 — 블루 풀배경 밴드 */
-  .recband{background:linear-gradient(135deg,#2D5BFF,#1E45D6);border-radius:30px;padding:clamp(34px,5vw,60px);position:relative;overflow:hidden}
-  .recband::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.12);top:-130px;right:-90px}
-  .recband>*{position:relative;z-index:1}
-  .recband .rc{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}
-  .recband .rc:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.4);transform:translateY(-4px)}
-  .recband .rc h3{color:#fff}
-  .recband .rc p{color:rgba(255,255,255,.82)}
-  .recband .rc .ic{color:#fff;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.14);margin-bottom:12px}
-  .recband .rc .ic svg{width:23px;height:23px}
+/* ================= 후기 ================= */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev-card{background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:.3s;border:1px solid #eef2fb}
+.rev-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.rev-card .ph{aspect-ratio:16/9;overflow:hidden;background:var(--paper)}
+.rev-card .ph img{width:100%;height:100%;object-fit:cover}
+.rev-card .bd{padding:22px}
+.rev-card .stars{color:#FFB400;font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.rev-card h3{font-size:16.5px;font-weight:700;color:var(--navy-900);letter-spacing:-.02em}
+.rev-card p{font-size:14px;color:#5b6789;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rev-card .by{margin-top:14px;font-size:13px;color:#93A1C7;font-weight:600}
+
+/* ================= CTA 밴드 ================= */
+.cta-band{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.06);top:-300px;left:-150px}
+.cta-band::after{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.05);bottom:-200px;right:-100px}
+.cta-band .wrap{position:relative;z-index:2}
+.cta-band h2{font-size:clamp(26px,3.6vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.25}
+.cta-band p{margin-top:16px;color:rgba(255,255,255,.85);font-size:17px}
+.cta-band .acts{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-band .btn-primary{background:#fff;color:var(--blue);box-shadow:0 14px 34px rgba(0,0,0,.2)}
+.cta-band .btn-primary:hover{background:var(--ice)}
+
+/* ================= FOOTER ================= */
+.ft{background:var(--navy-900);color:rgba(255,255,255,.62);padding:64px 0 40px;font-size:14px}
+.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-brand .logo{color:#fff;margin-bottom:18px}
+.ft-brand p{max-width:320px;line-height:1.7;font-size:13.5px}
+.ft-col h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px}
+.ft-col a{display:block;padding:6px 0;font-size:14px;transition:.2s}
+.ft-col a:hover{color:var(--blue-bright)}
+.ft-biz{padding-top:28px;font-size:12.5px;color:rgba(255,255,255,.45);line-height:1.9}
+.ft-biz .num{color:rgba(255,255,255,.6)}
+
+/* ================= 플로팅 ================= */
+.float{position:fixed;right:18px;bottom:18px;z-index:90;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.float-quote{background:var(--blue);color:#fff;border-radius:16px;padding:14px 20px;font-weight:800;font-size:15px;
+  box-shadow:0 14px 34px rgba(45,91,255,.4);display:flex;align-items:center;gap:9px;transition:.2s}
+.float-quote:hover{background:var(--blue-deep);transform:translateY(-3px)}
+.float-kakao{background:#FEE500;color:#3C1E1E;border-radius:14px;padding:12px 18px;font-weight:700;font-size:14px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;transition:.2s}
+.float-kakao:hover{transform:translateY(-3px)}
+.float-mini{display:flex;gap:8px}
+.fm{width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);display:grid;place-items:center;color:var(--navy-850);transition:.2s}
+.fm:hover{background:var(--blue);color:#fff;transform:translateY(-3px)}
+
+/* ================= REVEAL 애니 ================= */
+.reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ================= 모바일 ================= */
+.mob-nav{position:fixed;inset:0;background:var(--navy-900);z-index:200;transform:translateX(100%);transition:.35s;padding:90px 28px 40px;display:flex;flex-direction:column;gap:6px}
+.mob-nav.open{transform:none}
+.mob-nav a{color:#fff;font-size:19px;font-weight:600;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob-nav .mclose{position:absolute;top:26px;right:24px;background:none;border:none;color:#fff;cursor:pointer}
+.mob-nav .mtel{margin-top:24px;color:var(--blue-bright);font-weight:800;font-size:22px}
+
+@media(max-width:1024px){
+  .stats{grid-template-columns:repeat(2,1fr);margin-top:-90px}
+  .quote-grid{grid-template-columns:1fr;gap:46px}
+  .quote-grid .phone-col{order:-1}
+  .svc-grid,.veh-grid{grid-template-columns:repeat(2,1fr)}
+  .logo-wall{grid-template-columns:repeat(3,1fr)}
+  .why-grid{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:768px){
+  .nav,.hd-cta .tel,.hd-cta .btn{display:none}
+  .menu-toggle{display:block}
+  .sec{padding:64px 0}
+  .stats{grid-template-columns:1fr 1fr;gap:12px;margin-top:-70px}
+  .stat-card{padding:24px 16px}
+  .gal-grid,.rev-grid{grid-template-columns:1fr}
+  .dispatch-card{padding:24px 20px}
+  .ft-top{grid-template-columns:1fr;gap:30px}
+  .float-quote span.long{display:none}
+}
+/* ===== 히어로 스탯 (카운트업) ===== */
+.hero-stats{display:flex;align-items:flex-start;gap:clamp(18px,4vw,44px);margin-top:46px;flex-wrap:wrap}
+.hstat-v{display:flex;align-items:baseline;gap:3px}
+.hnum{font-family:var(--num);font-size:clamp(30px,4.4vw,48px);font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+.hsuf{font-family:var(--num);font-size:clamp(15px,2vw,22px);font-weight:700;color:var(--blue-bright)}
+.hlbl{display:block;margin-top:8px;font-size:13px;color:rgba(255,255,255,.78);font-weight:500}
+.hdiv{width:1px;height:46px;background:rgba(255,255,255,.22);align-self:center}
+
+/* ===== 고객사 로고 마퀴 ===== */
+.marquee-sec{padding:46px 0;background:#fff;overflow:hidden;border-bottom:1px solid #eef2fb}
+.marquee-label{text-align:center;color:var(--mute);font-size:12.5px;font-weight:700;letter-spacing:.14em;margin-bottom:28px}
+.marquee{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.marquee-track{display:flex;align-items:center;gap:54px;width:max-content;animation:marq 45s linear infinite}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-track img{height:40px;width:auto;object-fit:contain;opacity:.92;transition:.25s}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track img:hover{opacity:1;transform:scale(1.06)}
+
+/* ===== 폰 터치 모션 ===== */
+.phone-screen{position:relative}
+.ps-row{border:1.6px solid transparent}
+.ps-row.sel{border-color:var(--blue);box-shadow:0 6px 18px rgba(45,91,255,.18)}
+.ps-cta{margin-top:2px;background:var(--blue);color:#fff;border:none;border-radius:12px;padding:12px;font-weight:700;font-size:14px;width:100%;font-family:inherit;cursor:pointer;opacity:.45;transition:opacity .3s,transform .15s}
+.ps-cta.active{opacity:1}
+.ps-cta.tap{transform:scale(.95)}
+.ps-total{opacity:0;transform:translateY(8px);transition:.4s}
+.ps-total.show{opacity:1;transform:none}
+.finger{position:absolute;width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle at 34% 32%,rgba(255,255,255,.95),rgba(45,91,255,.55));
+  border:2px solid rgba(255,255,255,.85);box-shadow:0 6px 18px rgba(6,12,31,.4);
+  top:60%;left:60%;opacity:0;pointer-events:none;z-index:10;
+  transform:translate(-50%,-50%);
+  transition:top .65s cubic-bezier(.5,0,.25,1),left .65s cubic-bezier(.5,0,.25,1),opacity .3s,transform .14s}
+.finger.tap{transform:translate(-50%,-50%) scale(.68)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
-<header id="hdr">
-  <div class="wrap nav">
-    <a href="index.html" class="brand-logo" aria-label="푸드트럭하우스 홈"><img src="logo-white.png" alt="푸드트럭하우스"></a>
-    <nav class="nav-links">
-      <div class="has-sub"><a tabindex="0">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html">회사소개</a></div></div><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
+<!-- ================= HEADER ================= -->
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+    <a href="/index.html" class="logo">
+      <img src="logo-wordmark.png" alt="푸드트럭하우스" class="logo-img">
+    </a>
+
+    <nav class="nav">
+      <div class="has-drop">
+        <a href="/about.html">소개 ▾</a>
+        <div class="drop">
+          <a href="/about.html">대표 인사말</a>
+          <a href="/company.html">회사소개</a>
+        </div>
+      </div>
+      <a href="/service.html">서비스</a>
+      <div class="has-drop">
+        <a href="/vehicle-coffee.html">차량 ▾</a>
+        <div class="drop">
+          <a href="/vehicle-foodtruck.html">푸드트럭</a>
+          <a href="/vehicle-coffee.html">커피차</a>
+          <a href="/vehicle-snack.html">간식차</a>
+          <a href="/vehicle-bunsik.html">분식차</a>
+        </div>
+      </div>
+      <a href="/menu.html">메뉴</a>
+      <a href="/review.html">후기</a>
+      <a href="/news.html">공지</a>
     </nav>
-    <div class="nav-right">
-      <a href="tel:18776901" class="tel">1877-6901</a>
-      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
+
+    <div class="hd-cta">
+      <a href="tel:1877-6901" class="tel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="num">1877-6901</span>
+      </a>
+      <a href="https://foodtruck-quote.vercel.app/" class="btn btn-primary">3초 견적완성</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </div>
-    <button class="menu-btn" id="menuBtn" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="drawer" id="drawer">
-  <a href="about.html">인사말</a><a href="company.html">회사소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a><a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 →</a>
+
+<!-- 모바일 네비 -->
+<div class="mob-nav" id="mobNav">
+  <button class="mclose" id="mobClose" aria-label="닫기">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <a href="/about.html">대표 인사말</a>
+  <a href="/company.html">회사소개</a>
+  <a href="/service.html">서비스</a>
+  <a href="/vehicle-foodtruck.html">푸드트럭</a>
+  <a href="/vehicle-coffee.html">커피차</a>
+  <a href="/vehicle-snack.html">간식차</a>
+  <a href="/vehicle-bunsik.html">분식차</a>
+  <a href="/menu.html">메뉴</a>
+  <a href="/review.html">후기</a>
+  <a href="/news.html">공지</a>
+  <a href="tel:1877-6901" class="mtel">1877-6901</a>
+  <a href="https://foodtruck-quote.vercel.app/" class="btn btn-primary" style="margin-top:18px;justify-content:center">3초 견적완성</a>
 </div>
 
-<!-- 3초 견적완성 플로팅 버튼 (추후 챗봇 연동) -->
-<a class="quote-fab" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="3초 견적완성">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-  <span>3초 견적완성</span>
-</a>
-
-<!-- 카카오톡 상담 플로팅 버튼 -->
-<a class="kakao-fab" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.76 6.78-.21.78-.76 2.82-.87 3.26-.14.55.2.54.42.39.17-.11 2.71-1.84 3.81-2.59.6.09 1.23.13 1.88.13 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-  <span>카톡 상담</span>
-</a>
-
-<!-- HERO -->
+<!-- ================= HERO (영상 배경 유지) ================= -->
 <section class="hero">
-  <div class="hero-bg">
-    <video class="hero-vid" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
-      <source src="https://foodtruckhouse.com/assets/videos/main.mp4" type="video/mp4">
-    </video>
-    <div class="hero-veil"></div>
-  </div>
-  <div class="glow g1"></div><div class="glow g2"></div><div class="grid-bg"></div>
-  <div class="wrap">
-    <span class="eb"><span class="dot"></span>10년 경력 · 본사 직영 관리 시스템</span>
-    <h1 class="ht">젊음이 만든 <span class="grad">열정</span>,<br>깨끗한 푸드트럭의 기준.</h1>
-    <p class="hlead">기업 행사 케이터링, <b>8,000건의 현장</b>으로 증명합니다.</p>
-    <p class="hsub">기업 행사부터 건설현장·축제·페스티벌까지, 현장을 가리지 않습니다. 인원과 날짜만 알려주시면 가장 많이 굴려본 팀이 가장 빠르게 견적으로 답합니다.</p>
-    <div class="hbtns">
-      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="b1">3초 견적완성 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="review.html" class="b2">현장 후기 보기</a>
+  <video class="hero-video" autoplay muted loop playsinline
+         poster="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg">
+    <source src="https://foodtruckhouse.com/assets/videos/main.mp4" type="video/mp4">
+  </video>
+  <div class="hero-scrim"></div>
+
+  <div class="wrap hero-in">
+    <span class="hero-eyebrow"><span class="dot"></span> 고객사 4,000곳이 선택한 푸드트럭 케이터링</span>
+    <h1>젊음이 만든 <span class="hl">열정</span>,<br>깨끗한 푸드트럭의 기준</h1>
+    <p class="lead">기업행사·축제·브랜드행사까지. 직영 15대와 전국 협력 400여 대로, 어떤 현장이든 빠르고 깔끔하게 채웁니다.</p>
+    <div class="hero-actions">
+      <a href="https://foodtruck-quote.vercel.app/" class="btn btn-primary">
+        3초 견적완성
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:1877-6901" class="btn btn-ghost">전화상담 1877-6901</a>
     </div>
-    <div class="hstats">
-      <div class="hst"><div class="v"><span class="num" data-count="4000">0</span><span class="u">곳+</span></div><div class="l">함께한 고객사</div></div>
-      <div class="hst"><div class="v"><span class="num" data-count="8000">0</span><span class="u">건+</span></div><div class="l">누적 행사 운영</div></div>
-      <div class="hst"><div class="v"><span class="num" data-count="92">0</span><span class="u">%</span></div><div class="l">서비스 재이용률</div></div>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-v"><span class="hnum" data-target="4000">0</span><span class="hsuf">곳+</span></div>
+        <span class="hlbl">함께한 고객사</span>
+      </div>
+      <div class="hdiv"></div>
+      <div class="hstat">
+        <div class="hstat-v"><span class="hnum" data-target="8000">0</span><span class="hsuf">건+</span></div>
+        <span class="hlbl">누적 행사 운영</span>
+      </div>
+      <div class="hdiv"></div>
+      <div class="hstat">
+        <div class="hstat-v"><span class="hnum" data-target="92">0</span><span class="hsuf">%</span></div>
+        <span class="hlbl">서비스 재이용률</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint"><span>SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- ================= 고객사 로고 마퀴 (영상 바로 하단) ================= -->
+<section class="marquee-sec">
+  <div class="wrap"><p class="marquee-label">우리가 함께한 고객들</p></div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_1.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_2.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_3.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_4.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_5.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_6.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_7.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_8.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_9.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_10.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_11.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_12.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_13.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_14.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_15.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_16.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_17.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_18.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_19.png" alt="고객사">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_20.png" alt="고객사">
+      <!-- 무한 루프용 복제 -->
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_1.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_2.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_3.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_4.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_5.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_6.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_7.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_8.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_9.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_10.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_11.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_12.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_13.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_14.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_15.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_16.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_17.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_18.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_19.png" alt="고객사" aria-hidden="true">
+      <img src="https://foodtruckhouse.com/assets/images/main/logo_20.png" alt="고객사" aria-hidden="true">
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <p class="ml">우리가 함께한 고객들</p>
-  <div class="track" id="track"><!-- 고객사 로고는 스크립트로 채웁니다 --></div>
-</div>
-
-<!-- TRUST -->
-<div class="trust">
+<!-- ================= 견적 폰목업 섹션 ================= -->
+<section class="sec quote-sec">
   <div class="wrap">
-    <span class="tb">✓ 본사 직영 운영</span>
-    <span class="tb">✓ 100% 합법 푸드트럭</span>
-    <span class="tb">직영 트럭 <b>15대</b></span>
-    <span class="tb">전국 협력 <b>400대+</b></span>
-    <span class="tb">물류창고 <b>100평+</b></span>
-    <span class="tb">재이용률 <b>92%</b></span>
-  </div>
-</div>
+    <div class="quote-grid">
+      <div class="quote-copy reveal">
+        <span class="eyebrow" style="margin-left:0">FOODTRUCKHOUSE QUOTE</span>
+        <h2>전화 없이,<br><span class="hl">3초 만에 견적</span> 완성</h2>
+        <p>메뉴·인원·지역만 고르면 출장비까지 포함된 예상 견적이 즉시 나옵니다. 카카오 알림톡으로 바로 받아보세요.</p>
+        <ul class="qfeat">
+          <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>메뉴 75종에서 골라 담는 즉석 구성</li>
+          <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>전국 10개 권역 출장비 자동 반영</li>
+          <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>행사 메뉴판 시안까지 무료 제공</li>
+        </ul>
+        <a href="https://foodtruck-quote.vercel.app/" class="btn btn-primary">지금 견적 받기
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
 
-<!-- WHY + DISPATCH -->
-<section>
+      <!-- PHONE MOCKUP (견적챗봇 화면) -->
+      <div class="phone-col reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ps-top">
+              <div class="small">FOODTRUCKHOUSE</div>
+              <div class="big">3초 견적완성</div>
+            </div>
+            <div class="ps-body">
+              <span class="ps-pill">메뉴를 선택하세요</span>
+              <div class="ps-row" id="opt1"><span class="l">미니 핫도그 · 200개</span><span class="r">₩ 380,000</span></div>
+              <div class="ps-row" id="opt2"><span class="l">아메리카노 · 150잔</span><span class="r">₩ 285,000</span></div>
+              <div class="ps-row" id="opt3"><span class="l">출장 · 경기 남부</span><span class="r">+₩ 100,000</span></div>
+              <button class="ps-cta" id="psCta">견적 확인</button>
+              <div class="ps-total" id="psTotal">
+                <span class="t">예상 견적</span>
+                <span class="v"><span class="num" id="psNum">0</span><span class="w">원</span></span>
+              </div>
+            </div>
+            <div class="finger" id="finger"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 메뉴 (음식 몽타주) ================= -->
+<section class="sec montage-sec">
+  <div class="wrap">
+    <div class="montage-head reveal">
+      <span class="eyebrow">OUR MENU</span>
+      <h2>메뉴가 곧 분위기.<br><span class="hl">골라 담는 재미</span>로 채웁니다</h2>
+      <p>현장에서 바로 조리하는 75종 — 츄러스·닭강정·떡볶이부터 갓 내린 커피까지. 행사 성격에 맞춰 골라 담으세요.</p>
+    </div>
+
+    <div class="montage-stage reveal">
+      <span class="m-since">SINCE 2016</span>
+
+      <!-- ▼ 중앙 음식 영상 (임시: 메인 영상 — '음식 클로즈업 영상'으로 src만 교체) ▼ -->
+      <div class="m-video">
+        <video autoplay muted loop playsinline poster="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg">
+          <source src="https://foodtruckhouse.com/assets/videos/main.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- ▲ 음식 영상으로 교체 시 위 src만 바꾸면 됩니다 ▲ -->
+
+      <!-- ▼ 음식 컷 버블 — 더 먹음직한 개별 누끼/사진으로 교체 추천 ▼ -->
+      <div class="m-bubble b1"><img src="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg" alt="푸드트럭 메뉴" loading="lazy"></div>
+      <div class="m-bubble b2"><img src="https://foodtruckhouse.com/assets/images/main/sec06_2.jpg" alt="간식 메뉴" loading="lazy"></div>
+      <div class="m-bubble b3"><img src="https://foodtruckhouse.com/assets/images/main/sec06_3.jpg" alt="행사 케이터링 음식" loading="lazy"></div>
+      <div class="m-bubble b4"><img src="https://foodtruckhouse.com/files/attach/images/coffee-car.jpg" alt="커피차 음료" loading="lazy"></div>
+      <div class="m-bubble b5"><img src="https://foodtruckhouse.com/files/thumbnails/549/002/740x394.crop.jpg" alt="현장 음식" loading="lazy"></div>
+      <div class="m-bubble b6"><img src="https://foodtruckhouse.com/files/thumbnails/462/002/740x394.crop.jpg" alt="디저트 메뉴" loading="lazy"></div>
+      <!-- ▲ 누끼 PNG(투명배경) 6컷을 보내주시면 원형 대신 진짜 쿡앤컴퍼니式으로 바꿔드립니다 ▲ -->
+    </div>
+
+    <div class="montage-cta reveal">
+      <a href="/menu.html" class="btn btn-primary">메뉴 75종 보기
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 현장 운영 (다크) ================= -->
+<section class="sec why-sec">
   <div class="wrap why-grid">
     <div class="reveal">
-      <div class="kicker">왜 담당자들이 다시 찾을까</div>
+      <div class="why-kicker"><span class="kdot"></span>왜 담당자들이 다시 찾을까</div>
       <h2 class="st">케이터링은 음식이 아니라<br>현장 운영입니다.</h2>
       <p class="why-lead">맛있는 트럭은 많습니다. 행사 담당자가 진짜 걱정하는 건 "당일 그 규모를 펑크 없이 돌릴 수 있는가"예요. 그 운영을 8,000번 해봤습니다.</p>
       <div class="points">
@@ -426,159 +650,308 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services">
+<!-- ================= 서비스 ================= -->
+<section class="sec sec-paper">
   <div class="wrap">
-    <div class="svc-head reveal">
-      <div class="kicker">Service</div>
-      <h2 class="st">행사를 빛내는 푸드트럭 서비스</h2>
-      <p>규모와 목적이 다르면 운영도 달라야 합니다. 행사 성격에 맞춰 구성·동선·메뉴를 설계합니다.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">SERVICE</span>
+      <h2>어떤 현장이든, 채워드립니다</h2>
+      <p>기업·임직원 행사부터 축제·연예인 서포트·건설현장·관공서까지 — 현장 성격에 맞춰 구성·동선·메뉴를 설계합니다.</p>
     </div>
-    <div class="svc3">
-      <a href="service.html" class="svc reveal"><div class="bg"><img src="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div><span class="tag">기업·행사</span><div class="ix">01</div><h3>케이터링</h3><p>임직원 행사·체육대회·기념일까지. 특별한 이벤트에 맛있는 온도를 더합니다.</p><span class="go">자세히 보기 →</span></a>
-      <a href="service.html" class="svc reveal"><div class="bg"><img src="https://foodtruckhouse.com/assets/images/main/sec06_2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div><span class="tag">브랜드</span><div class="ix">02</div><h3>브랜드 프로모션</h3><p>팝업·연예인 서포트·광고촬영 간식차. 고객을 직접 만나는 오프라인 경험을 연출합니다.</p><span class="go">자세히 보기 →</span></a>
-      <a href="service.html" class="svc reveal"><div class="bg"><img src="https://foodtruckhouse.com/assets/images/main/sec06_3.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div><span class="tag">축제·부스</span><div class="ix">03</div><h3>축제·행사 부스</h3><p>페스티벌·콘서트·대학 축제. 길거리의 즐거움을 그대로 현장에 가져옵니다.</p><span class="go">자세히 보기 →</span></a>
+    <div class="svc-grid">
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5l7-2v18M19 21V9l-7-2M9 8h.01M9 12h.01M9 16h.01"/></svg></div>
+        <h3>기업·임직원 행사</h3>
+        <p>창립기념일·복지차·사내 이벤트</p>
+      </a>
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="5"/><path d="M9 10.5 7 3M15 10.5 17 3M10.5 15l1 1 2.5-2.5"/></svg></div>
+        <h3>체육대회·워크숍</h3>
+        <p>수백 명 야외 행사도 대기 없이</p>
+      </a>
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6L21 9.3l-4.5 4.3L17.7 21 12 17.7 6.3 21l1.2-7.4L3 9.3l6.4-.7z"/></svg></div>
+        <h3>연예인 서포트</h3>
+        <p>촬영장·콘서트 커피차·역조공</p>
+      </a>
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="15" height="12" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg></div>
+        <h3>광고·방송 촬영</h3>
+        <p>장시간 촬영 스태프 간식차</p>
+      </a>
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l9-15 9 15M12 5v15M7 20l5-7 5 7"/></svg></div>
+        <h3>축제·페스티벌</h3>
+        <p>대규모 푸드존 통합 운영</p>
+      </a>
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20M4 18a8 8 0 0116 0M9 10V7a3 3 0 016 0v3"/></svg></div>
+        <h3>건설·산업현장</h3>
+        <p>근로자 식사·새벽 간식 대응</p>
+      </a>
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div>
+        <h3>학교·대학 행사</h3>
+        <p>대동제·입학식·체육대회</p>
+      </a>
+      <a href="/service.html" class="svc-card reveal">
+        <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6M7 13h.01M17 13h.01"/></svg></div>
+        <h3>관공서·공공기관</h3>
+        <p>지자체 행사·기념식 대행</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- RECOMMEND (블루 풀배경 밴드) -->
-<section class="lite" style="padding-block:clamp(44px,6vw,72px)">
+<!-- ================= 실사진 갤러리 ================= -->
+<section class="sec">
   <div class="wrap">
-    <div class="recband">
-      <div class="reveal" style="max-width:620px;margin-bottom:38px">
-        <div class="kicker" style="color:#fff;opacity:.85">For You</div>
-        <h2 class="st" style="color:#fff">이런 행사에 추천합니다</h2>
+    <div class="sec-head reveal">
+      <span class="eyebrow">PORTFOLIO</span>
+      <h2>현장이 증명하는 퀄리티</h2>
+      <p>8,000건의 행사 데이터가 쌓아온 운영 노하우를, 사진으로 확인하세요.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-card reveal">
+        <div class="ph"><img src="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg" alt="기업행사 푸드트럭 케이터링 현장" loading="lazy"></div>
+        <div class="cap"><span class="tag">기업행사</span><h3>사내 페스타 · 임직원 케이터링</h3><p>대기업·금융사 사내행사 정기 운영</p></div>
       </div>
-      <div class="rec-grid">
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V5l7-2v18M19 21V9l-7-2M9 8h.01M9 12h.01M9 16h.01"/></svg></span><h3>기업·임직원 행사</h3><p>창립기념일·복지차·사내 이벤트</p></div>
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="15" r="5"/><path d="M9 10.5 7 3M15 10.5 17 3M10.5 15l1 1 2.5-2.5"/></svg></span><h3>체육대회·워크숍</h3><p>수백 명 야외 행사도 대기 없이</p></div>
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.6 5.6L21 9.3l-4.5 4.3L17.7 21 12 17.7 6.3 21l1.2-7.4L3 9.3l6.4-.7z"/></svg></span><h3>연예인 서포트</h3><p>촬영장·콘서트 커피차·역조공</p></div>
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="15" height="12" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg></span><h3>광고·방송 촬영</h3><p>장시간 촬영 스태프 간식차</p></div>
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20l9-15 9 15M12 5v15M7 20l5-7 5 7"/></svg></span><h3>축제·페스티벌</h3><p>대규모 푸드존 통합 운영</p></div>
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 18h20M4 18a8 8 0 0116 0M9 10V7a3 3 0 016 0v3"/></svg></span><h3>건설·산업현장</h3><p>근로자 식사·새벽 간식 대응</p></div>
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></span><h3>학교·대학 행사</h3><p>대동제·입학식·체육대회</p></div>
-        <div class="rc reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6M7 13h.01M17 13h.01"/></svg></span><h3>관공서·공공기관</h3><p>지자체 행사·기념식 대행</p></div>
+      <div class="gal-card reveal">
+        <div class="ph"><img src="https://foodtruckhouse.com/assets/images/main/sec06_2.jpg" alt="브랜드 프로모션 푸드트럭" loading="lazy"></div>
+        <div class="cap"><span class="tag">브랜드</span><h3>브랜드 래핑 · 팝업 프로모션</h3><p>브랜드 컬러 맞춤 차량 제작</p></div>
+      </div>
+      <div class="gal-card reveal">
+        <div class="ph"><img src="https://foodtruckhouse.com/assets/images/main/sec06_3.jpg" alt="축제 푸드트럭 다수 운영" loading="lazy"></div>
+        <div class="cap"><span class="tag">축제</span><h3>대형 축제 · 다수 차량 운영</h3><p>지자체·대학 축제 동시 다대 운영</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="lite">
+<!-- ================= 차량 라인업 (SEO) ================= -->
+<section class="sec">
   <div class="wrap">
-    <div class="rev-head reveal">
-      <div>
-        <div class="kicker">Review</div>
-        <h2 class="st">고객이 말하는 푸드트럭하우스</h2>
-      </div>
-      <a href="review.html">전체 후기 보기 →</a>
+    <div class="sec-head reveal">
+      <span class="eyebrow">VEHICLES</span>
+      <h2>행사 성격에 맞는 차량을 고르세요</h2>
+      <p>푸드트럭부터 커피차·간식차·분식차까지. 각 차량별 메뉴와 사례를 확인하실 수 있습니다.</p>
     </div>
-    <div class="rev3">
-      <div class="rev reveal"><div class="ph"><span class="badge">브랜드 프로모션</span><img src="https://foodtruckhouse.com/files/thumbnails/549/002/740x394.crop.jpg" alt="진로 테라 시음회 성수동 팝업" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="stars">★★★★★</div><h3>'진로' 테라 시음회 성수동 팝업</h3><p>푸드트럭을 브랜드 포토존처럼 연출해 현장 분위기를 살리고, 야외 시음행사가 원활히 진행되도록 운영했습니다.</p></div></div>
-      <div class="rev reveal"><div class="ph"><span class="badge">연예인 서포트</span><img src="https://foodtruckhouse.com/files/thumbnails/462/002/740x394.crop.jpg" alt="메디큐브 이사배 뮤직비디오 현장" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="stars">★★★★★</div><h3>'메디큐브' 이사배 뮤직비디오 현장</h3><p>긴 촬영 현장에 커피차 서포트. 브랜드의 응원을 자연스럽게 전하도록 메뉴부터 출력물 세팅까지 함께했습니다.</p></div></div>
-      <div class="rev reveal"><div class="ph"><span class="badge">기업 간식차</span><img src="https://foodtruckhouse.com/files/thumbnails/356/001/740x394.crop.jpg" alt="삼성생명 신년맞이 간식차" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="no" style="display:none">현장 사진</span></div><div class="rb"><div class="stars">★★★★★</div><h3>'삼성생명' 신년맞이 간식차</h3><p>겨울 출근길에 어묵·붕어빵으로 따뜻함을 전했습니다. 맞춤 출력물로 새해 분위기를 더했습니다.</p></div></div>
+    <div class="veh-grid">
+      <a href="/vehicle-foodtruck.html" class="veh-card reveal">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 13h11l2-4h3l2 4v5h-2M3 13V7h11v6M7 20a2 2 0 100-4 2 2 0 000 4zM17 20a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>푸드트럭</h3><p>핫도그·버거·분식 등 메인</p>
+      </a>
+      <a href="/vehicle-coffee.html" class="veh-card reveal">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 9h13v5a4 4 0 01-4 4H8a4 4 0 01-4-4V9zM17 10h2a2 2 0 010 4h-2M7 4v2M11 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>커피차</h3><p>아메리카노·라떼·에이드</p>
+      </a>
+      <a href="/vehicle-snack.html" class="veh-card reveal">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3c3 0 5 2 5 5 0 4-5 13-5 13S7 12 7 8c0-3 2-5 5-5zM12 8a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>간식차</h3><p>츄러스·붕어빵·솜사탕</p>
+      </a>
+      <a href="/vehicle-bunsik.html" class="veh-card reveal">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 11h14M5 11a7 7 0 0114 0M5 15h14M3 19h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>분식차</h3><p>떡볶이·어묵·튀김</p>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:22px;color:#93A1C7;font-size:14px">오뎅차 · 빙수차 라인업이 곧 추가됩니다</p>
+  </div>
+</section>
+
+<!-- ================= 후기 ================= -->
+<section class="sec sec-ice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">REVIEW</span>
+      <h2>재이용률 92%의 이유</h2>
+      <p>실제 고객사가 남긴 행사 후기입니다.</p>
+    </div>
+    <div class="rev-grid">
+      <a href="/review.html" class="rev-card reveal">
+        <div class="ph"><img src="https://foodtruckhouse.com/files/thumbnails/549/002/740x394.crop.jpg" alt="진로 행사 후기" loading="lazy"></div>
+        <div class="bd"><div class="stars">★★★★★</div><h3>임직원 반응이 정말 좋았어요</h3><p>세팅도 빠르고 메뉴 퀄리티가 기대 이상이었습니다. 다음 행사도 바로 예약했어요.</p><div class="by">진로</div></div>
+      </a>
+      <a href="/review.html" class="rev-card reveal">
+        <div class="ph"><img src="https://foodtruckhouse.com/files/thumbnails/462/002/740x394.crop.jpg" alt="메디큐브 행사 후기" loading="lazy"></div>
+        <div class="bd"><div class="stars">★★★★★</div><h3>브랜드 컨셉을 잘 살려주셨어요</h3><p>차량 래핑부터 메뉴 구성까지 우리 브랜드에 맞춰 디테일하게 준비해주셨습니다.</p><div class="by">메디큐브</div></div>
+      </a>
+      <a href="/review.html" class="rev-card reveal">
+        <div class="ph"><img src="https://foodtruckhouse.com/files/thumbnails/356/001/740x394.crop.jpg" alt="삼성생명 행사 후기" loading="lazy"></div>
+        <div class="bd"><div class="stars">★★★★★</div><h3>대규모 인원도 문제없었습니다</h3><p>수백 명 규모였는데 대기 없이 운영됐어요. 운영 노하우가 확실히 느껴졌습니다.</p><div class="by">삼성생명</div></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="/review.html" class="btn btn-line">후기 전체 보기
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="lite">
+<!-- ================= CTA 밴드 ================= -->
+<section class="sec cta-band">
   <div class="wrap">
-    <div class="reveal" style="max-width:600px;margin-bottom:46px">
-      <div class="kicker">Process</div>
-      <h2 class="st">문의부터 정산까지, 5단계</h2>
-    </div>
-    <div class="proc">
-      <div class="ps reveal"><div class="pn">STEP 01</div><h4>맞춤 상담·견적</h4></div>
-      <div class="ps reveal"><div class="pn">STEP 02</div><h4>계약·예약</h4></div>
-      <div class="ps reveal"><div class="pn">STEP 03</div><h4>메뉴·디자인·배차</h4></div>
-      <div class="ps reveal"><div class="pn">STEP 04</div><h4>행사 진행·운영</h4></div>
-      <div class="ps reveal"><div class="pn">STEP 05</div><h4>결제·정산</h4></div>
+    <h2 class="reveal">행사 일정이 잡히셨나요?</h2>
+    <p class="reveal">메뉴·인원·지역만 알려주시면, 3초 만에 견적을 보내드립니다.</p>
+    <div class="acts reveal">
+      <a href="https://foodtruck-quote.vercel.app/" class="btn btn-primary">3초 견적완성</a>
+      <a href="tel:1877-6901" class="btn btn-ghost">전화상담 1877-6901</a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-wrap" id="contact">
-  <div class="cta reveal">
-    <div>
-      <h2>다음 행사, 펑크 걱정 없이<br>맡겨보세요.</h2>
-      <p>인원과 날짜만 알려주시면 됩니다. 가장 많이 굴려본 팀이 가장 빠르게 견적으로 답합니다.</p>
-    </div>
-    <div class="act">
-      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="c1">3초 견적완성 →</a>
-      <a href="tel:18776901" class="c2">전화 문의 1877-6901</a>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
+<!-- ================= FOOTER ================= -->
+<footer class="ft">
   <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div class="brand-logo" style="margin-bottom:16px"><img src="logo-white.png" alt="푸드트럭하우스"></div>
-        <p>커피차·푸드트럭 케이터링 전문. 고객사 4,000곳과 8,000건의 현장을 함께한 운영의 힘으로 행사 그 이상의 추억을 만듭니다.</p>
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a href="/index.html" class="logo">
+          <img src="logo-wordmark.png" alt="푸드트럭하우스" class="logo-img">
+        </a>
+        <p>젊음이 만든 열정, 깨끗한 푸드트럭의 기준. 기업행사·축제·브랜드행사 케이터링 전문.</p>
       </div>
-      <div class="foot-col"><h4>서비스</h4><a href="service.html">케이터링</a><a href="service.html">브랜드 프로모션</a><a href="service.html">F&B 행사대행</a><a href="service.html">출장뷔페</a></div>
-      <div class="foot-col"><h4>바로가기</h4><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="#contact">3초 견적</a><a href="tel:18776901">1877-6901</a><a href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">네이버 블로그</a></div>
+      <div class="ft-col">
+        <h4>바로가기</h4>
+        <a href="/service.html">서비스</a>
+        <a href="/menu.html">메뉴</a>
+        <a href="/review.html">후기</a>
+        <a href="/news.html">공지사항</a>
+        <a href="/privacy.html">개인정보처리방침</a>
+      </div>
+      <div class="ft-col">
+        <h4>문의 · 채널</h4>
+        <a href="https://foodtruck-quote.vercel.app/">3초 견적완성</a>
+        <a href="https://pf.kakao.com/_MJvVG/chat">카카오톡 상담</a>
+        <a href="https://blog.naver.com/qnehdtksjw">네이버 블로그</a>
+        <a href="tel:1877-6901">전화 1877-6901</a>
+      </div>
     </div>
-    <div class="biz">
-      <b>푸드트럭하우스</b> &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 주식회사 하이팅 &nbsp;|&nbsp; 사업자번호 441-86-03352<br>
-      대표번호 1877-6901 / 010-2263-6901 / 010-2482-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229
-      <div class="copy">© 2026 푸드트럭하우스. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--blue-bright)">개인정보처리방침</a></div>
+    <div class="ft-biz">
+      ㈜하이팅 &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 사업자등록번호 <span class="num">441-86-03352</span><br>
+      <span class="num">1877-6901</span> &nbsp;|&nbsp; <span class="num">010-2263-6901</span> &nbsp;|&nbsp; <span class="num">010-2482-6901</span><br>
+      경기도 용인시 기흥구 상하동 229 &nbsp;|&nbsp; © 2026 FOODTRUCKHOUSE. All rights reserved.
     </div>
   </div>
 </footer>
 
-<script>
-  /* 고객사 로고 마퀴 채우기 (도메인 전환 전까지 기존 서버 URL 임시 참조) */
-  (function(){
-    var base="https://foodtruckhouse.com/assets/images/main/", track=document.getElementById('track');
-    if(!track)return;
-    var html="";
-    for(var pass=0;pass<2;pass++){          /* 끊김 없는 무한 스크롤용 2벌 */
-      for(var i=1;i<=20;i++){
-        html+='<div class="logo-chip"><img src="'+base+'logo_'+i+'.png" alt="고객사 로고" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></div>';
-      }
-    }
-    track.innerHTML=html;
-  })();
-  var hdr=document.getElementById('hdr'),last=0;
-  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
-
-  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
-  mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
-  dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
-
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-
-  function animate(el){var t=+el.dataset.count,d=1500,s=null;function tick(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t).toLocaleString('ko-KR');if(p<1)requestAnimationFrame(tick);else el.textContent=t.toLocaleString('ko-KR');}requestAnimationFrame(tick);}
-  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animate(e.target);co.unobserve(e.target);}});},{threshold:.6});
-  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
-
-  (function(){
-    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    var cells=[].slice.call(document.querySelectorAll('#dispatch .cell:not(.booth)'));
-    function tick(){
-      cells.forEach(function(c){c.classList.remove('on','warm');});
-      var idx=cells.map(function(_,i){return i;}).sort(function(){return Math.random()-.5;});
-      var onN=5+Math.floor(Math.random()*3), warmN=2+Math.floor(Math.random()*2);
-      for(var i=0;i<onN;i++)cells[idx[i]].classList.add('on');
-      for(var j=onN;j<onN+warmN;j++)cells[idx[j]].classList.add('warm');
-    }
-    tick();setInterval(tick,2200);
-  })();
-</script>
-<!-- 소셜·전화 (우측, 스크롤 따라옴) -->
-<div class="fab-social">
-  <a class="blog" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener" aria-label="네이버 블로그"><b>blog</b></a>
-  <a class="insta" href="#" target="_blank" rel="noopener" aria-label="인스타그램"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-  <a class="yt" href="#" target="_blank" rel="noopener" aria-label="유튜브"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4 0-1.3.1-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.5v1.9c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.9.3 6.9.3s4 0 6.8-.3c.4 0 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.9c0-1.7-.2-3.3-.2-3.3zM10 14.6V8.9l5 2.9-5 2.8z"/></svg></a>
-  <a class="tel" href="tel:18776901" aria-label="전화 연결"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg></a>
+<!-- ================= 플로팅 ================= -->
+<div class="float">
+  <a href="https://foodtruck-quote.vercel.app/" class="float-quote">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 13h11l2-4h3l2 4v5h-2M7 20a2 2 0 100-4 2 2 0 000 4zM17 20a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <span class="long">3초 견적완성</span>
+  </a>
+  <a href="https://pf.kakao.com/_MJvVG/chat" class="float-kakao">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.8 6.8-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.6-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+    상담
+  </a>
+  <div class="float-mini">
+    <a href="https://blog.naver.com/qnehdtksjw" class="fm" aria-label="블로그">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4zM8 9v6l4-3-4-3zM14 9h3M14 12h3M14 15h2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#" class="fm" aria-label="인스타그램">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>
+    </a>
+    <a href="#" class="fm" aria-label="유튜브">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M10 9.5l5 2.5-5 2.5v-5z" fill="currentColor"/></svg>
+    </a>
+    <a href="tel:1877-6901" class="fm" aria-label="전화">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L16 13l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
 </div>
 
+<script>
+// 헤더 스크롤
+const hd=document.getElementById('hd');
+const onScroll=()=>hd.classList.toggle('scrolled',window.scrollY>40);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+// 모바일 네비
+const mob=document.getElementById('mobNav');
+document.getElementById('menuToggle').onclick=()=>mob.classList.add('open');
+document.getElementById('mobClose').onclick=()=>mob.classList.remove('open');
+mob.querySelectorAll('a').forEach(a=>a.onclick=()=>mob.classList.remove('open'));
+
+// reveal 애니
+const io=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);io.unobserve(e.target);}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// 히어로 스탯 카운트업
+function countUp(el,dur=1700){
+  const target=+el.dataset.target, start=performance.now();
+  (function tick(now){
+    const p=Math.min((now-start)/dur,1), e=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(e*target).toLocaleString();
+    if(p<1)requestAnimationFrame(tick); else el.textContent=target.toLocaleString();
+  })(performance.now());
+}
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.hnum').forEach(el=>{
+    if(reduce)el.textContent=(+el.dataset.target).toLocaleString();
+    else countUp(el);
+  });
+});
+
+// 폰 견적 터치 모션
+(function(){
+  const finger=document.getElementById('finger'); if(!finger)return;
+  const opt1=document.getElementById('opt1'),opt2=document.getElementById('opt2'),
+        cta=document.getElementById('psCta'),total=document.getElementById('psTotal'),psNum=document.getElementById('psNum');
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  function moveTo(el){
+    const sr=finger.parentElement.getBoundingClientRect(), er=el.getBoundingClientRect();
+    finger.style.left=(er.left-sr.left+er.width*0.72)+'px';
+    finger.style.top=(er.top-sr.top+er.height/2)+'px';
+  }
+  function countNum(target,dur=1000){
+    const start=performance.now();
+    (function tick(now){
+      const p=Math.min((now-start)/dur,1), e=1-Math.pow(1-p,3);
+      psNum.textContent=Math.floor(e*target).toLocaleString();
+      if(p<1)requestAnimationFrame(tick); else psNum.textContent=target.toLocaleString();
+    })(performance.now());
+  }
+  async function tap(){finger.classList.add('tap');await wait(160);finger.classList.remove('tap');}
+  async function run(){
+    opt1.classList.remove('sel');opt2.classList.remove('sel');
+    cta.classList.remove('active');total.classList.remove('show');psNum.textContent='0';
+    finger.style.opacity='0'; await wait(900); finger.style.opacity='1';
+    moveTo(opt1); await wait(750); await tap(); opt1.classList.add('sel'); await wait(550);
+    moveTo(opt2); await wait(750); await tap(); opt2.classList.add('sel'); await wait(550);
+    cta.classList.add('active'); moveTo(cta); await wait(750);
+    finger.classList.add('tap'); cta.classList.add('tap'); await wait(200);
+    finger.classList.remove('tap'); cta.classList.remove('tap');
+    finger.style.opacity='0'; await wait(150);
+    total.classList.add('show'); countNum(765000,1000);
+    await wait(2900); run();
+  }
+  if(reduce){
+    opt1.classList.add('sel');opt2.classList.add('sel');cta.classList.add('active');
+    total.classList.add('show');psNum.textContent='765,000';
+  }else{
+    const obs=new IntersectionObserver((e)=>{if(e[0].isIntersecting){obs.disconnect();run();}},{threshold:.4});
+    obs.observe(document.querySelector('.phone'));
+  }
+})();
+
+// 실시간 배차 보드 (랜덤 점등 — 매 2.2초 다르게)
+(function(){
+  const grid=document.getElementById('dispatch'); if(!grid)return;
+  const cells=[...grid.querySelectorAll('.cell:not(.booth)')];
+  function tick(){
+    cells.forEach(c=>c.classList.remove('on','warm'));
+    const idx=cells.map((_,i)=>i).sort(()=>Math.random()-.5);
+    const onN=5+Math.floor(Math.random()*3), warmN=2+Math.floor(Math.random()*2);
+    for(let i=0;i<onN;i++)cells[idx[i]].classList.add('on');
+    for(let j=onN;j<onN+warmN;j++)cells[idx[j]].classList.add('warm');
+  }
+  if(reduce){ for(let i=0;i<7;i++)cells[i].classList.add('on'); return; }
+  tick(); setInterval(tick,2200);
+})();
+</script>
 </body>
 </html>
