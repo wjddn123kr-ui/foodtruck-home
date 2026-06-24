@@ -51,9 +51,12 @@ img{max-width:100%;display:block}
 .logo-mark{width:34px;height:34px;border-radius:9px;background:var(--blue);
   display:grid;place-items:center;color:#fff;flex:none;box-shadow:0 6px 16px rgba(45,91,255,.35)}
 /* 워드마크 로고: 영상 위=흰색, 스크롤 후=원본 파랑 */
-.logo-img{height:38px;width:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 2px 7px rgba(0,0,0,.5));transition:filter .3s}
-.hd.scrolled .logo-img{filter:none}
-.ft .logo-img{height:36px;filter:brightness(0) invert(1)}
+.logo-img{height:38px;width:auto;display:block;transition:opacity .3s}
+.logo-white{filter:drop-shadow(0 2px 8px rgba(0,0,0,.55))}
+.hd .logo-blue{display:none}
+.hd.scrolled .logo-white{display:none}
+.hd.scrolled .logo-blue{display:block}
+.ft .logo-img{height:36px}
 .nav{display:flex;align-items:center;gap:4px}
 .nav a{padding:10px 15px;font-size:15px;font-weight:600;color:rgba(255,255,255,.92);border-radius:10px;transition:.18s;position:relative}
 .hd.scrolled .nav a{color:#33406b}
@@ -396,7 +399,8 @@ img{max-width:100%;display:block}
 <header class="hd" id="hd">
   <div class="wrap hd-in">
     <a href="/index.html" class="logo">
-      <img src="logo-wordmark.png" alt="푸드트럭하우스" class="logo-img">
+      <img src="logo-white.png" alt="푸드트럭하우스" class="logo-img logo-white">
+      <img src="logo-wordmark.png" alt="푸드트럭하우스" class="logo-img logo-blue">
     </a>
 
     <nav class="nav">
@@ -813,7 +817,7 @@ img{max-width:100%;display:block}
     <div class="ft-top">
       <div class="ft-brand">
         <a href="/index.html" class="logo">
-          <img src="logo-wordmark.png" alt="푸드트럭하우스" class="logo-img">
+          <img src="logo-white.png" alt="푸드트럭하우스" class="logo-img">
         </a>
         <p>젊음이 만든 열정, 깨끗한 푸드트럭의 기준. 기업행사·축제·브랜드행사 케이터링 전문.</p>
       </div>
