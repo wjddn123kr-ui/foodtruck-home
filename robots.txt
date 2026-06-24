@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# 색인 제외 — 공통 컴포넌트(부분 조각) 및 작업용 시안
+Disallow: /quote-section.html
+Disallow: /index-light.html
+Disallow: /index-editorial.html
+Disallow: /design-1.html
+Disallow: /design-2.html
+Disallow: /design-3.html
+Disallow: /design-4.html
+Disallow: /design-5.html
+Disallow: /design-6.html
+
+Sitemap: https://foodtruckhouse.com/sitemap.xml
