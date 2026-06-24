@@ -6,87 +6,338 @@
 <title>커피차 대여·커피트럭 출장 | 커피차 가격·비용 안내 | 푸드트럭하우스</title>
 <meta name="description" content="기업행사·축제 커피차 대여 전문 푸드트럭하우스. 바리스타가 현장에서 직접 내리는 아메리카노·라떼·에이드 커피트럭 출장 케이터링. 커피차 가격과 비용 기준을 투명하게 안내합니다.">
 <meta name="keywords" content="커피차, 커피트럭, 커피차 대여, 커피차 가격, 커피차 비용, 커피차 출장, 기업행사 커피차">
+<meta name="theme-color" content="#0A1733">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* 1단계 임시 스타일 — 2단계에서 index.html 톤(소프트 스카이블루)으로 교체 */
-body{font-family:system-ui,'Pretendard',sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1f2e}
-header nav a{margin-right:14px;font-size:14px}
-h1{font-size:30px;line-height:1.3;margin:18px 0}
-h2{font-size:21px;margin-top:38px}
-.lead{font-size:18px;color:#3a4660}
-.cta{display:inline-block;background:#2D5BFF;color:#fff;padding:15px 26px;border-radius:10px;text-decoration:none;font-weight:700;margin:6px 8px 6px 0}
-.cta.line{background:#fff;color:#2D5BFF;border:1.5px solid #2D5BFF}
-table{border-collapse:collapse;width:100%;margin-top:12px}
-td,th{border:1px solid #e2e6ef;padding:10px 12px;text-align:left;font-size:15px}
-th{background:#f3f6fc}
-ul{padding-left:20px}
-.cta-band{margin-top:40px;padding:28px;background:#f3f6fc;border-radius:14px;text-align:center}
-footer{margin-top:48px;padding-top:22px;border-top:1px solid #e2e6ef;font-size:13px;color:#5b6789;line-height:1.9}
+  :root{
+    --navy-900:#060C1F;--navy-850:#0A1430;--navy-800:#0E1A3D;--navy-700:#13224C;
+    --blue:#2D5BFF;--blue-deep:#003892;--blue-bright:#5B86FF;
+    --ice:#EAF0FF;--paper:#F4F7FE;--ink:#0A1124;--mute:#93A1C7;
+    --line:rgba(140,165,225,.16);--max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;
+    background-color:#EDF2FC;
+    background-image:radial-gradient(680px 680px at 94% 30px,rgba(91,134,255,.40),transparent 70%),radial-gradient(640px 640px at 0% 700px,rgba(45,91,255,.30),transparent 70%),radial-gradient(720px 720px at 86% 1450px,rgba(91,134,255,.34),transparent 70%),radial-gradient(640px 640px at 6% 2200px,rgba(45,91,255,.28),transparent 70%),radial-gradient(700px 700px at 74% 2950px,rgba(91,134,255,.30),transparent 70%),radial-gradient(rgba(45,91,255,.07) 1.3px,transparent 1.4px);
+    background-size:auto,auto,auto,auto,auto,28px 28px;background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+    color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(10,17,36,.07);transition:transform .3s}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--navy-900)}
+  .brand-logo{height:30px;width:auto;display:block}
+  .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
+  .nav-links a{color:#33406b;transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--blue)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
+  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--navy-900);margin:5px 0}
+  .nav-links .has-sub{position:relative}
+  .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
+  .submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;backdrop-filter:blur(14px);border:1px solid rgba(10,17,36,.08);border-radius:12px;padding:8px;min-width:172px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(13,40,120,.28)}
+  .submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
+  .nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:#33406b;white-space:nowrap;transition:background .15s,color .15s}
+  .submenu a:hover,.submenu a.active{background:var(--paper);color:var(--blue)}
+
+  .phead{position:relative;padding:138px 0 64px;overflow:hidden;background:
+      radial-gradient(120% 120% at 100% 0%,rgba(91,134,255,.20),transparent 50%),
+      radial-gradient(110% 100% at 0% 100%,rgba(45,91,255,.10),transparent 55%),
+      linear-gradient(170deg,#EAF0FF 0%,#F4F7FE 62%)}
+  .phead .glow{position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(45,91,255,.13);filter:blur(90px);top:-160px;right:-40px;z-index:0}
+  .phead::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background-image:radial-gradient(rgba(45,91,255,.13) 1.4px,transparent 1.5px);background-size:26px 26px;-webkit-mask:radial-gradient(130% 90% at 80% 18%,#000,transparent 76%);mask:radial-gradient(130% 90% at 80% 18%,#000,transparent 76%)}
+  .phead .wrap{position:relative;z-index:2}
+  .crumb{font-size:13.5px;color:#7a87a8;margin-bottom:16px}
+  .crumb a:hover{color:var(--blue)}
+  .phead h1{font-size:clamp(30px,4.6vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:var(--navy-900)}
+  .phead .lead{margin-top:18px;font-size:17.5px;color:#46527a;max-width:60ch;line-height:1.75}
+
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:12px;font-weight:700;font-size:15.5px;transition:transform .15s,box-shadow .2s;cursor:pointer}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 30px -10px rgba(45,91,255,.8)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-line{background:#fff;color:var(--blue);border:1.6px solid #d4def5}
+  .btn-line:hover{border-color:var(--blue);transform:translateY(-2px)}
+
+  section{padding:clamp(64px,8vw,100px) 0}
+  .sec-band{background:var(--ice);border-top:1px solid rgba(10,17,36,.05);border-bottom:1px solid rgba(10,17,36,.05)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:18px}
+  .kicker::after{content:"";width:54px;height:1px;background:rgba(10,17,36,.12)}
+  h2.st{font-size:clamp(25px,3.4vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.18;color:var(--navy-900)}
+  .sec-head{max-width:660px;margin-bottom:40px}
+  .sec-head p{margin-top:16px;font-size:16.5px;color:#5b6789;line-height:1.75}
+  .prose p{font-size:16.5px;color:#46527a;line-height:1.85;max-width:66ch;margin-bottom:14px}
+  .prose p:last-child{margin-bottom:0}
+  .prose b{color:var(--navy-900)}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:1px solid #e7edf9;border-radius:16px;padding:26px;box-shadow:0 12px 32px -20px rgba(13,40,120,.22);transition:transform .25s,border-color .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-5px);border-color:rgba(45,91,255,.35);box-shadow:0 20px 44px -20px rgba(13,40,120,.28)}
+  .card .ci{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue);margin-bottom:12px}
+  .card h3{font-size:17.5px;font-weight:800;color:var(--navy-900);margin-bottom:8px;letter-spacing:-.02em}
+  .card p{font-size:14.5px;color:#5b6789;line-height:1.7}
+  .card ul{margin:6px 0 0;padding-left:18px}
+  .card li{font-size:14.5px;color:#5b6789;line-height:1.85}
+
+  .price-table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid #e7edf9;border-radius:16px;overflow:hidden;box-shadow:0 14px 36px -22px rgba(13,40,120,.24);margin-top:8px}
+  .price-table th,.price-table td{padding:16px 20px;text-align:left;border-bottom:1px solid #eef2fb;vertical-align:top}
+  .price-table tr:last-child td{border-bottom:0}
+  .price-table thead th{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;font-weight:700;font-size:14.5px}
+  .price-table td:first-child{font-weight:700;color:var(--navy-900);width:160px;white-space:nowrap}
+  .price-table td{color:#46527a;line-height:1.7;font-size:15px}
+  .note{margin-top:18px;font-size:15px;color:#46527a;line-height:1.85;max-width:66ch}
+
+  .cta-wrap{padding:clamp(64px,8vw,100px) 0}
+  .cta{max-width:var(--max);margin:0 auto;border-radius:24px;padding:clamp(40px,5vw,60px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;text-align:center}
+  .cta::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.12);top:-100px;right:-50px;filter:blur(10px)}
+  .cta h2{font-size:clamp(23px,3.2vw,34px);font-weight:800;letter-spacing:-.03em;color:#fff;position:relative}
+  .cta p{margin-top:14px;font-size:16px;color:rgba(255,255,255,.85);position:relative}
+  .cta-actions{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+  .cta-actions a{display:inline-block;padding:15px 28px;border-radius:12px;font-weight:800;font-size:15.5px;transition:transform .15s}
+  .cta-actions .p1{background:#fff;color:var(--blue-deep)}
+  .cta-actions .p2{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4)}
+  .cta-actions a:hover{transform:translateY(-2px)}
+
+  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:60px 0 40px}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand .brand-logo{height:30px}
+  .foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
+  .foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
+  .foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--blue-bright)}
+  .biz{padding-top:24px;font-size:13px;color:var(--mute);line-height:1.8}
+  .biz b{color:var(--ice);font-weight:600}
+  .copy{margin-top:12px;font-size:12.5px;color:rgba(147,161,199,.6)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .drawer{position:fixed;inset:70px 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line);max-height:calc(100vh - 70px);overflow:auto}
+  .drawer.open{transform:translateY(0)}
+  .drawer a{display:block;padding:13px 0;font-size:16px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
+  .drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
+  .drawer .dg{font-size:12px;color:var(--mute);font-weight:700;letter-spacing:.05em;padding:14px 0 4px;text-transform:uppercase}
+
+  .kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
+  .kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
+  .kakao-fab svg{width:21px;height:21px}
+  .quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
+  .quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
+  .quote-fab svg{width:18px;height:18px}
+  .fab-social{position:fixed;right:20px;bottom:148px;z-index:70;display:flex;flex-direction:column;gap:9px}
+  .fab-social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);transition:transform .15s}
+  .fab-social a:hover{transform:translateY(-2px) scale(1.05)}
+  .fab-social .blog{background:#03C75A}
+  .fab-social .blog b{font-size:11px;font-weight:800;font-family:'Archivo',sans-serif}
+  .fab-social .insta{background:radial-gradient(circle at 30% 107%,#fdf497,#fd5949 45%,#d6249f 70%,#285AEB 110%)}
+  .fab-social .yt{background:#FF0000}
+  .fab-social .tel{background:var(--blue)}
+  .fab-social svg{width:20px;height:20px}
+  @media(max-width:560px){.fab-social{right:14px;bottom:150px;gap:8px}.fab-social a{width:38px;height:38px}}
+  @media(max-width:560px){.quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}}
+  @media(max-width:560px){.kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}}
+
+  @media(max-width:900px){
+    .nav-links,.tel{display:none}.menu-btn{display:block}
+    .cards{grid-template-columns:1fr 1fr}
+    .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:560px){
+    .cards{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr}
+    .price-table td:first-child{width:auto;white-space:normal}
+    .phead{padding:104px 0 44px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
 </style>
 </head>
 <body>
 
-<!-- 공통 네비게이션 (2단계에서 디자인 통일) -->
-<header>
-  <nav>
-    <a href="index.html">메인(푸드트럭)</a>
-    <a href="coffee.html"><b>커피차</b></a>
-    <a href="snack.html">간식·분식차</a>
-    <a href="odeng.html">오뎅차</a>
-    <a href="ice.html">빙수·아이스크림차</a>
-    <a href="churros.html">츄러스트럭</a>
-  </nav>
-</header>
-
-<main>
-  <h1>커피차 대여 — 현장에서 갓 내린 커피로 행사 분위기를 채웁니다</h1>
-  <p class="lead">기업 행사장, 축제, 촬영 현장 어디든 찾아가는 커피트럭 출장 서비스입니다. 바리스타가 현장에서 직접 에스프레소를 추출해, 종이컵에 담긴 인스턴트가 아닌 카페 퀄리티의 커피를 손님께 바로 전합니다.</p>
-
-  <p><a class="cta" href="https://foodtruck-quote.vercel.app/">3초 견적완성</a><a class="cta line" href="tel:1877-6901">전화상담 1877-6901</a></p>
-
-  <h2>커피차란? — 카페를 통째로 현장에 옮깁니다</h2>
-  <p>커피차(커피트럭)는 에스프레소 머신·제빙기·온수기를 갖춘 차량형 카페입니다. 별도 전기·천막 설치 없이 차량 한 대로 운영이 끝나기 때문에, 실내 로비부터 야외 행사장까지 장소를 가리지 않습니다. 푸드트럭하우스는 직영 차량과 전국 협력 차량을 함께 운용해, 수도권은 물론 지방 행사까지 커피차 출장이 가능합니다.</p>
-
-  <h2>커피차 메뉴</h2>
-  <p>아메리카노·카페라떼·바닐라라떼 같은 기본 커피부터, 여름 시즌 에이드와 겨울 시즌 따뜻한 차까지 행사 성격에 맞춰 구성합니다.</p>
-  <ul>
-    <li>커피: 아메리카노, 카페라떼, 바닐라라떼, 카라멜마끼아또, 헤이즐넛라떼, 아샷추</li>
-    <li>논커피: 초코라떼, 딸기라떼, 말차라떼, 고구마라떼</li>
-    <li>에이드·티: 레몬에이드, 자몽에이드, 청포도에이드, 복숭아 아이스티, 유자차, 캐모마일</li>
-  </ul>
-
-  <h2>이런 행사에 커피차를 부릅니다</h2>
-  <ul>
-    <li>기업 창립기념일·워크숍·임직원 복지 행사</li>
-    <li>박람회·전시회 부스 운영, 신제품 런칭 팝업</li>
-    <li>광고·방송 촬영장, 콘서트 백스테이지 서포트(커피차 조공)</li>
-    <li>대학 축제, 지자체 페스티벌</li>
-  </ul>
-
-  <h2>커피차 가격·비용 안내</h2>
-  <p>커피차 가격은 정해진 단일 금액이 아니라 <b>① 음료 단가 × 인원수</b>에 <b>② 출장비(지역)</b>와 <b>③ 운영 시간·바리스타 인원</b>을 더해 산정합니다. 행사마다 조건이 다르기 때문에, 아래 기준을 참고하신 뒤 정확한 커피차 비용은 견적으로 받아보시는 것을 권합니다.</p>
-  <table>
-    <tr><th>구성 항목</th><th>설명</th></tr>
-    <tr><td>음료 단가</td><td>구성하는 메뉴 종류 수에 따라 잔당 단가가 달라집니다(2종 구성 약 3,000원~, 7종 구성 약 3,500원~, 15종 구성 약 4,000원~ / 잔 기준).</td></tr>
-    <tr><td>출장비</td><td>행사 지역(전국 권역)에 따라 차량 출장비가 더해집니다.</td></tr>
-    <tr><td>운영 조건</td><td>운영 시간, 예상 잔 수, 바리스타 인원에 따라 조정됩니다.</td></tr>
-  </table>
-  <p>예를 들어 커피 위주 7종 구성으로 150잔을 운영한다면 음료비에 지역 출장비가 더해지는 방식입니다. 메뉴·인원·지역만 알려주시면 출장비까지 포함된 커피차 견적을 빠르게 보내드립니다.</p>
-
-  <h2>왜 푸드트럭하우스 커피차인가</h2>
-  <p>10년간 4,000곳이 넘는 고객사와 8,000건 이상의 현장을 운영하며, 재이용률 92%를 유지하고 있습니다. 위생 관리된 차량과 검증된 바리스타로, "당일 그 규모를 펑크 없이 돌릴 수 있는가"라는 행사 담당자의 가장 큰 걱정을 해결합니다.</p>
-
-  <div class="cta-band">
-    <h2 style="margin-top:0">커피차 견적이 필요하신가요?</h2>
-    <p>메뉴·인원·지역만 알려주시면 출장비 포함 견적을 보내드립니다.</p>
-    <p><a class="cta" href="https://foodtruck-quote.vercel.app/">3초 견적완성</a><a class="cta line" href="https://pf.kakao.com/_MJvVG/chat">카카오톡 상담</a></p>
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="logo-wordmark.png" alt="푸드트럭하우스" class="brand-logo"></a>
+    <nav class="nav-links">
+      <div class="has-sub"><a href="company.html">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html">회사소개</a></div></div>
+      <a href="service.html">서비스</a>
+      <div class="has-sub"><a href="coffee.html" class="active">차량</a><div class="submenu"><a href="coffee.html" class="active">커피차</a><a href="snack.html">간식·분식차</a><a href="odeng.html">오뎅차</a><a href="ice.html">빙수·아이스크림차</a><a href="churros.html">츄러스트럭</a></div></div>
+      <a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:18776901" class="tel">1877-6901</a>
+      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-</main>
+</header>
+<div class="drawer" id="drawer">
+  <div class="dg">차량</div>
+  <a href="coffee.html">커피차</a><a href="snack.html">간식·분식차</a><a href="odeng.html">오뎅차</a><a href="ice.html">빙수·아이스크림차</a><a href="churros.html">츄러스트럭</a>
+  <div class="dg">메뉴 안내</div>
+  <a href="about.html">인사말</a><a href="company.html">회사소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
+  <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 →</a>
+</div>
+
+<section class="phead">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> · 차량 · 커피차</div>
+    <h1>커피차 대여 — 현장에서<br>갓 내린 커피로 분위기를 채웁니다</h1>
+    <p class="lead">기업 행사장, 축제, 촬영 현장 어디든 찾아가는 커피트럭 출장 서비스입니다. 바리스타가 현장에서 직접 에스프레소를 추출해, 종이컵에 담긴 인스턴트가 아닌 카페 퀄리티의 커피를 손님께 바로 전합니다.</p>
+    <div class="hero-actions">
+      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">3초 견적완성</a>
+      <a href="tel:1877-6901" class="btn btn-line">전화상담 1877-6901</a>
+    </div>
+  </div>
+</section>
+
+<!-- 커피차란 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Coffee Truck</div>
+      <h2 class="st">카페를 통째로 현장에 옮깁니다</h2>
+    </div>
+    <div class="prose reveal">
+      <p>커피차(커피트럭)는 에스프레소 머신·제빙기·온수기를 갖춘 차량형 카페입니다. 별도 전기·천막 설치 없이 차량 한 대로 운영이 끝나기 때문에, 실내 로비부터 야외 행사장까지 장소를 가리지 않습니다.</p>
+      <p>푸드트럭하우스는 직영 차량과 전국 협력 차량을 함께 운용해, 수도권은 물론 지방 행사까지 <b>커피차 출장</b>이 가능합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 메뉴 -->
+<section class="sec-band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Menu</div>
+      <h2 class="st">커피차 메뉴</h2>
+      <p>아메리카노·카페라떼 같은 기본 커피부터 여름 시즌 에이드, 겨울 시즌 따뜻한 차까지 행사 성격에 맞춰 구성합니다.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="ci">COFFEE</div><h3>커피</h3><ul><li>아메리카노</li><li>카페라떼 · 바닐라라떼</li><li>카라멜마끼아또 · 헤이즐넛라떼</li><li>아샷추</li></ul></div>
+      <div class="card reveal"><div class="ci">NON-COFFEE</div><h3>논커피</h3><ul><li>초코라떼 · 딸기라떼</li><li>말차라떼 · 고구마라떼</li></ul></div>
+      <div class="card reveal"><div class="ci">ADE · TEA</div><h3>에이드 · 티</h3><ul><li>레몬 · 자몽 · 청포도에이드</li><li>복숭아 아이스티</li><li>유자차 · 캐모마일</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 이런 행사에 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Use Cases</div>
+      <h2 class="st">이런 행사에 커피차를 부릅니다</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><h3>기업 행사</h3><p>창립기념일·워크숍·임직원 복지 행사에서 바리스타 커피로 만족도를 높입니다.</p></div>
+      <div class="card reveal"><h3>박람회 · 팝업</h3><p>전시 부스 운영, 신제품 런칭 팝업에서 방문객을 자연스럽게 모으는 미끼가 됩니다.</p></div>
+      <div class="card reveal"><h3>촬영장 · 콘서트</h3><p>광고·방송 촬영장과 콘서트 백스테이지 서포트(커피차 조공)로도 인기입니다.</p></div>
+      <div class="card reveal"><h3>축제 · 페스티벌</h3><p>대학 축제와 지자체 페스티벌의 푸드존에서 커피차로 회전율을 높입니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 가격·비용 안내 -->
+<section class="sec-band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Price</div>
+      <h2 class="st">커피차 가격·비용 안내</h2>
+      <p>커피차 가격은 정해진 단일 금액이 아니라 아래 세 가지를 더해 산정합니다. 조건이 행사마다 다르기 때문에, 정확한 커피차 비용은 견적으로 받아보시는 것을 권합니다.</p>
+    </div>
+    <div class="reveal">
+      <table class="price-table">
+        <thead><tr><th>구성 항목</th><th>설명</th></tr></thead>
+        <tbody>
+          <tr><td>음료 단가</td><td>구성하는 메뉴 종류 수에 따라 잔당 단가가 달라집니다. (2종 구성 약 3,000원~, 7종 구성 약 3,500원~, 15종 구성 약 4,000원~ / 잔 기준)</td></tr>
+          <tr><td>출장비</td><td>행사 지역(전국 권역)에 따라 차량 출장비가 더해집니다.</td></tr>
+          <tr><td>운영 조건</td><td>운영 시간, 예상 잔 수, 바리스타 인원에 따라 조정됩니다.</td></tr>
+        </tbody>
+      </table>
+      <p class="note">예를 들어 커피 위주 7종 구성으로 150잔을 운영한다면, 음료비에 지역 출장비가 더해지는 방식입니다. <b>메뉴·인원·지역만 알려주시면 출장비까지 포함된 커피차 견적</b>을 빠르게 보내드립니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 왜 푸드트럭하우스 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Why FoodtruckHouse</div>
+      <h2 class="st">현장을 가장 많이 굴려본 팀</h2>
+      <p>10년간 4,000곳이 넘는 고객사와 8,000건 이상의 현장을 운영하며 재이용률 92%를 유지하고 있습니다. 위생 관리된 차량과 검증된 바리스타로, "당일 그 규모를 펑크 없이 돌릴 수 있는가"라는 행사 담당자의 가장 큰 걱정을 해결합니다.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="ci">CLIENTS</div><h3>4,000곳+</h3><p>함께한 고객사</p></div>
+      <div class="card reveal"><div class="ci">EVENTS</div><h3>8,000건+</h3><p>누적 행사 운영</p></div>
+      <div class="card reveal"><div class="ci">RETENTION</div><h3>92%</h3><p>서비스 재이용률</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-wrap">
+  <div class="cta reveal">
+    <h2>커피차 견적이 필요하신가요?</h2>
+    <p>메뉴·인원·지역만 알려주시면 출장비 포함 견적을 보내드립니다.</p>
+    <div class="cta-actions">
+      <a class="p1" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성</a>
+      <a class="p2" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener">카카오톡 상담</a>
+    </div>
+  </div>
+</div>
 
 <footer>
-  주식회사 하이팅 &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 사업자등록번호 441-86-03352<br>
-  대표번호 1877-6901 / 010-2263-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229<br>
-  © 2026 푸드트럭하우스. All rights reserved.
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand"><img src="logo-white.png" alt="푸드트럭하우스" class="brand-logo"></div>
+        <p>커피차·푸드트럭 케이터링 전문. 고객사 4,000곳과 8,000건의 현장을 함께한 운영의 힘으로 행사 그 이상의 추억을 만듭니다.</p>
+      </div>
+      <div class="foot-col"><h4>차량</h4><a href="coffee.html">커피차</a><a href="snack.html">간식·분식차</a><a href="odeng.html">오뎅차</a><a href="ice.html">빙수·아이스크림차</a><a href="churros.html">츄러스트럭</a></div>
+      <div class="foot-col"><h4>바로가기</h4><a href="about.html">소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="news.html">공지사항</a><a href="tel:18776901">1877-6901</a></div>
+    </div>
+    <div class="biz">
+      <b>푸드트럭하우스</b> &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 주식회사 하이팅 &nbsp;|&nbsp; 사업자번호 441-86-03352<br>
+      대표번호 1877-6901 / 010-2263-6901 / 010-2482-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229
+      <div class="copy">© 2026 푸드트럭하우스. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--blue-bright)">개인정보처리방침</a></div>
+    </div>
+  </div>
 </footer>
 
+<script>
+  var hdr=document.getElementById('hdr'),last=0;
+  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
+  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
+  mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
+  dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+<div class="fab-social">
+  <a class="blog" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener" aria-label="네이버 블로그"><b>blog</b></a>
+  <a class="insta" href="#" target="_blank" rel="noopener" aria-label="인스타그램"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+  <a class="yt" href="#" target="_blank" rel="noopener" aria-label="유튜브"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4 0-1.3.1-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.5v1.9c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.9.3 6.9.3s4 0 6.8-.3c.4 0 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.9c0-1.7-.2-3.3-.2-3.3zM10 14.6V8.9l5 2.9-5 2.8z"/></svg></a>
+  <a class="tel" href="tel:18776901" aria-label="전화 연결"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg></a>
+</div>
+<a class="quote-fab" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="3초 견적완성">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+  <span>3초 견적완성</span>
+</a>
+<a class="kakao-fab" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.76 6.78-.21.78-.76 2.82-.87 3.26-.14.55.2.54.42.39.17-.11 2.71-1.84 3.81-2.59.6.09 1.23.13 1.88.13 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+  <span>카톡 상담</span>
+</a>
 </body>
 </html>
