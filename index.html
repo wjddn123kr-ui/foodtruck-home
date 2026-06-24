@@ -184,7 +184,7 @@ img{max-width:100%;display:block}
 .gal-card .cap p{font-size:14px;color:#5b6789;margin-top:6px}
 
 /* ================= 차량 라인업 (SEO) ================= */
-.veh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.veh-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .veh-card{background:#fff;border-radius:var(--r);padding:28px 22px;text-align:center;border:1.4px solid #eef2fb;transition:.25s}
 .veh-card:hover{border-color:var(--blue);transform:translateY(-5px);box-shadow:var(--shadow)}
 .veh-card .ico{width:64px;height:64px;border-radius:50%;background:var(--paper);color:var(--blue);display:grid;place-items:center;margin:0 auto 16px;transition:.25s}
@@ -301,7 +301,7 @@ img{max-width:100%;display:block}
 
 /* ================= FOOTER ================= */
 .ft{background:var(--navy-900);color:rgba(255,255,255,.62);padding:64px 0 40px;font-size:14px}
-.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
 .ft-brand .logo{color:#fff;margin-bottom:18px}
 .ft-brand p{max-width:320px;line-height:1.7;font-size:13.5px}
 .ft-col h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px}
@@ -414,15 +414,6 @@ img{max-width:100%;display:block}
         </div>
       </div>
       <a href="/service.html">서비스</a>
-      <div class="has-drop">
-        <a href="/vehicle-coffee.html">차량 ▾</a>
-        <div class="drop">
-          <a href="/vehicle-foodtruck.html">푸드트럭</a>
-          <a href="/vehicle-coffee.html">커피차</a>
-          <a href="/vehicle-snack.html">간식차</a>
-          <a href="/vehicle-bunsik.html">분식차</a>
-        </div>
-      </div>
       <a href="/menu.html">메뉴</a>
       <a href="/review.html">후기</a>
       <a href="/news.html">공지</a>
@@ -449,10 +440,6 @@ img{max-width:100%;display:block}
   <a href="/about.html">대표 인사말</a>
   <a href="/company.html">회사소개</a>
   <a href="/service.html">서비스</a>
-  <a href="/vehicle-foodtruck.html">푸드트럭</a>
-  <a href="/vehicle-coffee.html">커피차</a>
-  <a href="/vehicle-snack.html">간식차</a>
-  <a href="/vehicle-bunsik.html">분식차</a>
   <a href="/menu.html">메뉴</a>
   <a href="/review.html">후기</a>
   <a href="/news.html">공지</a>
@@ -747,27 +734,30 @@ img{max-width:100%;display:block}
     <div class="sec-head reveal">
       <span class="eyebrow">VEHICLES</span>
       <h2>행사 성격에 맞는 차량을 고르세요</h2>
-      <p>푸드트럭부터 커피차·간식차·분식차까지. 각 차량별 메뉴와 사례를 확인하실 수 있습니다.</p>
+      <p>커피차·간식차부터 오뎅차·빙수차·츄러스트럭까지. 각 차량별 메뉴와 사례를 확인하실 수 있습니다.</p>
     </div>
     <div class="veh-grid">
-      <a href="/vehicle-foodtruck.html" class="veh-card reveal">
-        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 13h11l2-4h3l2 4v5h-2M3 13V7h11v6M7 20a2 2 0 100-4 2 2 0 000 4zM17 20a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>푸드트럭</h3><p>핫도그·버거·분식 등 메인</p>
-      </a>
-      <a href="/vehicle-coffee.html" class="veh-card reveal">
+      <a href="/coffee.html" class="veh-card reveal">
         <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 9h13v5a4 4 0 01-4 4H8a4 4 0 01-4-4V9zM17 10h2a2 2 0 010 4h-2M7 4v2M11 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>커피차</h3><p>아메리카노·라떼·에이드</p>
       </a>
-      <a href="/vehicle-snack.html" class="veh-card reveal">
+      <a href="/snack.html" class="veh-card reveal">
         <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3c3 0 5 2 5 5 0 4-5 13-5 13S7 12 7 8c0-3 2-5 5-5zM12 8a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>간식차</h3><p>츄러스·붕어빵·솜사탕</p>
+        <h3>간식·분식차</h3><p>츄러스·핫도그·떡볶이</p>
       </a>
-      <a href="/vehicle-bunsik.html" class="veh-card reveal">
+      <a href="/odeng.html" class="veh-card reveal">
         <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 11h14M5 11a7 7 0 0114 0M5 15h14M3 19h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>분식차</h3><p>떡볶이·어묵·튀김</p>
+        <h3>오뎅차</h3><p>어묵·국물·겨울 간식</p>
+      </a>
+      <a href="/ice.html" class="veh-card reveal">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M8 9a4 4 0 018 0M7 9h10l-4.6 11.2a.45.45 0 01-.8 0L7 9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>빙수·아이스크림차</h3><p>팥빙수·젤라또·아이스크림</p>
+      </a>
+      <a href="/churros.html" class="veh-card reveal">
+        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M7 3c0 3-2 4-2 7s2 4 2 7M12 3c0 3-2 4-2 7s2 4 2 7M17 3c0 3-2 4-2 7s2 4 2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>츄러스트럭</h3><p>갓 튀긴 30cm 츄러스</p>
       </a>
     </div>
-    <p style="text-align:center;margin-top:22px;color:#93A1C7;font-size:14px">오뎅차 · 빙수차 라인업이 곧 추가됩니다</p>
   </div>
 </section>
 
@@ -822,6 +812,14 @@ img{max-width:100%;display:block}
           <img src="logo-white.png" alt="푸드트럭하우스" class="logo-img">
         </a>
         <p>젊음이 만든 열정, 깨끗한 푸드트럭의 기준. 기업행사·축제·브랜드행사 케이터링 전문.</p>
+      </div>
+      <div class="ft-col">
+        <h4>차량</h4>
+        <a href="/coffee.html">커피차</a>
+        <a href="/snack.html">간식·분식차</a>
+        <a href="/odeng.html">오뎅차</a>
+        <a href="/ice.html">빙수·아이스크림차</a>
+        <a href="/churros.html">츄러스트럭</a>
       </div>
       <div class="ft-col">
         <h4>바로가기</h4>
