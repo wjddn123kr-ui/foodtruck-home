@@ -19,6 +19,7 @@
   --navy-900:#060C1F; --navy-850:#0A1430; --navy-800:#0E1A3D;
   --blue:#2D5BFF; --blue-deep:#003892; --blue-bright:#5B86FF;
   --ice:#EAF0FF; --paper:#F4F7FE; --ink:#0A1124; --mute:#93A1C7;
+  --line:rgba(140,165,225,.16);
   --white:#ffffff;
   --r-sm:12px; --r:18px; --r-lg:26px;
   --shadow-sm:0 4px 18px rgba(13,40,120,.06);
@@ -192,45 +193,38 @@ img{max-width:100%;display:block}
 .logo-chip:hover{box-shadow:var(--shadow-sm);transform:translateY(-3px);border-color:#dbe6ff}
 .logo-chip:hover img{filter:none;opacity:1}
 
-/* ===== 현장 운영 섹션 ===== */
-.ops-split{display:grid;grid-template-columns:1.02fr 1fr;gap:52px;align-items:center}
-.ops-copy{text-align:left}
-.ops-copy .eyebrow{margin-bottom:14px}
-.ops-copy h2{font-size:clamp(26px,3.2vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.3;color:var(--navy-900)}
-.ops-copy h2 .hl{color:var(--blue)}
-.ops-copy>p{margin-top:16px;color:#5b6789;font-size:16px;line-height:1.7}
-.ops-points{margin-top:30px;display:flex;flex-direction:column;gap:20px}
-.ops-point{display:flex;gap:15px;align-items:flex-start}
-.ops-point .pn{font-family:var(--num);font-weight:800;font-size:19px;color:var(--blue);line-height:1.15;flex:none;width:30px}
-.ops-point h3{font-size:16.5px;font-weight:700;color:var(--navy-900);letter-spacing:-.02em}
-.ops-point p{font-size:14px;color:#5b6789;margin-top:3px;line-height:1.6}
+/* ===== 현장 운영 (다크) ===== */
+.why-sec{background:var(--navy-900);color:#fff;position:relative;overflow:hidden}
+.why-sec::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(45,91,255,.16),transparent 70%);top:-180px;left:-120px}
+.why-grid{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(40px,6vw,72px);align-items:center;position:relative;z-index:2}
+/* 강조 에어브로우(빨강 + 펄스) */
+.why-kicker{display:inline-flex;align-items:center;gap:11px;font-size:14px;font-weight:800;letter-spacing:.01em;color:#FF6B57;margin-bottom:18px}
+.why-kicker .kdot{width:8px;height:8px;border-radius:50%;background:#FF6B57;animation:kpulse 1.7s ease-out infinite}
+.why-kicker::after{content:"";width:52px;height:1px;background:linear-gradient(90deg,rgba(255,107,87,.7),transparent)}
+@keyframes kpulse{0%{box-shadow:0 0 0 0 rgba(255,107,87,.55)}70%{box-shadow:0 0 0 9px rgba(255,107,87,0)}100%{box-shadow:0 0 0 0 rgba(255,107,87,0)}}
+.why-sec h2.st{font-size:clamp(28px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:#fff}
+.why-lead{margin-top:22px;font-size:17px;color:var(--mute);max-width:46ch;line-height:1.7}
+.points{margin-top:38px}
+.pt{padding:26px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.pt:last-child{border-bottom:0}
+.pt .n{font-family:var(--num);font-weight:800;font-size:14px;color:var(--blue-bright);border:1.5px solid rgba(91,134,255,.4);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
+.pt h3{font-size:19px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:6px}
+.pt p{font-size:15px;color:var(--mute);line-height:1.6}
 
-/* ===== 라이브 배차 보드 ===== */
-.ops-board{margin-top:30px;background:var(--navy-900);border-radius:var(--r-lg);padding:32px 34px;box-shadow:var(--shadow-lg);color:#fff;position:relative;overflow:hidden}
-.ops-board::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(45,91,255,.32),transparent 70%);top:-170px;right:-90px}
-.obd-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;position:relative;z-index:2;flex-wrap:wrap;gap:12px}
-.obd-title{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px}
-.obd-live{display:inline-flex;align-items:center;gap:7px;background:rgba(45,91,255,.18);border:1px solid rgba(91,134,255,.4);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--blue-bright)}
-.obd-live .ld{width:7px;height:7px;border-radius:50%;background:#5BE38A;animation:blink 1.4s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(91,227,138,.5)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(91,227,138,0)}}
-.obd-count{font-family:var(--num);font-size:14px;color:var(--mute)}
-.obd-count b{color:#fff;font-size:22px}
-.obd-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;position:relative;z-index:2}
-.obd-chip{aspect-ratio:1;border-radius:11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:13px;color:var(--mute);transition:.45s cubic-bezier(.16,1,.3,1)}
-.obd-chip.on{background:var(--blue);border-color:var(--blue-bright);color:#fff;box-shadow:0 8px 20px rgba(45,91,255,.45);transform:translateY(-2px)}
-.obd-chip.booth{font-size:11px}
-.obd-bar-wrap{margin-top:24px;position:relative;z-index:2}
-.obd-bar-lbl{display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:9px}
-.obd-bar-lbl b{color:#fff;font-family:var(--num)}
-.obd-bar{height:8px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}
-.obd-bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--blue),var(--blue-bright));width:0%;transition:width .45s ease}
-.obd-done{margin-top:18px;display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--blue-bright);opacity:0;transform:translateY(6px);transition:.4s;position:relative;z-index:2}
-.obd-done.show{opacity:1;transform:none}
-.obd-cap{text-align:center;margin-top:20px;color:var(--mute);font-size:13.5px}
-/* 2단(글자 왼쪽 / 보드 오른쪽) 배치 */
-.ops-split .ops-board{margin-top:0}
-.ops-split .obd-grid{grid-template-columns:repeat(4,1fr)}
-.ops-split .obd-cap{text-align:left;margin-top:16px}
+/* ===== 실시간 배차 카드 ===== */
+.dispatch-card{background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid var(--line);border-radius:22px;padding:30px;position:relative;overflow:hidden;box-shadow:0 30px 70px -40px #000}
+.dispatch-card::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(45,91,255,.18);filter:blur(50px);top:-40px;right:-40px}
+.dc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative;flex-wrap:wrap;gap:8px}
+.dc-head .t{font-size:13px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:8px}
+.dc-head .t .live{width:8px;height:8px;border-radius:50%;background:#34D399;animation:pulse2 2s infinite}
+@keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.dc-head .meta{font-family:var(--num);font-size:12px;color:var(--mute)}
+.dispatch{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;position:relative}
+.cell{aspect-ratio:1;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:13px;color:var(--mute);background:rgba(140,165,225,.04);transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
+.cell.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 22px -8px rgba(45,91,255,.8)}
+.cell.warm{background:rgba(91,134,255,.14);color:var(--blue-bright);border-color:rgba(91,134,255,.35)}
+.cell.booth{background:rgba(52,211,153,.12);color:#34D399;border:1px dashed rgba(52,211,153,.45);font-size:12px}
+.dc-cap{margin-top:22px;font-size:13px;color:var(--mute);line-height:1.55;position:relative}
 
 /* ===== 음식 몽타주 (쿡앤컴퍼니式 → 우리 블루) ===== */
 .montage-sec{background:linear-gradient(165deg,#EAF0FF 0%,#DCE7FF 55%,#CFDDFF 100%);overflow:hidden;text-align:center;position:relative}
@@ -335,7 +329,7 @@ img{max-width:100%;display:block}
   .quote-grid .phone-col{order:-1}
   .svc-grid,.veh-grid{grid-template-columns:repeat(2,1fr)}
   .logo-wall{grid-template-columns:repeat(3,1fr)}
-  .ops-split{grid-template-columns:1fr;gap:34px}
+  .why-grid{grid-template-columns:1fr;gap:40px}
 }
 @media(max-width:768px){
   .nav,.hd-cta .tel,.hd-cta .btn{display:none}
@@ -344,8 +338,7 @@ img{max-width:100%;display:block}
   .stats{grid-template-columns:1fr 1fr;gap:12px;margin-top:-70px}
   .stat-card{padding:24px 16px}
   .gal-grid,.rev-grid{grid-template-columns:1fr}
-  .obd-grid{grid-template-columns:repeat(4,1fr)}
-  .ops-board{padding:24px 20px}
+  .dispatch-card{padding:24px 20px}
   .ft-top{grid-template-columns:1fr;gap:30px}
   .float-quote span.long{display:none}
 }
@@ -628,48 +621,31 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- ================= 현장 운영 (신뢰) ================= -->
-<section class="sec">
-  <div class="wrap">
-    <div class="ops-split">
-      <div class="ops-copy reveal">
-        <span class="eyebrow">WHY FOODTRUCKHOUSE</span>
-        <h2>푸드트럭 행사의 핵심은<br><span class="hl">'현장운영'</span>입니다</h2>
-        <p>맛있는 트럭은 많습니다. 행사 담당자가 진짜 걱정하는 건 "당일 그 규모를 펑크 없이 돌릴 수 있는가"입니다. 그 운영을 8,000번 해봤습니다.</p>
-        <div class="ops-points">
-          <div class="ops-point"><div class="pn">01</div><div><h3>규모를 감당해 본 팀</h3><p>직영 15대와 부스 운영 체계로, 수백 명 동시 행사도 대기 시간 없이 회전시킵니다.</p></div></div>
-          <div class="ops-point"><div class="pn">02</div><div><h3>펑크 없는 배차</h3><p>자체 운영 시스템으로 호차·인력·물량을 사전 배차해, 당일 변수에도 멈추지 않습니다.</p></div></div>
-          <div class="ops-point"><div class="pn">03</div><div><h3>다시 찾는 이유</h3><p>재이용률 92%. 한 번 맡겨본 담당자가 다음 행사도, 그 다음 행사도 맡기는 이유입니다.</p></div></div>
-        </div>
+<!-- ================= 현장 운영 (다크) ================= -->
+<section class="sec why-sec">
+  <div class="wrap why-grid">
+    <div class="reveal">
+      <div class="why-kicker"><span class="kdot"></span>왜 담당자들이 다시 찾을까</div>
+      <h2 class="st">케이터링은 음식이 아니라<br>현장 운영입니다.</h2>
+      <p class="why-lead">맛있는 트럭은 많습니다. 행사 담당자가 진짜 걱정하는 건 "당일 그 규모를 펑크 없이 돌릴 수 있는가"예요. 그 운영을 8,000번 해봤습니다.</p>
+      <div class="points">
+        <div class="pt"><div class="n">01</div><div><h3>규모를 감당해 본 팀</h3><p>15대 트럭과 부스 운영 체계로, 수백 명 동시 행사도 대기 시간 없이 회전시킵니다.</p></div></div>
+        <div class="pt"><div class="n">02</div><div><h3>펑크 없는 배차</h3><p>자체 운영 시스템으로 호차·인력·물량을 사전 배차해, 당일 변수에도 멈추지 않습니다.</p></div></div>
+        <div class="pt"><div class="n">03</div><div><h3>다시 찾는 이유</h3><p>재이용률 92%. 한 번 맡겨본 담당자가 다음 행사도, 그 다음 행사도 맡기는 이유입니다.</p></div></div>
       </div>
-
-      <div class="ops-right reveal">
-        <div class="ops-board">
-          <div class="obd-top">
-            <div class="obd-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 13h11l2-4h3l2 4v5h-2M3 13V7h11v6M7 20a2 2 0 100-4 2 2 0 000 4zM17 20a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-              오늘의 현장 배차
-              <span class="obd-live"><span class="ld"></span>LIVE</span>
-            </div>
-            <div class="obd-count"><b id="obdNum">0</b> / 15대 투입</div>
-          </div>
-          <div class="obd-grid" id="obdGrid">
-            <div class="obd-chip">1</div><div class="obd-chip">2</div><div class="obd-chip">3</div><div class="obd-chip">4</div>
-            <div class="obd-chip">5</div><div class="obd-chip">6</div><div class="obd-chip">7</div><div class="obd-chip">8</div>
-            <div class="obd-chip">9</div><div class="obd-chip">10</div><div class="obd-chip">11</div><div class="obd-chip">12</div>
-            <div class="obd-chip">13</div><div class="obd-chip">14</div><div class="obd-chip">15</div><div class="obd-chip booth">부스</div>
-          </div>
-          <div class="obd-bar-wrap">
-            <div class="obd-bar-lbl"><span>배차 진행률</span><b id="obdPct">0%</b></div>
-            <div class="obd-bar"><div class="obd-bar-fill" id="obdFill"></div></div>
-          </div>
-          <div class="obd-done" id="obdDone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            전 차량 현장 투입 완료 · 운영 시작
-          </div>
-        </div>
-        <p class="obd-cap">행사마다 호차를 미리 배정하고 인력·물량을 묶어 운영합니다. 같은 화면을 사무실과 현장팀이 함께 봅니다.</p>
+    </div>
+    <div class="dispatch-card reveal">
+      <div class="dc-head">
+        <span class="t"><span class="live"></span>실시간 배차 현황</span>
+        <span class="meta">TODAY · 15 UNITS · 부스</span>
       </div>
+      <div class="dispatch" id="dispatch">
+        <div class="cell">1호</div><div class="cell">2호</div><div class="cell">3호</div><div class="cell">4호</div>
+        <div class="cell">5호</div><div class="cell">6호</div><div class="cell">7호</div><div class="cell">8호</div>
+        <div class="cell">9호</div><div class="cell">10호</div><div class="cell">11호</div><div class="cell">12호</div>
+        <div class="cell">13호</div><div class="cell">14호</div><div class="cell">15호</div><div class="cell booth">부스</div>
+      </div>
+      <p class="dc-cap">행사마다 호차를 미리 배정하고 인력·물량을 묶어 운영합니다. 같은 화면을 사무실과 현장팀이 함께 봅니다.</p>
     </div>
   </div>
 </section>
@@ -962,40 +938,19 @@ window.addEventListener('load',()=>{
   }
 })();
 
-// 라이브 배차 보드 모션
+// 실시간 배차 보드 (랜덤 점등 — 매 2.2초 다르게)
 (function(){
-  const grid=document.getElementById('obdGrid'); if(!grid)return;
-  const chips=[...grid.querySelectorAll('.obd-chip')];
-  const num=document.getElementById('obdNum'),pct=document.getElementById('obdPct'),
-        fill=document.getElementById('obdFill'),done=document.getElementById('obdDone');
-  const total=chips.length;
-  const wait=ms=>new Promise(r=>setTimeout(r,ms));
-  async function run(){
-    chips.forEach(c=>c.classList.remove('on'));
-    num.textContent='0';pct.textContent='0%';fill.style.width='0%';done.classList.remove('show');
-    await wait(600);
-    // 랜덤 배차 순서 (순차 점등 X — 매 루프 다른 순서로 채워짐)
-    const order=[...Array(total).keys()];
-    for(let i=total-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
-    let lit=0;
-    for(const idx of order){
-      chips[idx].classList.add('on'); lit++;
-      num.textContent=Math.min(lit,15);
-      const p=Math.round(lit/total*100);
-      pct.textContent=p+'%'; fill.style.width=p+'%';
-      await wait(130);
-    }
-    num.textContent='15'; pct.textContent='100%'; fill.style.width='100%';
-    await wait(300); done.classList.add('show');
-    await wait(2800); run();
+  const grid=document.getElementById('dispatch'); if(!grid)return;
+  const cells=[...grid.querySelectorAll('.cell:not(.booth)')];
+  function tick(){
+    cells.forEach(c=>c.classList.remove('on','warm'));
+    const idx=cells.map((_,i)=>i).sort(()=>Math.random()-.5);
+    const onN=5+Math.floor(Math.random()*3), warmN=2+Math.floor(Math.random()*2);
+    for(let i=0;i<onN;i++)cells[idx[i]].classList.add('on');
+    for(let j=onN;j<onN+warmN;j++)cells[idx[j]].classList.add('warm');
   }
-  if(reduce){
-    chips.forEach(c=>c.classList.add('on'));
-    num.textContent='15';pct.textContent='100%';fill.style.width='100%';done.classList.add('show');
-  }else{
-    const obs=new IntersectionObserver(e=>{if(e[0].isIntersecting){obs.disconnect();run();}},{threshold:.3});
-    obs.observe(grid);
-  }
+  if(reduce){ for(let i=0;i<7;i++)cells[i].classList.add('on'); return; }
+  tick(); setInterval(tick,2200);
 })();
 </script>
 </body>
