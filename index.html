@@ -240,11 +240,14 @@ img{max-width:100%;display:block}
 .montage-sec{background:linear-gradient(165deg,#EAF0FF 0%,#DCE7FF 55%,#CFDDFF 100%);overflow:hidden;text-align:center;position:relative}
 .montage-sec::before{content:"";position:absolute;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(91,134,255,.30),transparent 70%);top:-230px;left:50%;transform:translateX(-50%)}
 .montage-sec .wrap{position:relative;z-index:2}
-.montage-head h2{font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.22;color:var(--navy-900)}
-.montage-head h2 .hl{color:var(--blue)}
-.montage-head p{margin-top:16px;color:#3c4a72;font-size:16.5px;max-width:580px;margin:16px auto 0}
+.mc-caption{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:min(620px,90%);text-align:center;pointer-events:none}
+.mc-caption::before{content:"";position:absolute;inset:-30px -48px;z-index:-1;background:radial-gradient(ellipse 70% 72% at center,rgba(238,243,255,.95) 0%,rgba(238,243,255,.8) 46%,transparent 74%)}
+.mc-caption .eyebrow{margin-left:0}
+.mc-caption h2{font-size:clamp(26px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.18;color:var(--navy-900);margin-top:8px}
+.mc-caption h2 .hl{color:var(--blue)}
+.mc-caption p{margin:12px auto 0;color:#3c4a72;font-size:15.5px;max-width:430px}
 
-.mc-stage{position:relative;height:680px;margin:36px auto 0;max-width:1180px}
+.mc-stage{position:relative;height:540px;margin:8px auto 0;max-width:1180px}
 .mc-pile{position:absolute;left:50%;top:50%;width:62%;max-width:680px;z-index:2;transform:translate(-50%,-50%)}
 .mc-pile .fi-bob{display:block;animation:floatMain 7s ease-in-out infinite}
 .mc-pile img{width:100%;display:block;filter:drop-shadow(0 28px 32px rgba(13,40,120,.20));transition:transform .3s ease,filter .3s ease;cursor:pointer}
@@ -274,8 +277,9 @@ img{max-width:100%;display:block}
 @keyframes floatB{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-26px) rotate(-3deg)}}
 
 @media(max-width:760px){
-  .mc-stage{height:560px}
+  .mc-stage{height:470px}
   .mc-pile{width:72%;max-width:330px}
+  .mc-caption h2{font-size:clamp(22px,6.4vw,30px)}.mc-caption p{font-size:13.5px}
   .fi-fruit{width:132px;left:0;top:6%}
   .fi-ade{width:116px;right:0;top:2%}
   .fi-chicken{width:140px;right:0;bottom:5%}
@@ -629,15 +633,15 @@ img{max-width:100%;display:block}
 <!-- ================= 메뉴 (음식 몽타주) ================= -->
 <section class="sec montage-sec">
   <div class="wrap">
-    <div class="montage-head reveal">
-      <span class="eyebrow">OUR MENU</span>
-      <h2>메뉴가 곧 분위기.<br><span class="hl">골라 담는 재미</span>로 채웁니다</h2>
-      <p>현장에서 바로 조리하는 100종 — 츄러스·닭강정·떡볶이부터 갓 내린 커피까지. 행사 성격에 맞춰 골라 담으세요.</p>
-    </div>
-
     <div class="mc-stage reveal">
       <!-- ▼ 누끼 음식 모음 (중앙, 둥실둥실) ▼ -->
       <div class="mc-pile"><span class="fi-bob"><img src="menu-pile.png" alt="푸드트럭하우스 100종 메뉴 모음" loading="lazy" onerror="this.closest('.mc-pile').style.opacity=0"></span></div>
+      <!-- ▼ 제목 문구 (사진 위 오버레이) ▼ -->
+      <div class="mc-caption">
+        <span class="eyebrow">OUR MENU</span>
+        <h2>메뉴가 곧 분위기.<br><span class="hl">골라 담는 재미</span>로 채웁니다</h2>
+        <p>현장에서 바로 조리하는 100종 — 갓 만든 그대로.</p>
+      </div>
       <!-- ▼ 떠다니는 개별 누끼 7종 ▼ -->
       <span class="float-item fi-fruit"><span class="fi-bob"><img src="item-fruit.png" alt="컵과일" loading="lazy" onerror="this.closest('.float-item').style.display='none'"></span></span>
       <span class="float-item fi-ade"><span class="fi-bob"><img src="item-ade.png" alt="청포도에이드" loading="lazy" onerror="this.closest('.float-item').style.display='none'"></span></span>
