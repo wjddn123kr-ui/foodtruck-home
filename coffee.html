@@ -199,11 +199,11 @@
 <style>
 /* 차량 히어로 밴드 (영상 반반 배경) — index .mc-stage 풀블리드 패턴 재사용 */
 .vhero{position:relative;width:100%;min-height:580px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#0A1430;padding:40px 0}
-.vhero-bg{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;z-index:1}
-.vhero-bg.l{left:0}.vhero-bg.r{right:0}
-.vhero-bg video{position:absolute;inset:0;width:100%;height:100%;display:block}
-.vhero-bg .blur{object-fit:cover;filter:blur(22px) brightness(.62);transform:scale(1.2)}
-.vhero-bg .main{object-fit:contain}
+.vhero-col{position:absolute;top:0;bottom:0;overflow:hidden;z-index:1}
+.vhero-col video,.vhero-col img{width:100%;height:100%;object-fit:cover;display:block}
+.vc-left{left:0;width:24%}
+.vc-center{left:24%;width:52%}
+.vc-right{right:0;width:24%}
 .vhero::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(6,12,31,.58) 0%,rgba(6,12,31,.4) 45%,rgba(6,12,31,.74) 100%)}
 .vhero .wrap{position:relative;z-index:3}
 .vhero .crumb{font-size:13px;color:rgba(255,255,255,.78);margin-bottom:14px}
@@ -213,18 +213,13 @@
 .vhero .hero-actions{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .vhero .btn-line{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
 .vhero .btn-line:hover{background:rgba(255,255,255,.14)}
-@media(max-width:760px){.vhero{min-height:460px}}
-@media(prefers-reduced-motion:reduce){.vhero-bg video{display:none}}
+@media(max-width:760px){.vhero{min-height:440px}.vc-left,.vc-right{display:none}.vc-center{left:0;width:100%}}
+@media(prefers-reduced-motion:reduce){.vhero-col video{display:none}}
 </style>
 <section class="vhero">
-  <div class="vhero-bg l">
-    <video class="blur" src="coffee-bg-1.mp4" autoplay muted loop playsinline preload="auto"></video>
-    <video class="main" src="coffee-bg-1.mp4" autoplay muted loop playsinline preload="auto"></video>
-  </div>
-  <div class="vhero-bg r">
-    <video class="blur" src="coffee-bg-2.mp4" autoplay muted loop playsinline preload="auto"></video>
-    <video class="main" src="coffee-bg-2.mp4" autoplay muted loop playsinline preload="auto"></video>
-  </div>
+  <div class="vhero-col vc-left"><video src="coffee-bg-1.mp4" autoplay muted loop playsinline preload="auto"></video></div>
+  <div class="vhero-col vc-center"><img src="coffee-center.jpg" alt="커피차 현장 아이스티 음료" onerror="this.style.display='none';this.closest('.vc-center').style.background='#11224A'"></div>
+  <div class="vhero-col vc-right"><video src="coffee-bg-2.mp4" autoplay muted loop playsinline preload="auto"></video></div>
   <div class="wrap">
     <div class="crumb"><a href="index.html">홈</a> · 차량 · 커피차</div>
     <h1>커피차 대여 — 현장에서<br>갓 내린 커피로 분위기를 채웁니다</h1>
