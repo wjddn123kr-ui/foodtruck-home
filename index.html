@@ -285,6 +285,65 @@ img{max-width:100%;display:block}
 }
 @media(prefers-reduced-motion:reduce){.fi-bob{animation:none}}
 
+/* ===== 메뉴 슬롯머신 (메뉴 섹션 내부) ===== */
+.slot-wrap{max-width:660px;margin:6px auto 0;background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px 22px 22px;box-shadow:0 24px 50px -28px rgba(13,40,120,.4)}
+.slot-title{font-weight:800;color:var(--navy-900);font-size:16.5px;text-align:center;letter-spacing:-.02em}
+.slot-title .hl{color:var(--blue)}
+.slot-reels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.reel-col{text-align:center}
+.reel-cat{font-size:11px;font-weight:800;color:var(--blue);letter-spacing:.06em}
+.reel{position:relative;height:58px;overflow:hidden;border-radius:14px;margin-top:6px;background:linear-gradient(180deg,#EEF3FF,#E1EAFF);border:1px solid #D6E2FF}
+.reel::before{content:"";position:absolute;top:0;left:0;right:0;height:14px;z-index:2;background:linear-gradient(#E9F0FF,transparent);pointer-events:none}
+.reel::after{content:"";position:absolute;bottom:0;left:0;right:0;height:14px;z-index:2;background:linear-gradient(transparent,#E2EAFF);pointer-events:none}
+.reel-track{position:absolute;left:0;right:0;top:0;will-change:transform}
+.reel-item{height:58px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14.5px;color:var(--ink);padding:0 6px;text-align:center;line-height:1.1}
+.slot-combo{margin-top:14px;text-align:center;font-size:13.5px;color:#3c4a72;min-height:20px}
+.slot-combo b{color:var(--blue-deep);font-weight:800}
+
+/* ===== 견적서 타이핑 자동완성 (3초견적 섹션 내부) ===== */
+.qsheet-wrap{max-width:540px;margin:40px auto 0}
+.qsheet{background:#fff;border-radius:18px;border:1px solid var(--line);box-shadow:0 26px 56px -30px rgba(13,40,120,.45);padding:22px 26px}
+.qsheet-h{display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #EDF1FB;padding-bottom:12px;margin-bottom:12px}
+.qsheet-h b{font-size:16px;color:var(--navy-900)}
+.qsheet-h .tag{font-size:11px;font-weight:800;color:var(--blue);background:#EAF0FF;padding:4px 10px;border-radius:20px;letter-spacing:.05em}
+.qrow{display:flex;justify-content:space-between;gap:14px;padding:7px 0;font-size:14.5px;min-height:23px}
+.qrow .k{color:#93A1C7;font-weight:700;flex:0 0 auto}
+.qrow .v{text-align:right;font-weight:600;color:var(--ink)}
+.qtot{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid #EDF1FB;margin-top:10px;padding-top:12px}
+.qtot .k{font-weight:800;color:var(--navy-900);font-size:14.5px}
+.qtot .v{font-family:var(--num);font-weight:800;font-size:22px;color:var(--blue)}
+.qsheet-cur::after{content:"|";color:var(--blue);font-weight:400;animation:qcaret .9s step-end infinite}
+.qstamp{margin-top:14px;text-align:center;font-size:12.5px;font-weight:800;color:#1AA260;opacity:0;transition:opacity .45s}
+.qstamp.on{opacity:1}
+@keyframes qcaret{50%{opacity:0}}
+
+/* ===== 트럭 도로 주행 (메뉴 ↔ 현장운영 사이) ===== */
+.road-sec{background:linear-gradient(180deg,#EEF3FF,#E0E9FF);padding:50px 0 0;overflow:hidden}
+.road-head{max-width:1100px;margin:0 auto;padding:0 20px;text-align:center}
+.road-head .kick{font-weight:800;color:var(--navy-900);font-size:clamp(19px,2.6vw,27px);letter-spacing:-.02em}
+.road-head .kick .hl{color:var(--blue)}
+.road-head p{margin-top:8px;color:#3c4a72;font-size:14.5px}
+.road-stage{position:relative;height:150px;margin-top:10px}
+.road-line{position:absolute;left:0;right:0;bottom:34px;height:4px;background:#B9CBF1}
+.road-dash{position:absolute;left:0;right:0;bottom:16px;height:5px;background:repeating-linear-gradient(90deg,var(--blue) 0 28px,transparent 28px 58px);background-size:58px 5px;opacity:.4;animation:roadDash .5s linear infinite}
+.road-truck{position:absolute;bottom:38px;left:0;width:148px;z-index:3;animation:roadDrive 5s linear infinite}
+.road-truck svg{display:block;width:100%;height:auto;filter:drop-shadow(0 9px 9px rgba(13,40,120,.22))}
+.road-truck .wheel{transform-box:fill-box;transform-origin:center;animation:roadWheel .5s linear infinite}
+.road-pin{position:absolute;bottom:40px;right:8%;z-index:2;text-align:center}
+.road-pin svg{width:40px;height:auto;transform-origin:bottom center;animation:roadPin 1.6s ease-in-out infinite;filter:drop-shadow(0 7px 7px rgba(45,91,255,.3))}
+.road-pin .lab{display:block;margin-top:1px;font-weight:800;font-size:11.5px;color:var(--blue-deep)}
+@keyframes roadDrive{0%{transform:translateX(-180px)}100%{transform:translateX(102vw)}}
+@keyframes roadWheel{to{transform:rotate(360deg)}}
+@keyframes roadDash{to{background-position:-58px 0}}
+@keyframes roadPin{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+@media(max-width:760px){
+  .slot-reels{gap:8px}.reel-item{font-size:13px}
+  .road-stage{height:120px}.road-truck{width:112px;bottom:30px}.road-line{bottom:26px}.road-dash{bottom:12px}.road-pin{bottom:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  .road-truck,.road-dash,.road-truck .wheel,.road-pin svg{animation:none}.road-truck{transform:translateX(58vw)}
+}
+
 /* ================= 후기 ================= */
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .rev-card{background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:.3s;border:1px solid #eef2fb}
@@ -596,6 +655,43 @@ img{max-width:100%;display:block}
         </div>
       </div>
     </div>
+
+    <!-- 📝 [모션] 견적서 타이핑 자동완성 — 3초견적 섹션 내부, 폰목업 그리드 바로 아래 -->
+    <div class="qsheet-wrap reveal">
+      <div class="qsheet">
+        <div class="qsheet-h"><b>예상 견적서</b><span class="tag">AUTO</span></div>
+        <div class="qrow"><span class="k">행사</span><span class="v" data-val="임직원 행사 · 200명"></span></div>
+        <div class="qrow"><span class="k">메뉴</span><span class="v" data-val="미니 핫도그 200 · 아메리카노 150"></span></div>
+        <div class="qrow"><span class="k">지역</span><span class="v" data-val="경기 남부 출장 (출장비 포함)"></span></div>
+        <div class="qtot"><span class="k">합계 · VAT 포함</span><span class="v" id="qtotVal">₩ 0</span></div>
+        <div class="qstamp">카카오 알림톡으로 견적 발송 완료</div>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var sheet=document.querySelector('.qsheet'); if(!sheet)return;
+      var rows=[].slice.call(sheet.querySelectorAll('.qrow .v'));
+      var totEl=sheet.querySelector('#qtotVal'), stamp=sheet.querySelector('.qstamp'), TOTAL=765000;
+      function fmt(n){return '₩ '+n.toLocaleString('ko-KR');}
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+        rows.forEach(function(v){v.textContent=v.getAttribute('data-val');});totEl.textContent=fmt(TOTAL);if(stamp)stamp.classList.add('on');return;
+      }
+      var timers=[];
+      function typeRow(idx,done){
+        var v=rows[idx],full=v.getAttribute('data-val'),i=0;
+        v.classList.add('qsheet-cur');v.textContent='';
+        (function step(){ if(i<=full.length){v.textContent=full.slice(0,i++);timers.push(setTimeout(step,42));} else {v.classList.remove('qsheet-cur');done&&done();} })();
+      }
+      function countUp(done){var s=null;(function f(ts){if(!s)s=ts;var p=Math.min((ts-s)/900,1);totEl.textContent=fmt(Math.floor(TOTAL*p));if(p<1)requestAnimationFrame(f);else done&&done();})(performance.now());}
+      function run(){
+        timers.forEach(clearTimeout);timers=[];
+        rows.forEach(function(v){v.textContent='';v.classList.remove('qsheet-cur');});totEl.textContent='₩ 0';if(stamp)stamp.classList.remove('on');
+        typeRow(0,function(){typeRow(1,function(){typeRow(2,function(){countUp(function(){if(stamp)stamp.classList.add('on');timers.push(setTimeout(run,3200));});});});});
+      }
+      var started=false;
+      new IntersectionObserver(function(e){if(e[0].isIntersecting&&!started){started=true;run();}},{threshold:.35}).observe(sheet);
+    })();
+    </script>
   </div>
 </section>
 
@@ -620,6 +716,48 @@ img{max-width:100%;display:block}
       <span class="float-item fi-corndog"><span class="fi-bob"><img src="item-corndog.png" alt="핫도그" loading="lazy" onerror="this.closest('.float-item').style.display='none'"></span></span>
       <span class="float-item fi-softcream"><span class="fi-bob"><img src="item-softcream.png" alt="소프트 아이스크림" loading="lazy" onerror="this.closest('.float-item').style.display='none'"></span></span>
     </div>
+
+    <!-- 🎰 [모션] 메뉴 슬롯머신 — 메뉴 섹션 내부, 떠다니는 음식(mc-stage) 바로 아래 -->
+    <div class="slot-wrap reveal">
+      <div class="slot-title">메뉴 100종, 오늘은 어떤 조합? <span class="hl">슬롯이 골라드려요</span></div>
+      <div class="slot-reels">
+        <div class="reel-col"><span class="reel-cat">음료</span><div class="reel" data-cat="음료"></div></div>
+        <div class="reel-col"><span class="reel-cat">간식</span><div class="reel" data-cat="간식"></div></div>
+        <div class="reel-col"><span class="reel-cat">디저트</span><div class="reel" data-cat="디저트"></div></div>
+      </div>
+      <div class="slot-combo"></div>
+    </div>
+    <script>
+    (function(){
+      var slot=document.querySelector('.slot-wrap'); if(!slot)return;
+      var data={'음료':['아메리카노','복숭아 아이스티','청포도 에이드','딸기 라떼','자몽 에이드','코코아'],
+                '간식':['미니 핫도그','닭강정','떡볶이','츄러스','감자튀김','어묵'],
+                '디저트':['팥빙수','소프트콘','마카롱','와플','쿠키','젤리']};
+      var H=58, combo=slot.querySelector('.slot-combo');
+      var tracks=[].slice.call(slot.querySelectorAll('.reel')).map(function(reel){
+        var items=data[reel.getAttribute('data-cat')]||[];
+        var track=document.createElement('div'); track.className='reel-track';
+        items.concat(items,items).forEach(function(t){var d=document.createElement('div');d.className='reel-item';d.textContent=t;track.appendChild(d);});
+        reel.appendChild(track);
+        return {track:track,items:items,n:items.length,cur:0};
+      });
+      function setY(t,y){t.track.style.transform='translateY('+y+'px)';}
+      tracks.forEach(function(t){setY(t,0);});
+      function showCombo(){if(combo)combo.innerHTML='추천 조합 — <b>'+tracks.map(function(t){return t.items[t.cur];}).join(' + ')+'</b>';}
+      showCombo();
+      if((window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)||!Element.prototype.animate)return;
+      function spin(){
+        tracks.forEach(function(t,i){
+          var target=Math.floor(Math.random()*t.n), from=-t.cur*H, to=-(t.n+target)*H;
+          var a=t.track.animate([{transform:'translateY('+from+'px)'},{transform:'translateY('+to+'px)'}],
+            {duration:1100+i*350,easing:'cubic-bezier(.12,.7,.2,1)',fill:'forwards'});
+          a.onfinish=function(){t.cur=target;setY(t,-target*H);a.cancel();if(i===tracks.length-1)showCombo();};
+        });
+      }
+      var started=false;
+      new IntersectionObserver(function(e){if(e[0].isIntersecting&&!started){started=true;spin();setInterval(spin,3600);}},{threshold:.3}).observe(slot);
+    })();
+    </script>
 
     <div class="montage-cta reveal">
       <a href="/menu.html" class="btn btn-primary">메뉴 100종 보기
@@ -679,6 +817,35 @@ img{max-width:100%;display:block}
       });
     });
     </script>
+  </div>
+</section>
+
+<!-- ================= 🚚 [모션] 트럭 도로 주행 — 메뉴 섹션과 현장운영(다크) 사이 ================= -->
+<section class="sec road-sec">
+  <div class="road-head reveal">
+    <div class="kick">전국 어디든, <span class="hl">트럭이 현장으로 달려갑니다</span></div>
+    <p>직영 15대 · 협력 400여 대가 오늘도 전국 행사장으로 출발합니다.</p>
+  </div>
+  <div class="road-stage">
+    <div class="road-line"></div>
+    <div class="road-dash"></div>
+    <div class="road-truck">
+      <svg viewBox="0 0 152 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="22" width="104" height="44" rx="7" fill="#2D5BFF"/>
+        <rect x="4" y="22" width="104" height="9" rx="4" fill="#5B86FF"/>
+        <rect x="16" y="34" width="52" height="22" rx="4" fill="#EAF0FF"/>
+        <rect x="16" y="34" width="52" height="6" rx="3" fill="#C7D7FF"/>
+        <path d="M108 30h22a8 8 0 0 1 7 4l7 14a4 4 0 0 1-1 5h-42z" fill="#003892"/>
+        <rect x="113" y="34" width="16" height="13" rx="3" fill="#9DBEFF"/>
+        <circle cx="146" cy="58" r="3" fill="#FFD54A"/>
+        <g class="wheel"><circle cx="34" cy="70" r="12" fill="#1A2340"/><circle cx="34" cy="70" r="4.5" fill="#7E8DB8"/><rect x="33" y="59" width="2" height="22" fill="#46537E"/><rect x="23" y="69" width="22" height="2" fill="#46537E"/></g>
+        <g class="wheel"><circle cx="118" cy="70" r="12" fill="#1A2340"/><circle cx="118" cy="70" r="4.5" fill="#7E8DB8"/><rect x="117" y="59" width="2" height="22" fill="#46537E"/><rect x="107" y="69" width="22" height="2" fill="#46537E"/></g>
+      </svg>
+    </div>
+    <div class="road-pin">
+      <svg viewBox="0 0 40 52" fill="none"><path d="M20 2C11 2 4 9 4 18c0 11 16 32 16 32s16-21 16-32C36 9 29 2 20 2z" fill="#2D5BFF"/><circle cx="20" cy="18" r="6" fill="#fff"/></svg>
+      <span class="lab">현장</span>
+    </div>
   </div>
 </section>
 
