@@ -240,25 +240,24 @@ img{max-width:100%;display:block}
 .montage-sec{background:linear-gradient(165deg,#EAF0FF 0%,#DCE7FF 55%,#CFDDFF 100%);overflow:hidden;text-align:center;position:relative}
 .montage-sec::before{content:"";position:absolute;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(91,134,255,.30),transparent 70%);top:-230px;left:50%;transform:translateX(-50%)}
 .montage-sec .wrap{position:relative;z-index:2}
-/* 메뉴 헤더 (상단) */
-.montage-head h2{font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.22;color:var(--navy-900)}
-.montage-head h2 .hl{color:var(--blue)}
-.montage-head p{margin:14px auto 0;color:#3c4a72;font-size:16px;max-width:560px}
-
-/* 스테이지: 좌우 배경사진 + 가운데 음식모음 누끼 */
-.mc-stage{position:relative;height:460px;margin:30px auto 0;max-width:1180px;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#EAF0FF,#DCE7FF);box-shadow:0 30px 60px -30px rgba(13,40,120,.35)}
-.mc-bg{position:absolute;top:0;bottom:0;width:48%;background-size:cover;background-position:center;z-index:1}
-.mc-bg-left{left:0;background-image:url(scene-drinks.jpg);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 40%,transparent 92%);mask-image:linear-gradient(90deg,#000 0%,#000 40%,transparent 92%)}
-.mc-bg-right{right:0;background-image:url(scene-hotdog.jpg);-webkit-mask-image:linear-gradient(270deg,#000 0%,#000 40%,transparent 92%);mask-image:linear-gradient(270deg,#000 0%,#000 40%,transparent 92%)}
-.mc-stage::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 50% 78% at center,rgba(238,243,255,.82) 0%,rgba(238,243,255,.2) 55%,transparent 82%)}
-.mc-pile{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52%;max-width:580px;z-index:3}
-.mc-pile img{width:100%;display:block;filter:drop-shadow(0 24px 30px rgba(13,40,120,.30))}
+/* 스테이지: 풀배경 사진 + 상단 제목 오버레이 + 하단 음식모음 */
+/* 배경사진 교체: 아래 url(scene-hotdog.jpg)를 scene-drinks.jpg 로 바꾸면 음료사진 */
+.mc-stage{position:relative;height:520px;margin:24px auto 0;max-width:1180px;overflow:hidden;border-radius:28px;background:#0A1430 center/cover no-repeat;background-image:url(scene-hotdog.jpg);box-shadow:0 30px 60px -30px rgba(13,40,120,.4)}
+.mc-stage::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,12,31,.66) 0%,rgba(6,12,31,.22) 30%,rgba(6,12,31,.1) 55%,rgba(6,12,31,.5) 100%)}
+.mc-caption{position:absolute;top:0;left:0;right:0;z-index:3;text-align:center;padding:34px 20px 0;pointer-events:none}
+.mc-caption .eyebrow{margin-left:0;color:rgba(255,255,255,.82)}
+.mc-caption h2{font-size:clamp(26px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff;margin-top:8px;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.mc-caption h2 .hl{color:var(--blue-bright)}
+.mc-caption p{margin:10px auto 0;color:rgba(255,255,255,.9);font-size:15px;max-width:470px;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+.mc-pile{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);width:60%;max-width:640px;z-index:2}
+.mc-pile img{width:100%;display:block;filter:drop-shadow(0 22px 28px rgba(0,0,0,.55))}
 .montage-cta{margin-top:30px}
 
 @media(max-width:760px){
-  .mc-stage{height:330px;border-radius:20px}
-  .mc-bg{width:58%}
-  .mc-pile{width:82%;max-width:330px}
+  .mc-stage{height:440px;border-radius:20px}
+  .mc-caption{padding-top:24px}
+  .mc-caption h2{font-size:clamp(22px,6.4vw,30px)}
+  .mc-pile{width:88%;max-width:360px;bottom:2%}
 }
 
 /* ===== 트럭 도로 주행 (현장운영 섹션 하단, 다크 배경) ===== */
@@ -605,17 +604,14 @@ img{max-width:100%;display:block}
 <!-- ================= 메뉴 (음식 몽타주) ================= -->
 <section class="sec montage-sec">
   <div class="wrap">
-    <div class="montage-head reveal">
-      <span class="eyebrow">OUR MENU</span>
-      <h2>메뉴가 곧 분위기.<br><span class="hl">골라 담는 재미</span>로 채웁니다</h2>
-      <p>현장에서 바로 조리하는 100종 — 갓 만든 그대로 골라 담으세요.</p>
-    </div>
-
     <div class="mc-stage reveal">
-      <!-- 좌우 배경사진 (scene-drinks.jpg=좌 / scene-hotdog.jpg=우, 저장 시 표시) -->
-      <div class="mc-bg mc-bg-left"></div>
-      <div class="mc-bg mc-bg-right"></div>
-      <!-- 가운데 음식모음 누끼 -->
+      <!-- 상단 제목 (풀배경 사진 위 오버레이) -->
+      <div class="mc-caption">
+        <span class="eyebrow">OUR MENU</span>
+        <h2>메뉴가 곧 분위기.<br><span class="hl">골라 담는 재미</span>로 채웁니다</h2>
+        <p>현장에서 바로 조리하는 100종 — 갓 만든 그대로.</p>
+      </div>
+      <!-- 하단 가운데 음식모음 누끼 -->
       <div class="mc-pile"><img src="menu-pile.png" alt="푸드트럭하우스 100종 메뉴 모음" loading="lazy"></div>
     </div>
 
