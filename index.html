@@ -250,7 +250,7 @@ img{max-width:100%;display:block}
 .mc-caption h2{font-size:clamp(26px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.5)}
 .mc-caption h2 .hl{color:#FF7A2E}
 .mc-caption p{margin:10px auto 0;color:rgba(255,255,255,.9);font-size:15px;max-width:470px;text-shadow:0 1px 12px rgba(0,0,0,.55)}
-.mc-cta-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5}
+.mc-cta-center{display:inline-block;margin-top:18px;pointer-events:auto}
 .mc-cta-center .btn-primary{background:linear-gradient(135deg,#FF8A3A,#FF4E2C);box-shadow:0 14px 30px -8px rgba(255,78,44,.7)}
 .mc-cta-center .btn-primary:hover{background:linear-gradient(135deg,#FF7A28,#F23A1E);box-shadow:0 18px 38px -8px rgba(255,78,44,.85)}
 .mc-pile{position:absolute;left:50%;bottom:-18%;transform:translateX(-50%);z-index:3}
@@ -611,16 +611,15 @@ img{max-width:100%;display:block}
       <!-- 좌우 반반 풀커버 사진 (왼쪽 음료 / 오른쪽 핫도그) -->
       <div class="mc-half mc-half-left"></div>
       <div class="mc-half mc-half-right"></div>
-      <!-- 상단 끝: 제목 -->
+      <!-- 상단 끝: 제목 + 본문 바로 아래 버튼 -->
       <div class="mc-caption">
         <h2>메뉴가 곧 분위기.<br><span class="hl">골라 담는 재미</span>로 채웁니다</h2>
         <p>현장에서 바로 조리하는 100종 — 갓 만든 그대로.</p>
-      </div>
-      <!-- 정가운데: 메뉴 100종 보기 버튼 -->
-      <div class="mc-cta-center">
-        <a href="/menu.html" class="btn btn-primary">메뉴 100종 보기
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <div class="mc-cta-center">
+          <a href="/menu.html" class="btn btn-primary">메뉴 100종 보기
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
       <!-- 하단 끝: 음식모음 누끼 -->
       <div class="mc-pile"><img src="menu-pile.png" alt="푸드트럭하우스 100종 메뉴 모음" loading="lazy"></div>
