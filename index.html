@@ -254,7 +254,8 @@ img{max-width:100%;display:block}
 .mc-cta-center .btn-primary{background:linear-gradient(135deg,#FF8A3A,#FF4E2C);box-shadow:0 14px 30px -8px rgba(255,78,44,.7)}
 .mc-cta-center .btn-primary:hover{background:linear-gradient(135deg,#FF7A28,#F23A1E);box-shadow:0 18px 38px -8px rgba(255,78,44,.85)}
 .mc-pile{position:absolute;left:50%;bottom:-18%;transform:translateX(-50%);z-index:3}
-.mc-pile img{display:block;height:clamp(300px,46vw,480px);width:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+.mc-pile img{display:block;height:clamp(300px,46vw,480px);width:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55));transform-origin:bottom center;transition:transform .3s ease,filter .3s ease;cursor:pointer}
+.mc-pile:hover img{transform:scale(1.1);filter:drop-shadow(0 28px 34px rgba(0,0,0,.6))}
 
 @media(max-width:760px){
   .mc-stage{height:480px}
