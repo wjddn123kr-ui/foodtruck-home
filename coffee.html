@@ -37,18 +37,25 @@
   img{max-width:100%;display:block}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
 
-  header{position:fixed;top:0;left:0;right:0;z-index:60;background:#fff;backdrop-filter:blur(14px);border-bottom:1px solid rgba(10,17,36,.07);transition:transform .3s}
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,box-shadow .3s,transform .3s}
+  header.scrolled{background:#fff;backdrop-filter:blur(14px);border-bottom-color:rgba(10,17,36,.07);box-shadow:0 10px 30px -22px rgba(13,40,120,.2)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
   .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--navy-900)}
   .brand-logo{height:38px;width:auto;display:block}
+  .logo-b{display:none}
+  header.scrolled .logo-w{display:none}
+  header.scrolled .logo-b{display:block}
   .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
-  .nav-links a{color:#33406b;transition:color .2s}
+  .nav-links a{color:rgba(255,255,255,.92);transition:color .2s}
+  header.scrolled .nav-links a{color:#33406b}
   .nav-links a:hover,.nav-links a.active{color:var(--blue)}
   .nav-right{display:flex;align-items:center;gap:18px}
-  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
+  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:#fff}
+  header.scrolled .tel{color:var(--blue-bright)}
   .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
   .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
-  .menu-btn span{display:block;width:22px;height:2px;background:var(--navy-900);margin:5px 0}
+  .menu-btn span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;transition:background .2s}
+  header.scrolled .menu-btn span{background:var(--navy-900)}
   .nav-links .has-sub{position:relative}
   .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
   .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
@@ -174,7 +181,7 @@
 
 <header id="hdr">
   <div class="wrap nav">
-    <a href="index.html" class="brand"><img src="logo-wordmark.png" alt="푸드트럭하우스" class="brand-logo"></a>
+    <a href="index.html" class="brand"><img src="logo-white.png" alt="푸드트럭하우스" class="brand-logo logo-w"><img src="logo-wordmark.png" alt="푸드트럭하우스" class="brand-logo logo-b"></a>
     <nav class="nav-links">
       <div class="has-sub"><a href="company.html">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html">회사소개</a></div></div>
       <a href="service.html">서비스</a>
@@ -195,7 +202,7 @@
 
 <style>
 /* 차량 히어로 밴드 (영상 반반 배경) — index .mc-stage 풀블리드 패턴 재사용 */
-.vhero{position:relative;width:100%;min-height:580px;display:flex;align-items:flex-start;justify-content:center;text-align:center;overflow:hidden;background:#0A1430;padding:82px 0 50px}
+.vhero{position:relative;width:100%;min-height:760px;display:flex;align-items:flex-start;justify-content:center;text-align:center;overflow:hidden;background:#0A1430;padding:96px 0 50px}
 .vhero-col{position:absolute;top:0;bottom:0;overflow:hidden;z-index:1}
 .vhero-col video,.vhero-col img{width:100%;height:100%;object-fit:cover;display:block}
 .vc-left{left:0;width:24%}
@@ -211,7 +218,7 @@
 .vhero .hero-actions{margin-top:106px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .vhero .btn-line{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
 .vhero .btn-line:hover{background:rgba(255,255,255,.14)}
-@media(max-width:760px){.vhero{min-height:440px}.vc-left,.vc-right{display:none}.vc-center{left:0;width:100%}}
+@media(max-width:760px){.vhero{min-height:560px}.vc-left,.vc-right{display:none}.vc-center{left:0;width:100%}}
 @media(prefers-reduced-motion:reduce){.vhero-col video{display:none}}
 </style>
 <section class="vhero">
@@ -335,7 +342,7 @@
 
 <script>
   var hdr=document.getElementById('hdr'),last=0;
-  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
+  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.classList.toggle('scrolled',y>40);hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
   var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
   mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
   dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
