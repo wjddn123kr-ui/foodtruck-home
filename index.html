@@ -248,17 +248,19 @@ img{max-width:100%;display:block}
 .mc-stage::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(6,12,31,.68) 0%,rgba(6,12,31,.22) 26%,rgba(6,12,31,.08) 48%,rgba(6,12,31,.52) 100%)}
 .mc-caption{position:absolute;top:0;left:0;right:0;z-index:4;text-align:center;padding:32px 20px 0;pointer-events:none}
 .mc-caption h2{font-size:clamp(26px,3.8vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.5)}
-.mc-caption h2 .hl{color:var(--blue-bright)}
+.mc-caption h2 .hl{color:#FF7A2E}
 .mc-caption p{margin:10px auto 0;color:rgba(255,255,255,.9);font-size:15px;max-width:470px;text-shadow:0 1px 12px rgba(0,0,0,.55)}
 .mc-cta-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5}
+.mc-cta-center .btn-primary{background:linear-gradient(135deg,#FF8A3A,#FF4E2C);box-shadow:0 14px 30px -8px rgba(255,78,44,.7)}
+.mc-cta-center .btn-primary:hover{background:linear-gradient(135deg,#FF7A28,#F23A1E);box-shadow:0 18px 38px -8px rgba(255,78,44,.85)}
 .mc-pile{position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:3}
-.mc-pile img{display:block;height:clamp(160px,24vw,250px);width:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+.mc-pile img{display:block;height:clamp(300px,46vw,480px);width:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
 
 @media(max-width:760px){
   .mc-stage{height:480px}
   .mc-caption{padding-top:22px}
   .mc-caption h2{font-size:clamp(22px,6.4vw,30px)}
-  .mc-pile img{height:clamp(130px,30vw,180px)}
+  .mc-pile img{height:clamp(210px,50vw,320px)}
 }
 
 /* ===== 트럭 도로 주행 (현장운영 섹션 하단, 다크 배경) ===== */
