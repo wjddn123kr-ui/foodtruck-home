@@ -237,6 +237,12 @@
   .vhero-banner{display:block;width:100%;padding:0;line-height:0}
   .vhero-banner a{display:block;font-size:0}
   .vhero-banner img{display:block;width:100%;height:auto;margin:0 auto}
+  /* 모바일: 상단에 PROBLEM 배경색(#F4F4F4) 띠를 두고 배너를 내려 로고글자 안 가리게 + 띠 위 로고/햄버거는 진하게 */
+  @media(max-width:760px){
+    .vhero-banner{padding-top:70px;background:#F4F4F4}
+    .logo-w{display:none}.logo-b{display:block}
+    .menu-btn span{background:var(--navy-900)}
+  }
 </style>
 <section class="vhero-banner">
   <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="전화 없이 3초 만에 견적 받기">
