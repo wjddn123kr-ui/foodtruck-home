@@ -1,0 +1,136 @@
+/* ============================================================
+   푸드트럭하우스 — 공통 스타일 (모든 페이지 공유)
+   여기만 고치면 전 페이지에 반영됩니다.
+   (페이지 고유 스타일은 각 .html의 <style>에 남겨둡니다)
+   ============================================================ */
+
+/* ---- 폰트 ---- */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap");
+
+/* ---- 디자인 토큰 ---- */
+:root{
+  --navy-900:#060C1F;--navy-850:#0A1430;--navy-800:#0E1A3D;--navy-700:#13224C;
+  --blue:#2D5BFF;--blue-deep:#003892;--blue-bright:#5B86FF;
+  --ice:#EAF0FF;--paper:#F4F7FE;--ink:#0A1124;--mute:#93A1C7;
+  --line:rgba(140,165,225,.16);--max:1200px;
+  --hd-h:70px; /* 헤더 높이 */
+}
+
+/* ---- 리셋·기본 ---- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;
+  background-color:#EDF2FC;
+  background-image:radial-gradient(680px 680px at 94% 30px,rgba(91,134,255,.40),transparent 70%),radial-gradient(640px 640px at 0% 700px,rgba(45,91,255,.30),transparent 70%),radial-gradient(720px 720px at 86% 1450px,rgba(91,134,255,.34),transparent 70%),radial-gradient(640px 640px at 6% 2200px,rgba(45,91,255,.28),transparent 70%),radial-gradient(700px 700px at 74% 2950px,rgba(91,134,255,.30),transparent 70%),radial-gradient(rgba(45,91,255,.07) 1.3px,transparent 1.4px);
+  background-size:auto,auto,auto,auto,auto,28px 28px;background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+  color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
+
+/* ---- 헤더 자리(placeholder): 헤더가 늦게 떠도 화면 안 출렁이게 높이 확보 ----
+   ※ 헤더 자체는 position:fixed라 화면을 덮습니다. 본문은 각 페이지가 상단 여백으로 피해 있습니다. */
+[data-include]{display:block}
+[data-include].hd-slot{min-height:var(--hd-h)}
+
+/* ============ 헤더 ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(10,17,36,.07);transition:transform .3s,background .3s,border-color .3s}
+.nav{display:flex;align-items:center;justify-content:space-between;height:var(--hd-h)}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--navy-900)}
+.brand-logo{height:38px;width:auto;display:block}
+.brand .logo-w{display:none} /* 흰 로고는 기본 숨김(투명헤더=랜딩에서만 사용) */
+.nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
+.nav-links a{color:#33406b;transition:color .2s}
+.nav-links a:hover,.nav-links a.active,.nav-links a.is-active{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
+.nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--navy-900);margin:5px 0;transition:background .2s}
+/* 드롭다운(소개·서비스) */
+.nav-links .has-sub{position:relative}
+.nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
+.submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;backdrop-filter:blur(14px);border:1px solid rgba(10,17,36,.08);border-radius:12px;padding:8px;min-width:148px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(13,40,120,.28)}
+.submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
+.nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:#33406b;white-space:nowrap;transition:background .15s,color .15s}
+.submenu a:hover,.submenu a.active,.submenu a.is-active{background:var(--paper);color:var(--blue)}
+
+/* 모바일 드로어 */
+.drawer{position:fixed;inset:var(--hd-h) 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line)}
+.drawer.open{transform:translateY(0)}
+.drawer a{display:block;padding:14px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
+.drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
+.drawer .sub-label{padding:14px 0 6px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--mute);border-bottom:0}
+.drawer .sub a{padding-left:14px;font-size:15.5px;font-weight:500}
+
+/* ============ 랜딩(차량 페이지) 투명헤더 변형: body.landing ============ */
+body.landing header{background:transparent;border-bottom-color:transparent}
+body.landing header.scrolled{background:#fff;backdrop-filter:blur(14px);border-bottom-color:rgba(10,17,36,.07);box-shadow:0 10px 30px -22px rgba(13,40,120,.2)}
+body.landing .brand .logo-w{display:block}
+body.landing .brand .logo-b{display:none}
+body.landing header.scrolled .brand .logo-w{display:none}
+body.landing header.scrolled .brand .logo-b{display:block}
+body.landing .nav-links a{color:rgba(255,255,255,.92)}
+body.landing header.scrolled .nav-links a{color:#33406b}
+body.landing .nav-links a:hover,body.landing .nav-links a.is-active{color:#fff}
+body.landing header.scrolled .nav-links a:hover,body.landing header.scrolled .nav-links a.is-active{color:var(--blue)}
+body.landing .tel{color:#fff}
+body.landing header.scrolled .tel{color:var(--blue-bright)}
+body.landing .menu-btn span{background:#fff}
+body.landing header.scrolled .menu-btn span{background:var(--navy-900)}
+
+/* ============ 푸터 ============ */
+footer{background:var(--navy-850);border-top:1px solid var(--line);padding:60px 0 40px}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.foot-brand .brand{margin-bottom:16px}
+.foot-brand .brand-logo{height:30px}
+.foot-brand .brand .logo-w{display:block} /* 푸터는 항상 흰 로고 */
+.foot-brand .brand .logo-b{display:none}
+.foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
+.foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
+.foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
+.foot-col a:hover{color:var(--blue-bright)}
+.biz{padding-top:24px;font-size:13px;color:var(--mute);line-height:1.8}
+.biz b{color:var(--ice);font-weight:600}
+.copy{margin-top:12px;font-size:12.5px;color:rgba(147,161,199,.6)}
+
+/* ============ 공통 유틸·플로팅 ============ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+.kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
+.kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
+.kakao-fab svg{width:21px;height:21px}
+.quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
+.quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
+.quote-fab svg{width:18px;height:18px}
+.fab-social{position:fixed;right:20px;bottom:148px;z-index:70;display:flex;flex-direction:column;gap:9px}
+.fab-social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);transition:transform .15s}
+.fab-social a:hover{transform:translateY(-2px) scale(1.05)}
+.fab-social .blog{background:#03C75A}
+.fab-social .blog b{font-size:11px;font-weight:800;font-family:'Archivo',sans-serif}
+.fab-social .insta{background:radial-gradient(circle at 30% 107%,#fdf497,#fd5949 45%,#d6249f 70%,#285AEB 110%)}
+.fab-social .yt{background:#FF0000}
+.fab-social .tel{background:var(--blue)}
+.fab-social svg{width:20px;height:20px}
+
+:focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+
+/* ============ 반응형(헤더·푸터·플로팅) ============ */
+@media(max-width:900px){
+  .nav-links,.nav-right .tel{display:none}
+  .menu-btn{display:block}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .foot-top{grid-template-columns:1fr}
+  .fab-social{right:14px;bottom:150px;gap:8px}.fab-social a{width:38px;height:38px}
+  .quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}
+  .kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}

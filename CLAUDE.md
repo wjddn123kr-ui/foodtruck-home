@@ -53,6 +53,31 @@
 - 품질 기준: 반응형(모바일 우선 확인), focus-visible 포커스, prefers-reduced-motion 존중.
 - 헤더 네비: 소개(about) / 서비스(service) / 메뉴(menu) / 후기(review) / 공지사항(news), 우측에 전화(1877-6901) + "3분 견적내기" CTA.
 
+## 4-1. ⭐ 공통 구조 (헤더·푸터·CSS 공유) — 2026-06 리팩토링
+
+**핵심: 헤더·푸터·공통 CSS는 한 곳에만 있고, 모든 페이지가 그것을 "불러다" 쓴다. 한 번만 고치면 전 페이지 반영.**
+
+| 파일 | 역할 | 고칠 때 |
+|------|------|---------|
+| `assets/css/style.css` | 공통 CSS(토큰·리셋·헤더·푸터·드로어·플로팅버튼·.reveal·반응형). 폰트는 여기서 `@import` | 색/헤더/푸터 스타일은 **여기만** 수정 |
+| `partials/header.html` | 헤더 + 모바일 드로어 마크업(소개·서비스 드롭다운 포함) | 메뉴 항목·로고·전화·CTA는 **여기만** 수정 |
+| `partials/footer.html` | 푸터 + 플로팅버튼(카톡·3초견적·소셜) 마크업 | 푸터 링크·사업자정보·SNS는 **여기만** 수정 |
+| `assets/js/include.js` | `[data-include]`에 해당 파일을 fetch해 끼워넣고, 현재 경로와 일치하는 메뉴에 `is-active` 부여 + 헤더 스크롤·드로어·.reveal 동작 연결 | 보통 건드릴 일 없음 |
+
+**각 페이지(.html)의 모습:**
+- `<head>`: `<link rel="stylesheet" href="/assets/css/style.css">` + 그 아래 `<style>`에 **그 페이지 고유 CSS만**
+- 헤더 자리: `<div class="hd-slot" data-include="/partials/header.html"></div>`
+- 푸터 자리: `<div data-include="/partials/footer.html"></div>`
+- `</body>` 직전: `<script src="/assets/js/include.js" defer></script>`
+
+**규칙:**
+- 경로는 **루트 절대경로**(`/assets/...`, `/partials/...`)로 쓴다(하위폴더 페이지가 생겨도 안 깨지게).
+- `include.js`는 **fetch 방식**이라 `file://`(파일 더블클릭)로 열면 헤더·푸터가 안 뜬다. **반드시 http**(로컬서버/배포)에서 확인. 로컬 확인은 루트의 **`미리보기.bat` 더블클릭**(→ http://localhost:8123 자동 열림).
+- 활성 메뉴 표시는 JS가 자동(`is-active`). 페이지에 하드코딩하지 말 것.
+- **차량 랜딩 중 coffee.html만** 투명헤더 → `<body class="landing">` 사용(흰 로고). 나머지(snack·odeng·ice·churros)는 밝은 히어로라 일반 흰 헤더(landing 미사용).
+- 적용 완료(17개): index, about, company, service, service-catering/promotion/events/buffet, menu, review, news, privacy, coffee, snack, odeng, ice, churros. (design-*·index-7/editorial/light·promo-sections·section3-review_3·vehicle-coffee·quote-section 같은 드래프트/구버전은 미적용.)
+- 새 페이지를 만들 땐 위 "각 페이지의 모습" 4줄만 넣으면 헤더·푸터가 자동으로 붙는다.
+
 ## 5. 페이지 구조
 
 | 파일 | 내용 | 상태 |

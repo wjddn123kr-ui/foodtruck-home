@@ -13,51 +13,12 @@
 <meta property="og:url" content="https://foodtruckhouse.com/churros.html">
 <meta property="og:image" content="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg">
 <meta name="theme-color" content="#0A1733">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
 <style>
-  :root{
-    --navy-900:#060C1F;--navy-850:#0A1430;--navy-800:#0E1A3D;--navy-700:#13224C;
-    --blue:#2D5BFF;--blue-deep:#003892;--blue-bright:#5B86FF;
-    --ice:#EAF0FF;--paper:#F4F7FE;--ink:#0A1124;--mute:#93A1C7;
-    --line:rgba(140,165,225,.16);--max:1200px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;
-    background-color:#EDF2FC;
-    background-image:radial-gradient(680px 680px at 94% 30px,rgba(91,134,255,.40),transparent 70%),radial-gradient(640px 640px at 0% 700px,rgba(45,91,255,.30),transparent 70%),radial-gradient(720px 720px at 86% 1450px,rgba(91,134,255,.34),transparent 70%),radial-gradient(640px 640px at 6% 2200px,rgba(45,91,255,.28),transparent 70%),radial-gradient(700px 700px at 74% 2950px,rgba(91,134,255,.30),transparent 70%),radial-gradient(rgba(45,91,255,.07) 1.3px,transparent 1.4px);
-    background-size:auto,auto,auto,auto,auto,28px 28px;background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat;
-    color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  .num{font-family:'Archivo',sans-serif;font-feature-settings:"tnum";letter-spacing:-.02em}
-  a{text-decoration:none;color:inherit}
-  img{max-width:100%;display:block}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,28px)}
-
-  header{position:fixed;top:0;left:0;right:0;z-index:60;background:#fff;backdrop-filter:blur(14px);border-bottom:1px solid rgba(10,17,36,.07);transition:transform .3s}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--navy-900)}
-  .brand-logo{height:38px;width:auto;display:block}
-  .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
-  .nav-links a{color:#33406b;transition:color .2s}
-  .nav-links a:hover,.nav-links a.active{color:var(--blue)}
-  .nav-right{display:flex;align-items:center;gap:18px}
-  .tel{font-family:'Archivo';font-weight:700;font-size:15px;color:var(--blue-bright)}
-  .nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:9px;font-weight:700;font-size:14.5px;box-shadow:0 6px 20px -8px rgba(45,91,255,.8)}
-  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px}
-  .menu-btn span{display:block;width:22px;height:2px;background:var(--navy-900);margin:5px 0}
-  .nav-links .has-sub{position:relative}
-  .nav-links .has-sub>a{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-  .nav-links .has-sub>a::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.65}
-  .submenu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;backdrop-filter:blur(14px);border:1px solid rgba(10,17,36,.08);border-radius:12px;padding:8px;min-width:172px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;box-shadow:0 22px 46px -22px rgba(13,40,120,.28)}
-  .submenu::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:18px}
-  .nav-links .has-sub:hover .submenu,.nav-links .has-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-  .submenu a{padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:#33406b;white-space:nowrap;transition:background .15s,color .15s}
-  .submenu a:hover,.submenu a.active{background:var(--paper);color:var(--blue)}
-
   .phead{position:relative;padding:138px 0 64px;overflow:hidden;background:
       radial-gradient(120% 120% at 100% 0%,rgba(91,134,255,.20),transparent 50%),
       radial-gradient(110% 100% at 0% 100%,rgba(45,91,255,.10),transparent 55%),
@@ -97,81 +58,18 @@
   .card ul{margin:6px 0 0;padding-left:18px}
   .card li{font-size:14.5px;color:#5b6789;line-height:1.85}
 
-  footer{background:var(--navy-850);border-top:1px solid var(--line);padding:60px 0 40px}
-  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
-  .foot-brand .brand{margin-bottom:16px}
-  .foot-brand .brand-logo{height:30px}
-  .foot-brand p{font-size:14px;color:var(--mute);max-width:34ch;line-height:1.66}
-  .foot-col h4{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.04em;margin-bottom:18px}
-  .foot-col a{display:block;font-size:14.5px;color:var(--ice);margin-bottom:11px;transition:color .2s}
-  .foot-col a:hover{color:var(--blue-bright)}
-  .biz{padding-top:24px;font-size:13px;color:var(--mute);line-height:1.8}
-  .biz b{color:var(--ice);font-weight:600}
-  .copy{margin-top:12px;font-size:12.5px;color:rgba(147,161,199,.6)}
-
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  .drawer{position:fixed;inset:70px 0 auto;background:var(--navy-850);z-index:59;padding:20px 24px 30px;transform:translateY(-130%);transition:transform .3s;border-bottom:1px solid var(--line);max-height:calc(100vh - 70px);overflow:auto}
-  .drawer.open{transform:translateY(0)}
-  .drawer a{display:block;padding:13px 0;font-size:16px;font-weight:600;border-bottom:1px solid var(--line);color:var(--ice)}
-  .drawer a:last-child{border-bottom:0;color:var(--blue-bright)}
-  .drawer .dg{font-size:12px;color:var(--mute);font-weight:700;letter-spacing:.05em;padding:14px 0 4px;text-transform:uppercase}
-
-  .kakao-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#3A1D1D;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .15s,box-shadow .2s}
-  .kakao-fab:hover{transform:translateY(-2px);box-shadow:0 18px 38px -8px rgba(0,0,0,.6)}
-  .kakao-fab svg{width:21px;height:21px}
-  .quote-fab{position:fixed;right:20px;bottom:82px;z-index:71;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;padding:13px 18px;border-radius:30px;font-weight:800;font-size:14.5px;box-shadow:0 12px 30px -8px rgba(45,91,255,.75);transition:transform .15s,box-shadow .2s}
-  .quote-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(45,91,255,.9)}
-  .quote-fab svg{width:18px;height:18px}
-  .fab-social{position:fixed;right:20px;bottom:148px;z-index:70;display:flex;flex-direction:column;gap:9px}
-  .fab-social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);transition:transform .15s}
-  .fab-social a:hover{transform:translateY(-2px) scale(1.05)}
-  .fab-social .blog{background:#03C75A}
-  .fab-social .blog b{font-size:11px;font-weight:800;font-family:'Archivo',sans-serif}
-  .fab-social .insta{background:radial-gradient(circle at 30% 107%,#fdf497,#fd5949 45%,#d6249f 70%,#285AEB 110%)}
-  .fab-social .yt{background:#FF0000}
-  .fab-social .tel{background:var(--blue)}
-  .fab-social svg{width:20px;height:20px}
-  @media(max-width:560px){.fab-social{right:14px;bottom:150px;gap:8px}.fab-social a{width:38px;height:38px}}
-  @media(max-width:560px){.quote-fab{bottom:84px;padding:15px;border-radius:50%}.quote-fab span{display:none}}
-  @media(max-width:560px){.kakao-fab{padding:15px;border-radius:50%}.kakao-fab span{display:none}}
-
   @media(max-width:900px){
-    .nav-links,.tel{display:none}.menu-btn{display:block}
     .cards{grid-template-columns:1fr 1fr}
-    .foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
   }
   @media(max-width:560px){
     .cards{grid-template-columns:1fr}
-    .foot-top{grid-template-columns:1fr}
     .phead{padding:104px 0 44px}
   }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-  :focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
 </style>
 </head>
 <body>
 
-<header id="hdr">
-  <div class="wrap nav">
-    <a href="index.html" class="brand"><img src="logo-wordmark.png" alt="푸드트럭하우스" class="brand-logo"></a>
-    <nav class="nav-links">
-      <div class="has-sub"><a href="company.html">소개</a><div class="submenu"><a href="about.html">인사말</a><a href="company.html">회사소개</a></div></div>
-      <a href="service.html">서비스</a>
-      <a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
-    </nav>
-    <div class="nav-right">
-      <a href="tel:18776901" class="tel">1877-6901</a>
-      <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" class="nav-cta">3초 견적완성</a>
-    </div>
-    <button class="menu-btn" id="menuBtn" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</header>
-<div class="drawer" id="drawer">
-  <div class="dg">메뉴 안내</div>
-  <a href="about.html">인사말</a><a href="company.html">회사소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="review.html">후기</a><a href="news.html">공지사항</a>
-  <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener">3초 견적완성 →</a>
-</div>
+<div class="hd-slot" data-include="/partials/header.html"></div>
 
 <section class="phead">
   <div class="glow"></div>
@@ -251,51 +149,15 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div class="brand"><img src="logo-white.png" alt="푸드트럭하우스" class="brand-logo"></div>
-        <p>커피차·푸드트럭 케이터링 전문. 고객사 4,000곳과 8,000건의 현장을 함께한 운영의 힘으로 행사 그 이상의 추억을 만듭니다.</p>
-      </div>
-      <div class="foot-col"><h4>차량</h4><a href="coffee.html">커피차</a><a href="snack.html">간식·분식차</a><a href="odeng.html">오뎅차</a><a href="ice.html">빙수·아이스크림차</a><a href="churros.html">츄러스트럭</a></div>
-      <div class="foot-col"><h4>바로가기</h4><a href="about.html">소개</a><a href="service.html">서비스</a><a href="menu.html">메뉴</a><a href="news.html">공지사항</a><a href="tel:18776901">1877-6901</a></div>
-    </div>
-    <div class="biz">
-      <b>푸드트럭하우스</b> &nbsp;|&nbsp; 대표 김정우 &nbsp;|&nbsp; 주식회사 하이팅 &nbsp;|&nbsp; 사업자번호 441-86-03352<br>
-      대표번호 1877-6901 / 010-2263-6901 / 010-2482-6901 &nbsp;|&nbsp; 경기도 용인시 기흥구 상하동 229
-      <div class="copy">© 2026 푸드트럭하우스. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--blue-bright)">개인정보처리방침</a></div>
-    </div>
-  </div>
-</footer>
+<div data-include="/partials/footer.html"></div>
 
 <script>
-  var hdr=document.getElementById('hdr'),last=0;
-  window.addEventListener('scroll',function(){var y=window.scrollY;hdr.style.transform=(y>last&&y>240)?'translateY(-100%)':'translateY(0)';last=y;},{passive:true});
-  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
-  mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
-  dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
   // 공통 컴포넌트(3초 견적) 주입 — quote-section.html 한 곳만 고치면 전 페이지 반영
   fetch('quote-section.html',{cache:'no-cache'}).then(function(r){return r.text();}).then(function(html){
     var m=document.getElementById('quote-mount'); if(!m)return; m.innerHTML=html;
     m.querySelectorAll('script').forEach(function(o){var s=document.createElement('script');s.textContent=o.textContent;document.body.appendChild(s);});
   }).catch(function(){});
 </script>
-<div class="fab-social">
-  <a class="blog" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener" aria-label="네이버 블로그"><b>blog</b></a>
-  <a class="insta" href="#" target="_blank" rel="noopener" aria-label="인스타그램"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-  <a class="yt" href="#" target="_blank" rel="noopener" aria-label="유튜브"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4 0-1.3.1-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.5v1.9c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.9.3 6.9.3s4 0 6.8-.3c.4 0 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.9c0-1.7-.2-3.3-.2-3.3zM10 14.6V8.9l5 2.9-5 2.8z"/></svg></a>
-  <a class="tel" href="tel:18776901" aria-label="전화 연결"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg></a>
-</div>
-<a class="quote-fab" href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="3초 견적완성">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-  <span>3초 견적완성</span>
-</a>
-<a class="kakao-fab" href="https://pf.kakao.com/_MJvVG/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.76 6.78-.21.78-.76 2.82-.87 3.26-.14.55.2.54.42.39.17-.11 2.71-1.84 3.81-2.59.6.09 1.23.13 1.88.13 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-  <span>카톡 상담</span>
-</a>
+<script src="/assets/js/include.js" defer></script>
 </body>
 </html>
