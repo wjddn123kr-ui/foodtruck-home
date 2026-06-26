@@ -388,7 +388,7 @@ img{max-width:100%;display:block}
   .hero h1{margin-bottom:14px}
   .hero p.lead{margin-bottom:22px}
   .hero-stats{margin-top:28px;gap:16px 22px}
-  .hero-marquee{position:static;background:rgba(255,255,255,.95);padding:18px 0 16px}
+  .hero-marquee{position:static;background:transparent;padding:10px 0 4px}
   .sec{padding:64px 0}
   .stats{grid-template-columns:1fr 1fr;gap:12px;margin-top:-70px}
   .stat-card{padding:24px 16px}
@@ -420,9 +420,9 @@ img{max-width:100%;display:block}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-track img:hover{opacity:1;transform:scale(1.06)}
 /* 히어로 하단 편입 마퀴 (PC=영상 하단 띠, 모바일=슬로건 아래 흐름) */
-.hero-marquee{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:13px 0 12px;background:rgba(255,255,255,.84);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.5)}
-.hero-marquee .marquee-label{margin-bottom:8px;color:#5b6789}
-.hero-marquee .marquee-track img{height:30px;opacity:.92}
+.hero-marquee{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:14px 0 18px;background:transparent}
+.hero-marquee .marquee-label{margin-bottom:9px;color:rgba(255,255,255,.78)}
+.hero-marquee .marquee-track img{height:28px;opacity:.82;filter:brightness(0) invert(1)}
 
 /* ===== 폰 터치 모션 ===== */
 .phone-screen{position:relative}
@@ -594,7 +594,7 @@ img{max-width:100%;display:block}
     <div class="quote-grid">
       <div class="quote-copy reveal">
         <h2>전화 없이,<br><span class="hl">3초 만에 견적</span> 완성</h2>
-        <p>메뉴·인원·지역만 고르면 출장비까지 포함된 예상 견적이 즉시 나옵니다. 카카오 알림톡으로 바로 받아보세요.</p>
+        <p>메뉴·인원·지역만 고르면 출장비까지 포함된 예상 견적이 즉시 나옵니다.</p>
         <ul class="qfeat">
           <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>메뉴 100종에서 골라 담는 즉석 구성</li>
           <li><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>전국 10개 권역 출장비 자동 반영</li>
