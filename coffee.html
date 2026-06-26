@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy-900:#060C1F;--navy-850:#0A1430;--navy-800:#0E1A3D;--navy-700:#13224C;
@@ -251,6 +252,150 @@
 <section class="img-sec">
   <div class="wrap"><img src="coffee-solution.jpg" alt="경험으로 검증된 신뢰 — 최근 3년간 10,000건 중 최고의 서비스만 선별. 맛·위생·소통·디자인 철저 검증." loading="lazy"></div>
 </section>
+
+<!-- ════════════ 03 CUSTOMER REVIEW (섹션3 · 섹션2 바로 아래, 폭=섹션2와 동일 70%/760) ════════════ -->
+<style>
+/* ===== SECTION 3 : CUSTOMER REVIEW (scoped .fts3-) ===== */
+.fts3{--ink:#1F2329;--gray:#7C828B;--line:#E6E8EC;--teal:#1F5C6E;--gold:#FFC02E;--blue:#2E86E6;--bg:#EAF0F4;
+  --body:'Pretendard',system-ui,sans-serif;--disp:'Black Han Sans',sans-serif;
+  font-family:var(--body);background:var(--bg);color:var(--ink);padding:0 0 76px;-webkit-font-smoothing:antialiased;line-height:1.5}
+.fts3 *{box-sizing:border-box;margin:0;padding:0}
+/* 상단 이미지 — 섹션2와 동일 폭(70% / max 760) 가운데 정렬 */
+.fts3-top{display:block;width:70%;max-width:760px;height:auto;margin:0 auto}
+/* 하단 카드뉴스 — 동일 폭 */
+.fts3-carousel{width:70%;max-width:760px;margin:30px auto 0;padding:0}
+.fts3-track{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;scroll-behavior:smooth}
+.fts3-track::-webkit-scrollbar{display:none}
+.fts3-track.drag{cursor:grabbing;scroll-behavior:auto}
+.fts3-cards{display:flex;gap:16px;padding:6px 2px 4px}
+.fts3 .rev{flex:0 0 258px;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 10px 24px rgba(30,50,80,.08);display:flex;flex-direction:column;text-align:left;
+  opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.fts3 .rev.in{opacity:1;transform:none}
+.fts3 .rev .photo{aspect-ratio:16/10;background:linear-gradient(150deg,#E3ECF2,#D2E0EC);display:flex;align-items:center;
+  justify-content:center;color:#9FB3C6;font-size:30px;user-select:none}
+.fts3 .rev .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.fts3 .rev .body{padding:14px 15px 16px}
+.fts3 .rev .stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+.fts3 .rev .who{font-size:12.5px;color:var(--gray);font-weight:600;margin-top:7px}
+.fts3 .rev .ttl{font-family:var(--disp);color:var(--blue);font-size:15px;margin-top:5px;line-height:1.35}
+.fts3 .rev .txt{font-size:13px;color:#4A4F57;font-weight:500;line-height:1.55;margin-top:8px}
+.fts3-bar{position:relative;height:5px;background:#CFDBDF;border-radius:99px;max-width:240px;margin:26px auto 0;cursor:pointer}
+.fts3-thumb{position:absolute;top:0;left:0;height:5px;width:60px;background:var(--teal);border-radius:99px}
+@media(max-width:760px){.fts3-top,.fts3-carousel{width:88%}.fts3 .rev{flex-basis:78vw;max-width:300px}}
+@media(prefers-reduced-motion:reduce){.fts3 .rev{opacity:1;transform:none}.fts3-track{scroll-behavior:auto}}
+</style>
+<section class="fts3">
+  <!-- 상단 이미지 (정우님 제작) — base64 대신 파일 -->
+  <img class="fts3-top" src="section3-top.png" alt="100% 실제 고객 리뷰 결과 · 4.9+/5 (맛 만족도·위생 상태·소통 만족도·디자인 만족도)">
+
+  <!-- 하단: 카드뉴스 (자동스크롤·드래그·진행바) -->
+  <div class="fts3-carousel">
+    <div class="fts3-track" id="t3track">
+      <div class="fts3-cards" id="t3cards">
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">김○○</div>
+          <div class="ttl">○○전자 창립기념일 · 커피차</div>
+          <div class="txt">300명 행사였는데 대기 줄이 금방 빠져서 놀랐어요. 라떼 퀄리티도 카페 수준이라 직원들 반응이 정말 좋았습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">이○○</div>
+          <div class="ttl">IT기업 워크샵 · 커피차</div>
+          <div class="txt">전날 늦게 문의했는데도 바로 배차해주셨어요. 위생 장갑·소독까지 꼼꼼해서 믿고 맡길 수 있었습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">박○○</div>
+          <div class="ttl">대학 축제 · 커피차</div>
+          <div class="txt">트럭 디자인이 예뻐서 그 자체로 포토존이 됐어요. 학생들이 줄 서서 사진 찍더라고요. 다음 축제도 바로 예약했습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">최○○</div>
+          <div class="ttl">병원 사내행사 · 커피차</div>
+          <div class="txt">응대가 친절하고 메뉴 구성까지 먼저 제안해주셔서 준비가 훨씬 수월했어요. 정산도 깔끔했습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">정○○</div>
+          <div class="ttl">관공서 행사 · 커피차</div>
+          <div class="txt">도착 시간을 칼같이 지켜주시고 현장 세팅도 빨라서, 운영팀 입장에서 너무 편했습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">한○○</div>
+          <div class="ttl">기업 가족행사 · 커피차</div>
+          <div class="txt">아이들 음료까지 신경 써주셔서 가족 단위 만족도가 높았어요. 현장 사진도 실시간으로 공유해주셔서 보고가 편했습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">강○○</div>
+          <div class="ttl">백화점 프로모션 · 커피차</div>
+          <div class="txt">브랜드 색에 맞춰 트럭을 꾸며주셔서 행사장이 한층 화사해졌어요. 방문 고객 반응이 폭발적이었습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">조○○</div>
+          <div class="ttl">아파트 입주행사 · 커피차</div>
+          <div class="txt">입주민 연령대가 다양했는데 메뉴가 골고루 있어서 다들 만족하셨어요. 시종일관 친절하셨던 게 인상 깊었습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">윤○○</div>
+          <div class="ttl">학교 체육대회 · 커피차</div>
+          <div class="txt">더운 날이었는데 아이스 음료를 빠르게 뽑아주셔서 줄이 안 밀렸어요. 선생님들도 다들 좋아하셨습니다.</div></div></article>
+
+        <article class="rev"><div class="photo">&#9749;</div><div class="body">
+          <div class="stars">★★★★★</div><div class="who">임○○</div>
+          <div class="ttl">브랜드 팝업 · 커피차</div>
+          <div class="txt">팝업 컨셉을 미리 듣고 음료까지 맞춰 제안해주셨어요. 트럭이 감각적이라 SNS 인증 사진이 정말 많았습니다.</div></div></article>
+
+      </div>
+    </div>
+    <div class="fts3-bar" id="t3bar"><div class="fts3-thumb" id="t3thumb"></div></div>
+  </div>
+</section>
+<script>
+/* SECTION3 reveal */
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.18});
+  document.querySelectorAll('.fts3 .rev').forEach(function(el,i){el.style.transitionDelay=((i%6)*60)+'ms';io.observe(el);});
+})();
+/* SECTION3 carousel : drag + auto-scroll + progress bar */
+(function(){
+  var track=document.getElementById('t3track'); if(!track)return;
+  var bar=document.getElementById('t3bar'), thumb=document.getElementById('t3thumb');
+  var paused=false;
+  function maxScroll(){return track.scrollWidth-track.clientWidth;}
+  function step(){return (track.querySelector('.rev').offsetWidth)+16;}
+  function syncBar(){
+    var ms=maxScroll();if(ms<=0){thumb.style.width='100%';thumb.style.left='0';return;}
+    var ratio=track.clientWidth/track.scrollWidth;
+    var tw=Math.max(bar.clientWidth*ratio,40);
+    thumb.style.width=tw+'px';
+    thumb.style.left=(track.scrollLeft/ms)*(bar.clientWidth-tw)+'px';
+  }
+  track.addEventListener('scroll',syncBar,{passive:true});
+  window.addEventListener('resize',syncBar);
+  var down=false,sx=0,sl=0,moved=false;
+  track.addEventListener('pointerdown',function(e){down=true;moved=false;sx=e.clientX;sl=track.scrollLeft;track.classList.add('drag');track.setPointerCapture(e.pointerId);});
+  track.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>3)moved=true;track.scrollLeft=sl-dx;});
+  function endDrag(){down=false;track.classList.remove('drag');}
+  track.addEventListener('pointerup',endDrag);track.addEventListener('pointercancel',endDrag);
+  track.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation();}},true);
+  var bdown=false;
+  function barScrub(clientX){var r=bar.getBoundingClientRect(),tw=thumb.offsetWidth;
+    var x=clientX-r.left-tw/2;x=Math.max(0,Math.min(x,r.width-tw));
+    track.scrollLeft=(x/(r.width-tw))*maxScroll();}
+  bar.addEventListener('pointerdown',function(e){bdown=true;bar.setPointerCapture(e.pointerId);barScrub(e.clientX);pause();});
+  bar.addEventListener('pointermove',function(e){if(bdown)barScrub(e.clientX);});
+  bar.addEventListener('pointerup',function(){bdown=false;resume();});
+  function tickAuto(){if(paused)return;
+    if(track.scrollLeft>=maxScroll()-4){track.scrollTo({left:0,behavior:'smooth'});}
+    else{track.scrollBy({left:step(),behavior:'smooth'});}}
+  setInterval(tickAuto,2800);
+  function pause(){paused=true;}function resume(){paused=false;}
+  track.addEventListener('pointerenter',pause);
+  track.addEventListener('pointerleave',function(){if(!down)resume();});
+  track.addEventListener('pointerdown',pause);
+  track.addEventListener('pointerup',function(){setTimeout(resume,1200);});
+  syncBar();
+})();
+</script>
 
 <!-- 커피차란 -->
 <section>
