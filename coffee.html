@@ -238,6 +238,21 @@
 <!-- 공통 컴포넌트: 3초 견적 섹션 (quote-section.html 주입) — 히어로 바로 다음(2번째 위치) -->
 <div id="quote-mount"></div>
 
+<!-- ════════════ 01 PROBLEM / 02 SOLUTION (디자인 이미지 섹션, 3초견적 하단) ════════════ -->
+<style>
+  .img-sec{padding:30px 0}
+  .img-sec.first{padding-top:14px}
+  .img-sec .wrap{max-width:760px}
+  .img-sec img{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 24px 54px -30px rgba(13,40,120,.34)}
+  @media(max-width:760px){.img-sec{padding:13px 0}.img-sec img{border-radius:16px}}
+</style>
+<section class="img-sec first">
+  <div class="wrap"><img src="coffee-problem.jpg" alt="커피차 고를 때 이런 걱정 한 번쯤 — 입맛에 안 맞는 커피, 걱정되는 위생 상태, 실망스러운 서비스, 안 이쁜 디자인. 진짜 괜찮은 커피차 고르기 어렵죠." loading="lazy"></div>
+</section>
+<section class="img-sec">
+  <div class="wrap"><img src="coffee-solution.jpg" alt="경험으로 검증된 신뢰 — 최근 3년간 10,000건 중 최고의 서비스만 선별. 맛·위생·소통·디자인 철저 검증." loading="lazy"></div>
+</section>
+
 <!-- 커피차란 -->
 <section>
   <div class="wrap">
