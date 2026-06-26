@@ -258,11 +258,13 @@ img{max-width:100%;display:block}
 .mc-pile:hover img{transform:scale(1.1);filter:drop-shadow(0 28px 34px rgba(0,0,0,.6))}
 
 @media(max-width:760px){
-  .mc-stage{height:450px}
-  .mc-caption{padding-top:24px}
+  /* 모바일: 배경 두 장면을 cover로 자르지 말고(가로 안 잘리게) 세로로 쌓아 풀폭·풀이미지 — 히어로 영상 배너 방식 */
+  .mc-stage{height:auto;display:block}
+  .mc-half{position:relative;width:100%;height:auto;aspect-ratio:4/3;top:auto;bottom:auto;left:auto;right:auto}
+  .mc-caption{padding-top:30px}
   .mc-caption h2{font-size:clamp(22px,6.4vw,30px)}
-  .mc-pile{bottom:-10%}
-  .mc-pile img{height:clamp(200px,53vw,318px)}
+  .mc-pile{bottom:-6%}
+  .mc-pile img{height:clamp(190px,50vw,300px)}
 }
 
 /* ===== 트럭 도로 주행 (현장운영 섹션 하단, 다크 배경) ===== */
