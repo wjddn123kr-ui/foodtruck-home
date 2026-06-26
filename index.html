@@ -298,7 +298,6 @@
   .hero p.lead{margin-bottom:22px}
   .hero-stats{margin-top:28px;gap:16px 22px}
   .client-sec{padding:26px 0 28px}
-  .client-sec .marquee-track{gap:38px}.client-sec .marquee-track img{height:32px}
   .sec{padding:64px 0}
   .stats{grid-template-columns:1fr 1fr;gap:12px;margin-top:-70px}
   .stat-card{padding:24px 16px}
@@ -393,6 +392,11 @@
   /* 5. 빈 배경 띠 제거: montage 섹션이 .sec 패딩(64px)을 받아 메뉴 이미지 위·아래로
         연파랑 빈 띠가 생기던 것 → 패딩 0으로 되돌려 이미지가 위아래 섹션과 맞붙게 */
   .montage-sec{padding:0}
+  /* '케이터링은 음식이 아니라' 섹션 상·하단 여백 축소 */
+  .why-sec{padding:24px 0}
+  /* 우리가 함께한 고객들 로고: 현재 40px의 절반(20px)로 — 너무 커서 적어 보임 */
+  .client-sec .marquee-track{gap:24px}
+  .client-sec .marquee-track img{height:20px}
 
   /* 6. '메뉴가 곧 분위기' — 배경을 menu-bg-mobile.jpg 한 장으로 교체 */
   .mc-half{display:none}
