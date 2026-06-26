@@ -85,7 +85,7 @@ body.landing header.scrolled .menu-btn span{background:var(--navy-900)}
 
 /* ============ 푸터 ============ */
 footer{background:var(--navy-850);border-top:1px solid var(--line);padding:60px 0 40px}
-.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.foot-top{display:grid;grid-template-columns:1.7fr 1fr 1.2fr 1.2fr;gap:36px;padding-bottom:40px;border-bottom:1px solid var(--line)}
 .foot-brand .brand{margin-bottom:16px}
 .foot-brand .brand-logo{height:30px}
 .foot-brand .brand .logo-w{display:block} /* 푸터는 항상 흰 로고 */
