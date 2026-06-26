@@ -42,7 +42,27 @@
   .ps-total .v .w{font-size:.6em;font-weight:600;margin-left:2px}
   .finger{position:absolute;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 34% 32%,rgba(255,255,255,.95),rgba(45,91,255,.55));border:2px solid rgba(255,255,255,.85);box-shadow:0 6px 18px rgba(6,12,31,.4);top:60%;left:60%;opacity:0;pointer-events:none;z-index:10;transform:translate(-50%,-50%);transition:top .65s cubic-bezier(.5,0,.25,1),left .65s cubic-bezier(.5,0,.25,1),opacity .3s,transform .14s}
   .finger.tap{transform:translate(-50%,-50%) scale(.68)}
-  @media(max-width:900px){.quote-grid{grid-template-columns:1fr;gap:40px}.phone-col{order:-1}}
+  /* 모바일에서도 PC처럼 좌우 구성 유지(폰목업만 축소) */
+  @media(max-width:900px){
+    .quote-grid{grid-template-columns:1fr 230px;gap:28px}
+    .phone{width:230px;padding:9px;border-radius:30px}
+    .phone::before{width:84px;height:18px}
+  }
+  @media(max-width:600px){
+    .quote-grid{grid-template-columns:1fr 140px;gap:14px}
+    .phone{width:140px;padding:6px;border-radius:20px}
+    .phone::before{width:54px;height:11px;top:11px;border-radius:0 0 9px 9px}
+    .phone-screen{border-radius:15px}
+    .ps-top{padding:26px 10px 10px}.ps-top .small{font-size:7px}.ps-top .big{font-size:11px}
+    .ps-body{padding:8px;gap:5px}
+    .ps-row{padding:6px 7px;border-radius:7px}.ps-row .l,.ps-row .r{font-size:7.5px}
+    .ps-pill{font-size:6.5px;padding:2px 4px}
+    .ps-cta{padding:6px;font-size:8px;border-radius:7px}
+    .ps-total{padding:7px 8px;border-radius:8px}.ps-total .t{font-size:6.5px}.ps-total .v{font-size:11px}
+    .quote-copy h2{font-size:21px}
+    .quote-copy>p{font-size:12.5px;margin-top:10px;line-height:1.5;max-width:none}
+    .qfeat{gap:7px;margin:14px 0 16px}.qfeat li{font-size:11.5px;gap:7px}.qfeat .chk{width:18px;height:18px}
+  }
 </style>
 
 <section class="quote-sec">
