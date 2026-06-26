@@ -48,17 +48,23 @@
     .phone{width:230px;padding:9px;border-radius:30px}
     .phone::before{width:84px;height:18px}
   }
-  /* 모바일 : 깔끔한 단일 컬럼 (폰목업 위 → 문구 아래, 가운데 정렬) */
+  /* 모바일 : PC처럼 좌우 2단 유지 (글 + 폰목업) — 세로 스택 금지, 폰목업만 축소 */
   @media(max-width:760px){
-    .quote-sec{padding:clamp(48px,9vw,72px) 0}
-    .quote-grid{grid-template-columns:1fr;gap:28px;text-align:center}
-    .phone-col{order:-1}
-    .phone{width:250px;padding:10px;border-radius:34px}
-    .phone::before{width:100px;height:22px}
-    .quote-copy h2{font-size:clamp(25px,6.8vw,32px);line-height:1.26}
-    .quote-copy>p{font-size:14.5px;margin:14px auto 0;max-width:430px;line-height:1.65}
-    .qfeat{width:max-content;max-width:100%;margin:22px auto 26px;gap:11px}
-    .qfeat li{font-size:14px}
+    .quote-sec{padding:46px 0}
+    .quote-grid{grid-template-columns:1fr 145px;gap:15px;align-items:center}
+    .phone{width:145px;padding:6px;border-radius:22px}
+    .phone::before{width:56px;height:12px;top:11px;border-radius:0 0 9px 9px}
+    .phone-screen{border-radius:16px}
+    .ps-top{padding:26px 9px 9px}.ps-top .small{font-size:7px}.ps-top .big{font-size:11px}
+    .ps-body{padding:8px;gap:5px}
+    .ps-row{padding:6px 7px;border-radius:7px}.ps-row .l,.ps-row .r{font-size:7.5px}
+    .ps-pill{font-size:6.5px;padding:2px 4px}
+    .ps-cta{padding:6px;font-size:8px;border-radius:7px}
+    .ps-total{padding:7px 8px;border-radius:8px}.ps-total .t{font-size:6.5px}.ps-total .v{font-size:11px}
+    .quote-copy h2{font-size:17px;line-height:1.3}
+    .quote-copy>p{font-size:11.5px;margin-top:8px;line-height:1.5;max-width:none}
+    .qfeat{gap:7px;margin:12px 0 14px}.qfeat li{font-size:10.5px;gap:6px}.qfeat .chk{width:16px;height:16px}
+    .quote-copy .btn{font-size:11.5px;padding:9px 13px}
   }
 </style>
 

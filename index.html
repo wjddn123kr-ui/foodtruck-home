@@ -142,15 +142,6 @@ img{max-width:100%;display:block}
 .qfeat{display:flex;flex-direction:column;gap:14px;margin:30px 0 34px}
 .qfeat li{display:flex;align-items:center;gap:13px;font-weight:600;color:var(--navy-850);font-size:15.5px}
 .qfeat .chk{width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
-/* 3초견적 모바일 : 가운데 정렬 + 타이포 정리 */
-@media(max-width:768px){
-  .quote-grid{text-align:center}
-  .quote-copy h2{font-size:clamp(25px,6.8vw,32px);line-height:1.26}
-  .quote-copy p{margin:14px auto 0;max-width:430px;font-size:15px;line-height:1.65}
-  .qfeat{width:max-content;max-width:100%;margin:22px auto 28px}
-  .qfeat li{font-size:14.5px}
-  .quote-sec .phone{width:260px}
-}
 /* phone mockup */
 .phone{width:320px;margin:0 auto;background:#0E1A3D;border-radius:42px;padding:12px;
   box-shadow:var(--shadow-lg);position:relative}
@@ -368,8 +359,7 @@ img{max-width:100%;display:block}
 
 @media(max-width:1024px){
   .stats{grid-template-columns:repeat(2,1fr);margin-top:-90px}
-  .quote-grid{grid-template-columns:1fr;gap:46px}
-  .quote-grid .phone-col{order:-1}
+  .quote-grid{grid-template-columns:1fr 240px;gap:28px}
   .svc-grid,.veh-grid{grid-template-columns:repeat(2,1fr)}
   .logo-wall{grid-template-columns:repeat(3,1fr)}
   .why-grid{grid-template-columns:1fr;gap:40px}
@@ -377,6 +367,20 @@ img{max-width:100%;display:block}
 @media(max-width:768px){
   .nav,.hd-cta .tel,.hd-cta .btn{display:none}
   .menu-toggle{display:block}
+  /* 3초견적 모바일: PC처럼 좌우 2단 유지(폰목업 축소) — 세로 스택 금지 */
+  .quote-grid{grid-template-columns:1fr 145px;gap:14px;align-items:center}
+  .phone{width:145px;padding:6px;border-radius:22px}
+  .phone::before{width:56px;height:12px;top:11px;border-radius:0 0 9px 9px}
+  .phone-screen{border-radius:16px}
+  .ps-top{padding:26px 9px 9px}.ps-top .small{font-size:7px}.ps-top .big{font-size:11px}
+  .ps-body{padding:8px;gap:5px}
+  .ps-row{padding:6px 7px;border-radius:7px}.ps-row .l,.ps-row .r{font-size:7.5px}
+  .ps-pill{font-size:6.5px;padding:2px 4px}
+  .ps-cta{padding:6px;font-size:8px;border-radius:7px}
+  .ps-total{padding:7px 8px;border-radius:8px}.ps-total .t{font-size:6.5px}.ps-total .v{font-size:11px}
+  .quote-copy h2{font-size:17px;line-height:1.3}
+  .quote-copy p{font-size:11.5px;margin-top:8px;line-height:1.5;max-width:none}
+  .qfeat{gap:7px;margin:12px 0 14px}.qfeat li{font-size:10.5px;gap:6px}.qfeat .chk{width:16px;height:16px}
   .hero{display:block;min-height:auto;background:var(--navy-900);padding-top:62px}
   .hero-video{position:relative;inset:auto;width:100%;height:auto;object-fit:fill}
   .hero-scrim{display:none}
