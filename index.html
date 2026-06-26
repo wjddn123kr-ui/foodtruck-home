@@ -142,6 +142,15 @@ img{max-width:100%;display:block}
 .qfeat{display:flex;flex-direction:column;gap:14px;margin:30px 0 34px}
 .qfeat li{display:flex;align-items:center;gap:13px;font-weight:600;color:var(--navy-850);font-size:15.5px}
 .qfeat .chk{width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+/* 3초견적 모바일 : 가운데 정렬 + 타이포 정리 */
+@media(max-width:768px){
+  .quote-grid{text-align:center}
+  .quote-copy h2{font-size:clamp(25px,6.8vw,32px);line-height:1.26}
+  .quote-copy p{margin:14px auto 0;max-width:430px;font-size:15px;line-height:1.65}
+  .qfeat{width:max-content;max-width:100%;margin:22px auto 28px}
+  .qfeat li{font-size:14.5px}
+  .quote-sec .phone{width:260px}
+}
 /* phone mockup */
 .phone{width:320px;margin:0 auto;background:#0E1A3D;border-radius:42px;padding:12px;
   box-shadow:var(--shadow-lg);position:relative}
@@ -580,7 +589,6 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <div class="quote-grid">
       <div class="quote-copy reveal">
-        <span class="eyebrow" style="margin-left:0">FOODTRUCKHOUSE QUOTE</span>
         <h2>전화 없이,<br><span class="hl">3초 만에 견적</span> 완성</h2>
         <p>메뉴·인원·지역만 고르면 출장비까지 포함된 예상 견적이 즉시 나옵니다. 카카오 알림톡으로 바로 받아보세요.</p>
         <ul class="qfeat">
