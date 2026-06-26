@@ -220,7 +220,16 @@
 .vhero .hero-actions{margin-top:106px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .vhero .btn-line{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
 .vhero .btn-line:hover{background:rgba(255,255,255,.14)}
-@media(max-width:760px){.vhero{min-height:480px;padding-top:84px}.vhero .lead{font-size:14px}.vhero .hero-actions{margin-top:40px}}
+@media(max-width:760px){
+  .vhero{display:block;min-height:auto;padding:66px 0 0;background:#0A1430}
+  .vhero-col{position:relative;top:auto;bottom:auto;height:auto;overflow:visible}
+  .vhero-col img{height:auto}
+  .vhero::before{display:none}
+  .vhero .wrap{padding:24px 20px 40px}
+  .vhero h1{font-size:clamp(24px,6.4vw,32px)}
+  .vhero .lead{font-size:14px;margin-top:12px}
+  .vhero .hero-actions{margin-top:24px}
+}
 @media(prefers-reduced-motion:reduce){.vhero-col video{display:none}}
 </style>
 <section class="vhero">
