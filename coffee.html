@@ -234,18 +234,14 @@
 </style>
 <!-- 커피차 히어로 : 디자인 배너(이미지 전체, 클릭 시 3초견적) — 되돌릴 땐 git revert -->
 <style>
-  .vhero-banner{display:block;width:100%;background:#0A1430;padding-top:70px}
+  .vhero-banner{display:block;width:100%}
   .vhero-banner img{display:block;width:100%;height:auto}
-  @media(max-width:760px){.vhero-banner{padding-top:62px}}
 </style>
 <section class="vhero-banner">
   <a href="https://foodtruck-quote.vercel.app/" target="_blank" rel="noopener" aria-label="전화 없이 3초 만에 견적 받기">
     <img src="coffee-hero2.jpg" alt="커피차 대여 — 갓 내린 커피로 분위기를 채웁니다. 푸드트럭하우스, 전국 어디든 어떤 행사든. 전화 없이 3초만에 견적." loading="eager">
   </a>
 </section>
-
-<!-- 공통 컴포넌트: 3초 견적 섹션 (quote-section.html 주입) — 히어로 바로 다음(2번째 위치) -->
-<div id="quote-mount"></div>
 
 <!-- ════════════ 01 PROBLEM / 02 SOLUTION (디자인 이미지 섹션, 3초견적 하단) ════════════ -->
 <style>
@@ -404,6 +400,9 @@
   syncBar();
 })();
 </script>
+
+<!-- 공통 컴포넌트: 3초 견적 섹션 (quote-section.html 주입) — 섹션3(리뷰) 하단으로 이동 -->
+<div id="quote-mount"></div>
 
 <!-- 커피차란 -->
 <section>
