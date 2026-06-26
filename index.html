@@ -375,6 +375,7 @@ img{max-width:100%;display:block}
   .hero h1{margin-bottom:14px}
   .hero p.lead{margin-bottom:22px}
   .hero-stats{margin-top:28px;gap:16px 22px}
+  .hero-marquee{position:static;background:rgba(255,255,255,.95);padding:18px 0 16px}
   .sec{padding:64px 0}
   .stats{grid-template-columns:1fr 1fr;gap:12px;margin-top:-70px}
   .stat-card{padding:24px 16px}
@@ -405,6 +406,10 @@ img{max-width:100%;display:block}
 .marquee-track img{height:40px;width:auto;object-fit:contain;opacity:.92;transition:.25s}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-track img:hover{opacity:1;transform:scale(1.06)}
+/* 히어로 하단 편입 마퀴 (PC=영상 하단 띠, 모바일=슬로건 아래 흐름) */
+.hero-marquee{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:13px 0 12px;background:rgba(255,255,255,.84);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.5)}
+.hero-marquee .marquee-label{margin-bottom:8px;color:#5b6789}
+.hero-marquee .marquee-track img{height:30px;opacity:.92}
 
 /* ===== 폰 터치 모션 ===== */
 .phone-screen{position:relative}
@@ -519,12 +524,9 @@ img{max-width:100%;display:block}
     </div>
   </div>
 
-  <div class="scroll-hint"><span>SCROLL</span><span class="bar"></span></div>
-</section>
-
-<!-- ================= 고객사 로고 마퀴 (영상 바로 하단) ================= -->
-<section class="marquee-sec">
-  <div class="wrap"><p class="marquee-label">우리가 함께한 고객들</p></div>
+  <!-- 고객사 로고 마퀴 (영상 하단 편입) -->
+  <div class="hero-marquee">
+    <div class="wrap"><p class="marquee-label">우리가 함께한 고객들</p></div>
   <div class="marquee">
     <div class="marquee-track">
       <img src="https://foodtruckhouse.com/assets/images/main/logo_1.png" alt="고객사">
@@ -569,6 +571,7 @@ img{max-width:100%;display:block}
       <img src="https://foodtruckhouse.com/assets/images/main/logo_19.png" alt="고객사" aria-hidden="true">
       <img src="https://foodtruckhouse.com/assets/images/main/logo_20.png" alt="고객사" aria-hidden="true">
     </div>
+  </div>
   </div>
 </section>
 
