@@ -453,21 +453,19 @@
 .cn-modal-photos{margin-top:14px}
 .cn-modal-photos img{width:100%;border-radius:12px;margin-bottom:10px;display:block;background:var(--navy-850)}
 body.cn-open{overflow:hidden}
-/* ===== 입소문 — 블로그 스택(계단식) + 인스타 그리드 ===== */
-.blog-stack{position:relative;width:100%;max-width:360px;margin:8px auto 0}
-.blog-stack .bcard{display:block;position:relative;width:93%;margin-left:auto;margin-right:auto;border:3px solid #fff;border-radius:11px;overflow:hidden;background:#fff;box-shadow:0 12px 28px -14px rgba(13,40,120,.45),0 2px 6px rgba(13,40,120,.12)}
-.blog-stack .bcard img{width:100%;height:auto;display:block}
-.blog-stack .bcard:not(:first-child){margin-top:-45px}
-.blog-stack .bcard:nth-child(1){z-index:1;transform:rotate(-1.5deg)}
-.blog-stack .bcard:nth-child(2){z-index:2;transform:rotate(1.2deg)}
-.blog-stack .bcard:nth-child(3){z-index:3;transform:rotate(-1deg)}
-.blog-stack .bcard:nth-child(4){z-index:4;transform:rotate(1.5deg)}
-@media(hover:hover){.blog-stack .bcard{transition:transform .25s,box-shadow .25s}.blog-stack .bcard:hover{transform:rotate(0) scale(1.03);z-index:20;box-shadow:0 22px 44px -16px rgba(13,40,120,.5)}}
-.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:420px;margin:26px auto 0}
-.insta-grid .icard{display:block;border:2px solid #fff;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 8px 20px -12px rgba(13,40,120,.35)}
-.insta-grid .icard img{width:100%;height:auto;display:block}
-.insta-grid .icard:nth-child(7):last-child{grid-column:2} /* 7장이면 마지막 1장 가운데 */
-@media(hover:hover){.insta-grid .icard{transition:transform .2s,box-shadow .2s}.insta-grid .icard:hover{transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(13,40,120,.45)}}
+/* ===== 입소문 — 인스타 카드뉴스 계단식 스택 ===== */
+.insta-stack{position:relative;width:100%;max-width:330px;margin:8px auto 0}
+.insta-stack .icard{display:block;position:relative;width:84%;margin-left:auto;margin-right:auto;border:3px solid #fff;border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 14px 30px -14px rgba(13,40,120,.5),0 2px 6px rgba(13,40,120,.14)}
+.insta-stack .icard img{width:100%;height:auto;display:block}
+.insta-stack .icard:not(:first-child){margin-top:-65%}
+.insta-stack .icard:nth-child(1){z-index:1;transform:rotate(-1.5deg)}
+.insta-stack .icard:nth-child(2){z-index:2;transform:rotate(1.2deg)}
+.insta-stack .icard:nth-child(3){z-index:3;transform:rotate(-1.1deg)}
+.insta-stack .icard:nth-child(4){z-index:4;transform:rotate(1.4deg)}
+.insta-stack .icard:nth-child(5){z-index:5;transform:rotate(-1.2deg)}
+.insta-stack .icard:nth-child(6){z-index:6;transform:rotate(1deg)}
+.insta-stack .icard:nth-child(7){z-index:7;transform:rotate(-1.3deg)}
+@media(hover:hover){.insta-stack .icard{transition:transform .25s,box-shadow .25s}.insta-stack .icard:hover{transform:rotate(0) scale(1.04);z-index:30;box-shadow:0 26px 50px -18px rgba(13,40,120,.55)}}
 /* ===== 차량 라인업 칩 (SEO 내부링크) ===== */
 .veh-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .veh-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;background:#fff;border:1px solid #d9e3f7;color:var(--navy-900);font-weight:700;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(13,40,120,.35);transition:transform .15s,border-color .2s,color .2s}
@@ -846,13 +844,7 @@ body.cn-open{overflow:hidden}
       <h2>입소문은 못 속입니다</h2>
       <p>블로그·인스타에 쏟아진 수많은 현장 후기. 재이용률 92%가 증명합니다.</p>
     </div>
-    <div class="blog-stack reveal">
-      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-1.png" alt="푸드트럭 대여 한국장학재단 캠페인 현장 후기" loading="lazy"></a>
-      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-2.png" alt="푸드트럭 대여비용 커피차 간식차 FC서울 선수단 출장 후기" loading="lazy"></a>
-      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-3.png" alt="간식차 이벤트 관대초등학교 운동회 푸드트럭 운영 후기" loading="lazy"></a>
-      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-4.png" alt="푸드트럭 부르는법 현대자동차 고객 초청 행사 운영 사례" loading="lazy"></a>
-    </div>
-    <div class="insta-grid reveal">
+    <div class="insta-stack reveal">
       <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-1.jpg" alt="연예인 커피차 서포트 현장" loading="lazy"></a>
       <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-2.jpg" alt="행사 출장 뷔페식 밥차" loading="lazy"></a>
       <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-3.jpg" alt="브랜드 실내 케이터링 푸드트럭" loading="lazy"></a>
