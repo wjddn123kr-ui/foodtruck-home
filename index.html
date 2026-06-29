@@ -484,7 +484,7 @@ body.cn-open{overflow:hidden}
 /* PC: 후기 카드 2열로 넓게(모바일은 위 기본 1열 유지) */
 @media(min-width:768px){
   .rv-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1120px}
-  .rv{padding:15px}
+  .rv,.rv:nth-child(even){padding:15px;flex-direction:row-reverse} /* PC: 모든 카드 아이디 왼쪽·사진 오른쪽 통일 */
   .rv-ph{flex:0 0 30%}
   .rv-tx .h{font-size:15px}
   .rv-tx p{font-size:13.8px;line-height:1.55}
