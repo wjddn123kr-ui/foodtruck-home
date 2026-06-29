@@ -453,12 +453,20 @@
 .cn-modal-photos{margin-top:14px}
 .cn-modal-photos img{width:100%;border-radius:12px;margin-bottom:10px;display:block;background:var(--navy-850)}
 body.cn-open{overflow:hidden}
-/* ===== SNS 후기 더미 (흩뿌린 콜라주) ===== */
-.sns-pile{position:relative;width:100%;max-width:360px;height:500px;margin:10px auto 0}
-.sns-pile .pc{position:absolute;left:var(--l);top:var(--t);width:var(--w);transform:rotate(var(--r));z-index:var(--z);
-  border:3px solid #fff;border-radius:8px;background:#fff;
-  box-shadow:0 12px 26px -12px rgba(13,40,120,.45),0 2px 6px rgba(13,40,120,.14)}
-@media(hover:hover){.sns-pile .pc{transition:transform .25s,box-shadow .25s,z-index 0s}.sns-pile .pc:hover{transform:rotate(0) scale(1.07);z-index:30;box-shadow:0 26px 52px -16px rgba(13,40,120,.5)}}
+/* ===== 입소문 — 블로그 스택(계단식) + 인스타 그리드 ===== */
+.blog-stack{position:relative;width:100%;max-width:360px;margin:8px auto 0}
+.blog-stack .bcard{display:block;position:relative;width:93%;margin-left:auto;margin-right:auto;border:3px solid #fff;border-radius:11px;overflow:hidden;background:#fff;box-shadow:0 12px 28px -14px rgba(13,40,120,.45),0 2px 6px rgba(13,40,120,.12)}
+.blog-stack .bcard img{width:100%;height:auto;display:block}
+.blog-stack .bcard:not(:first-child){margin-top:-45px}
+.blog-stack .bcard:nth-child(1){z-index:1;transform:rotate(-1.5deg)}
+.blog-stack .bcard:nth-child(2){z-index:2;transform:rotate(1.2deg)}
+.blog-stack .bcard:nth-child(3){z-index:3;transform:rotate(-1deg)}
+.blog-stack .bcard:nth-child(4){z-index:4;transform:rotate(1.5deg)}
+@media(hover:hover){.blog-stack .bcard{transition:transform .25s,box-shadow .25s}.blog-stack .bcard:hover{transform:rotate(0) scale(1.03);z-index:20;box-shadow:0 22px 44px -16px rgba(13,40,120,.5)}}
+.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:420px;margin:26px auto 0}
+.insta-grid .icard{display:block;border:2px solid #fff;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 8px 20px -12px rgba(13,40,120,.35)}
+.insta-grid .icard img{width:100%;height:auto;display:block}
+@media(hover:hover){.insta-grid .icard{transition:transform .2s,box-shadow .2s}.insta-grid .icard:hover{transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(13,40,120,.45)}}
 /* ===== 차량 라인업 칩 (SEO 내부링크) ===== */
 .veh-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .veh-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;background:#fff;border:1px solid #d9e3f7;color:var(--navy-900);font-weight:700;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(13,40,120,.35);transition:transform .15s,border-color .2s,color .2s}
@@ -837,17 +845,19 @@ body.cn-open{overflow:hidden}
       <h2>입소문은 못 속입니다</h2>
       <p>블로그·인스타에 쏟아진 수많은 현장 후기. 재이용률 92%가 증명합니다.</p>
     </div>
-    <div class="sns-pile reveal">
-      <img class="pc" style="--l:0%;--t:2%;--w:48%;--r:-6deg;--z:3" src="blog-review-1.png" alt="푸드트럭 대여 한국장학재단 캠페인 현장 후기" loading="lazy">
-      <img class="pc" style="--l:45%;--t:11%;--w:50%;--r:4deg;--z:4" src="blog-review-2.png" alt="푸드트럭 대여비용 커피차 간식차 FC서울 선수단 출장 후기" loading="lazy">
-      <img class="pc" style="--l:5%;--t:35%;--w:48%;--r:5deg;--z:5" src="blog-review-3.png" alt="간식차 이벤트 관대초등학교 운동회 푸드트럭 운영 후기" loading="lazy">
-      <img class="pc" style="--l:33%;--t:55%;--w:51%;--r:-4deg;--z:6" src="blog-review-4.png" alt="푸드트럭 부르는법 현대자동차 고객 초청 행사 운영 사례" loading="lazy">
-      <img class="pc" style="--l:63%;--t:0%;--w:30%;--r:7deg;--z:7" src="insta-card-1.jpg" alt="연예인 커피차 현장 후기" loading="lazy">
-      <img class="pc" style="--l:1%;--t:19%;--w:29%;--r:-8deg;--z:6" src="insta-card-2.jpg" alt="FC서울 간식차 출장 현장" loading="lazy">
-      <img class="pc" style="--l:70%;--t:27%;--w:31%;--r:6deg;--z:8" src="insta-card-3.jpg" alt="푸드트럭하우스 샌드위치 메뉴" loading="lazy">
-      <img class="pc" style="--l:49%;--t:41%;--w:29%;--r:-7deg;--z:7" src="insta-card-4.jpg" alt="기업행사 푸드트럭 홍보" loading="lazy">
-      <img class="pc" style="--l:1%;--t:59%;--w:30%;--r:6deg;--z:7" src="insta-card-5.jpg" alt="분식차 떡볶이 튀김 순대 어묵" loading="lazy">
-      <img class="pc" style="--l:71%;--t:63%;--w:29%;--r:8deg;--z:9" src="insta-card-6.jpg" alt="간식차 회오리감자 봄 메뉴" loading="lazy">
+    <div class="blog-stack reveal">
+      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-1.png" alt="푸드트럭 대여 한국장학재단 캠페인 현장 후기" loading="lazy"></a>
+      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-2.png" alt="푸드트럭 대여비용 커피차 간식차 FC서울 선수단 출장 후기" loading="lazy"></a>
+      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-3.png" alt="간식차 이벤트 관대초등학교 운동회 푸드트럭 운영 후기" loading="lazy"></a>
+      <a class="bcard" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener"><img src="blog-review-4.png" alt="푸드트럭 부르는법 현대자동차 고객 초청 행사 운영 사례" loading="lazy"></a>
+    </div>
+    <div class="insta-grid reveal">
+      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-card-1.jpg" alt="연예인 커피차 현장 후기" loading="lazy"></a>
+      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-card-2.jpg" alt="FC서울 간식차 출장 현장" loading="lazy"></a>
+      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-card-3.jpg" alt="푸드트럭하우스 샌드위치 메뉴" loading="lazy"></a>
+      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-card-4.jpg" alt="기업행사 푸드트럭 홍보" loading="lazy"></a>
+      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-card-5.jpg" alt="분식차 떡볶이 튀김 순대 어묵" loading="lazy"></a>
+      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-card-6.jpg" alt="간식차 회오리감자 봄 메뉴" loading="lazy"></a>
     </div>
     <div style="text-align:center;margin-top:40px">
       <a href="/review.html" class="btn btn-line">후기 전체 보기
