@@ -210,7 +210,8 @@
       <button class="tab" data-cat="snack" aria-pressed="false">간식</button>
       <button class="tab" data-cat="dessert" aria-pressed="false">디저트</button>
       <button class="tab" data-cat="bunsik" aria-pressed="false">분식</button>
-      <button class="tab" data-cat="meal" aria-pressed="false">식사</button>
+      <button class="tab" data-cat="meal" aria-pressed="false">식사(밥)</button>
+      <button class="tab" data-cat="noodle" aria-pressed="false">면류·안주류</button>
       <button class="tab" data-cat="buffet" aria-pressed="false">뷔페</button>
     </div>
   </div>
@@ -290,44 +291,44 @@
       {name:"떡+튀+순+어", price:10000, img:"bunsik-12.jpg"}
     ],
     meal_rice: [
-      {name:"제육덮밥", price:8000, best:true},
-      {name:"간장제육덮밥", price:8000},
-      {name:"치킨마요덮밥", price:8000},
-      {name:"스팸마요덮밥", price:9000},
-      {name:"돈까스마요덮밥", price:9000},
-      {name:"짜장군만두덮밥", price:9000},
-      {name:"돈까스카레덮밥", price:10000},
-      {name:"고추장닭갈비덮밥", price:10000},
-      {name:"간장닭갈비덮밥", price:10000},
-      {name:"불닭덮밥", price:10000},
-      {name:"흑돼지덮밥", price:10000, best:true},
-      {name:"규동", price:10000},
-      {name:"소불고기덮밥", price:10000},
-      {name:"비빔밥", price:11000},
-      {name:"돈토로동", price:12000},
-      {name:"스테이크덮밥", price:13000}
+      {name:"제육덮밥", price:8000, best:true, img:"meal-1.jpg"},
+      {name:"간장제육덮밥", price:8000, img:"meal-2.jpg"},
+      {name:"치킨마요덮밥", price:8000, img:"meal-3.jpg"},
+      {name:"스팸마요덮밥", price:9000, img:"meal-4.jpg"},
+      {name:"돈까스마요덮밥", price:9000, img:"meal-5.jpg"},
+      {name:"짜장군만두덮밥", price:9000, img:"meal-6.jpg"},
+      {name:"돈까스카레덮밥", price:10000, img:"meal-7.jpg"},
+      {name:"고추장닭갈비덮밥", price:10000, img:"meal-8.jpg"},
+      {name:"간장닭갈비덮밥", price:10000, img:"meal-9.jpg"},
+      {name:"불닭덮밥", price:10000, img:"meal-10.jpg"},
+      {name:"흑돼지덮밥", price:10000, best:true, img:"meal-11.jpg"},
+      {name:"규동", price:10000, img:"meal-12.jpg"},
+      {name:"소불고기덮밥", price:10000, img:"meal-13.jpg"},
+      {name:"비빔밥", price:11000, img:"meal-14.jpg"},
+      {name:"돈토로동", price:12000, img:"meal-15.jpg"},
+      {name:"스테이크덮밥", price:13000, img:"meal-16.jpg"}
     ],
     meal_noodle: [
-      {name:"잔치국수", price:7500},
-      {name:"어묵우동", price:8000},
-      {name:"비빔국수", price:9000},
-      {name:"볶음우동", price:9000},
-      {name:"냉우동", price:9000},
-      {name:"냉소바", price:9000},
-      {name:"짜장면", price:9000},
-      {name:"야끼소바", price:10000, best:true}
+      {name:"잔치국수", price:7500, img:"noodle-1.jpg"},
+      {name:"어묵우동", price:8000, img:"noodle-2.jpg"},
+      {name:"비빔국수", price:9000, img:"noodle-3.jpg"},
+      {name:"볶음우동", price:9000, img:"noodle-4.jpg"},
+      {name:"냉우동", price:9000, img:"noodle-5.jpg"},
+      {name:"냉소바", price:9000, img:"noodle-6.jpg"},
+      {name:"짜장면", price:9000, img:"noodle-7.jpg"},
+      {name:"야끼소바", price:10000, best:true, img:"noodle-8.jpg"}
     ],
     meal_etc: [
-      {name:"떡국", price:8500},
-      {name:"오코노미야끼", price:10000},
-      {name:"닭강정", price:12000},
-      {name:"닭목살구이", price:14000},
-      {name:"소세지플래터", price:14000},
-      {name:"치킨윙봉", price:15000},
-      {name:"숯불치킨", price:15000},
-      {name:"목살 플래터", price:15000},
-      {name:"감바스알하이오", price:15000},
-      {name:"부채살 큐브스테이크", price:18000}
+      {name:"떡국", price:8500, img:"anju-1.jpg"},
+      {name:"오코노미야끼", price:10000, img:"anju-2.jpg"},
+      {name:"닭강정", price:12000, img:"anju-3.jpg"},
+      {name:"닭목살구이", price:14000, img:"anju-4.jpg"},
+      {name:"소세지플래터", price:14000, img:"anju-5.jpg"},
+      {name:"치킨윙봉", price:15000, img:"anju-6.jpg"},
+      {name:"숯불치킨", price:15000, img:"anju-7.jpg"},
+      {name:"목살 플래터", price:15000, img:"anju-8.jpg"},
+      {name:"감바스알하이오", price:15000, img:"anju-9.jpg"},
+      {name:"부채살 큐브스테이크", price:18000, img:"anju-10.jpg"}
     ],
     buffet: {
       sets: [
@@ -345,22 +346,22 @@
     },
     season: {
       summer: [
-        {name:"수박화채", price:5000, best:true},
-        {name:"수박주스", price:5500},
-        {name:"팥빙수", price:5000, best:true},
-        {name:"망고빙수", price:6000},
-        {name:"베리빙수", price:6000},
-        {name:"아이스크림빙수", price:7000},
-        {name:"토핑 아이스크림", price:5000}
+        {name:"수박화채", price:5000, best:true, img:"ssummer-1.jpg"},
+        {name:"수박주스", price:5500, img:"ssummer-2.jpg"},
+        {name:"팥빙수", price:5000, best:true, img:"ssummer-3.jpg"},
+        {name:"망고빙수", price:6000, img:"ssummer-4.jpg"},
+        {name:"베리빙수", price:6000, img:"ssummer-5.jpg"},
+        {name:"아이스크림빙수", price:7000, img:"ssummer-6.jpg"},
+        {name:"토핑 아이스크림", price:5000, img:"ssummer-7.jpg"}
       ],
       winter: [
-        {name:"씨앗호떡", price:2500},
-        {name:"옛날 꿀호떡", price:2500},
-        {name:"호빵", price:2500},
-        {name:"꿀 가래떡 꼬치(2ea)", price:2500},
-        {name:"일반붕어빵(2ea)", price:2500},
-        {name:"뱅쇼", price:5000},
-        {name:"오곡라떼", price:5000}
+        {name:"씨앗호떡", price:2500, img:"swinter-1.jpg"},
+        {name:"옛날 꿀호떡", price:2500, img:"swinter-2.jpg"},
+        {name:"호빵", price:2500, img:"swinter-3.jpg"},
+        {name:"꿀 가래떡 꼬치(2ea)", price:2500, img:"swinter-4.jpg"},
+        {name:"일반붕어빵(2ea)", price:2500, img:"swinter-5.jpg"},
+        {name:"뱅쇼", price:5000, img:"swinter-6.jpg"},
+        {name:"오곡라떼", price:5000, img:"swinter-7.jpg"}
       ]
     }
   };
@@ -431,13 +432,16 @@
   /* 분식 */
   html += panel('bunsik','분식','떡볶이·튀김·순대·어묵. 2~4종 모둠 구성으로도 제공합니다.','', grid(MENU.bunsik,'🍢'));
 
-  /* 식사 */
-  html += panel('meal','식사',
-    '덮밥·면류부터 안주류까지. 든든한 한 끼가 필요한 행사에 적합합니다.',
-    '100인분 이상부터 주문 가능',
-    '<div class="sub">덮밥</div>'+grid(MENU.meal_rice,'🍚')+
-    '<div class="sub">면류</div>'+grid(MENU.meal_noodle,'🍜')+
-    '<div class="sub">기타 · 안주류</div>'+grid(MENU.meal_etc,'🍖'));
+  /* 식사(밥) */
+  html += panel('meal','식사(밥)',
+    '제육·불닭·스테이크까지 든든한 덮밥. 100인분 이상부터 주문 가능합니다.','',
+    grid(MENU.meal_rice,'🍚'));
+
+  /* 면류 · 안주류 */
+  html += panel('noodle','면류 · 안주류',
+    '국수·우동·짜장면부터 치킨·플래터 안주까지, 술자리·뒤풀이에 좋은 구성입니다.','',
+    '<div class="sub" style="margin-top:0">면류</div>'+grid(MENU.meal_noodle,'🍜')+
+    '<div class="sub">안주류</div>'+grid(MENU.meal_etc,'🍖'));
 
   /* 뷔페 */
   (function(){
