@@ -261,7 +261,7 @@
     dessert_bakery: [
       {name:"쿠키", price:2000, img:"dessert-1.jpg"},
       {name:"버터떡", price:2500, img:"dessert-2.jpg"},
-      {name:"츄러스(30cm)", price:3000, best:true, img:"dessert-3.jpg"},
+      {name:"츄러스(30cm)", price:3000, best:true, img:"snack-1.jpg"},
       {name:"휘낭시에", price:3500, img:"dessert-4.jpg"},
       {name:"마들렌", price:3500, img:"dessert-5.jpg"},
       {name:"마카롱", price:3500, img:"dessert-6.jpg"},
@@ -380,7 +380,7 @@
 
   function itemCard(it, emoji){
     var badge = it.best ? '<span class="mc-best">BEST</span>' : '';
-    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=3" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
+    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=4" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
     return '<div class="mc reveal"><div class="mc-th">'+badge+thumb+'</div>'+
            '<div class="mc-b"><span class="mc-n">'+esc(it.name)+'</span>'+
            '<span class="mc-p num">'+won(it.price)+'<i>원</i></span></div></div>';
