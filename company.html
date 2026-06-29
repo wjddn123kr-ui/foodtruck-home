@@ -13,19 +13,17 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
-  .phead{position:relative;padding:138px 0 64px;overflow:hidden;background:
+  .phead{position:relative;padding:clamp(70px,8vw,104px) 0;overflow:hidden;background:
       radial-gradient(120% 120% at 100% 0%,rgba(91,134,255,.20),transparent 50%),
       radial-gradient(110% 100% at 0% 100%,rgba(45,91,255,.10),transparent 55%),
       linear-gradient(170deg,#EAF0FF 0%,#F4F7FE 62%)}
   .phead .glow{position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(45,91,255,.13);filter:blur(90px);top:-160px;right:-40px;z-index:0}
   .phead::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background-image:radial-gradient(rgba(45,91,255,.13) 1.4px,transparent 1.5px);background-size:26px 26px;-webkit-mask:radial-gradient(130% 90% at 80% 18%,#000,transparent 76%);mask:radial-gradient(130% 90% at 80% 18%,#000,transparent 76%)}
   .phead .wrap{position:relative;z-index:2}
-  .crumb{font-size:13.5px;color:#7a87a8;margin-bottom:16px}
-  .crumb a:hover{color:var(--blue)}
   .phead h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;color:var(--navy-900)}
   .phead p{margin-top:16px;font-size:17px;color:#5b6789;max-width:54ch}
 
-  .stats-sec{padding:10px 0 30px}
+  .stats-sec{padding:36px 0}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(165deg,var(--navy-800),var(--navy-850))}
   .stat{padding:30px 24px;border-right:1px solid var(--line)}
   .stat:last-child{border-right:0}
@@ -48,8 +46,8 @@
   .intro-body p{font-size:16.5px;color:#5b6789;line-height:1.85;margin-bottom:16px}
   .intro-body p:last-child{margin-bottom:0}
 
-  /* timeline */
-  .history{border-top:1px solid rgba(10,17,36,.06);border-bottom:1px solid rgba(10,17,36,.06)}
+  /* timeline (연혁) — 첫 섹션이라 헤더 여백 확보 */
+  .history{border-bottom:1px solid rgba(10,17,36,.06);padding-top:120px}
   .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:2px solid rgba(45,91,255,.2)}
   .tl{position:relative;padding:0 0 40px}
   .tl:last-child{padding-bottom:0}
@@ -93,7 +91,7 @@
   .fac-num{margin-top:24px;font-family:'Archivo';font-weight:800;font-size:clamp(38px,5vw,54px);color:var(--navy-900);line-height:1;display:flex;align-items:flex-end;gap:5px}
   .fac-num .u{font-size:.36em;color:var(--blue-bright);font-weight:700;margin-bottom:.18em}
   .fac-num .l{font-size:.26em;color:var(--mute);font-weight:600;margin-left:8px;margin-bottom:.34em}
-  /* 위치 */
+  /* 위치 — 첫 섹션 아님(연혁이 첫). 물류창고/오시는길은 기본 */
   .location{border-top:1px solid rgba(10,17,36,.06)}
   .loc-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .loc-card{background:#fff;border:1px solid #e7edf9;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 36px -22px rgba(13,40,120,.24)}
@@ -122,10 +120,10 @@
     .biz-cards{grid-template-columns:1fr}
   }
   @media(max-width:600px){
-    .phead{padding:100px 0 40px}
     .phead h1{font-size:clamp(27px,7.4vw,42px);line-height:1.18}
-    .phead p,.phead .sub{font-size:15px;margin-top:13px;line-height:1.65}
+    .phead p{font-size:15px;margin-top:13px;line-height:1.65}
     section{padding-top:clamp(54px,12vw,80px);padding-bottom:clamp(54px,12vw,80px)}
+    .history{padding-top:92px}
     .sec-head{margin-bottom:30px}
     h2.st{font-size:clamp(22px,6.3vw,32px);line-height:1.22}
     .sec-head p{font-size:15px;line-height:1.65}
@@ -136,15 +134,75 @@
 
 <div class="hd-slot" data-include="/partials/header.html"></div>
 
+<!-- ① 연혁 -->
+<section class="history">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">History</div>
+      <h2 class="st">푸드트럭 1대에서<br>직영 15대까지</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal"><div class="tl-y num">2016</div><h3>'와사바리' 푸드트럭 설립</h3><p>직영 차량 1대로 현장을 시작했습니다.</p></div>
+      <div class="tl reveal"><div class="tl-y num">2021</div><h3>'푸드트럭하우스'로 상호 변경</h3><p>직영 차량 5대. 케이터링 전문 브랜드로 확장.</p></div>
+      <div class="tl reveal"><div class="tl-y num">2024</div><h3>'주식회사 하이팅' 법인 설립</h3><p>직영 차량 11대. 운영 체계를 본사 직영으로 정비.</p></div>
+      <div class="tl reveal"><div class="tl-y num">2025</div><h3>F&amp;B 오프라인 매장 '더판'·'츄럭스' 오픈</h3><p>직영 차량 15대. 외식 브랜드 사업으로 영역 확장.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ② 시설: 물류창고 -->
+<section class="facility">
+  <div class="wrap fac-grid">
+    <div class="fac-photo reveal">
+      <img src="https://foodtruckhouse.com/files/thumbnails/857/001/1170x658.fill.jpg" alt="푸드트럭하우스 100평 자체 물류창고 내부" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="ph-note" style="display:none">물류창고 사진</span>
+    </div>
+    <div class="fac-text reveal">
+      <div class="fac-badge">⬢ 전국 최대 규모 인프라</div>
+      <h2 class="st">100평이 넘는<br>자체 물류창고</h2>
+      <p>푸드트럭 업계를 통틀어 전국 최대 규모의 물류창고를 직접 운영합니다. 대규모 행사에도 장비와 물량을 안정적으로 공급하는, 우리 운영의 든든한 기반입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 위치 / 오시는 길 -->
+<section class="location">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Location</div>
+      <h2 class="st">오시는 길</h2>
+    </div>
+    <div class="loc-2">
+      <div class="loc-card reveal">
+        <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2&z=17&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 사무실 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-meta">
+          <span class="tag">사무실</span>
+          <div class="addr">경기도 용인시 기흥구 중부대로 746번길 2, 2층 푸드트럭하우스</div>
+          <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2" target="_blank" rel="noopener">큰 지도로 보기 →</a>
+        </div>
+      </div>
+      <div class="loc-card reveal">
+        <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229&z=16&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 물류창고·차고지 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-meta">
+          <span class="tag">물류창고 · 차고지</span>
+          <div class="addr">경기도 용인시 기흥구 상하동 229</div>
+          <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229" target="_blank" rel="noopener">큰 지도로 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 현장을 책임지는 운영의 힘 -->
 <section class="phead">
   <div class="glow"></div>
   <div class="wrap">
-    <div class="crumb"><a href="index.html">홈</a> · 소개 · 회사소개</div>
     <h1>현장을 책임지는 운영의 힘</h1>
     <p>2016년 푸드트럭 한 대로 시작해, 지금은 직영 15대와 전국 협력 400여 대의 운영망을 갖춘 케이터링 전문 회사입니다.</p>
   </div>
 </section>
 
+<!-- 핵심 수치 -->
 <section class="stats-sec">
   <div class="wrap">
     <div class="stats reveal">
@@ -171,37 +229,6 @@
   </div>
 </section>
 
-<!-- 시설: 물류창고 -->
-<section class="facility">
-  <div class="wrap fac-grid">
-    <div class="fac-photo reveal">
-      <img src="https://foodtruckhouse.com/files/thumbnails/857/001/1170x658.fill.jpg" alt="푸드트럭하우스 100평 자체 물류창고 내부" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="ph-note" style="display:none">물류창고 사진</span>
-    </div>
-    <div class="fac-text reveal">
-      <div class="fac-badge">⬢ 전국 최대 규모 인프라</div>
-      <h2 class="st">100평이 넘는<br>자체 물류창고</h2>
-      <p>푸드트럭 업계를 통틀어 전국 최대 규모의 물류창고를 직접 운영합니다. 대규모 행사에도 장비와 물량을 안정적으로 공급하는, 우리 운영의 든든한 기반입니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 연혁 -->
-<section class="history">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="kicker">History</div>
-      <h2 class="st">푸드트럭 1대에서<br>직영 15대까지</h2>
-    </div>
-    <div class="timeline">
-      <div class="tl reveal"><div class="tl-y num">2016</div><h3>'와사바리' 푸드트럭 설립</h3><p>직영 차량 1대로 현장을 시작했습니다.</p></div>
-      <div class="tl reveal"><div class="tl-y num">2021</div><h3>'푸드트럭하우스'로 상호 변경</h3><p>직영 차량 5대. 케이터링 전문 브랜드로 확장.</p></div>
-      <div class="tl reveal"><div class="tl-y num">2024</div><h3>'주식회사 하이팅' 법인 설립</h3><p>직영 차량 11대. 운영 체계를 본사 직영으로 정비.</p></div>
-      <div class="tl reveal"><div class="tl-y num">2025</div><h3>F&amp;B 오프라인 매장 '더판'·'츄럭스' 오픈</h3><p>직영 차량 15대. 외식 브랜드 사업으로 영역 확장.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- 비전 -->
 <section>
   <div class="wrap">
@@ -216,34 +243,6 @@
       <div class="bz reveal"><div class="bi">03</div><h3>오프라인<br>매장 운영</h3></div>
       <div class="bz reveal"><div class="bi">04</div><h3>프랜차이즈<br>시스템</h3></div>
       <div class="bz reveal"><div class="bi">05</div><h3>식자재 ·<br>상품 유통</h3></div>
-    </div>
-  </div>
-</section>
-
-<!-- 위치 / 오시는 길 -->
-<section class="location">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="kicker">Location</div>
-      <h2 class="st">오시는 길</h2>
-    </div>
-    <div class="loc-2">
-      <div class="loc-card reveal">
-        <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2&z=17&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 사무실 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-        <div class="loc-meta">
-          <span class="tag">사무실</span>
-          <div class="addr">경기도 용인시 기흥구 중부대로 746번길 2, 2층 푸드트럭하우스</div>
-          <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2" target="_blank" rel="noopener">큰 지도로 보기 →</a>
-        </div>
-      </div>
-      <div class="loc-card reveal">
-        <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229&z=16&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 물류창고·차고지 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-        <div class="loc-meta">
-          <span class="tag">물류창고 · 차고지</span>
-          <div class="addr">경기도 용인시 기흥구 상하동 229</div>
-          <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229" target="_blank" rel="noopener">큰 지도로 보기 →</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
