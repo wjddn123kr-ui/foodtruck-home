@@ -412,6 +412,15 @@
   .mc-stage::before{background:linear-gradient(180deg,rgba(6,12,31,.45) 0%,rgba(6,12,31,.52) 100%)}
   .mc-caption{position:relative;top:auto;left:auto;right:auto;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:46px 22px 30px}
   .mc-cta-center{margin-top:auto}
+  /* 브랜드 프로모션: 카드뉴스 아래 여백 축소 */
+  .promo-sec{padding-bottom:22px}
+  /* SERVICE: 8개 항목을 3·3·2(3열) 컴팩트 카드로 */
+  .svc-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .svc-card{padding:14px 8px;text-align:center}
+  .svc-card .ico{width:40px;height:40px;border-radius:11px;margin:0 auto 8px}
+  .svc-card .ico svg{width:22px;height:22px}
+  .svc-card h3{font-size:11.5px;line-height:1.25;margin-bottom:0;letter-spacing:-.03em}
+  .svc-card p{display:none}
 }
 /* ===== 브랜드 프로모션 — 카드뉴스(스와이프) + 상세 모달 ===== */
 .cn-strip{display:flex;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px 10px}
@@ -702,7 +711,6 @@ body.cn-open{overflow:hidden}
         <div class="cn-meta"><span class="promo-tag">전국투어</span><h3>삼양라면</h3><p>'맵탱go' 출시 전국투어</p><span class="cn-more">상세 사진 보기 →</span></div>
       </button>
     </div>
-    <p class="cn-hint">카드를 누르면 상세 사진을 볼 수 있어요 · 그 외 대기업 프로모션 다수</p>
   </div>
   <div class="cn-modal" id="cnModal" hidden>
     <div class="cn-modal-bg"></div>
