@@ -67,6 +67,7 @@
   .mc:hover{transform:translateY(-4px);border-color:rgba(91,134,255,.42)}
   .mc-th{position:relative;aspect-ratio:16/10;display:grid;place-items:center;background:radial-gradient(circle at 50% 32%,rgba(91,134,255,.14),transparent 60%),linear-gradient(160deg,#eaf0fc,#dbe6f7);border-bottom:1px solid #eef2fb}
   .mc-th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .mc-th img.mc-img{object-fit:contain;background:#fff;padding:6px}
   .mc-emoji{font-size:42px;line-height:1;opacity:.95}
   .mc-best{position:absolute;top:10px;left:10px;z-index:2;background:var(--blue);color:#fff;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.03em;box-shadow:0 4px 12px -4px rgba(45,91,255,.7)}
   .mc-b{padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -210,22 +211,22 @@
       {name:"15종 클래식세트", price:4000, coffee:["아메리카노","카페라떼","바닐라라떼","카라멜마끼야또","카페모카","헤이즐넛라떼","헤이즐넛아메리카노","아샷추","다방커피"], non_coffee:["딸기라떼","초코라떼","말차라떼","꿀고구마라떼"], ade:["레몬에이드","자몽에이드","청포도에이드","애플망고에이드"], tea:["복숭아 아이스티","자몽허니블랙티","유자차","캐모마일","애플캐모마일","얼그레이","얼그레이밀크티","페퍼민트","생강레몬티","애플시나몬티"]}
     ],
     snacks: [
-      {name:"츄러스(30cm)", price:3000, best:true},
-      {name:"팝콘(소)", price:3500},
-      {name:"컵솜사탕", price:3500},
-      {name:"핫바", price:3500},
-      {name:"소떡소떡", price:3500},
-      {name:"그릴소세지", price:3500},
-      {name:"옛날 핫도그", price:3500},
-      {name:"감자핫도그", price:4000},
-      {name:"페스츄리핫도그", price:4000, best:true},
-      {name:"미니붕어빵(5ea)", price:3500},
-      {name:"회오리감자", price:4000},
-      {name:"닭꼬치", price:5000},
-      {name:"후라이드닭꼬치", price:4500},
-      {name:"타코야끼", price:5000},
-      {name:"닭강정(중간컵)", price:6000},
-      {name:"닭강정(큰컵)", price:12000}
+      {name:"츄러스(30cm)", price:3000, best:true, img:"snack-1.jpg"},
+      {name:"팝콘(소)", price:3500, img:"snack-2.jpg"},
+      {name:"컵솜사탕", price:3500, img:"snack-3.jpg"},
+      {name:"핫바", price:3500, img:"snack-4.jpg"},
+      {name:"소떡소떡", price:3500, img:"snack-5.jpg"},
+      {name:"그릴소세지", price:3500, img:"snack-6.jpg"},
+      {name:"옛날 핫도그", price:3500, img:"snack-7.jpg"},
+      {name:"감자핫도그", price:4000, img:"snack-8.jpg"},
+      {name:"페스츄리핫도그", price:4000, best:true, img:"snack-9.jpg"},
+      {name:"미니붕어빵(5ea)", price:3500, img:"snack-10.jpg"},
+      {name:"회오리감자", price:4000, img:"snack-11.jpg"},
+      {name:"닭꼬치", price:5000, img:"snack-12.jpg"},
+      {name:"후라이드닭꼬치", price:4500, img:"snack-13.jpg"},
+      {name:"타코야끼", price:5000, img:"snack-14.jpg"},
+      {name:"닭강정(중간컵)", price:6000, img:"snack-15.jpg"},
+      {name:"닭강정(큰컵)", price:12000, img:"snack-16.jpg"}
     ],
     dessert_bakery: [
       {name:"쿠키", price:2000},
@@ -349,7 +350,8 @@
 
   function itemCard(it, emoji){
     var badge = it.best ? '<span class="mc-best">BEST</span>' : '';
-    return '<div class="mc reveal"><div class="mc-th">'+badge+'<span class="mc-emoji">'+(emoji||'🍽️')+'</span></div>'+
+    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
+    return '<div class="mc reveal"><div class="mc-th">'+badge+thumb+'</div>'+
            '<div class="mc-b"><span class="mc-n">'+esc(it.name)+'</span>'+
            '<span class="mc-p num">'+won(it.price)+'<i>원</i></span></div></div>';
   }
