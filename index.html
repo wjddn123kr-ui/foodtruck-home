@@ -289,7 +289,7 @@
   .ps-total{padding:7px 8px;border-radius:8px}.ps-total .t{font-size:6.5px}.ps-total .v{font-size:11px}
   .quote-copy h2{font-size:17px;line-height:1.3}
   .quote-copy p{font-size:11.5px;margin-top:8px;line-height:1.5;max-width:none}
-  .qfeat{gap:7px;margin:12px 0 14px}.qfeat li{font-size:10.5px;gap:6px}.qfeat .chk{width:16px;height:16px}
+  .qfeat{gap:7px;margin:12px 0 14px}.qfeat li{font-size:9px;gap:5px;line-height:1.25}.qfeat .chk{width:15px;height:15px}
   .hero{display:block;min-height:auto;background:var(--navy-900);padding-top:62px}
   .hero-video{position:relative;inset:auto;width:100%;height:auto;object-fit:fill}
   .hero-scrim{display:none}
@@ -305,7 +305,7 @@
   /* 케이터링(현장운영) 섹션: 3초견적처럼 모바일도 좌우 2단 유지 — 세로 스택 금지 */
   /* 제목/리드 상단 풀폭 → 그 아래 [포인트 좌 / 실시간 배차현황 우] */
   .why-col{display:contents}
-  .why-grid{grid-template-columns:1fr 148px;grid-template-areas:"head head" "points disp";column-gap:12px;row-gap:18px;align-items:start}
+  .why-grid{grid-template-columns:1fr 150px;grid-template-areas:"head head" "points disp";column-gap:12px;row-gap:18px;align-items:start}
   .why-head{grid-area:head}
   .points{grid-area:points}
   .dispatch-card{grid-area:disp}
@@ -313,11 +313,11 @@
   .why-sec h2.st{font-size:20px;line-height:1.22}
   .why-lead{font-size:11.5px;margin-top:10px;line-height:1.5;max-width:none}
   .points{margin-top:0}
-  .pt{padding:11px 0;gap:9px}
+  .pt{padding:8px 0;gap:9px}
   .pt .n{width:27px;height:27px;font-size:11px;border-radius:7px}
   .pt h3{font-size:13px;margin-bottom:2px}
   .pt p{font-size:10.5px;line-height:1.42}
-  .dispatch-card{padding:12px 10px;border-radius:13px}
+  .dispatch-card{padding:14px 11px;border-radius:13px;height:100%;display:flex;flex-direction:column;justify-content:center}
   .dc-head{margin-bottom:9px}
   .dc-head .t{font-size:10px;gap:6px}
   .dc-head .meta{display:none}
@@ -380,8 +380,10 @@
    ★ 모바일 전용 (≤767px) — PC(데스크톱) 레이아웃은 영향 없음
    ============================================================ */
 @media(max-width:767px){
-  /* 메인 영상을 섹션 최상단에 붙여 영상 위 남색 배경이 안 보이게 */
-  .hero{padding-top:0}
+  /* 1. 슬로건 ↔ 영상 위치 교체  +  2. 슬로건 배경을 promo-baemin-1 사진으로(문구는 위로) */
+  .hero{padding-top:0;display:flex;flex-direction:column}
+  .hero-in{order:-1;min-height:340px;display:flex;flex-direction:column;justify-content:center;padding:88px 22px 48px;background:linear-gradient(180deg,rgba(6,12,31,.42),rgba(6,12,31,.6)),url(promo-baemin-1.jpg) center/cover no-repeat}
+  .hero h1{text-shadow:0 2px 16px rgba(0,0,0,.55)}
   /* 1~3. 히어로: 부가 요소 숨기고 큰 슬로건만 남김 */
   .hero .hero-eyebrow{display:none}
   .hero .lead{display:none}
@@ -394,7 +396,8 @@
   .montage-sec{padding:0}
   /* '케이터링은 음식이 아니라' 섹션 상·하단 여백 축소 */
   .why-sec{padding:24px 0}
-  /* 우리가 함께한 고객들 로고: 현재 40px의 절반(20px)로 — 너무 커서 적어 보임 */
+  /* 우리가 함께한 고객들 로고: 절반 크기 + 상·하단 여백 축소 */
+  .client-sec{padding:12px 0 14px}
   .client-sec .marquee-track{gap:24px}
   .client-sec .marquee-track img{height:20px}
 
