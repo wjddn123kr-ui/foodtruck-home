@@ -481,6 +481,14 @@ body.cn-open{overflow:hidden}
 .rv-tx .h{font-weight:800;font-size:13.5px;color:var(--blue);margin-bottom:4px}
 .rv-tx p{font-size:12.2px;color:#37425f;line-height:1.45}
 @media(hover:hover){.rv-ph img{transition:transform .3s}.rv:hover .rv-ph img{transform:scale(1.05)}}
+/* PC: 후기 카드 2열로 넓게(모바일은 위 기본 1열 유지) */
+@media(min-width:768px){
+  .rv-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:960px}
+  .rv{padding:13px}
+  .rv-ph{flex:0 0 34%}
+  .rv-tx .h{font-size:14.5px}
+  .rv-tx p{font-size:13.3px;line-height:1.5}
+}
 /* ===== 차량 라인업 칩 (SEO 내부링크) ===== */
 .veh-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .veh-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;background:#fff;border:1px solid #d9e3f7;color:var(--navy-900);font-weight:700;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(13,40,120,.35);transition:transform .15s,border-color .2s,color .2s}
