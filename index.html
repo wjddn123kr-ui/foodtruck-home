@@ -453,21 +453,17 @@
 .cn-modal-photos{margin-top:14px}
 .cn-modal-photos img{width:100%;border-radius:12px;margin-bottom:10px;display:block;background:var(--navy-850)}
 body.cn-open{overflow:hidden}
-/* ===== 입소문 — 인스타 카드뉴스 지그재그(W) 겹침 ===== */
-.insta-stack{position:relative;width:100%;max-width:380px;margin:8px auto 0}
-.insta-stack .icard{display:block;position:relative;width:58%;border:3px solid #fff;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 14px 30px -14px rgba(13,40,120,.5),0 2px 6px rgba(13,40,120,.14)}
-.insta-stack .icard img{width:100%;height:auto;display:block}
-.insta-stack .icard:not(:first-child){margin-top:-22%}
-.insta-stack .icard:nth-child(odd){margin-left:0;margin-right:auto;transform:rotate(-2.5deg)}
-.insta-stack .icard:nth-child(even){margin-left:auto;margin-right:0;transform:rotate(2.5deg)}
-.insta-stack .icard:nth-child(1){z-index:1}
-.insta-stack .icard:nth-child(2){z-index:2}
-.insta-stack .icard:nth-child(3){z-index:3}
-.insta-stack .icard:nth-child(4){z-index:4}
-.insta-stack .icard:nth-child(5){z-index:5}
-.insta-stack .icard:nth-child(6){z-index:6}
-.insta-stack .icard:nth-child(7){z-index:7}
-@media(hover:hover){.insta-stack .icard{transition:transform .25s,box-shadow .25s}.insta-stack .icard:hover{transform:rotate(0) scale(1.05);z-index:30;box-shadow:0 26px 50px -18px rgba(13,40,120,.55)}}
+/* ===== 입소문 — 리얼후기(흐릿한 후기벽 + 핵심 말풍선) ===== */
+.rr-head{text-align:center;margin-bottom:18px}
+.rr-eyebrow{font-size:14.5px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.rr-title{font-size:clamp(27px,7.6vw,40px);font-weight:900;letter-spacing:-.02em;color:var(--navy-900);line-height:1.1;margin-top:3px}
+.rr-title .rr-hl{color:var(--blue)}
+.rr-sub{margin-top:9px;font-size:13.5px;font-weight:600;color:var(--mute)}
+.rr{position:relative;max-width:520px;margin:0 auto;border-radius:20px;border:1px solid #e7edf9;padding:22px 14px;display:flex;flex-direction:column;gap:14px;align-items:center;background-image:linear-gradient(rgba(244,247,254,.80),rgba(244,247,254,.74)),url(review-wall.jpg);background-size:cover;background-position:center;box-shadow:0 20px 50px -30px rgba(13,40,120,.4)}
+.rr-q{position:relative;width:100%;max-width:312px;background:#fff;border:2px solid var(--blue);border-radius:15px;padding:13px 18px 12px;text-align:center;box-shadow:0 12px 26px -14px rgba(45,91,255,.5)}
+.rr-q .rr-stars{color:#FFB300;font-size:13px;letter-spacing:3px;margin-bottom:5px}
+.rr-q p{font-size:14.5px;font-weight:700;color:var(--navy-900);line-height:1.5}
+.rr-q .rr-who{display:block;margin-top:6px;font-size:11.5px;color:var(--mute);font-weight:600}
 /* ===== 차량 라인업 칩 (SEO 내부링크) ===== */
 .veh-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .veh-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;background:#fff;border:1px solid #d9e3f7;color:var(--navy-900);font-weight:700;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(13,40,120,.35);transition:transform .15s,border-color .2s,color .2s}
@@ -841,19 +837,17 @@ body.cn-open{overflow:hidden}
 <!-- ================= 후기 ================= -->
 <section class="sec sec-ice">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">REAL REVIEW</span>
-      <h2>입소문은 못 속입니다</h2>
-      <p>블로그·인스타에 쏟아진 수많은 현장 후기. 재이용률 92%가 증명합니다.</p>
+    <div class="rr-head reveal">
+      <p class="rr-eyebrow">실제 고객 후기로 증명하는</p>
+      <h2 class="rr-title">푸드트럭하우스 <span class="rr-hl">리·얼·후·기</span></h2>
+      <p class="rr-sub">재이용률 92% · 누적 행사 8,000건</p>
     </div>
-    <div class="insta-stack reveal">
-      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-1.jpg" alt="연예인 커피차 서포트 현장" loading="lazy"></a>
-      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-2.jpg" alt="행사 출장 뷔페식 밥차" loading="lazy"></a>
-      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-3.jpg" alt="브랜드 실내 케이터링 푸드트럭" loading="lazy"></a>
-      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-4.jpg" alt="학교 체육대회 간식차" loading="lazy"></a>
-      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-5.jpg" alt="FC서울 응원 간식차" loading="lazy"></a>
-      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-6.jpg" alt="기업행사 푸드트럭 케이터링" loading="lazy"></a>
-      <a class="icard" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener"><img src="insta-7.jpg" alt="축제 행사 푸드트럭" loading="lazy"></a>
+    <div class="rr reveal">
+      <div class="rr-q"><div class="rr-stars">★★★★★</div><p>현장 분위기가 확 살았어요! 임직원 반응이 정말 좋았습니다.</p><span class="rr-who">기업 사내행사</span></div>
+      <div class="rr-q"><div class="rr-stars">★★★★★</div><p>세팅이 빠르고 메뉴 퀄리티가 기대 이상이었어요.</p><span class="rr-who">브랜드 팝업</span></div>
+      <div class="rr-q"><div class="rr-stars">★★★★★</div><p>수백 명 규모인데 대기 없이 운영됐어요.</p><span class="rr-who">대학 축제</span></div>
+      <div class="rr-q"><div class="rr-stars">★★★★★</div><p>차량 래핑부터 디테일하게 우리 브랜드를 살려주셨어요.</p><span class="rr-who">신제품 프로모션</span></div>
+      <div class="rr-q"><div class="rr-stars">★★★★★</div><p>비 오는 날도 천막·동선까지 꼼꼼하게 챙겨주셨어요.</p><span class="rr-who">체육대회</span></div>
     </div>
     <div style="text-align:center;margin-top:40px">
       <a href="/review.html" class="btn btn-line">후기 전체 보기
