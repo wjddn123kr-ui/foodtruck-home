@@ -271,7 +271,6 @@
       {name:"뉴욕핫도그", price:5000, img:"dessert-10.jpg"},
       {name:"클럽샌드위치", price:5500, img:"dessert-11.jpg"},
       {name:"스쿱아이스크림", price:3500, img:"dessert-12.jpg"},
-      {name:"소프트아이스크림", price:3500},
       {name:"젤라또 아이스크림", price:4500, img:"dessert-13.jpg"},
       {name:"아츄(스쿱)", price:6000, img:"dessert-14.jpg"},
       {name:"아츄(젤라또)", price:7000, img:"dessert-15.jpg"}
@@ -281,7 +280,7 @@
       {name:"튀김", price:3500, img:"bunsik-2.jpg"},
       {name:"순대", price:3500, img:"bunsik-3.jpg"},
       {name:"어묵(2ea)", price:2500, img:"bunsik-4.jpg"},
-      {name:"어묵(어묵1+물떡1)", price:3000, img:"bunsik-5.jpg"},
+      {name:"어떡(어묵1+물떡1)", price:3000, img:"bunsik-5.jpg"},
       {name:"떡+튀", price:6000, img:"bunsik-6.jpg"},
       {name:"떡+순", price:6000, img:"bunsik-7.jpg"},
       {name:"떡+어", price:6000, img:"bunsik-8.jpg"},
@@ -380,7 +379,7 @@
 
   function itemCard(it, emoji){
     var badge = it.best ? '<span class="mc-best">BEST</span>' : '';
-    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=4" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
+    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=5" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
     return '<div class="mc reveal"><div class="mc-th">'+badge+thumb+'</div>'+
            '<div class="mc-b"><span class="mc-n">'+esc(it.name)+'</span>'+
            '<span class="mc-p num">'+won(it.price)+'<i>원</i></span></div></div>';
