@@ -453,22 +453,12 @@
 .cn-modal-photos{margin-top:14px}
 .cn-modal-photos img{width:100%;border-radius:12px;margin-bottom:10px;display:block;background:var(--navy-850)}
 body.cn-open{overflow:hidden}
-/* ===== SNS 후기 콜라주 (블로그 + 인스타) ===== */
-.sns-blogs{display:flex;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px 12px;scroll-snap-type:x mandatory}
-.sns-blogs::-webkit-scrollbar{display:none}
-.sns-blog-card{flex:0 0 86%;max-width:380px;scroll-snap-align:start;position:relative;display:block;background:#fff;border:1px solid #e7edf9;border-radius:16px;overflow:hidden;box-shadow:0 14px 34px -20px rgba(13,40,120,.28);transition:transform .25s,box-shadow .25s}
-.sns-blog-card img{width:100%;height:auto;display:block}
-.sns-blog-card .nv{position:absolute;top:10px;left:10px;display:inline-flex;align-items:center;gap:4px;background:#03C75A;color:#fff;font-size:11px;font-weight:800;font-family:'Archivo',sans-serif;letter-spacing:.02em;padding:4px 9px;border-radius:7px;box-shadow:0 4px 12px -4px rgba(3,199,90,.55)}
-@media(hover:hover){.sns-blog-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px -22px rgba(13,40,120,.4)}}
-.sns-insta{max-width:560px;margin:22px auto 0;background:#fff;border:1px solid #e7edf9;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(13,40,120,.3)}
-.sns-insta-head{display:flex;align-items:center;gap:11px;padding:13px 16px}
-.sns-insta-head .ig{width:38px;height:38px;border-radius:50%;flex:0 0 auto;background:radial-gradient(circle at 30% 107%,#fdf497,#fd5949 45%,#d6249f 70%,#285AEB 110%)}
-.sns-insta-head .h-id{font-weight:800;font-size:14px;color:var(--navy-900);line-height:1.25}
-.sns-insta-head .h-sub{font-size:11.5px;color:var(--mute)}
-.sns-insta-head .follow{margin-left:auto;background:var(--blue);color:#fff;font-weight:700;font-size:12.5px;padding:7px 14px;border-radius:8px;box-shadow:0 6px 16px -8px rgba(45,91,255,.8)}
-.sns-insta-grid{display:block;border-top:1px solid #eef2fb;border-bottom:1px solid #eef2fb}
-.sns-insta-grid img{width:100%;height:auto;display:block}
-.sns-insta-more{display:flex;align-items:center;justify-content:center;gap:7px;padding:14px;font-weight:700;font-size:13.5px;color:var(--blue)}
+/* ===== SNS 후기 더미 (흩뿌린 콜라주) ===== */
+.sns-pile{position:relative;width:100%;max-width:360px;height:500px;margin:10px auto 0}
+.sns-pile .pc{position:absolute;left:var(--l);top:var(--t);width:var(--w);transform:rotate(var(--r));z-index:var(--z);
+  border:3px solid #fff;border-radius:8px;background:#fff;
+  box-shadow:0 12px 26px -12px rgba(13,40,120,.45),0 2px 6px rgba(13,40,120,.14)}
+@media(hover:hover){.sns-pile .pc{transition:transform .25s,box-shadow .25s,z-index 0s}.sns-pile .pc:hover{transform:rotate(0) scale(1.07);z-index:30;box-shadow:0 26px 52px -16px rgba(13,40,120,.5)}}
 /* ===== 차량 라인업 칩 (SEO 내부링크) ===== */
 .veh-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .veh-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;background:#fff;border:1px solid #d9e3f7;color:var(--navy-900);font-weight:700;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(13,40,120,.35);transition:transform .15s,border-color .2s,color .2s}
@@ -845,42 +835,19 @@ body.cn-open{overflow:hidden}
     <div class="sec-head reveal">
       <span class="eyebrow">REAL REVIEW</span>
       <h2>입소문은 못 속입니다</h2>
-      <p>네이버 블로그·인스타그램에 쌓인 진짜 현장 기록. 재이용률 92%가 증명합니다.</p>
+      <p>블로그·인스타에 쏟아진 수많은 현장 후기. 재이용률 92%가 증명합니다.</p>
     </div>
-    <div class="sns-blogs reveal">
-      <a class="sns-blog-card" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">
-        <span class="nv">blog</span>
-        <img src="blog-review-1.png" alt="푸드트럭 대여 한국장학재단 캠페인 현장 후기" loading="lazy">
-      </a>
-      <a class="sns-blog-card" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">
-        <span class="nv">blog</span>
-        <img src="blog-review-2.png" alt="푸드트럭 대여비용 커피차 간식차 FC서울 선수단 출장 후기" loading="lazy">
-      </a>
-      <a class="sns-blog-card" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">
-        <span class="nv">blog</span>
-        <img src="blog-review-3.png" alt="간식차 이벤트 관대초등학교 운동회 푸드트럭 운영 후기" loading="lazy">
-      </a>
-      <a class="sns-blog-card" href="https://blog.naver.com/qnehdtksjw" target="_blank" rel="noopener">
-        <span class="nv">blog</span>
-        <img src="blog-review-4.png" alt="푸드트럭 부르는법 현대자동차 고객 초청 행사 운영 사례" loading="lazy">
-      </a>
-    </div>
-    <div class="sns-insta reveal">
-      <div class="sns-insta-head">
-        <span class="ig"></span>
-        <div>
-          <div class="h-id">foodtruckhouse_official</div>
-          <div class="h-sub">푸드트럭하우스 공식 인스타그램</div>
-        </div>
-        <a class="follow" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener">팔로우</a>
-      </div>
-      <a class="sns-insta-grid" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener">
-        <img src="insta-feed.jpg" alt="푸드트럭하우스 인스타그램 피드 — 연예인 커피차·뷔페식 밥차·실내 케이터링 등 현장 게시물" loading="lazy">
-      </a>
-      <a class="sns-insta-more" href="https://www.instagram.com/foodtruckhouse_official/" target="_blank" rel="noopener">
-        인스타그램에서 더 보기
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+    <div class="sns-pile reveal">
+      <img class="pc" style="--l:0%;--t:2%;--w:48%;--r:-6deg;--z:3" src="blog-review-1.png" alt="푸드트럭 대여 한국장학재단 캠페인 현장 후기" loading="lazy">
+      <img class="pc" style="--l:45%;--t:11%;--w:50%;--r:4deg;--z:4" src="blog-review-2.png" alt="푸드트럭 대여비용 커피차 간식차 FC서울 선수단 출장 후기" loading="lazy">
+      <img class="pc" style="--l:5%;--t:35%;--w:48%;--r:5deg;--z:5" src="blog-review-3.png" alt="간식차 이벤트 관대초등학교 운동회 푸드트럭 운영 후기" loading="lazy">
+      <img class="pc" style="--l:33%;--t:55%;--w:51%;--r:-4deg;--z:6" src="blog-review-4.png" alt="푸드트럭 부르는법 현대자동차 고객 초청 행사 운영 사례" loading="lazy">
+      <img class="pc" style="--l:63%;--t:0%;--w:30%;--r:7deg;--z:7" src="insta-card-1.jpg" alt="연예인 커피차 현장 후기" loading="lazy">
+      <img class="pc" style="--l:1%;--t:19%;--w:29%;--r:-8deg;--z:6" src="insta-card-2.jpg" alt="FC서울 간식차 출장 현장" loading="lazy">
+      <img class="pc" style="--l:70%;--t:27%;--w:31%;--r:6deg;--z:8" src="insta-card-3.jpg" alt="푸드트럭하우스 샌드위치 메뉴" loading="lazy">
+      <img class="pc" style="--l:49%;--t:41%;--w:29%;--r:-7deg;--z:7" src="insta-card-4.jpg" alt="기업행사 푸드트럭 홍보" loading="lazy">
+      <img class="pc" style="--l:1%;--t:59%;--w:30%;--r:6deg;--z:7" src="insta-card-5.jpg" alt="분식차 떡볶이 튀김 순대 어묵" loading="lazy">
+      <img class="pc" style="--l:71%;--t:63%;--w:29%;--r:8deg;--z:9" src="insta-card-6.jpg" alt="간식차 회오리감자 봄 메뉴" loading="lazy">
     </div>
     <div style="text-align:center;margin-top:40px">
       <a href="/review.html" class="btn btn-line">후기 전체 보기
