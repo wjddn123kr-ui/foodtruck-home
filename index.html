@@ -401,10 +401,10 @@
   /* 6. '메뉴가 곧 분위기' — 배경을 menu-bg-mobile.jpg 한 장으로 교체 */
   .mc-half{display:none}
   .mc-pile{display:none}
-  .mc-stage{height:auto;min-height:420px;display:flex;align-items:center;justify-content:center;
+  .mc-stage{height:auto;aspect-ratio:1;display:flex;align-items:center;justify-content:center;
     background:url(menu-bg-mobile-v2.jpg) center/cover no-repeat}
   .mc-stage::before{background:linear-gradient(180deg,rgba(6,12,31,.45) 0%,rgba(6,12,31,.52) 100%)}
-  .mc-caption{position:relative;top:auto;left:auto;right:auto;padding:46px 22px}
+  .mc-caption{position:relative;top:auto;left:auto;right:auto;padding:46px 22px;transform:translateY(-22px)}
 }
 </style>
 </head>
