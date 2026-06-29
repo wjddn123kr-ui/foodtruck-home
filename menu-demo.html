@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메뉴 사진형 데모(간식) — 푸드트럭하우스</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .pwrap{max-width:1120px;margin:0 auto;padding:0 18px}
+  .mh{text-align:center;padding:104px 0 22px}
+  .mh .e{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--blue)}
+  .mh h1{font-size:clamp(26px,7vw,40px);font-weight:900;color:var(--navy-900);letter-spacing:-.02em;margin-top:6px}
+  .mh p{margin-top:8px;font-size:13.5px;color:var(--mute)}
+
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-bottom:60px}
+  .mp{position:relative;background:#fff;border:1px solid #e7edf9;border-radius:16px;padding:11px 11px 14px;text-align:center;box-shadow:0 10px 26px -18px rgba(13,40,120,.28)}
+  .mp .ph{aspect-ratio:1/1;border-radius:12px;background:linear-gradient(160deg,#eef3ff,#dde8ff);display:grid;place-items:center;overflow:hidden;margin-bottom:11px}
+  .mp .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .mp .ph svg{width:40px;height:40px;color:#a9bff0}
+  .mp h3{font-size:14.5px;font-weight:800;color:var(--navy-900);letter-spacing:-.01em;line-height:1.25}
+  .mp .price{margin-top:4px;font-family:'Archivo',sans-serif;font-size:15px;font-weight:800;color:var(--blue)}
+  .mp .best{position:absolute;top:9px;left:9px;background:#FF7A2E;color:#fff;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:20px;box-shadow:0 4px 12px -4px rgba(255,122,46,.6)}
+  @media(hover:hover){.mp{transition:transform .2s,box-shadow .2s}.mp:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(13,40,120,.4)}}
+  @media(min-width:768px){
+    .pgrid{grid-template-columns:repeat(4,1fr);gap:20px}
+    .mh{padding-top:120px}
+  }
+</style>
+</head>
+<body>
+
+<div class="hd-slot" data-include="/partials/header.html"></div>
+
+<div class="pwrap">
+  <div class="mh">
+    <p class="e">MENU · 사진형 데모</p>
+    <h1>간식 (핑거푸드)</h1>
+    <p>※ 사진 자리는 임시(placeholder)입니다 — 실제 사진으로 교체 예정</p>
+  </div>
+
+  <div class="pgrid" id="grid"></div>
+</div>
+
+<div data-include="/partials/footer.html"></div>
+
+<script>
+  var ITEMS=[
+    {n:"츄러스 (30cm)",p:3000,best:true},
+    {n:"팝콘 (소)",p:3500},
+    {n:"컵솜사탕",p:3500},
+    {n:"핫바",p:3500},
+    {n:"소떡소떡",p:3500},
+    {n:"그릴소세지",p:3500},
+    {n:"옛날핫도그",p:3500},
+    {n:"감자핫도그",p:4000},
+    {n:"페스츄리핫도그",p:4000,best:true},
+    {n:"미니붕어빵 (5ea)",p:3500},
+    {n:"회오리감자",p:4000},
+    {n:"닭꼬치",p:5000},
+    {n:"후라이드닭꼬치",p:4500},
+    {n:"타코야끼",p:5000},
+    {n:"닭강정 (중간컵)",p:6000},
+    {n:"닭강정 (큰컵)",p:12000}
+  ];
+  var ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 01-2 2H4M5 3v18M11 3c0 3-1 4-1 6s1 3 1 6M17 3c-1.5 0-3 1.5-3 5s1.5 4 3 4v9"/></svg>';
+  document.getElementById('grid').innerHTML=ITEMS.map(function(it){
+    return '<div class="mp">'+(it.best?'<span class="best">최고</span>':'')+
+      '<div class="ph">'+(it.img?'<img src="'+it.img+'" alt="'+it.n+'" loading="lazy">':ICON)+'</div>'+
+      '<h3>'+it.n+'</h3>'+
+      '<div class="price">'+it.p.toLocaleString('ko-KR')+'원</div>'+
+    '</div>';
+  }).join('');
+</script>
+<script src="/assets/js/include.js" defer></script>
+</body>
+</html>
