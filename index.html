@@ -444,6 +444,11 @@
 .cn-modal-photos{margin-top:14px}
 .cn-modal-photos img{width:100%;border-radius:12px;margin-bottom:10px;display:block;background:var(--navy-850)}
 body.cn-open{overflow:hidden}
+/* ===== 차량 라인업 칩 (SEO 내부링크) ===== */
+.veh-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.veh-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;background:#fff;border:1px solid #d9e3f7;color:var(--navy-900);font-weight:700;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(13,40,120,.35);transition:transform .15s,border-color .2s,color .2s}
+.veh-chip::after{content:"→";color:var(--blue);font-weight:600}
+.veh-chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
 /* ===== FAQ ===== */
 .faq-list{max-width:760px;margin:0 auto}
 .faq-item{background:#fff;border:1px solid #e7edf9;border-radius:14px;margin-bottom:10px;overflow:hidden}
@@ -811,59 +816,20 @@ body.cn-open{overflow:hidden}
 </section>
 
 <!-- ================= 실사진 갤러리 ================= -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">PORTFOLIO</span>
-      <h2>현장이 증명하는 퀄리티</h2>
-      <p>8,000건의 행사 데이터가 쌓아온 운영 노하우를, 사진으로 확인하세요.</p>
-    </div>
-    <div class="gal-grid">
-      <div class="gal-card reveal">
-        <div class="ph"><img src="https://foodtruckhouse.com/assets/images/main/sec06_1.jpg" alt="기업행사 푸드트럭 케이터링 현장" loading="lazy"></div>
-        <div class="cap"><span class="tag">기업행사</span><h3>사내 페스타 · 임직원 케이터링</h3><p>대기업·금융사 사내행사 정기 운영</p></div>
-      </div>
-      <div class="gal-card reveal">
-        <div class="ph"><img src="https://foodtruckhouse.com/assets/images/main/sec06_2.jpg" alt="브랜드 프로모션 푸드트럭" loading="lazy"></div>
-        <div class="cap"><span class="tag">브랜드</span><h3>브랜드 래핑 · 팝업 프로모션</h3><p>브랜드 컬러 맞춤 차량 제작</p></div>
-      </div>
-      <div class="gal-card reveal">
-        <div class="ph"><img src="https://foodtruckhouse.com/assets/images/main/sec06_3.jpg" alt="축제 푸드트럭 다수 운영" loading="lazy"></div>
-        <div class="cap"><span class="tag">축제</span><h3>대형 축제 · 다수 차량 운영</h3><p>지자체·대학 축제 동시 다대 운영</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 차량 라인업 (SEO) ================= -->
+<!-- ================= 차량 라인업 (SEO 내부링크 — 컴팩트 칩) ================= -->
 <section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">VEHICLES</span>
-      <h2>행사 성격에 맞는 차량을 고르세요</h2>
-      <p>커피차·간식차부터 오뎅차·빙수차·츄러스트럭까지. 각 차량별 메뉴와 사례를 확인하실 수 있습니다.</p>
+      <h2>행사에 맞는 푸드트럭을 고르세요</h2>
+      <p>커피차·간식차·분식차·오뎅차·빙수차·아이스크림차·츄러스트럭까지, 전국 푸드트럭 대여.</p>
     </div>
-    <div class="veh-grid">
-      <a href="/coffee.html" class="veh-card reveal">
-        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 9h13v5a4 4 0 01-4 4H8a4 4 0 01-4-4V9zM17 10h2a2 2 0 010 4h-2M7 4v2M11 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>커피차</h3><p>아메리카노·라떼·에이드</p>
-      </a>
-      <a href="/snack.html" class="veh-card reveal">
-        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3c3 0 5 2 5 5 0 4-5 13-5 13S7 12 7 8c0-3 2-5 5-5zM12 8a1 1 0 100-2 1 1 0 000 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>간식·분식차</h3><p>츄러스·핫도그·떡볶이</p>
-      </a>
-      <a href="/odeng.html" class="veh-card reveal">
-        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 11h14M5 11a7 7 0 0114 0M5 15h14M3 19h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>오뎅차</h3><p>어묵·국물·겨울 간식</p>
-      </a>
-      <a href="/ice.html" class="veh-card reveal">
-        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M8 9a4 4 0 018 0M7 9h10l-4.6 11.2a.45.45 0 01-.8 0L7 9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>빙수·아이스크림차</h3><p>팥빙수·젤라또·아이스크림</p>
-      </a>
-      <a href="/churros.html" class="veh-card reveal">
-        <div class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M7 3c0 3-2 4-2 7s2 4 2 7M12 3c0 3-2 4-2 7s2 4 2 7M17 3c0 3-2 4-2 7s2 4 2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>츄러스트럭</h3><p>갓 튀긴 30cm 츄러스</p>
-      </a>
+    <div class="veh-chips reveal">
+      <a href="/coffee.html" class="veh-chip">커피차</a>
+      <a href="/snack.html" class="veh-chip">간식·분식차</a>
+      <a href="/odeng.html" class="veh-chip">오뎅차</a>
+      <a href="/ice.html" class="veh-chip">빙수·아이스크림차</a>
+      <a href="/churros.html" class="veh-chip">츄러스트럭</a>
     </div>
   </div>
 </section>
