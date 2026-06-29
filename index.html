@@ -453,19 +453,21 @@
 .cn-modal-photos{margin-top:14px}
 .cn-modal-photos img{width:100%;border-radius:12px;margin-bottom:10px;display:block;background:var(--navy-850)}
 body.cn-open{overflow:hidden}
-/* ===== 입소문 — 인스타 카드뉴스 계단식 스택 ===== */
-.insta-stack{position:relative;width:100%;max-width:330px;margin:8px auto 0}
-.insta-stack .icard{display:block;position:relative;width:84%;margin-left:auto;margin-right:auto;border:3px solid #fff;border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 14px 30px -14px rgba(13,40,120,.5),0 2px 6px rgba(13,40,120,.14)}
+/* ===== 입소문 — 인스타 카드뉴스 지그재그(W) 겹침 ===== */
+.insta-stack{position:relative;width:100%;max-width:380px;margin:8px auto 0}
+.insta-stack .icard{display:block;position:relative;width:58%;border:3px solid #fff;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 14px 30px -14px rgba(13,40,120,.5),0 2px 6px rgba(13,40,120,.14)}
 .insta-stack .icard img{width:100%;height:auto;display:block}
-.insta-stack .icard:not(:first-child){margin-top:-65%}
-.insta-stack .icard:nth-child(1){z-index:1;transform:rotate(-1.5deg)}
-.insta-stack .icard:nth-child(2){z-index:2;transform:rotate(1.2deg)}
-.insta-stack .icard:nth-child(3){z-index:3;transform:rotate(-1.1deg)}
-.insta-stack .icard:nth-child(4){z-index:4;transform:rotate(1.4deg)}
-.insta-stack .icard:nth-child(5){z-index:5;transform:rotate(-1.2deg)}
-.insta-stack .icard:nth-child(6){z-index:6;transform:rotate(1deg)}
-.insta-stack .icard:nth-child(7){z-index:7;transform:rotate(-1.3deg)}
-@media(hover:hover){.insta-stack .icard{transition:transform .25s,box-shadow .25s}.insta-stack .icard:hover{transform:rotate(0) scale(1.04);z-index:30;box-shadow:0 26px 50px -18px rgba(13,40,120,.55)}}
+.insta-stack .icard:not(:first-child){margin-top:-22%}
+.insta-stack .icard:nth-child(odd){margin-left:0;margin-right:auto;transform:rotate(-2.5deg)}
+.insta-stack .icard:nth-child(even){margin-left:auto;margin-right:0;transform:rotate(2.5deg)}
+.insta-stack .icard:nth-child(1){z-index:1}
+.insta-stack .icard:nth-child(2){z-index:2}
+.insta-stack .icard:nth-child(3){z-index:3}
+.insta-stack .icard:nth-child(4){z-index:4}
+.insta-stack .icard:nth-child(5){z-index:5}
+.insta-stack .icard:nth-child(6){z-index:6}
+.insta-stack .icard:nth-child(7){z-index:7}
+@media(hover:hover){.insta-stack .icard{transition:transform .25s,box-shadow .25s}.insta-stack .icard:hover{transform:rotate(0) scale(1.05);z-index:30;box-shadow:0 26px 50px -18px rgba(13,40,120,.55)}}
 /* ===== 차량 라인업 칩 (SEO 내부링크) ===== */
 .veh-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .veh-chip{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;background:#fff;border:1px solid #d9e3f7;color:var(--navy-900);font-weight:700;font-size:14.5px;box-shadow:0 8px 20px -14px rgba(13,40,120,.35);transition:transform .15s,border-color .2s,color .2s}
