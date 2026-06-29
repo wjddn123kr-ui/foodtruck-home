@@ -48,10 +48,18 @@
 
   /* timeline (연혁) — 첫 섹션이라 헤더 여백 확보 */
   .history{border-bottom:1px solid rgba(10,17,36,.06);padding-top:120px}
-  .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:2px solid rgba(45,91,255,.2)}
-  .tl{position:relative;padding:0 0 40px}
+  .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:2px solid transparent}
+  .timeline::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:100%;background:rgba(45,91,255,.22);transform:scaleY(0);transform-origin:top;transition:transform 1.2s cubic-bezier(.4,0,.2,1)}
+  .timeline.on::before{transform:scaleY(1)}
+  .tl{position:relative;padding:0 0 40px;transition-delay:var(--dly,0s)}
   .tl:last-child{padding-bottom:0}
-  .tl::before{content:"";position:absolute;left:-43px;top:5px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--blue);box-shadow:0 0 0 4px rgba(45,91,255,.12)}
+  .tl:nth-child(1){--dly:.15s}
+  .tl:nth-child(2){--dly:.38s}
+  .tl:nth-child(3){--dly:.61s}
+  .tl:nth-child(4){--dly:.84s}
+  .tl::before{content:"";position:absolute;left:-43px;top:5px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--blue);box-shadow:0 0 0 4px rgba(45,91,255,.12);transform:scale(0);transition:transform .5s cubic-bezier(.34,1.56,.64,1) var(--dly,0s)}
+  .tl.in::before{transform:scale(1)}
+  @media(prefers-reduced-motion:reduce){.timeline::before,.tl::before{transition:none;transform:none}}
   .tl-y{font-family:'Archivo';font-weight:800;font-size:22px;color:var(--blue);margin-bottom:8px}
   .tl h3{font-size:18.5px;font-weight:700;color:var(--navy-900);letter-spacing:-.02em;margin-bottom:5px}
   .tl p{font-size:14.5px;color:#5b6789}
@@ -281,6 +289,9 @@
     function animate(el){var t=+el.dataset.count,d=1500,s=null;function tick(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t).toLocaleString('ko-KR');if(p<1)requestAnimationFrame(tick);else el.textContent=t.toLocaleString('ko-KR');}requestAnimationFrame(tick);}
     var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animate(e.target);co.unobserve(e.target);}});},{threshold:.6});
     document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+    /* 연혁 타임라인: 세로 라인 드로잉 */
+    var tline=document.querySelector('.timeline');
+    if(tline){ if('IntersectionObserver' in window){var to=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');to.unobserve(e.target);}});},{threshold:.12});to.observe(tline);} else {tline.classList.add('on');} }
   })();
 </script>
 <script src="/assets/js/include.js" defer></script>
