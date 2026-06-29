@@ -407,6 +407,44 @@
   .mc-caption{position:relative;top:auto;left:auto;right:auto;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:46px 22px 30px}
   .mc-cta-center{margin-top:auto}
 }
+/* ===== 브랜드 프로모션 — 카드뉴스(스와이프) + 상세 모달 ===== */
+.cn-strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px 10px}
+.cn-strip::-webkit-scrollbar{display:none}
+.cn-card{flex:0 0 78%;max-width:300px;scroll-snap-align:start;display:block;text-align:left;background:#fff;border:1px solid #e7edf9;border-radius:18px;overflow:hidden;box-shadow:0 14px 34px -20px rgba(13,40,120,.25);cursor:pointer;padding:0;font:inherit;color:inherit;transition:transform .15s}
+.cn-card:active{transform:scale(.985)}
+.cn-cover{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy-800),var(--navy-850));display:grid;place-items:center}
+.cn-cover::after{content:attr(data-label);color:var(--mute);font-size:12.5px;font-weight:700}
+.cn-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cn-meta{padding:13px 15px 15px}
+.promo-tag{display:inline-block;font-size:11px;font-weight:800;color:var(--blue);background:rgba(45,91,255,.1);padding:3px 9px;border-radius:999px}
+.cn-meta h3{font-size:17px;font-weight:800;color:var(--navy-900);margin:8px 0 4px;letter-spacing:-.02em}
+.cn-meta p{font-size:12.5px;color:#5b6789;line-height:1.45}
+.cn-more{display:inline-block;margin-top:9px;font-size:12px;font-weight:800;color:var(--blue)}
+.cn-hint{text-align:center;color:var(--mute);font-size:12px;margin-top:12px}
+.cn-modal[hidden]{display:none}
+.cn-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-end;justify-content:center}
+.cn-modal-bg{position:absolute;inset:0;background:rgba(6,12,31,.72)}
+.cn-modal-box{position:relative;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#fff;border-radius:20px 20px 0 0;padding:18px 16px 28px;animation:cnUp .25s ease}
+@keyframes cnUp{from{transform:translateY(28px)}to{transform:none}}
+.cn-modal-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cn-modal-head h3{font-size:18px;font-weight:800;color:var(--navy-900);margin:8px 0 4px;letter-spacing:-.02em}
+.cn-modal-head p{font-size:13px;color:#5b6789;line-height:1.5}
+.cn-close{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:0;background:var(--paper);color:var(--navy-900);font-size:15px;font-weight:700;cursor:pointer;line-height:1}
+.cn-modal-photos{margin-top:14px}
+.cn-modal-photos img{width:100%;border-radius:12px;margin-bottom:10px;display:block;background:var(--navy-850)}
+body.cn-open{overflow:hidden}
+/* ===== FAQ ===== */
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid #e7edf9;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:16px 18px;font-size:15px;font-weight:700;color:var(--navy-900);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:20px;color:var(--blue);font-weight:400}
+.faq-item[open] summary::after{content:"\2212"}
+.faq-a{padding:0 18px 16px;font-size:13.5px;color:#5b6789;line-height:1.65}
+@media(max-width:768px){
+  .case-head h3{font-size:16.5px}.case-head p{font-size:12.5px}
+  .faq-item summary{font-size:14px;padding:14px 15px}.faq-a{font-size:13px;padding:0 15px 14px}
+}
 </style>
 </head>
 <body>
@@ -621,6 +659,69 @@
   </div>
 </section>
 
+<!-- ================= 브랜드 프로모션 (푸드트럭 대여) ================= -->
+<section class="sec promo-sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">BRAND PROMOTION</span>
+      <h2>브랜드 프로모션으로 최고,<br>푸드트럭 대여</h2>
+      <p>광고 촬영장부터 브랜드 팝업·구단 이벤트·신제품 전국투어까지 — 대기업 캠페인 현장을 푸드트럭 대여와 케이터링으로 직접 운영합니다.</p>
+    </div>
+    <div class="cn-strip">
+      <button class="cn-card" type="button" data-case="0">
+        <div class="cn-cover" data-label="배달의민족"><img src="promo-baemin-1.jpg" alt="배달의민족 푸드트럭 현장" loading="lazy" onerror="this.remove()"></div>
+        <div class="cn-meta"><span class="promo-tag">광고 촬영</span><h3>배달의민족</h3><p>광고 촬영장 푸드트럭 5대 운영</p><span class="cn-more">상세 사진 보기 →</span></div>
+      </button>
+      <button class="cn-card" type="button" data-case="1">
+        <div class="cn-cover" data-label="고든램지 버거"><img src="promo-gordon-1.jpg" alt="고든램지 버거 푸드트럭 현장" loading="lazy" onerror="this.remove()"></div>
+        <div class="cn-meta"><span class="promo-tag">브랜드 팝업</span><h3>고든램지 버거</h3><p>부산 '더베이' 팝업 간식차</p><span class="cn-more">상세 사진 보기 →</span></div>
+      </button>
+      <button class="cn-card" type="button" data-case="2">
+        <div class="cn-cover" data-label="한화이글스"><img src="promo-hanwha-1.jpg" alt="한화이글스 푸드트럭 현장" loading="lazy" onerror="this.remove()"></div>
+        <div class="cn-meta"><span class="promo-tag">구단 이벤트</span><h3>한화이글스</h3><p>류현진 복귀 이벤트 몬스터트럭</p><span class="cn-more">상세 사진 보기 →</span></div>
+      </button>
+      <button class="cn-card" type="button" data-case="3">
+        <div class="cn-cover" data-label="삼양라면"><img src="promo-samyang-1.jpg" alt="삼양라면 푸드트럭 현장" loading="lazy" onerror="this.remove()"></div>
+        <div class="cn-meta"><span class="promo-tag">전국투어</span><h3>삼양라면</h3><p>'맵탱go' 출시 전국투어</p><span class="cn-more">상세 사진 보기 →</span></div>
+      </button>
+    </div>
+    <p class="cn-hint">카드를 누르면 상세 사진을 볼 수 있어요 · 그 외 대기업 프로모션 다수</p>
+  </div>
+  <div class="cn-modal" id="cnModal" hidden>
+    <div class="cn-modal-bg"></div>
+    <div class="cn-modal-box">
+      <div class="cn-modal-top">
+        <div class="cn-modal-head"><span class="promo-tag" id="cnTag"></span><h3 id="cnTitle"></h3><p id="cnDesc"></p></div>
+        <button class="cn-close" type="button" aria-label="닫기">✕</button>
+      </div>
+      <div class="cn-modal-photos" id="cnPhotos"></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var CASES=[
+    {tag:'광고 촬영',title:'배달의민족',desc:'광고 촬영 현장 푸드트럭 5대 운영 — 촬영 소품 겸 스태프 케이터링',photos:['promo-baemin-1.jpg','promo-baemin-2.jpg','promo-baemin-3.jpg']},
+    {tag:'브랜드 팝업',title:'고든램지 버거',desc:"부산 '더베이' 팝업스토어 — 간식차 푸드트럭 운영",photos:['promo-gordon-1.jpg','promo-gordon-2.jpg','promo-gordon-3.jpg']},
+    {tag:'구단 이벤트',title:'한화이글스',desc:"류현진 선수 복귀 이벤트 — '몬스터트럭' 운영",photos:['promo-hanwha-1.jpg','promo-hanwha-2.jpg','promo-hanwha-3.jpg']},
+    {tag:'전국투어',title:'삼양라면',desc:"'맵탱go' 출시 기념 전국투어 이벤트 운영",photos:['promo-samyang-1.jpg','promo-samyang-2.jpg','promo-samyang-3.jpg']}
+  ];
+  var modal=document.getElementById('cnModal'); if(!modal) return;
+  var t=document.getElementById('cnTag'),ti=document.getElementById('cnTitle'),d=document.getElementById('cnDesc'),ph=document.getElementById('cnPhotos');
+  function openCase(i){var c=CASES[i]; if(!c) return;
+    t.textContent=c.tag; ti.textContent=c.title; d.textContent=c.desc;
+    ph.innerHTML=c.photos.map(function(s){return '<img src="'+s+'" alt="'+c.title+' 푸드트럭 현장" loading="lazy" onerror="this.remove()">';}).join('');
+    modal.hidden=false; document.body.classList.add('cn-open');
+    var box=modal.querySelector('.cn-modal-box'); if(box) box.scrollTop=0;
+  }
+  function closeM(){modal.hidden=true; document.body.classList.remove('cn-open');}
+  document.querySelectorAll('.cn-card').forEach(function(card){card.addEventListener('click',function(){openCase(parseInt(card.getAttribute('data-case'),10));});});
+  modal.querySelector('.cn-modal-bg').addEventListener('click',closeM);
+  modal.querySelector('.cn-close').addEventListener('click',closeM);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeM();});
+})();
+</script>
+
 <!-- ================= 서비스 ================= -->
 <section class="sec sec-paper">
   <div class="wrap">
@@ -758,6 +859,24 @@
       <a href="/review.html" class="btn btn-line">후기 전체 보기
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec faq-sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary>푸드트럭 대여 비용은 어떻게 되나요?</summary><div class="faq-a">행사 규모·메뉴·지역·차량 수에 따라 달라집니다. 메뉴·인원·지역만 알려주시면 출장비까지 포함된 예상 견적을 3초 만에 받아보실 수 있습니다.</div></details>
+      <details class="faq-item"><summary>출장 가능 지역은 어디인가요?</summary><div class="faq-a">전국 출장 가능합니다. 직영 15대와 전국 협력 400여 대로 수도권부터 지방까지 운영합니다.</div></details>
+      <details class="faq-item"><summary>소규모도 되나요? 최소 규모가 있나요?</summary><div class="faq-a">소규모 사내행사부터 수천 명 규모 축제까지, 행사 성격에 맞춰 차량과 인력을 구성합니다.</div></details>
+      <details class="faq-item"><summary>현장에서 바로 조리하나요?</summary><div class="faq-a">네. 100종 메뉴를 대부분 현장에서 갓 조리해 제공하며, 행사 콘셉트에 맞춰 메뉴를 구성합니다.</div></details>
+      <details class="faq-item"><summary>위생 관리는 어떻게 하나요?</summary><div class="faq-a">위생 교육·복장·기물 관리 기준을 두고 운영하며, '깨끗한 푸드트럭의 기준'을 지킵니다.</div></details>
+      <details class="faq-item"><summary>우천·실내 행사도 가능한가요?</summary><div class="faq-a">우천 대비 천막 구성과 실내 대안까지 함께 준비해 드립니다.</div></details>
     </div>
   </div>
 </section>
