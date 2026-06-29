@@ -56,10 +56,24 @@
 .scroll-hint .bar{width:1px;height:38px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:drop 1.8s ease-in-out infinite}
 @keyframes drop{0%,100%{opacity:.3;transform:scaleY(.4);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
 
+/* 메인 전용: 스카이블루 글로우를 페이지 전체 길이에 % 위치로 깔기(하단까지) */
+body{
+  background-color:#EDF2FC;
+  background-image:
+    radial-gradient(620px 620px at 92% 3%,rgba(91,134,255,.38),transparent 70%),
+    radial-gradient(660px 660px at 2% 20%,rgba(45,91,255,.26),transparent 70%),
+    radial-gradient(700px 700px at 90% 40%,rgba(91,134,255,.30),transparent 70%),
+    radial-gradient(640px 640px at 4% 58%,rgba(45,91,255,.24),transparent 70%),
+    radial-gradient(700px 700px at 84% 76%,rgba(91,134,255,.30),transparent 70%),
+    radial-gradient(600px 600px at 8% 93%,rgba(45,91,255,.24),transparent 70%),
+    radial-gradient(rgba(45,91,255,.07) 1.3px,transparent 1.4px);
+  background-size:auto,auto,auto,auto,auto,auto,28px 28px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,repeat}
+
 /* ================= SECTION 공통 ================= */
 .sec{padding:96px 0;position:relative}
-.sec-paper{background:var(--paper)}
-.sec-ice{background:linear-gradient(180deg,var(--paper) 0%,var(--ice) 100%)}
+.sec-paper{background:transparent}
+.sec-ice{background:transparent}
 .sec-head{text-align:center;max-width:680px;margin:0 auto 56px}
 .eyebrow{display:inline-block;color:var(--blue);font-weight:700;font-size:14px;letter-spacing:.04em;margin-bottom:14px}
 .eyebrow::before{content:"";display:inline-block;width:22px;height:2px;background:var(--blue);vertical-align:middle;margin-right:9px;border-radius:2px}
