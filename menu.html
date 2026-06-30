@@ -374,8 +374,8 @@
   /* ===== 시즌·인기조합 설정 (나중에 관리자 페이지에서 이 부분만 바꾸면 됨) ===== */
   var SEASON_NOW = 'summer';   // 'summer' 또는 'winter' — 겨울엔 'winter'로 바꾸면 겨울 메뉴가 위로 올라가요
   var COMBOS = [
-    {n:'조합 1', items:'커피·음료 7종 세트 ＋ 츄러스(30cm)', tag:'인기 No.1', img:'combo-coffee.png'},
-    {n:'조합 2', items:'팥빙수 ＋ 페스츄리핫도그', tag:'여름철 인기세트', img:'combo-summer.png'}
+    {n:'조합 1', items:'커피·음료 7종 세트 ＋ 츄러스(30cm)', tag:'인기 No.1', img:'combo-coffee.png', desc:'달달한 츄러스와 시원한 커피의 조화 · 전시즌 압도적 1위 조합'},
+    {n:'조합 2', items:'팥빙수 ＋ 페스츄리핫도그', tag:'여름철 인기세트', img:'combo-summer.png', desc:'무더운 여름철 날려버리는 시원+든든 조합 !!'}
   ];
 
   /* ===== 렌더링 ===== */
@@ -479,7 +479,7 @@
                '<div class="combo-body">'+
                  (c.tag?'<span class="combo-rank">'+esc(c.tag)+'</span>':'')+
                  '<div class="combo-formula">'+formula+'</div>'+
-                 '<div class="combo-meta">담당자들이 가장 많이 찾는 구성 · 인원·예산 맞춰 조정 가능</div>'+
+                 '<div class="combo-meta">'+esc(c.desc||'담당자들이 가장 많이 찾는 구성 · 인원·예산 맞춰 조정 가능')+'</div>'+
                '</div>'+
              '</div>';
     }).join('');
