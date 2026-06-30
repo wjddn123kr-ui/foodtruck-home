@@ -375,7 +375,7 @@
   var SEASON_NOW = 'summer';   // 'summer' 또는 'winter' — 겨울엔 'winter'로 바꾸면 겨울 메뉴가 위로 올라가요
   var COMBOS = [
     {n:'조합 1', items:'커피·음료 7종 세트 ＋ 츄러스(30cm)', tag:'인기 No.1', img:'combo-coffee.png'},
-    {n:'조합 2', items:'팥빙수 ＋ 페스츄리핫도그', tag:'여름철 인기세트'}
+    {n:'조합 2', items:'팥빙수 ＋ 페스츄리핫도그', tag:'여름철 인기세트', img:'combo-summer.png'}
   ];
 
   /* ===== 렌더링 ===== */
@@ -385,7 +385,7 @@
 
   function itemCard(it, emoji){
     var badge = it.best ? '<span class="mc-best">BEST</span>' : '';
-    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=5" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
+    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=6" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
     return '<div class="mc reveal"><div class="mc-th">'+badge+thumb+'</div>'+
            '<div class="mc-b"><span class="mc-n">'+esc(it.name)+'</span>'+
            '<span class="mc-p num">'+won(it.price)+'<i>원</i></span></div></div>';
