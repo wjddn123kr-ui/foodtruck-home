@@ -64,6 +64,28 @@
   .svc-more span{transition:transform .2s}
   .svc-more:hover span{transform:translateX(4px)}
 
+  /* PORTFOLIO 진행사례 갤러리 */
+  .pf-filter{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:24px;scrollbar-width:none}
+  .pf-filter::-webkit-scrollbar{display:none}
+  .pf-tab{flex:0 0 auto;font:inherit;cursor:pointer;font-size:13.5px;font-weight:700;color:#5b6789;background:#fff;border:1px solid #e0e8f6;padding:9px 16px;border-radius:30px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s,box-shadow .2s}
+  .pf-tab:hover{border-color:var(--blue);color:var(--blue)}
+  .pf-tab.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px -10px rgba(45,91,255,.5)}
+  .pf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .pf{display:flex;flex-direction:column;gap:10px}
+  .pf.hide{display:none}
+  .pf-ph{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:linear-gradient(155deg,#1b2a55,#0b1430);border:1px solid var(--line);display:grid;place-items:center}
+  .pf-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+  .pf-ico{width:30px;height:30px;color:rgba(146,170,225,.32)}
+  .pf-cat{position:absolute;top:10px;left:10px;z-index:3;font-size:11px;font-weight:700;color:#fff;background:rgba(45,91,255,.9);padding:4px 10px;border-radius:20px;letter-spacing:-.01em;box-shadow:0 6px 16px -8px rgba(13,40,120,.7)}
+  .pf-cap b{display:block;font-size:14.5px;font-weight:800;color:var(--navy-900);letter-spacing:-.02em;line-height:1.32}
+  .pf-cap span{font-size:12.5px;color:#5b6789}
+  .pf-note{margin-top:18px;font-size:12.5px;color:#8a97b6;text-align:center}
+  .pf-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;justify-content:center}
+  .pf-links a{font-size:13.5px;font-weight:700;color:var(--blue);background:#eef3fc;border:1px solid #e0e8f6;padding:10px 16px;border-radius:30px;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+  .pf-links a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+  @media(min-width:680px){.pf-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:1000px){.pf-grid{grid-template-columns:repeat(4,1fr)}}
+
   /* PROCESS */
   .process{background:var(--paper);color:var(--ink)}
   .process .kicker{color:var(--blue-deep)}
@@ -168,83 +190,28 @@
   </div>
 </section>
 
-<!-- SERVICE DETAILS -->
-<section>
+<!-- PORTFOLIO: 진행 사례 갤러리 -->
+<section class="portfolio">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="kicker">Service</div>
-      <h2 class="st">네 가지 서비스</h2>
+      <div class="kicker">Portfolio</div>
+      <h2 class="st">우리가 진행한 현장들</h2>
+      <p>4,000여 고객사와 함께한 8,000건의 현장. 케이터링부터 브랜드 프로모션, 축제 부스, 출장뷔페까지 실제 진행 사례입니다.</p>
     </div>
-    <div class="svc-list">
-
-      <!-- 1. 케이터링 -->
-      <div class="svc-row reveal" id="catering">
-        <div class="svc-media"><span class="ix">01</span><span class="ph-note">사진 영역 · 케이터링</span><img src="https://foodtruckhouse.com/files/attach/images/2026/01/27/63ac7f52b7fec3f10b51f0d1c756ff6f.jpg" alt="기업 케이터링 현장" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="svc-info">
-          <div class="svc-tag">CATERING</div>
-          <h3>케이터링</h3>
-          <p class="desc">임직원 복지차·기념일·연예인 서포트·실내 행사까지. 메뉴 구성부터 현장 운영 방식까지 A to Z 전담 디렉션으로, 기억에 남는 현장에 맛을 더합니다.</p>
-          <div class="svc-chips"><span>#임직원 복지차</span><span>#학교·기업 체육대회</span><span>#기념일·창립기념일</span><span>#연예인 서포트</span><span>#실내 행사</span></div>
-          <ul class="svc-bullets">
-            <li>핑거푸드 · 도시락 · 분식 · 커피음료 등 구성 유연</li>
-            <li>공간상 푸드트럭이 어려운 곳도 대안 운영 솔루션으로 진행</li>
-            <li>맞춤 디자인물 직접 제작 후 피드백 → 완성도 높은 현장</li>
-          </ul>
-          <a class="svc-more" href="service-catering.html">케이터링 자세히 보기 <span>→</span></a>
-        </div>
-      </div>
-
-      <!-- 2. 브랜드 프로모션 -->
-      <div class="svc-row reveal" id="promotion">
-        <div class="svc-media"><span class="ix">02</span><span class="ph-note">사진 영역 · 브랜드 프로모션</span><img src="https://foodtruckhouse.com/files/attach/images/2026/05/29/b60e7eb63d49b3c8d3b1436779f631d9.jpg" alt="브랜드 랩핑 푸드트럭·이동식 팝업" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="svc-info">
-          <div class="svc-tag">BRAND PROMOTION</div>
-          <h3>브랜드 프로모션</h3>
-          <p class="desc">고객이 있는 곳 전국 어디든, 차량에 브랜드를 입혀 이동식 팝업 스토어를 엽니다. 제품·밀키트를 현장에서 직접 조리·배식해 오프라인 참여도를 높입니다.</p>
-          <div class="svc-chips"><span>#팝업스토어</span><span>#연예인 서포트</span><span>#광고촬영 간식차</span><span>#신제품 시음</span><span>#현수막·랩핑 브랜딩</span></div>
-          <ul class="svc-bullets">
-            <li>직영 차량 다수 보유 → 어떤 날짜든 대체 차량 확보 (섭외만 하는 업체와 차별)</li>
-            <li>현수막 브랜딩(합리적) / 랩핑 브랜딩(고퀄리티) 옵션 선택</li>
-            <li>타겟 고객층 분석 후 브랜드 맞춤형 솔루션 제안</li>
-          </ul>
-          <a class="svc-more" href="service-promotion.html">브랜드 프로모션 자세히 보기 <span>→</span></a>
-        </div>
-      </div>
-
-      <!-- 3. F&B 행사대행 -->
-      <div class="svc-row reveal" id="events">
-        <div class="svc-media"><span class="ix">03</span><span class="ph-note">사진 영역 · 축제·페스티벌 부스</span><img src="https://foodtruckhouse.com/files/attach/images/2026/04/22/13085eebb794f9b3f11e54e2bf39f0d9.jpg" alt="대규모 행사 푸드존 부스" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="svc-info">
-          <div class="svc-tag">F&amp;B EVENT</div>
-          <h3>F&amp;B 행사대행 (축제·부스)</h3>
-          <p class="desc">페스티벌·축제·지자체 행사의 푸드존. 부스 조리의 번거로움 없이 푸드트럭으로 간편·효율적으로 운영하고, 단일 창구로 푸드존 전체를 통합 관리합니다.</p>
-          <div class="svc-chips"><span>#워터밤</span><span>#흠뻑쇼</span><span>#여의도 벚꽃축제</span><span>#대학 대동제</span><span>#한강 야시장</span></div>
-          <ul class="svc-bullets">
-            <li>10년 이상 대규모 행사 운영 경험으로 안정적 진행</li>
-            <li>담당 단일 창구가 푸드존 전체를 통합 관리 → 고객사 번거로움 최소화</li>
-            <li>참여 경력: 워터밤·흠뻑쇼·밤도깨비야시장·부산세계맥주축제·대구치맥 등</li>
-          </ul>
-          <a class="svc-more" href="service-events.html">행사대행 자세히 보기 <span>→</span></a>
-        </div>
-      </div>
-
-      <!-- 4. 출장뷔페 -->
-      <div class="svc-row reveal" id="buffet">
-        <div class="svc-media"><span class="ix">04</span><span class="ph-note">사진 영역 · 출장뷔페</span><img src="https://foodtruckhouse.com/files/attach/images/2026/04/14/90d5a8229976876a416ffeabb51e8b96.png" alt="출장뷔페·단체 식사 구성" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="svc-info">
-          <div class="svc-tag">CATERING BUFFET</div>
-          <h3>출장뷔페 (단체도시락)</h3>
-          <p class="desc">뻔한 출장뷔페·도시락은 그만. 현장 조리가 가능한 푸드트럭으로 따뜻한 한 끼를 차리고, 필요하면 홍보 효과까지 함께 만듭니다.</p>
-          <div class="svc-chips"><span>#뷔페식</span><span>#도시락</span><span>#덮밥식</span><span>#비건식</span></div>
-          <ul class="svc-bullets">
-            <li>스태프밀·촬영장·연수/워크숍·건설현장·공공기관·스포츠대회·군경소방 교육 등</li>
-            <li>간식·커피음료 등 다양한 구성도 유연하게 추가</li>
-            <li>전국 단위 이동이 필요한 행사에 특히 적합</li>
-          </ul>
-          <a class="svc-more" href="service-buffet.html">출장뷔페 자세히 보기 <span>→</span></a>
-        </div>
-      </div>
-
+    <div class="pf-filter" id="pfFilter">
+      <button class="pf-tab active" data-cat="all" aria-pressed="true">전체</button>
+      <button class="pf-tab" data-cat="catering" aria-pressed="false">케이터링</button>
+      <button class="pf-tab" data-cat="promotion" aria-pressed="false">브랜드 프로모션</button>
+      <button class="pf-tab" data-cat="festival" aria-pressed="false">축제·행사</button>
+      <button class="pf-tab" data-cat="buffet" aria-pressed="false">출장뷔페</button>
+    </div>
+    <div class="pf-grid" id="pfGrid"></div>
+    <div class="pf-note">※ 현장 사진은 순차적으로 업데이트됩니다.</div>
+    <div class="pf-links">
+      <a href="service-catering.html">케이터링 자세히 →</a>
+      <a href="service-promotion.html">브랜드 프로모션 자세히 →</a>
+      <a href="service-events.html">행사대행 자세히 →</a>
+      <a href="service-buffet.html">출장뷔페 자세히 →</a>
     </div>
   </div>
 </section>
@@ -276,6 +243,53 @@
 
 <div data-include="/partials/footer.html"></div>
 
+<script>
+(function(){
+  var CATS={catering:'케이터링',promotion:'프로모션',festival:'축제',buffet:'뷔페'};
+  var PROJECTS=[
+    {cat:'catering',client:'삼성생명',event:'새해 임직원 행사'},
+    {cat:'catering',client:'국토대장정',event:'전국 라이딩 케이터링'},
+    {cat:'catering',client:'한국장학재단',event:'후원 행사 다과'},
+    {cat:'catering',client:'국민은행',event:'임직원 복지차'},
+    {cat:'catering',client:'iM 사회공헌재단',event:'나눔 행사 운영'},
+    {cat:'catering',client:'CJ',event:'창립기념 행사'},
+    {cat:'promotion',client:'진로',event:'테라 신제품 시음회'},
+    {cat:'promotion',client:'메디큐브',event:'뮤직비디오 촬영 간식차'},
+    {cat:'promotion',client:'디스커버리',event:'변우석 광고촬영 서포트'},
+    {cat:'promotion',client:'무신사',event:'브랜드 팝업 스토어'},
+    {cat:'promotion',client:'잡코리아',event:'캠퍼스 프로모션'},
+    {cat:'festival',client:'워터밤',event:'페스티벌 푸드존'},
+    {cat:'festival',client:'흠뻑쇼',event:'투어 콘서트 부스'},
+    {cat:'festival',client:'여의도 벚꽃축제',event:'시즌 야외 부스'},
+    {cat:'festival',client:'FC서울',event:'홈경기 팬존 운영'},
+    {cat:'festival',client:'한화이글스',event:'구단 이벤트 부스'},
+    {cat:'festival',client:'대학 대동제',event:'축제 푸드트럭존'},
+    {cat:'buffet',client:'영화 촬영장',event:'스태프밀 중식 제공'},
+    {cat:'buffet',client:'건설 현장',event:'단체 중식 케이터링'},
+    {cat:'buffet',client:'공공기관',event:'워크숍 출장뷔페'},
+    {cat:'buffet',client:'군·경·소방',event:'교육과정 급식 지원'}
+  ];
+  var ICO='<svg class="pf-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 15l-5-5L4 20"/></svg>';
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  var grid=document.getElementById('pfGrid');
+  if(!grid)return;
+  grid.innerHTML=PROJECTS.map(function(p){
+    return '<article class="pf reveal in" data-cat="'+p.cat+'">'+
+      '<div class="pf-ph">'+ICO+'<span class="pf-cat">'+CATS[p.cat]+'</span></div>'+
+      '<div class="pf-cap"><b>'+esc(p.client)+'</b><span>'+esc(p.event)+'</span></div>'+
+    '</article>';
+  }).join('');
+  var tabs=[].slice.call(document.querySelectorAll('.pf-tab'));
+  var cells=[].slice.call(grid.querySelectorAll('.pf'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      var cat=t.dataset.cat;
+      tabs.forEach(function(x){var on=x===t;x.classList.toggle('active',on);x.setAttribute('aria-pressed',on);});
+      cells.forEach(function(c){c.classList.toggle('hide',!(cat==='all'||c.dataset.cat===cat));});
+    });
+  });
+})();
+</script>
 <script src="/assets/js/include.js" defer></script>
 </body>
 </html>
