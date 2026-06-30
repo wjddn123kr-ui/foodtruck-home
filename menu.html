@@ -133,7 +133,13 @@
     .mgrid{grid-template-columns:1fr 1fr}.set-grid{grid-template-columns:1fr}.buf-grid{grid-template-columns:1fr}.season-grid{grid-template-columns:1fr}
   }
   @media(max-width:560px){
-    .mgrid{grid-template-columns:1fr 1fr}
+    .mgrid{grid-template-columns:repeat(3,1fr);gap:8px}
+    .mc-b{flex-direction:column;align-items:flex-start;gap:1px;padding:7px 8px 9px}
+    .mc-n{font-size:11px;line-height:1.3}
+    .mc-p{font-size:11.5px}
+    .mc-p i{font-size:9px;margin-left:1px}
+    .mc-best{font-size:9px;padding:2px 6px;top:6px;left:6px}
+    .mc-th img.mc-img{padding:4px}
     .buf .comp{min-height:0}
   }
   @media(max-width:600px){
@@ -318,16 +324,16 @@
       {name:"야끼소바", price:10000, best:true, img:"야끼소바.png"}
     ],
     meal_etc: [
-      {name:"떡국", price:8500, img:"anju-1.jpg"},
-      {name:"오코노미야끼", price:10000, img:"anju-2.jpg"},
-      {name:"닭강정", price:12000, img:"anju-3.jpg"},
-      {name:"닭목살구이", price:14000, img:"anju-4.jpg"},
-      {name:"소세지플래터", price:14000, img:"anju-5.jpg"},
-      {name:"치킨윙봉", price:15000, img:"anju-6.jpg"},
-      {name:"숯불치킨", price:15000, img:"anju-7.jpg"},
-      {name:"목살 플래터", price:15000, img:"anju-8.jpg"},
-      {name:"감바스알하이오", price:15000, img:"anju-9.jpg"},
-      {name:"부채살 큐브스테이크", price:18000, img:"anju-10.jpg"}
+      {name:"떡국", price:8500, img:"떡국.png"},
+      {name:"오코노미야끼", price:10000, img:"오코노미야끼.png"},
+      {name:"닭강정", price:12000, img:"닭강정.png"},
+      {name:"닭목살구이", price:14000, img:"닭목살구이.png"},
+      {name:"소세지플래터", price:14000, img:"소세지플래터.png"},
+      {name:"치킨윙봉", price:15000, img:"치킨윙봉.png"},
+      {name:"숯불치킨", price:15000, img:"숯불치킨.png"},
+      {name:"목살 플래터", price:15000, img:"목살플래터.png"},
+      {name:"감바스알하이오", price:15000, img:"오감바스알하히오.png"},
+      {name:"부채살 큐브스테이크", price:18000, img:"부채살큐브스테이크.png"}
     ],
     buffet: {
       sets: [
@@ -477,29 +483,33 @@
     }).join('');
   })();
 
-  /* ===== 탭 필터 ===== */
+  /* ===== 탭: 해당 메뉴 섹션으로 스크롤 + 스크롤스파이 ===== */
   var tabsWrap = document.getElementById('tabs');
   var tabs = [].slice.call(tabsWrap.querySelectorAll('.tab'));
   var panels = [].slice.call(document.querySelectorAll('.panel'));
-  function filter(cat){
-    tabs.forEach(function(t){
-      var on = t.dataset.cat === cat;
-      t.classList.toggle('active', on);
-      t.setAttribute('aria-pressed', on);
-    });
-    panels.forEach(function(p){
-      var show = (cat === 'all') || (p.dataset.cat === cat);
-      p.classList.toggle('hide', !show);
-      if(show) p.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
-    });
+  /* 전체 섹션 항상 표시 */
+  panels.forEach(function(p){ p.classList.remove('hide'); p.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');}); });
+  function topOffset(){ return 70 + tabsWrap.offsetHeight + 6; }
+  function setActive(cat){
+    tabs.forEach(function(t){ var on = t.dataset.cat === cat; t.classList.toggle('active', on); t.setAttribute('aria-pressed', on); });
   }
   tabs.forEach(function(t){
     t.addEventListener('click', function(){
-      filter(t.dataset.cat);
-      var y = tabsWrap.getBoundingClientRect().top + window.scrollY - 78;
-      window.scrollTo({top:y, behavior:'smooth'});
+      var cat = t.dataset.cat;
+      if(cat === 'all'){ window.scrollTo({top:0, behavior:'smooth'}); return; }
+      var p = panels.filter(function(x){return x.dataset.cat === cat;})[0];
+      if(p){ var y = p.getBoundingClientRect().top + window.scrollY - topOffset(); window.scrollTo({top:y, behavior:'smooth'}); }
     });
   });
+  var ticking = false;
+  function spy(){
+    var line = topOffset() + 14;
+    var cat = 'all';
+    panels.forEach(function(p){ if(p.getBoundingClientRect().top <= line) cat = p.dataset.cat; });
+    setActive(cat);
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ window.requestAnimationFrame(function(){ spy(); ticking = false; }); ticking = true; } }, {passive:true});
+  spy();
 </script>
 <script src="/assets/js/include.js" defer></script>
 </body>
