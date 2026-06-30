@@ -60,6 +60,9 @@
   .svc-bullets{list-style:none;display:flex;flex-direction:column;gap:9px}
   .svc-bullets li{font-size:14.5px;color:#33406b;padding-left:22px;position:relative;line-height:1.6}
   .svc-bullets li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px rgba(45,91,255,.18)}
+  .svc-more{display:inline-flex;align-items:center;gap:7px;margin-top:20px;font-size:14px;font-weight:700;color:var(--blue);text-decoration:none}
+  .svc-more span{transition:transform .2s}
+  .svc-more:hover span{transform:translateX(4px)}
 
   /* PROCESS */
   .process{background:var(--paper);color:var(--ink)}
@@ -82,10 +85,23 @@
 
   @media(max-width:900px){
     .eff-grid{grid-template-columns:1fr}
-    .svc-row{grid-template-columns:1fr;gap:24px}.svc-row:nth-child(even) .svc-media{order:0}
+    .svc-row{grid-template-columns:1fr;gap:0;background:#fff;border:1px solid #e7edf9;border-radius:20px;overflow:hidden;box-shadow:0 16px 40px -26px rgba(13,40,120,.32)}
+    .svc-row:nth-child(even) .svc-media{order:0}
+    .svc-media{aspect-ratio:16/9;border-radius:0;border:none;border-bottom:1px solid var(--line)}
+    .svc-info{padding:24px 22px 26px}
     .proc{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:560px){.proc{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    .proc{grid-template-columns:1fr;gap:0;padding-left:6px}
+    .proc-step{border-top:none;padding:0 0 24px 28px;position:relative}
+    .proc-step:last-child{padding-bottom:0}
+    .proc-step::before{content:"";position:absolute;left:0;top:3px;width:13px;height:13px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(45,91,255,.15);z-index:1}
+    .proc-step::after{content:"";position:absolute;left:6px;top:14px;bottom:0;width:2px;background:rgba(10,17,36,.13)}
+    .proc-step:last-child::after{display:none}
+    .proc-step .pn{margin-bottom:3px}
+    .proc-step h4{font-size:15.5px}
+    .proc-step h4 br{display:none}
+  }
   @media(max-width:600px){
     .phead{padding:82px 0 30px}
     .phead h1{font-size:clamp(27px,7.4vw,42px);line-height:1.18}
@@ -98,6 +114,24 @@
     .sec-head{margin-bottom:30px}
     h2.st{font-size:clamp(22px,6.3vw,32px);line-height:1.22}
     .sec-head p{font-size:15px;line-height:1.65}
+    /* EFFECT — 번호 왼쪽 가로형으로 압축 */
+    .eff-grid{gap:12px}
+    .eff{display:grid;grid-template-columns:46px 1fr;column-gap:12px;row-gap:4px;padding:18px 16px}
+    .eff:hover{transform:none}
+    .eff .en{grid-row:1/3;font-size:25px;margin:0;line-height:1}
+    .eff h3{grid-column:2;margin:0;font-size:16.5px}
+    .eff p{grid-column:2;font-size:13.3px;line-height:1.6}
+    /* 서비스 카드 내부 */
+    .svc-info{padding:22px 20px 24px}
+    .svc-info h3{font-size:21px;margin-bottom:10px}
+    .svc-info .desc{font-size:14.5px;line-height:1.7;margin-bottom:16px}
+    .svc-tag{margin-bottom:10px}
+    .svc-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 0 16px;padding-bottom:6px;scrollbar-width:none}
+    .svc-chips::-webkit-scrollbar{display:none}
+    .svc-chips span{flex:0 0 auto;font-size:12px}
+    .svc-bullets{gap:7px}
+    .svc-bullets li{font-size:13.5px;padding-left:20px}
+    .svc-more{margin-top:18px}
   }
 </style>
 </head>
@@ -156,6 +190,7 @@
             <li>공간상 푸드트럭이 어려운 곳도 대안 운영 솔루션으로 진행</li>
             <li>맞춤 디자인물 직접 제작 후 피드백 → 완성도 높은 현장</li>
           </ul>
+          <a class="svc-more" href="service-catering.html">케이터링 자세히 보기 <span>→</span></a>
         </div>
       </div>
 
@@ -172,6 +207,7 @@
             <li>현수막 브랜딩(합리적) / 랩핑 브랜딩(고퀄리티) 옵션 선택</li>
             <li>타겟 고객층 분석 후 브랜드 맞춤형 솔루션 제안</li>
           </ul>
+          <a class="svc-more" href="service-promotion.html">브랜드 프로모션 자세히 보기 <span>→</span></a>
         </div>
       </div>
 
@@ -188,6 +224,7 @@
             <li>담당 단일 창구가 푸드존 전체를 통합 관리 → 고객사 번거로움 최소화</li>
             <li>참여 경력: 워터밤·흠뻑쇼·밤도깨비야시장·부산세계맥주축제·대구치맥 등</li>
           </ul>
+          <a class="svc-more" href="service-events.html">행사대행 자세히 보기 <span>→</span></a>
         </div>
       </div>
 
@@ -204,6 +241,7 @@
             <li>간식·커피음료 등 다양한 구성도 유연하게 추가</li>
             <li>전국 단위 이동이 필요한 행사에 특히 적합</li>
           </ul>
+          <a class="svc-more" href="service-buffet.html">출장뷔페 자세히 보기 <span>→</span></a>
         </div>
       </div>
 
