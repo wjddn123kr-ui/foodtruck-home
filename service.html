@@ -22,6 +22,11 @@
   .crumb a:hover{color:var(--blue)}
   .phead h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;color:var(--navy-900)}
   .phead p{margin-top:16px;font-size:17px;color:#5b6789;max-width:54ch}
+  .phead h1 .hl{color:var(--blue)}
+  .hero-stats{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;max-width:560px}
+  .hs{flex:1;min-width:100px;background:#fff;border:1px solid #e3ebfa;border-radius:14px;padding:13px 15px;box-shadow:0 12px 30px -22px rgba(13,40,120,.45)}
+  .hs b{display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:23px;color:var(--blue);line-height:1.05;letter-spacing:-.02em}
+  .hs span{font-size:12px;color:#5b6789;font-weight:600}
 
   section{padding:clamp(70px,8vw,104px) 0}
   .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue);text-transform:uppercase;display:flex;align-items:center;gap:11px;margin-bottom:18px}
@@ -44,7 +49,7 @@
   .svc-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);align-items:center;scroll-margin-top:90px}
   .svc-row:nth-child(even) .svc-media{order:2}
   .svc-media{border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#16224a,#0c1530);border:1px solid var(--line);display:grid;place-items:center;position:relative}
-  .svc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .svc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
   .svc-media .ph-note{color:var(--mute);font-size:13px;z-index:1}
   .svc-media .ix{position:absolute;top:16px;left:20px;font-family:'Archivo';font-weight:800;font-size:42px;color:rgba(91,134,255,.22)}
   .svc-tag{font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.04em;margin-bottom:12px}
@@ -82,9 +87,13 @@
   }
   @media(max-width:560px){.proc{grid-template-columns:1fr}}
   @media(max-width:600px){
-    .phead{padding:100px 0 40px}
+    .phead{padding:82px 0 30px}
     .phead h1{font-size:clamp(27px,7.4vw,42px);line-height:1.18}
     .phead p,.phead .sub{font-size:15px;margin-top:13px;line-height:1.65}
+    .hero-stats{gap:8px;margin-top:22px}
+    .hs{padding:11px 9px;text-align:center;min-width:0}
+    .hs b{font-size:19px}
+    .hs span{font-size:11px}
     section{padding-top:clamp(54px,12vw,80px);padding-bottom:clamp(54px,12vw,80px)}
     .sec-head{margin-bottom:30px}
     h2.st{font-size:clamp(22px,6.3vw,32px);line-height:1.22}
@@ -99,9 +108,13 @@
 <section class="phead">
   <div class="glow"></div>
   <div class="wrap">
-    <div class="crumb"><a href="index.html">홈</a> · 서비스</div>
-    <h1>행사 성격에 맞춰<br>설계하는 F&amp;B 서비스</h1>
+    <h1>행사 성격에 맞춰<br>설계하는 <span class="hl">F&amp;B 서비스</span></h1>
     <p>케이터링부터 브랜드 프로모션, 축제 부스, 출장뷔페까지. 규모와 목적이 다르면 운영도 달라야 합니다. 현장에 맞춰 구성·동선·메뉴를 직접 설계합니다.</p>
+    <div class="hero-stats">
+      <div class="hs"><b>4,000+</b><span>법인 고객사 (곳)</span></div>
+      <div class="hs"><b>8,000+</b><span>누적 행사 (건)</span></div>
+      <div class="hs"><b>92%</b><span>재이용률</span></div>
+    </div>
   </div>
 </section>
 
@@ -132,7 +145,7 @@
 
       <!-- 1. 케이터링 -->
       <div class="svc-row reveal" id="catering">
-        <div class="svc-media"><span class="ix">01</span><span class="ph-note">사진 영역 · 케이터링</span></div>
+        <div class="svc-media"><span class="ix">01</span><span class="ph-note">사진 영역 · 케이터링</span><img src="https://foodtruckhouse.com/files/attach/images/2026/01/27/63ac7f52b7fec3f10b51f0d1c756ff6f.jpg" alt="기업 케이터링 현장" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="svc-info">
           <div class="svc-tag">CATERING</div>
           <h3>케이터링</h3>
@@ -148,7 +161,7 @@
 
       <!-- 2. 브랜드 프로모션 -->
       <div class="svc-row reveal" id="promotion">
-        <div class="svc-media"><span class="ix">02</span><span class="ph-note">사진 영역 · 브랜드 프로모션</span></div>
+        <div class="svc-media"><span class="ix">02</span><span class="ph-note">사진 영역 · 브랜드 프로모션</span><img src="https://foodtruckhouse.com/files/attach/images/2026/05/29/b60e7eb63d49b3c8d3b1436779f631d9.jpg" alt="브랜드 랩핑 푸드트럭·이동식 팝업" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="svc-info">
           <div class="svc-tag">BRAND PROMOTION</div>
           <h3>브랜드 프로모션</h3>
@@ -164,7 +177,7 @@
 
       <!-- 3. F&B 행사대행 -->
       <div class="svc-row reveal" id="events">
-        <div class="svc-media"><span class="ix">03</span><span class="ph-note">사진 영역 · 축제·페스티벌 부스</span></div>
+        <div class="svc-media"><span class="ix">03</span><span class="ph-note">사진 영역 · 축제·페스티벌 부스</span><img src="https://foodtruckhouse.com/files/attach/images/2026/04/22/13085eebb794f9b3f11e54e2bf39f0d9.jpg" alt="대규모 행사 푸드존 부스" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="svc-info">
           <div class="svc-tag">F&amp;B EVENT</div>
           <h3>F&amp;B 행사대행 (축제·부스)</h3>
@@ -180,7 +193,7 @@
 
       <!-- 4. 출장뷔페 -->
       <div class="svc-row reveal" id="buffet">
-        <div class="svc-media"><span class="ix">04</span><span class="ph-note">사진 영역 · 출장뷔페</span></div>
+        <div class="svc-media"><span class="ix">04</span><span class="ph-note">사진 영역 · 출장뷔페</span><img src="https://foodtruckhouse.com/files/attach/images/2026/04/14/90d5a8229976876a416ffeabb51e8b96.png" alt="출장뷔페·단체 식사 구성" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="svc-info">
           <div class="svc-tag">CATERING BUFFET</div>
           <h3>출장뷔페 (단체도시락)</h3>
