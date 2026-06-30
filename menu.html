@@ -21,6 +21,7 @@
   .crumb{font-size:13.5px;color:#7a87a8;margin-bottom:16px}
   .crumb a:hover{color:var(--blue)}
   .phead h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;color:var(--navy-900)}
+  .phead h1 .hl{color:var(--blue)}
   .phead p{margin-top:16px;font-size:17px;color:#5b6789;max-width:50ch}
   .phead .count{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:7px 15px;border-radius:30px}
 
@@ -35,9 +36,9 @@
   /* menu body */
   /* 인기 조합 */
   .combos{padding:6px 0 30px}
-  .combos-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-  .cb-tag{font-size:16px;font-weight:800;color:var(--navy-900);letter-spacing:-.01em}
-  .cb-sub{font-size:13px;color:#5b6789}
+  .combos-head{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-bottom:18px}
+  .cb-tag{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:800;color:var(--blue-deep);background:rgba(237,76,28,.09);border:1px solid rgba(237,76,28,.22);padding:7px 14px;border-radius:30px;letter-spacing:-.01em}
+  .cb-sub{font-size:16px;font-weight:800;color:var(--navy-900);letter-spacing:-.02em}
   .combo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .combo{position:relative;display:flex;align-items:center;gap:20px;padding:22px 26px 22px 22px;border-radius:18px;background:#fff;border:1px solid #e7edf9;box-shadow:0 12px 32px -20px rgba(13,40,120,.2);overflow:hidden;transition:transform .25s}
   .combo::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--blue),var(--blue-bright))}
@@ -143,7 +144,7 @@
     .buf .comp{min-height:0}
   }
   @media(max-width:600px){
-    .phead{padding:100px 0 40px}
+    .phead{padding:82px 0 22px}
     .phead h1{font-size:clamp(27px,7.4vw,42px);line-height:1.18}
     .phead p,.phead .sub{font-size:15px;margin-top:13px;line-height:1.65}
     section{padding-top:clamp(54px,12vw,80px);padding-bottom:clamp(54px,12vw,80px)}
@@ -189,9 +190,8 @@
 <section class="phead">
   <div class="glow"></div>
   <div class="wrap">
-    <div class="crumb"><a href="index.html">홈</a> · 메뉴</div>
-    <h1>행사에 맞춰 고르는 메뉴</h1>
-    <p>커피·음료 세트부터 간식·디저트·분식·식사·출장뷔페까지. 행사 성격과 인원에 맞춰 자유롭게 구성하세요. 가격·구성은 현장 여건에 따라 조정될 수 있습니다.</p>
+    <h1><span class="hl">내 맘대로</span> 고르는 메뉴</h1>
+    <p>커피·음료부터 간식·디저트·분식·식사·출장뷔페까지, 행사 성격과 인원에 맞춰 원하는 대로 골라 담으세요. 가격·구성은 현장 여건에 따라 조정될 수 있어요.</p>
     <span class="count">총 <b class="num" style="margin:0 2px">100</b>여 종 · 시즌 한정 메뉴 운영</span>
   </div>
 </section>
@@ -200,8 +200,8 @@
 <section class="combos">
   <div class="wrap">
     <div class="combos-head">
-      <span class="cb-tag">🔥 이번 달 인기 조합</span>
-      <span class="cb-sub">담당자들이 가장 많이 찾는 구성이에요</span>
+      <span class="cb-tag">😋 이달의 인기 조합</span>
+      <span class="cb-sub">요즘 담당자님들이 제일 많이 담아가는 구성이에요</span>
     </div>
     <div class="combo-grid" id="comboRoot"></div>
   </div>
