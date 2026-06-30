@@ -47,7 +47,15 @@
   .intro-body p:last-child{margin-bottom:0}
 
   /* timeline (연혁) — 첫 섹션이라 헤더 여백 확보 */
-  .history{border-bottom:1px solid rgba(10,17,36,.06);padding-top:120px}
+  .history{border-bottom:1px solid rgba(10,17,36,.06);padding-top:0}
+  .hist-hero{position:relative;padding:150px 0 56px;margin-bottom:clamp(40px,6vw,60px);overflow:hidden;background:#0b1430}
+  .hist-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hist-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,31,.5),rgba(6,12,31,.74));z-index:1}
+  .hist-hero .wrap{position:relative;z-index:2}
+  .hist-hero .kicker{color:#fff}
+  .hist-hero .kicker::after{background:rgba(255,255,255,.45)}
+  .hist-hero h2.st{color:#fff}
+  .hist-sub{margin-top:14px;font-size:16px;color:rgba(255,255,255,.86);max-width:44ch;line-height:1.6}
   .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:2px solid transparent}
   .timeline::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:100%;background:rgba(45,91,255,.22);transform:scaleY(0);transform-origin:top;transition:transform 1.2s cubic-bezier(.4,0,.2,1)}
   .timeline.on::before{transform:scaleY(1)}
@@ -131,7 +139,7 @@
     .phead h1{font-size:clamp(27px,7.4vw,42px);line-height:1.18}
     .phead p{font-size:15px;margin-top:13px;line-height:1.65}
     section{padding-top:clamp(54px,12vw,80px);padding-bottom:clamp(54px,12vw,80px)}
-    .history{padding-top:92px}
+    .hist-hero{padding:100px 0 40px}.hist-sub{font-size:14.5px;margin-top:12px}
     .sec-head{margin-bottom:30px}
     h2.st{font-size:clamp(22px,6.3vw,32px);line-height:1.22}
     .sec-head p{font-size:15px;line-height:1.65}
@@ -144,11 +152,15 @@
 
 <!-- ① 연혁 -->
 <section class="history">
-  <div class="wrap">
-    <div class="sec-head reveal">
+  <div class="hist-hero reveal">
+    <img class="hist-bg" src="about-hero.jpg" alt="" onerror="this.style.display='none'">
+    <div class="wrap">
       <div class="kicker">History</div>
       <h2 class="st">푸드트럭 1대에서<br>직영 15대까지</h2>
+      <p class="hist-sub">2016년 한 대로 시작해, 지금은 직영 15대 · 전국 협력 400여 대.</p>
     </div>
+  </div>
+  <div class="wrap">
     <div class="timeline">
       <div class="tl reveal"><div class="tl-y num">2016</div><h3>'와사바리' 푸드트럭 설립</h3><p>직영 차량 1대로 현장을 시작했습니다.</p></div>
       <div class="tl reveal"><div class="tl-y num">2021</div><h3>'푸드트럭하우스'로 상호 변경</h3><p>직영 차량 5대. 케이터링 전문 브랜드로 확장.</p></div>
