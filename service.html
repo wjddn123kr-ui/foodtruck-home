@@ -157,10 +157,11 @@
     .proc-step h4 br{display:none}
   }
   @media(max-width:600px){
-    .phead{padding:0;min-height:68svh;display:flex;align-items:flex-start}
+    /* 히어로 높이를 내용에 맞춤 → 배경사진이 '함께한 고객사' ops 카드 바로 아래에서 잘림 */
+    .phead{padding:0}
     .phead-bg img{object-position:center 38%}
-    .phead::after{background:linear-gradient(180deg,rgba(6,12,31,.74) 0%,rgba(6,12,31,.4) 40%,rgba(6,12,31,.14) 68%,rgba(6,12,31,.28) 100%)}
-    .phead .wrap{padding-top:92px;padding-bottom:36px}
+    .phead::after{background:linear-gradient(180deg,rgba(6,12,31,.74) 0%,rgba(6,12,31,.4) 45%,rgba(6,12,31,.5) 100%)}
+    .phead .wrap{padding-top:92px;padding-bottom:26px}
     .phead h1{font-size:clamp(26px,7vw,40px);line-height:1.2}
     .phead p,.phead .sub{font-size:14px;margin-top:11px;line-height:1.6;color:rgba(255,255,255,.9)}
     .ops{margin-top:18px;padding:14px 15px 15px}
