@@ -82,13 +82,20 @@
   .zznode p{font-size:5px;color:rgba(255,255,255,.9);line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,.95)}
   @media(min-width:761px){
     .hist-hero{aspect-ratio:1248/832}
-    .hist-inner{padding:88px clamp(30px,5vw,56px) 52px}
-    .zz{display:none}
-    .hist-tl{display:block;order:1;margin-bottom:auto;width:auto;max-width:400px;padding-left:22px}
-    .hist-title{order:2}
-    .htl{padding-bottom:20px}
-    .htl b{font-size:21px}.htl h4{font-size:16px;margin:4px 0 3px}.htl p{font-size:13px}
-    .htl::before{width:13px;height:13px;left:-28px;top:3px}
+    .hist-inner{padding:100px clamp(32px,5vw,64px) 44px}
+    /* 제목 좌상단(모바일과 동일 구조) — PC 크게 */
+    .hist-title .kicker{margin-bottom:14px;font-size:14px}
+    .hist-title h2.st{font-size:clamp(30px,3.6vw,46px)}
+    /* 하단 지그재그 — PC 크게 */
+    .zz{height:200px}
+    .zznode{width:22%}
+    .zznode.a{top:8px}
+    .zznode.b{top:100px}
+    .zdot{width:14px;height:14px;border-width:2.5px;margin-bottom:8px}
+    .zz-svg polyline{stroke-width:1.6}
+    .zznode b{font-size:clamp(24px,2.5vw,34px)}
+    .zznode h4{font-size:clamp(13px,1.35vw,17px);margin:6px 0 3px}
+    .zznode p{font-size:clamp(11px,1.05vw,13.5px)}
   }
   .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:2px solid transparent}
   .timeline::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:100%;background:rgba(45,91,255,.22);transform:scaleY(0);transform-origin:top;transition:transform 1.2s cubic-bezier(.4,0,.2,1)}
