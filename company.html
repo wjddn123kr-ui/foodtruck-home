@@ -81,9 +81,8 @@
   .zznode h4{font-size:7.5px;font-weight:700;color:#fff;margin:2px 0 1px;line-height:1.22;text-shadow:0 1px 4px rgba(0,0,0,.95)}
   .zznode p{font-size:5px;color:rgba(255,255,255,.9);line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,.95)}
   @media(min-width:761px){
-    /* 사진 높이 축소(너무 큰 문제 해결): 고정 560~640px + 상단 기준 크롭으로 발/다리 아래 잘라냄 */
-    .hist-hero{aspect-ratio:auto;height:clamp(560px,46vw,640px)}
-    .hist-bg img{object-position:50% 0%}
+    /* 작업자가 직접 크롭한 사진(1248x714)을 추가 크롭 없이 그대로 표시. 좁은 폭에서만 min-height로 겹침 방지 */
+    .hist-hero{aspect-ratio:1248/714;min-height:560px}
     .hist-inner{padding:76px clamp(32px,5vw,64px) 32px}
     /* History 폰트 2배 */
     .hist-title .kicker{margin-bottom:12px;font-size:28px}
@@ -198,7 +197,7 @@
 <section class="history">
   <div class="hist-hero reveal">
     <picture class="hist-bg">
-      <source media="(min-width:761px)" srcset="about-hero-pc.jpg">
+      <source media="(min-width:761px)" srcset="about-hero-pc.jpg?v=2">
       <img src="about-hero-m.jpg" alt="푸드트럭하우스 현장" onerror="this.closest('.hist-bg').style.display='none'">
     </picture>
     <div class="hist-inner">
