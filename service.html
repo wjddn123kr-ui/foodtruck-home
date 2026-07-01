@@ -73,7 +73,7 @@
   .pf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   .pf{display:flex;flex-direction:column;gap:10px}
   .pf.hide{display:none}
-  .pf-ph{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:linear-gradient(155deg,#1b2a55,#0b1430);border:1px solid var(--line);display:grid;place-items:center}
+  .pf-ph{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:linear-gradient(155deg,#1b2a55,#0b1430);border:1px solid var(--line);display:grid;place-items:center}
   .pf-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
   .pf-ico{width:30px;height:30px;color:rgba(146,170,225,.32)}
   .pf-cat{position:absolute;top:10px;left:10px;z-index:3;font-size:11px;font-weight:700;color:#fff;background:rgba(45,91,255,.9);padding:4px 10px;border-radius:20px;letter-spacing:-.01em;box-shadow:0 6px 16px -8px rgba(13,40,120,.7)}
@@ -206,7 +206,7 @@
       <button class="pf-tab" data-cat="buffet" aria-pressed="false">출장뷔페</button>
     </div>
     <div class="pf-grid" id="pfGrid"></div>
-    <div class="pf-note">※ 현장 사진은 순차적으로 업데이트됩니다.</div>
+    <div class="pf-note">※ 실제 진행 현장 사진입니다. (일부 사례)</div>
     <div class="pf-links">
       <a href="service-catering.html">케이터링 자세히 →</a>
       <a href="service-promotion.html">브랜드 프로모션 자세히 →</a>
@@ -247,27 +247,32 @@
 (function(){
   var CATS={catering:'케이터링',promotion:'프로모션',festival:'축제',buffet:'뷔페'};
   var PROJECTS=[
-    {cat:'catering',client:'삼성생명',event:'새해 임직원 행사'},
-    {cat:'catering',client:'국토대장정',event:'전국 라이딩 케이터링'},
-    {cat:'catering',client:'한국장학재단',event:'후원 행사 다과'},
-    {cat:'catering',client:'국민은행',event:'임직원 복지차'},
-    {cat:'catering',client:'iM 사회공헌재단',event:'나눔 행사 운영'},
-    {cat:'catering',client:'CJ',event:'창립기념 행사'},
-    {cat:'promotion',client:'진로',event:'테라 신제품 시음회'},
-    {cat:'promotion',client:'메디큐브',event:'뮤직비디오 촬영 간식차'},
-    {cat:'promotion',client:'디스커버리',event:'변우석 광고촬영 서포트'},
-    {cat:'promotion',client:'무신사',event:'브랜드 팝업 스토어'},
-    {cat:'promotion',client:'잡코리아',event:'캠퍼스 프로모션'},
-    {cat:'festival',client:'워터밤',event:'페스티벌 푸드존'},
-    {cat:'festival',client:'흠뻑쇼',event:'투어 콘서트 부스'},
-    {cat:'festival',client:'여의도 벚꽃축제',event:'시즌 야외 부스'},
-    {cat:'festival',client:'FC서울',event:'홈경기 팬존 운영'},
-    {cat:'festival',client:'한화이글스',event:'구단 이벤트 부스'},
-    {cat:'festival',client:'대학 대동제',event:'축제 푸드트럭존'},
-    {cat:'buffet',client:'영화 촬영장',event:'스태프밀 중식 제공'},
-    {cat:'buffet',client:'건설 현장',event:'단체 중식 케이터링'},
-    {cat:'buffet',client:'공공기관',event:'워크숍 출장뷔페'},
-    {cat:'buffet',client:'군·경·소방',event:'교육과정 급식 지원'}
+    {cat:'catering',img:'svc-cat-1.jpg',cap:'삼성SDS 임직원 행사'},
+    {cat:'catering',img:'svc-cat-2.jpg',cap:'한국공항공사 행사'},
+    {cat:'catering',img:'svc-cat-5.jpg',cap:'촬영장 간식차'},
+    {cat:'catering',img:'svc-cat-6.jpg',cap:'야간 기업 행사'},
+    {cat:'catering',img:'svc-cat-7.jpg',cap:'행사 스태프 운영'},
+    {cat:'catering',img:'svc-cat-3.jpg',cap:'선수·연예인 서포트'},
+    {cat:'catering',img:'svc-cat-4.png',cap:'케이터링 메뉴 구성'},
+    {cat:'promotion',img:'promo-baemin-1.jpg',cap:'배달의민족 광고 촬영'},
+    {cat:'promotion',img:'promo-gordon-1.jpg',cap:'고든램지 버거 팝업'},
+    {cat:'promotion',img:'promo-hanwha-1.jpg',cap:'한화이글스 구단 이벤트'},
+    {cat:'promotion',img:'promo-samyang-1.jpg',cap:'삼양라면 전국투어'},
+    {cat:'promotion',img:'promo-terra-1.jpg',cap:'테라 신제품 프로모션'},
+    {cat:'promotion',img:'promo-bibigo-1.jpg',cap:'비비고 브랜드 홍보'},
+    {cat:'festival',img:'svc-fest-1.jpg',cap:'여의도 불꽃축제'},
+    {cat:'festival',img:'svc-fest-2.jpg',cap:'광화문 행사'},
+    {cat:'festival',img:'svc-fest-3.jpg',cap:'무도런 러닝 이벤트'},
+    {cat:'festival',img:'svc-fest-4.jpg',cap:'부산 유채꽃축제'},
+    {cat:'festival',img:'svc-fest-5.jpg',cap:'버거강정런 이벤트'},
+    {cat:'festival',img:'svc-fest-6.jpg',cap:'축제 푸드존 운영'},
+    {cat:'festival',img:'svc-fest-7.jpg',cap:'페스티벌 부스 운영'},
+    {cat:'buffet',img:'svc-buf-1.png',cap:'우삼겹덮밥 구성'},
+    {cat:'buffet',img:'svc-buf-2.jpg',cap:'단체 출장뷔페'},
+    {cat:'buffet',img:'svc-buf-3.jpg',cap:'현장 출장뷔페'},
+    {cat:'buffet',img:'svc-buf-4.jpg',cap:'행사 뷔페 세팅'},
+    {cat:'buffet',img:'svc-buf-5.jpg',cap:'단체 급식 지원'},
+    {cat:'buffet',img:'svc-buf-6.jpg',cap:'스태프밀 제공'}
   ];
   var ICO='<svg class="pf-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 15l-5-5L4 20"/></svg>';
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
@@ -275,8 +280,8 @@
   if(!grid)return;
   grid.innerHTML=PROJECTS.map(function(p){
     return '<article class="pf reveal in" data-cat="'+p.cat+'">'+
-      '<div class="pf-ph">'+ICO+'<span class="pf-cat">'+CATS[p.cat]+'</span></div>'+
-      '<div class="pf-cap"><b>'+esc(p.client)+'</b><span>'+esc(p.event)+'</span></div>'+
+      '<div class="pf-ph">'+ICO+(p.img?'<img src="'+p.img+'" alt="'+esc(p.cap)+'" loading="lazy" onerror="this.style.display=\'none\'">':'')+'<span class="pf-cat">'+CATS[p.cat]+'</span></div>'+
+      '<div class="pf-cap"><b>'+esc(p.cap)+'</b></div>'+
     '</article>';
   }).join('');
   var tabs=[].slice.call(document.querySelectorAll('.pf-tab'));
