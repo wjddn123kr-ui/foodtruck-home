@@ -233,11 +233,13 @@ body{
   .mc-pile img{height:clamp(190px,50vw,300px)}
 }
 
-/* PC: 좌우 배경 2장 + 음식 누끼 → 100종 플랫레이 한 장으로 교체 */
+/* PC: 좌우 배경 2장 + 음식 누끼 → 100종 플랫레이 한 장으로 교체 + 문구/버튼 배치 */
 @media(min-width:761px){
   .mc-stage{background:#0A1430 url(menu-bg-pc.png) center/cover no-repeat}
   .mc-half{display:none}
   .mc-pile{display:none}
+  .mc-caption{padding-top:64px}
+  .mc-cta-center{margin-top:250px}
 }
 
 /* ===== 트럭 도로 주행 (현장운영 섹션 하단, 다크 배경) ===== */
