@@ -14,16 +14,18 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 <style>
   /* page head */
-  .phead{position:relative;padding:138px 0 50px;overflow:hidden}
-  .phead .glow{position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(45,91,255,.13);filter:blur(90px);top:-160px;right:-40px;z-index:0}
-  .phead::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background-image:radial-gradient(rgba(45,91,255,.13) 1.4px,transparent 1.5px);background-size:26px 26px;-webkit-mask:radial-gradient(130% 90% at 80% 18%,#000,transparent 76%);mask:radial-gradient(130% 90% at 80% 18%,#000,transparent 76%)}
+  .phead{position:relative;padding:138px 0 56px;overflow:hidden;background:#0A1430 url(menu-bg-pc.png) center/cover no-repeat}
+  .phead .glow{display:none}
+  /* 배경사진 위 가독성 스크림 */
+  .phead::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(6,12,31,.62) 0%,rgba(6,12,31,.34) 40%,rgba(6,12,31,.5) 72%,rgba(6,12,31,.72) 100%),linear-gradient(90deg,rgba(6,12,31,.5) 0%,rgba(6,12,31,.05) 60%)}
+  .phead::after{display:none}
   .phead .wrap{position:relative;z-index:2}
   .crumb{font-size:13.5px;color:#7a87a8;margin-bottom:16px}
   .crumb a:hover{color:var(--blue)}
-  .phead h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;color:var(--navy-900)}
-  .phead h1 .hl{color:var(--blue)}
-  .phead p{margin-top:16px;font-size:17px;color:#5b6789;max-width:50ch}
-  .phead .count{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--blue-bright);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:7px 15px;border-radius:30px}
+  .phead h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+  .phead h1 .hl{color:var(--blue-bright)}
+  .phead p{margin-top:16px;font-size:17px;color:rgba(255,255,255,.92);max-width:50ch;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+  .phead .count{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,138,46,.22);border:1px solid rgba(255,180,120,.5);padding:7px 15px;border-radius:30px;backdrop-filter:blur(4px)}
 
   /* tabs */
   .tabs{position:sticky;top:70px;z-index:40;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-top:1px solid rgba(10,17,36,.06);border-bottom:1px solid rgba(10,17,36,.06)}
@@ -144,7 +146,7 @@
     .buf .comp{min-height:0}
   }
   @media(max-width:600px){
-    .phead{padding:82px 0 22px}
+    .phead{padding:96px 0 34px;background-image:url(menu-bg-mobile-v2.jpg)}
     .phead h1{font-size:clamp(27px,7.4vw,42px);line-height:1.18}
     .phead p,.phead .sub{font-size:15px;margin-top:13px;line-height:1.65}
     section{padding-top:clamp(54px,12vw,80px);padding-bottom:clamp(54px,12vw,80px)}
