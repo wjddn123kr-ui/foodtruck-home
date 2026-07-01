@@ -47,14 +47,16 @@
   .intro-body p:last-child{margin-bottom:0}
 
   /* timeline (연혁) — 첫 섹션이라 헤더 여백 확보 */
-  .history{border-bottom:1px solid rgba(10,17,36,.06);padding:var(--hd-h,70px) 0 0}
+  .history{border-bottom:1px solid rgba(10,17,36,.06);padding:0}
   /* 히어로 비율 = 이미지 비율 → 크롭 없음. 모바일 1:1, PC 3:2(아래 미디어) */
   .hist-hero{position:relative;overflow:hidden;background:#0b1430;aspect-ratio:1/1}
   .hist-bg{position:absolute;inset:0;z-index:0;display:block}
   .hist-bg img{width:100%;height:100%;object-fit:cover;display:block}
   .hist-hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(6,12,31,.3) 0%,rgba(6,12,31,.44) 48%,rgba(6,12,31,.84) 100%)}
   /* 오버레이는 절대배치(히어로 높이에 영향 X → 사진 원본비율 유지) */
-  .hist-inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:16px clamp(20px,5vw,40px) 22px;box-sizing:border-box}
+  .hist-inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;padding:76px clamp(18px,5vw,40px) 14px;box-sizing:border-box}
+  .hist-title{order:1}
+  .hist-tl{display:none}
   /* 연혁 전문 오른쪽 상단(세로 라인+점+다운 화살표) */
   .hist-tl{align-self:flex-end;width:66%;max-width:340px;margin-bottom:auto;position:relative;padding-left:18px;border-left:2px solid rgba(255,255,255,.55)}
   .hist-tl::after{content:"";position:absolute;left:-6px;bottom:-7px;width:11px;height:11px;border-right:2.5px solid var(--blue-bright);border-bottom:2.5px solid var(--blue-bright);transform:rotate(45deg)}
@@ -68,10 +70,22 @@
   .hist-title .kicker{color:#fff;margin-bottom:10px}
   .hist-title .kicker::after{background:rgba(255,255,255,.5)}
   .hist-title h2.st{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.65)}
+  /* 모바일 하단 지그재그 연혁 (2016↘2021↗2024↘2025) — 오른쪽 문구 폰트 절반 */
+  .zz{order:3;margin-top:auto;position:relative;height:108px;width:100%}
+  .zz-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible}
+  .zznode{position:absolute;width:23%;transform:translateX(-50%);text-align:center;z-index:1}
+  .zznode.a{top:4px}
+  .zznode.b{top:54px}
+  .zdot{display:block;width:8px;height:8px;border-radius:50%;background:var(--blue-bright);border:1.5px solid #fff;margin:0 auto 3px;box-shadow:0 0 0 2px rgba(6,12,31,.45)}
+  .zznode b{display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;color:#fff;line-height:1;letter-spacing:-.02em;text-shadow:0 1px 4px rgba(0,0,0,.9)}
+  .zznode h4{font-size:6px;font-weight:700;color:#fff;margin:2px 0 1px;line-height:1.22;text-shadow:0 1px 4px rgba(0,0,0,.95)}
+  .zznode p{font-size:5px;color:rgba(255,255,255,.9);line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,.95)}
   @media(min-width:761px){
     .hist-hero{aspect-ratio:1248/832}
-    .hist-inner{padding:44px clamp(30px,5vw,56px) 52px}
-    .hist-tl{width:auto;max-width:400px;padding-left:22px}
+    .hist-inner{padding:88px clamp(30px,5vw,56px) 52px}
+    .zz{display:none}
+    .hist-tl{display:block;order:1;margin-bottom:auto;width:auto;max-width:400px;padding-left:22px}
+    .hist-title{order:2}
     .htl{padding-bottom:20px}
     .htl b{font-size:21px}.htl h4{font-size:16px;margin:4px 0 3px}.htl p{font-size:13px}
     .htl::before{width:13px;height:13px;left:-28px;top:3px}
@@ -188,6 +202,13 @@
       <div class="hist-title">
         <div class="kicker">History</div>
         <h2 class="st">푸드트럭 1대에서<br>직영 15대까지</h2>
+      </div>
+      <div class="zz">
+        <svg class="zz-svg" viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><polyline points="12.5,8 37.5,58 62.5,8 87.5,58" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.3" vector-effect="non-scaling-stroke"/></svg>
+        <div class="zznode a" style="left:12.5%"><span class="zdot"></span><b>2016</b><h4>'와사바리' 푸드트럭 설립</h4><p>직영 차량 1대로 현장을 시작했습니다.</p></div>
+        <div class="zznode b" style="left:37.5%"><span class="zdot"></span><b>2021</b><h4>'푸드트럭하우스'로 상호 변경</h4><p>직영 차량 5대. 케이터링 전문 브랜드로 확장.</p></div>
+        <div class="zznode a" style="left:62.5%"><span class="zdot"></span><b>2024</b><h4>'주식회사 하이팅' 법인 설립</h4><p>직영 차량 11대. 운영 체계를 본사 직영으로 정비.</p></div>
+        <div class="zznode b" style="left:87.5%"><span class="zdot"></span><b>2025</b><h4>F&amp;B 매장 '더판'·'츄럭스' 오픈</h4><p>직영 차량 15대. 외식 브랜드 사업으로 영역 확장.</p></div>
       </div>
     </div>
   </div>
