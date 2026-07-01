@@ -233,6 +233,13 @@ body{
   .mc-pile img{height:clamp(190px,50vw,300px)}
 }
 
+/* PC: 좌우 배경 2장 + 음식 누끼 → 100종 플랫레이 한 장으로 교체 */
+@media(min-width:761px){
+  .mc-stage{background:#0A1430 url(menu-bg-pc.png) center/cover no-repeat}
+  .mc-half{display:none}
+  .mc-pile{display:none}
+}
+
 /* ===== 트럭 도로 주행 (현장운영 섹션 하단, 다크 배경) ===== */
 .road-band{margin-top:clamp(40px,6vw,64px);padding-top:34px;border-top:1px solid var(--line);position:relative;z-index:2}
 .road-head{max-width:1100px;margin:0 auto;padding:0 20px;text-align:center}
