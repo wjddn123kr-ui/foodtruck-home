@@ -385,7 +385,7 @@
 
   function itemCard(it, emoji){
     var badge = it.best ? '<span class="mc-best">BEST</span>' : '';
-    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=6" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
+    var thumb = it.img ? '<img class="mc-img" src="'+it.img+'?v=7" alt="'+esc(it.name)+'" loading="lazy">' : '<span class="mc-emoji">'+(emoji||'🍽️')+'</span>';
     return '<div class="mc reveal"><div class="mc-th">'+badge+thumb+'</div>'+
            '<div class="mc-b"><span class="mc-n">'+esc(it.name)+'</span>'+
            '<span class="mc-p num">'+won(it.price)+'<i>원</i></span></div></div>';
