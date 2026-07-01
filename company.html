@@ -154,11 +154,20 @@
   .loc-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .loc-card{background:#fff;border:1px solid #e7edf9;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 36px -22px rgba(13,40,120,.24)}
   .loc-card .loc-map{border-bottom:1px solid #e7edf9}
-  .loc-card iframe{width:100%;height:300px;border:0;display:block}
-  .loc-meta{padding:22px 24px}
-  .loc-meta .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);background:rgba(45,91,255,.1);border:1px solid rgba(45,91,255,.28);padding:5px 12px;border-radius:20px;margin-bottom:12px}
-  .loc-meta .addr{font-size:15.5px;color:var(--ink);line-height:1.6}
-  .loc-meta .map-link{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--blue-bright)}
+  .loc-card iframe{width:100%;height:260px;border:0;display:block}
+  .loc-meta{padding:20px 22px}
+  .loc-head{display:flex;align-items:center;gap:12px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid #eef2fa}
+  .loc-ico{flex:0 0 auto;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(45,91,255,.1);color:var(--blue)}
+  .loc-ico svg{width:25px;height:25px}
+  .loc-ttl h3{font-size:19.5px;font-weight:800;color:var(--navy-900);letter-spacing:-.02em;line-height:1.14}
+  .loc-ttl span{display:block;margin-top:3px;font-size:12.5px;font-weight:600;color:var(--mute)}
+  .loc-row{display:flex;gap:9px;align-items:baseline}
+  .loc-k{flex:0 0 auto;font-size:11.5px;font-weight:800;color:var(--blue);background:rgba(45,91,255,.09);padding:3px 9px;border-radius:6px}
+  .loc-meta .addr{font-size:15px;color:var(--ink);line-height:1.55}
+  .loc-meta .map-link{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:700;color:var(--blue-bright)}
+  /* 물류창고 카드는 딥블루 액센트로 구분 */
+  .loc-card.warehouse .loc-ico{background:rgba(0,56,146,.1);color:var(--blue-deep)}
+  .loc-card.warehouse .loc-k{color:var(--blue-deep);background:rgba(0,56,146,.08)}
 
   .cta-wrap{padding:clamp(70px,8vw,104px) 0}
   .cta{max-width:var(--max);margin:0 auto;border-radius:24px;padding:clamp(40px,5vw,60px);background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative;overflow:hidden;text-align:center}
@@ -245,19 +254,25 @@
       <h2 class="st">오시는 길</h2>
     </div>
     <div class="loc-2">
-      <div class="loc-card reveal">
+      <div class="loc-card office reveal">
         <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2&z=17&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 사무실 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="loc-meta">
-          <span class="tag">사무실</span>
-          <div class="addr">경기도 용인시 기흥구 중부대로 746번길 2, 2층 푸드트럭하우스</div>
+          <div class="loc-head">
+            <span class="loc-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 21V5.5L11 2l8 3.5V21h-5v-4.5H8V21H3zm5-8.5h2v-2H8v2zm4 0h2v-2h-2v2zM8 8.5h2v-2H8v2zm4 0h2v-2h-2v2z"/></svg></span>
+            <div class="loc-ttl"><h3>본사 사무실</h3><span>방문 상담 · 미팅</span></div>
+          </div>
+          <div class="loc-row"><span class="loc-k">주소</span><span class="addr">경기도 용인시 기흥구 중부대로 746번길 2, 2층 푸드트럭하우스</span></div>
           <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+중부대로+746번길+2" target="_blank" rel="noopener">큰 지도로 보기 →</a>
         </div>
       </div>
-      <div class="loc-card reveal">
+      <div class="loc-card warehouse reveal">
         <div class="loc-map"><iframe src="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229&z=16&hl=ko&output=embed" loading="lazy" title="푸드트럭하우스 물류창고·차고지 위치" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="loc-meta">
-          <span class="tag">물류창고 · 차고지</span>
-          <div class="addr">경기도 용인시 기흥구 상하동 229</div>
+          <div class="loc-head">
+            <span class="loc-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 5a1 1 0 011-1h11a1 1 0 011 1v2h3a1 1 0 01.8.4l2 2.6a1 1 0 01.2.6V15a1 1 0 01-1 1h-1.2a3 3 0 01-5.6 0H8.8a3 3 0 01-5.6 0H3a1 1 0 01-1-1V5zm14 4v2.5h4V11l-1.5-2H16zM6 15.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm11 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg></span>
+            <div class="loc-ttl"><h3>물류창고 · 차고지</h3><span>장비 보관 · 차량 배차</span></div>
+          </div>
+          <div class="loc-row"><span class="loc-k">주소</span><span class="addr">경기도 용인시 기흥구 상하동 229</span></div>
           <a class="map-link" href="https://www.google.com/maps?q=경기도+용인시+기흥구+상하동+229" target="_blank" rel="noopener">큰 지도로 보기 →</a>
         </div>
       </div>
