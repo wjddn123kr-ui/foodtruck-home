@@ -22,7 +22,7 @@
 ## 3. 기술 스택 (의도적으로 단순하게)
 
 - **순수 정적 HTML/CSS/JS** — 빌드 도구·프레임워크 없음. 페이지마다 단일 .html 파일.
-- 폰트: Pretendard(본문, CDN), Archivo(숫자·영문 강조, Google Fonts)
+- 폰트: 헤드라인 Black Han Sans(Google Fonts), 본문 Pretendard(CDN), Archivo(숫자·영문 강조, Google Fonts)
 - 추후 단계에서 Supabase(후기·뉴스·메뉴 관리용 admin) + 메타 픽셀 연동 예정. 지금은 정적.
 - **localStorage 등 브라우저 스토리지 쓰지 말 것** (불필요). 데이터는 JSON 파일 또는 추후 Supabase.
 
@@ -84,7 +84,7 @@
 |------|------|------|
 | index.html | 메인 (히어로·통계·호차격자·서비스·후기·CTA) | ✅ 완료 |
 | review.html | 후기 목록 (9건) | ✅ 완료 |
-| menu.html | 메뉴 (카테고리 탭, 75개 항목) | ✅ 완료 |
+| menu.html | 메뉴 (카테고리 탭, 100여 종) | ✅ 완료 |
 | about.html | **소개>인사말** (대표 인사말 패널 + 6가지 가치) | ✅ 완료 |
 | company.html | **소개>회사소개** (정체성·핵심수치·연혁·비전·사업자정보) | ✅ 완료 |
 | service.html | 서비스 **허브** (EFFECT 3 + 4종 요약 + 절차, 각 상세로 연결) | ✅ 완료 |
@@ -105,7 +105,7 @@
 ## 6. 콘텐츠 자원 (이미 스크랩 완료)
 
 - `reviews.json` — 기존 사이트 후기 9건 전문 (제목·카테고리·본문·기존 이미지 URL). review.html에 이미 반영됨.
-- `menu.json` — 전체 메뉴 75개 항목 (음료세트·간식·디저트·분식·식사·뷔페·시즌메뉴, 가격 포함). menu.html 만들 때 사용.
+- `menu.json` — 초기 메뉴 스크랩(75개 항목, 음료세트·간식·디저트·분식·식사·뷔페·시즌메뉴, 가격 포함). **단, 실제 정본은 menu.html(현재 약 100종 렌더)** — 공개 표기·마케팅 수치는 **"100여 종"으로 통일**(2026-07 확정). menu.json은 참고용 초기 데이터.
 
 핵심 수치: 고객사 **4,000곳+**, 누적 행사 **8,000건+**, 재이용률 **92%**, 10년 경력.
 주요 거래처: 삼성생명·한화·현대·CJ·무신사·국민은행·농협은행·FC서울·진로·메디큐브·잡코리아·동양생명.
@@ -127,7 +127,22 @@
 6. ⬜ 도메인 무중단 전환 (이미지 이전 포함)
 7. ⬜ 캠페인용 랜딩페이지
 
-## 9. 지금 할 일
+## 9. 프로젝트 스킬 (.claude/skills)
+
+작업 종류에 맞는 규칙 스킬. 별도 요청이 없어도 해당 작업 시 자동으로 따를 것.
+
+- [foodtruck-frontend](.claude/skills/foodtruck-frontend/SKILL.md) — UI 구현 규칙(딥네이비+일렉트릭블루, 헤드라인 Black Han Sans/본문 Pretendard, 모바일 퍼스트 768px, 스코프 `.ftp-`/`.fts3-`)
+- [foodtruck-brand](.claude/skills/foodtruck-brand/SKILL.md) — 브랜드 무드·슬로건·모션 섹션 컨벤션
+- [component-refactor](.claude/skills/component-refactor/SKILL.md) — partials/header·footer 분리, CSS는 assets/css, DRY
+- [seo](.claude/skills/seo/SKILL.md) — 페이지별 title/description·OG태그·JSON-LD 필수(정적 기준)
+- [performance](.claude/skills/performance/SKILL.md) — webp+lazy load, 애니메이션 transform/opacity만, Lighthouse 90+
+- [mobile-first](.claude/skills/mobile-first/SKILL.md) — 768px 단일 분기점, 터치 타겟 44×44px, 가로 스크롤 금지, 본문 16px, 이미지 폭 초과 금지
+- [accessibility](.claude/skills/accessibility/SKILL.md) — img alt·키보드 접근·색대비 WCAG AA
+- [form-validation](.claude/skills/form-validation/SKILL.md) — 견적폼(최소 60만원·연락처 게이트·VAT 별도·친절한 에러)
+- [supabase-rules](.claude/skills/supabase-rules/SKILL.md) — RLS 필수·egress 절약·Storage·민감정보 암호화 (4단계 admin용)
+- [vercel-deploy](.claude/skills/vercel-deploy/SKILL.md) — 전 페이지 완성 후 일괄 업로드, 중간 배포 제안 금지
+
+## 10. 지금 할 일
 
 **3단계 하위 페이지를 이어서 완성하세요.** 다음은 `menu.html`입니다.
 - `menu.json`의 데이터로 카테고리 탭(전체/시즌/커피/간식/디저트/분식/식사/뷔페)을 만들고,
