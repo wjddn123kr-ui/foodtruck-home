@@ -5,6 +5,47 @@
    - 헤더 스크롤 동작·모바일 드로어·.reveal 등장 애니 연결
    ※ fetch 방식이라 file:// 로 열면 동작하지 않습니다. 반드시 http(로컬서버/배포)에서 확인.
    ============================================================ */
+
+/* ── 분석·광고 추적(전 페이지 공통) ────────────────────────────
+   메타 픽셀 + (예정)GA4. 한 곳에서 관리해 17개 페이지에 자동 적용.
+   전환: 견적 신청 클릭=Lead, 전화 클릭=Contact 자동 추적.        */
+(function () {
+  /* Meta Pixel */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '974391308967190');
+  fbq('track', 'PageView');
+
+  /* GA4 — 측정 ID 받으면 여기에 추가 예정
+  var GA_ID='G-XXXXXXXXXX';
+  var g=document.createElement('script');g.async=true;
+  g.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+  document.head.appendChild(g);
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  window.gtag=gtag;gtag('js',new Date());gtag('config',GA_ID);
+  */
+
+  /* 전환 추적(견적/전화 클릭) — 이벤트 위임이라 include 여부와 무관 */
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/foodtruck-quote\.vercel\.app/i.test(href)) {
+      if (window.fbq) fbq('track', 'Lead', { content_name: '3분 견적 신청' });
+      if (window.gtag) gtag('event', 'generate_lead', { method: '3분견적' });
+    } else if (/^tel:/i.test(href)) {
+      if (window.fbq) fbq('track', 'Contact');
+      if (window.gtag) gtag('event', 'contact', { method: 'phone' });
+    } else if (/pf\.kakao\.com/i.test(href)) {
+      if (window.fbq) fbq('track', 'Contact', { content_name: '카카오톡 상담' });
+      if (window.gtag) gtag('event', 'contact', { method: 'kakao' });
+    }
+  }, true);
+})();
+
 (function () {
   function norm(p) {
     p = (p || '').toLowerCase();
