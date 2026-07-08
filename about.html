@@ -37,18 +37,17 @@
   .sec-head{max-width:640px;margin-bottom:46px}
   .sec-head p{margin-top:16px;font-size:16.5px;color:#5b6789}
 
-  /* 대표 인사말 (강조 패널 — 본문 2단으로 카드를 꽉 채움) */
+  /* 대표 인사말 (강조 패널 — 좌: 인용문 제목블록 / 우: 본문 단일 컬럼) */
   .greet{padding-top:116px}
-  .greet-panel{position:relative;background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid var(--line);border-radius:24px;padding:clamp(36px,5vw,64px);overflow:hidden;box-shadow:0 30px 70px -44px #000}
-  .greet-panel::before{content:"\201C";position:absolute;top:6px;left:32px;font-family:'Archivo';font-weight:900;font-size:170px;color:rgba(91,134,255,.14);line-height:1;pointer-events:none;z-index:1}
-  .greet-panel>*{position:relative;z-index:2}
-  .greet-q{font-weight:800;font-size:clamp(26px,3.6vw,44px);letter-spacing:-.025em;color:#fff;line-height:1.32;margin:10px 0 34px;word-break:keep-all;text-wrap:balance}
+  .greet-panel{position:relative;background:linear-gradient(165deg,var(--navy-800),var(--navy-850));border:1px solid var(--line);border-radius:24px;padding:clamp(38px,4.6vw,62px);overflow:hidden;box-shadow:0 30px 70px -44px #000}
+  .greet-panel::before{content:"\201C";position:absolute;top:6px;left:32px;font-family:'Archivo';font-weight:900;font-size:168px;color:rgba(91,134,255,.13);line-height:1;pointer-events:none;z-index:1}
+  .greet-grid{position:relative;z-index:2;display:grid;grid-template-columns:0.92fr 1.08fr;gap:clamp(34px,4.5vw,62px);align-items:center}
+  .greet-q{font-weight:800;font-size:clamp(25px,2.9vw,39px);letter-spacing:-.025em;color:#fff;line-height:1.36;margin-top:8px;word-break:keep-all;text-wrap:balance}
   .greet-q .hl{color:var(--blue-bright)}
-  .greet-body{column-count:2;column-gap:clamp(32px,4vw,56px)}
-  .greet-body p{font-size:clamp(16px,1.55vw,17px);color:var(--ice);line-height:1.9;margin-bottom:18px;word-break:keep-all;break-inside:avoid}
+  .greet-body p{font-size:clamp(16px,1.35vw,17px);color:var(--ice);line-height:1.95;margin-bottom:18px;word-break:keep-all}
   .greet-body p:last-child{margin-bottom:0}
   .greet-body b{color:#fff;font-weight:700}
-  .greet-sign{margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mute)}
+  .greet-sign{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mute)}
   .greet-sign b{display:block;color:#fff;font-family:'Nanum Pen Script',cursive;font-weight:400;font-size:34px;letter-spacing:0;margin-top:2px;line-height:1}
 
   /* 핵심 가치 */
@@ -76,9 +75,9 @@
   .cta a:hover{transform:translateY(-2px)}
 
   @media(max-width:900px){ .values{grid-template-columns:1fr 1fr} }
-  /* 인사말: 좁은 화면에선 본문을 1단으로 */
-  @media(max-width:720px){
-    .greet-body{column-count:1}
+  /* 인사말: 좁은 화면에선 인용문 위 → 본문 아래로 세로 스택 */
+  @media(max-width:820px){
+    .greet-grid{grid-template-columns:1fr;gap:24px;align-items:start}
   }
   @media(max-width:560px){
     .values{grid-template-columns:1fr 1fr;gap:10px}
@@ -96,7 +95,7 @@
     /* 인사말 패널 — 여백 축소(가독성 유지) */
     .greet-panel{padding:28px 22px;border-radius:18px}
     .greet-panel::before{font-size:92px;left:16px;top:0}
-    .greet-q{font-size:25px;line-height:1.36;margin:6px 0 20px}
+    .greet-q{font-size:24px;line-height:1.38;margin-top:4px}
     .greet-body p{font-size:15px;line-height:1.72;margin-bottom:13px}
     .greet-sign{margin-top:20px;padding-top:16px;font-size:13.5px}
     .greet-sign b{font-size:30px}
@@ -117,14 +116,20 @@
 <section class="greet">
   <div class="wrap">
     <div class="greet-panel reveal">
-      <div class="kicker">대표 인사말</div>
-      <p class="greet-q">책임감으로 신뢰를 드리고, 열정적인 서비스와 유연한 대응, <span class="hl">그리고 청결까지 약속합니다.</span></p>
-      <div class="greet-body">
-        <p>안녕하세요, 푸드트럭하우스 대표 <b>김정우</b>입니다. 저희는 현장을 중심으로 움직이는 '맛있는 경험'을 만드는 사람들입니다. 그저 음식을 제공하는 것을 넘어, 각 행사에 어울리는 분위기와 감동을 함께 전하는 것이 저희의 일이라 믿습니다.</p>
-        <p>2016년 푸드트럭 한 대로 시작해, 지금은 직영 15대와 전국 협력 400여 대의 운영망을 갖췄습니다. 기업 행사부터 축제, 브랜드 이벤트까지 직접 보유한 차량과 자체 인력으로 기획부터 마감까지 책임지고 있습니다.</p>
-        <p>이동식 구조라는 강점을 살려, 고정된 공간이 아닌 어떤 상황에서도 최적의 식음 솔루션을 제공하겠습니다. 앞으로도 신뢰와 청결을 기본으로, 현장의 모든 순간을 책임지는 팀이 되겠습니다.</p>
+      <div class="greet-grid">
+        <div class="greet-head">
+          <div class="kicker">대표 인사말</div>
+          <p class="greet-q">책임감으로 신뢰를 드리고, 열정적인 서비스와 유연한 대응, <span class="hl">그리고 청결까지 약속합니다.</span></p>
+        </div>
+        <div class="greet-main">
+          <div class="greet-body">
+            <p>안녕하세요, 푸드트럭하우스 대표 <b>김정우</b>입니다. 저희는 현장을 중심으로 움직이는 '맛있는 경험'을 만드는 사람들입니다. 그저 음식을 제공하는 것을 넘어, 각 행사에 어울리는 분위기와 감동을 함께 전하는 것이 저희의 일이라 믿습니다.</p>
+            <p>2016년 푸드트럭 한 대로 시작해, 지금은 직영 15대와 전국 협력 400여 대의 운영망을 갖췄습니다. 기업 행사부터 축제, 브랜드 이벤트까지 직접 보유한 차량과 자체 인력으로 기획부터 마감까지 책임지고 있습니다.</p>
+            <p>이동식 구조라는 강점을 살려, 고정된 공간이 아닌 어떤 상황에서도 최적의 식음 솔루션을 제공하겠습니다. 앞으로도 신뢰와 청결을 기본으로, 현장의 모든 순간을 책임지는 팀이 되겠습니다.</p>
+          </div>
+          <div class="greet-sign">푸드트럭하우스 · 주식회사 하이팅 대표<b>김정우</b></div>
+        </div>
       </div>
-      <div class="greet-sign">푸드트럭하우스 · 주식회사 하이팅 대표<b>김정우</b></div>
     </div>
   </div>
 </section>
