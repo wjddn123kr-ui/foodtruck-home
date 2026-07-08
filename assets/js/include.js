@@ -19,14 +19,16 @@
   fbq('init', '974391308967190');
   fbq('track', 'PageView');
 
-  /* GA4 — 측정 ID 받으면 여기에 추가 예정
-  var GA_ID='G-XXXXXXXXXX';
-  var g=document.createElement('script');g.async=true;
-  g.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+  /* GA4 (Google Analytics) */
+  var GA_ID = 'G-SY1XRW0QB5';
+  var g = document.createElement('script'); g.async = true;
+  g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
   document.head.appendChild(g);
-  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-  window.gtag=gtag;gtag('js',new Date());gtag('config',GA_ID);
-  */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID);
 
   /* 전환 추적(견적/전화 클릭) — 이벤트 위임이라 include 여부와 무관 */
   document.addEventListener('click', function (e) {
