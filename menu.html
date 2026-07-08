@@ -88,6 +88,7 @@
   .mc-emoji{font-size:42px;line-height:1;opacity:.95}
   .mc-best{position:absolute;top:10px;left:10px;z-index:2;background:var(--blue);color:#fff;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:.03em;box-shadow:0 4px 12px -4px rgba(45,91,255,.7)}
   .mc-b{padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .mc-b.mc-b-solo{justify-content:center;align-items:center;text-align:center}
   .mc-n{font-size:14.5px;font-weight:600;color:#33406b;line-height:1.35}
   .mc-p{font-size:15.5px;font-weight:700;color:var(--navy-900);white-space:nowrap}
   .mc-p i{font-style:normal;font-size:12px;color:#5b6789;margin-left:2px;font-weight:600}
@@ -262,6 +263,44 @@
       {name:"7종 베이직세트", price:3500, coffee:["아메리카노","카페라떼","바닐라라떼","아샷추"], ade:["레몬에이드","자몽에이드","청포도에이드","애플망고에이드"], tea:["복숭아 아이스티","자몽허니블랙티","유자차","캐모마일","애플캐모마일","얼그레이","얼그레이밀크티"], non_coffee:["초코라떼"]},
       {name:"15종 클래식세트", price:4000, coffee:["아메리카노","카페라떼","바닐라라떼","카라멜마끼야또","카페모카","헤이즐넛라떼","헤이즐넛아메리카노","아샷추","다방커피"], non_coffee:["딸기라떼","초코라떼","말차라떼","꿀고구마라떼"], ade:["레몬에이드","자몽에이드","청포도에이드","애플망고에이드"], tea:["복숭아 아이스티","자몽허니블랙티","유자차","캐모마일","애플캐모마일","얼그레이","얼그레이밀크티","페퍼민트","생강레몬티","애플시나몬티"]}
     ],
+    /* 세트에 담기는 개별 음료 라인업(사진). 한 장의 사진이 여러 메뉴에 함께 쓰일 수 있음 */
+    drinks_lineup: {
+      coffee: [
+        {name:"아메리카노", img:"drink-americano.png"},
+        {name:"헤이즐넛 아메리카노", img:"drink-americano.png"},
+        {name:"카페라떼", img:"drink-latte.png"},
+        {name:"바닐라라떼", img:"drink-latte.png"},
+        {name:"헤이즐넛라떼", img:"drink-latte.png"},
+        {name:"다방커피", img:"drink-latte.png"},
+        {name:"카라멜마끼야또", img:"drink-makiato.png"},
+        {name:"카페모카", img:"drink-mocha.png"},
+        {name:"아샷추", img:"drink-ashotchu.png"}
+      ],
+      non_coffee: [
+        {name:"딸기라떼", img:"drink-strawberry.png"},
+        {name:"초코라떼", img:"drink-choco.png"},
+        {name:"말차(녹차)라떼", img:"drink-greentea.png"},
+        {name:"꿀고구마라떼", img:"drink-sweetpotato.png"}
+      ],
+      ade: [
+        {name:"레몬에이드", img:"drink-lemonade.png"},
+        {name:"자몽에이드", img:"drink-grapefruitade.png"},
+        {name:"청포도에이드", img:"drink-grapeade.png"},
+        {name:"애플망고에이드", img:"drink-applemangoade.png"}
+      ],
+      tea: [
+        {name:"복숭아 아이스티", img:"drink-icetea.png"},
+        {name:"자몽허니블랙티", img:"drink-blacktea.png"},
+        {name:"생강레몬티", img:"drink-blacktea.png"},
+        {name:"유자차", img:"drink-yuja.png"},
+        {name:"캐모마일", img:"drink-herbtea.png"},
+        {name:"얼그레이", img:"drink-herbtea.png"},
+        {name:"페퍼민트", img:"drink-herbtea.png"},
+        {name:"얼그레이밀크티", img:"drink-milktea.png"},
+        {name:"애플캐모마일", img:"drink-applecinnamon.png"},
+        {name:"애플시나몬티", img:"drink-applecinnamon.png"}
+      ]
+    },
     snacks: [
       {name:"츄러스(30cm)", price:3000, best:true, img:"snack-1.jpg"},
       {name:"팝콘(소)", price:3500, img:"popcorn.jpg"},
@@ -408,6 +447,13 @@
   }
   function grid(items, emoji){return '<div class="mgrid">'+items.map(function(it){return itemCard(it,emoji);}).join('')+'</div>';}
 
+  /* 음료 라인업 카드(가격 없음 — 가격은 세트 기준) */
+  function drinkCard(it){
+    return '<div class="mc reveal"><div class="mc-th"><img class="mc-img" src="'+it.img+'?v=1" alt="'+esc(it.name)+'" loading="lazy"></div>'+
+           '<div class="mc-b mc-b-solo"><span class="mc-n">'+esc(it.name)+'</span></div></div>';
+  }
+  function drinkGrid(items){return '<div class="mgrid">'+items.map(drinkCard).join('')+'</div>';}
+
   var SETLABELS = {summer:"여름 메뉴", winter:"겨울 메뉴", coffee:"커피", non_coffee:"논커피", ade:"에이드", tea:"티 · 기타"};
   function setCard(s){
     var groups = '';
@@ -438,11 +484,17 @@
     html += panel('season','시즌 한정 메뉴','계절에 맞춰 운영하는 시즌 메뉴입니다. 더위엔 시원하게, 추위엔 따뜻하게 현장을 챙깁니다.','', inner);
   })();
 
-  /* 커피·음료 세트 */
+  /* 커피·음료 세트 + 음료 전체 라인업 사진 */
   html += panel('drinks','커피 · 음료 세트',
     '인원과 메뉴 수에 맞춰 세트를 고르세요. 가격은 1인 기준이며, 세트 안에서 음료를 자유롭게 선택할 수 있습니다.',
     '가장 인기 있는 커피차 구성',
-    '<div class="set-grid">'+MENU.drink_sets.map(setCard).join('')+'</div>');
+    '<div class="set-grid">'+MENU.drink_sets.map(setCard).join('')+'</div>'+
+    '<div class="sub" style="margin-top:46px;font-size:18px">🥤 음료 전체 라인업</div>'+
+    '<p style="margin:0 0 22px;font-size:14px;color:#5b6789;line-height:1.65">위 세트에 담을 수 있는 음료예요. 아이스·핫 모두 가능하며, 사진은 예시입니다.</p>'+
+    '<div class="sub">커피</div>'+drinkGrid(MENU.drinks_lineup.coffee)+
+    '<div class="sub">논커피 라떼</div>'+drinkGrid(MENU.drinks_lineup.non_coffee)+
+    '<div class="sub">에이드</div>'+drinkGrid(MENU.drinks_lineup.ade)+
+    '<div class="sub">티 · 기타</div>'+drinkGrid(MENU.drinks_lineup.tea));
 
   /* 간식 */
   html += panel('snack','간식','츄러스·닭꼬치·타코야끼 등 손이 자주 가는 길거리 간식입니다.','', grid(MENU.snacks,'🌭'));
