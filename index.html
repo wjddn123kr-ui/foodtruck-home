@@ -169,15 +169,17 @@ body{background-color:#F7F9FC}
 .logo-chip:hover img{filter:none;opacity:1}
 
 /* ===== 현장 운영 (다크) ===== */
-.why-sec{background:linear-gradient(180deg,#0B3480 0%,#082A61 100%);color:#fff;position:relative;overflow:hidden}
-/* 블루프린트 격자: 현장 운영 = 사전 설계, 배차 격자가 '도면 위 설계'로 읽히도록 */
-.why-sec::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.9;
+.why-sec{background:linear-gradient(180deg,#0A1430 0%,#0D2152 48%,#0A1430 100%);color:#fff;position:relative;overflow:hidden}
+/* 블루프린트 격자: 현장 운영 = 사전 설계. 배차 카드 쪽에만 은은하게 — 텍스트 영역은 깨끗하게 */
+.why-sec::before{content:"";position:absolute;inset:0;pointer-events:none;
   background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px);
-  background-size:28px 28px,28px 28px,140px 140px,140px 140px}
+    linear-gradient(rgba(91,134,255,.10) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(91,134,255,.10) 1px,transparent 1px),
+    linear-gradient(rgba(91,134,255,.18) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(91,134,255,.18) 1px,transparent 1px);
+  background-size:28px 28px,28px 28px,140px 140px,140px 140px;
+  -webkit-mask:linear-gradient(100deg,transparent 0%,transparent 38%,rgba(0,0,0,.55) 62%,#000 82%);
+  mask:linear-gradient(100deg,transparent 0%,transparent 38%,rgba(0,0,0,.55) 62%,#000 82%)}
 .why-grid{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(40px,6vw,72px);align-items:center;position:relative;z-index:2}
 /* 강조 에어브로우(빨강 + 펄스) */
 .why-kicker{display:inline-flex;align-items:center;gap:11px;font-size:14px;font-weight:800;letter-spacing:.01em;color:#9DB9FF;margin-bottom:18px}
@@ -185,16 +187,16 @@ body{background-color:#F7F9FC}
 .why-kicker::after{content:"";width:52px;height:1px;background:linear-gradient(90deg,rgba(157,185,255,.7),transparent)}
 @keyframes kpulse{0%{box-shadow:0 0 0 0 rgba(157,185,255,.55)}70%{box-shadow:0 0 0 9px rgba(157,185,255,0)}100%{box-shadow:0 0 0 0 rgba(157,185,255,0)}}
 .why-sec h2.st{font-size:clamp(28px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.12;color:#fff}
-.why-lead{margin-top:22px;font-size:17px;color:#C4D2F2;max-width:46ch;line-height:1.7}
+.why-lead{margin-top:22px;font-size:17px;color:#D6E0F8;max-width:46ch;line-height:1.7}
 .points{margin-top:38px}
 .pt{padding:26px 0;border-bottom:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
 .pt:last-child{border-bottom:0}
-.pt .n{font-family:var(--num);font-weight:800;font-size:14px;color:var(--blue-bright);border:1.5px solid rgba(91,134,255,.4);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
+.pt .n{font-family:var(--num);font-weight:800;font-size:14px;color:#9DB9FF;border:1.5px solid rgba(157,185,255,.55);border-radius:9px;width:40px;height:40px;display:grid;place-items:center;flex-shrink:0}
 .pt h3{font-size:19px;font-weight:700;letter-spacing:-.02em;color:#fff;margin-bottom:6px}
-.pt p{font-size:15px;color:#B9C8EA;line-height:1.6}
+.pt p{font-size:15px;color:#C9D5F0;line-height:1.6}
 
 /* ===== 실시간 배차 카드 ===== */
-.dispatch-card{background:var(--navy-850);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:30px;position:relative;overflow:hidden;box-shadow:0 30px 70px -40px rgba(2,10,40,.9)}
+.dispatch-card{background:#070E24;border:1px solid rgba(157,185,255,.22);border-radius:22px;padding:30px;position:relative;overflow:hidden;box-shadow:0 30px 70px -40px rgba(2,10,40,.9)}
 
 .dc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;position:relative;flex-wrap:wrap;gap:8px}
 .dc-head .t{font-size:13px;font-weight:600;color:var(--ice);display:flex;align-items:center;gap:8px}
@@ -202,7 +204,7 @@ body{background-color:#F7F9FC}
 @keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
 .dc-head .meta{font-family:var(--num);font-size:12px;color:var(--mute)}
 .dispatch{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;position:relative}
-.cell{aspect-ratio:1;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:13px;color:var(--mute);background:rgba(140,165,225,.04);transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
+.cell{aspect-ratio:1;border-radius:11px;border:1px solid rgba(140,165,225,.22);display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:13px;color:#8FA0CB;background:rgba(140,165,225,.06);transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
 .cell.on{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 22px -8px rgba(45,91,255,.8)}
 .cell.warm{background:rgba(91,134,255,.14);color:var(--blue-bright);border-color:rgba(91,134,255,.35)}
 .cell.booth{background:rgba(52,211,153,.12);color:#34D399;border:1px dashed rgba(52,211,153,.45);font-size:12px}
