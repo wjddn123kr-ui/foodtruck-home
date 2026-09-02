@@ -124,9 +124,12 @@
   .process .kicker::after{background:rgba(10,17,36,.12)}
   .process h2.st{color:var(--ink)}
   .proc{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px}
-  .proc-step{padding-top:18px;border-top:2px solid rgba(10,17,36,.14)}
+  .proc-step{padding-top:18px;border-top:2px solid rgba(10,17,36,.14);transition:border-color .2s,transform .2s}
   .proc-step:first-child{border-top-color:var(--blue)}
-  .proc-step .pn{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue-deep);margin-bottom:10px}
+  .proc-step:hover{border-top-color:var(--blue);transform:translateY(-3px)}
+  .proc-step:hover .pn{color:var(--blue)}
+  .proc-step:hover h4{color:var(--blue-deep)}
+  .proc-step .pn{font-family:'Archivo';font-weight:800;font-size:14px;color:var(--blue-deep);margin-bottom:10px;transition:color .2s}
   .proc-step h4{font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.45}
 
   .cta-wrap{padding:clamp(70px,8vw,104px) 0}
@@ -274,11 +277,11 @@
       <h2 class="st">진행은 5단계로 간단하게</h2>
     </div>
     <div class="proc">
-      <div class="proc-step reveal"><div class="pn">STEP 01</div><h4>맞춤 상담<br>및 견적</h4></div>
-      <div class="proc-step reveal"><div class="pn">STEP 02</div><h4>계약 ·<br>예약금</h4></div>
-      <div class="proc-step reveal"><div class="pn">STEP 03</div><h4>디자인물 제작<br>· 트럭 배차</h4></div>
-      <div class="proc-step reveal"><div class="pn">STEP 04</div><h4>행사 진행<br>· 현장 운영</h4></div>
-      <div class="proc-step reveal"><div class="pn">STEP 05</div><h4>결제 ·<br>정산서류 발급</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 01</div><h4>문의<br>상담</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 02</div><h4>차량<br>배차</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 03</div><h4>브랜딩물<br>제작</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 04</div><h4>현장<br>운영</h4></div>
+      <div class="proc-step reveal"><div class="pn">STEP 05</div><h4>정산 ·<br>서류 발급</h4></div>
     </div>
   </div>
 </section>
